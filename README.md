@@ -2,7 +2,7 @@
 
 ## Integrantes
 
-- [Aponte Díaz, Silvina Belén.]()
+- [Aponte Díaz, Silvina Belén.](https://github.com/belenkskin)
 - [Cicconi, Lucas.]()
 - [Flores Ponzoni, Juan Franco.](https://github.com/juanfranflores)
 - [Redona, Ramiro.]()
