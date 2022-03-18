@@ -3,10 +3,10 @@
 ## Integrantes
 
 - [Aponte Díaz, Silvina Belén.](https://github.com/belenkskin)
-- [Cicconi, Lucas.]()
+- [Cicconi, Lucas.](https://github.com/LucasCicconi1704)
 - [Flores Ponzoni, Juan Franco.](https://github.com/juanfranflores)
-- [Redona, Ramiro.]()
-- [Torino, Rocco.]()
+- [Redona, Ramiro.](https://github.com/ramiro1998)
+- [Torino, Rocco.](https://github.com/RoccoTorino)
 
 ## ¿Qué productos o servicios brindará nuestro sitio?
 
