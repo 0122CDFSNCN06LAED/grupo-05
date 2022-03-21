@@ -36,6 +36,14 @@ Las características relevantes de Workana es la provisión de una sección úni
 Las empresas cuentan con la opción de realizar una búsqueda por medio de filtros. Pudiendo observar tareas o proyectos que estos hayan realizado con anterioridad. Los freelancers también pueden realizar búsquedas de ofertas laborales. Así como recibir notificaciones sobre trabajos que se adapten a las tareas y servicios que estén ofreciendo.
 Otra característica que posee la web, es que permite tanto a los profesionales, como a las empresas, el poder comunicarse a través del sitio. También Permite señalar la puntualidad con la que un freelancer entrega sus proyectos, así como la opinión de sus clientes.
 
+## Paleta de colores:
+
+- Gris oscuro (textos): #4a4a4a
+- Blanco (fondo): #ffffff
+- Gris claro (fondo): #f0f0f0
+- Íconos: #1c3f7f
+- Azul: #3a7fff
+- Verde: #16c153
 
 <!--
 Ideas:
