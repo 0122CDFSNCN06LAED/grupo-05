@@ -1,0 +1,6 @@
+- Gris oscuro (textos): #4a4a4a
+- Blanco (fondo): #ffffff
+- Gris claro (fondo): #f0f0f0
+- Íconos: #1c3f7f
+- Azul: #3a7fff
+- Verde: #16c153
