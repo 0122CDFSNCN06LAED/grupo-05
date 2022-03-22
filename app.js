@@ -16,11 +16,11 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/login.html"));
 });
-app.get("/productCart", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/productCart.html"));
+app.get("/proposal-list", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/poroposal-list.html"));
 });
-app.get("/productDetail", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/productDetail.html"));
+app.get("/bidding-detail", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/bidding-detail.html"));
 });
 /*SErver */
 app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}`));
