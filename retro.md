@@ -21,7 +21,7 @@
 - Mostrar estadísticas de tu empresa (historial de contrataciones, últimos proyectos, descripción de tu empresa, ).
 - Generar proyecto nuevo.
 
-## Detalle de producto (la publicación):
+## ~Detalle de producto~ Bidding detail:
 
 - Nombre y descripción de la empresa.
 - Breve descripción del proyecto.
@@ -32,7 +32,7 @@
 - Enviar mensaje y postularse a licitación.
 - Compartir (Copiar url).
 - 
-## Carrito de compras. Reemplazado por lista de postulantes: 
+## ~Carrito de compras~ Proposal list: 
 ### Mantener el header de las demás pantallas. Con logo centrado, hamburger bar a la izquierda, etc.
 ### Publicación de postulante:
 - Confirmar propuesta.
