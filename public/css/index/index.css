@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  font-family: "BhuTuka Expanded One", cursive;
+  font-family: "Karla", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 20%;
+  width: 20%;
+}
+
+.configuracion {
+  height: 20px;
+  width: 20px;
+  margin-top: 9px;
+  margin-right: 8px;
+}
+
+.usuario-datos {
+  display: flex;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.usuario-texto {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.imagen-usuario {
+  height: 40px;
+  width: 40px;
+}
+
+.nivel-icon {
+  margin-top: 5px;
+  margin-right: 3px;
+  height: 27px;
+  width: 27px;
+}
+
+.texto-gris {
+  color: gray;
+}
+
+.recomendados {
+  height: 130px;
+}
+
+.contenido-principal {
+  display: flex;
+}
+
+.buscador-buscados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.lista-buscados {
+  list-style: none;
+  padding: 0;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-buscados li div:first-child {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.requisitos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.requisitos {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.requisitos div {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.requisitos div p {
+  background-color: #3a7fff;
+  border-radius: 10px;
+  padding: 4px;
+  font-weight: 100;
+}
+
+.elemento-lista-buscados {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: #f0f0f0;
+  text-align: justify;
+  margin-right: 5px;
+}
+
+.input-buscar {
+  width: 120px;
+  border-radius: 15px;
+}
+
+.boton-buscar {
+  align-self: flex-start;
+}
+
+.boton-boton {
+  display: none;
+}
+
+/* filtrado */
+
+.filtrado {
+  margin-top: 30px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* filtrado precio */
+.filtrado-precio {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-precio {
+  width: 35px;
+  height: 10px;
+  font-size: 12px;
+}
+
+.filtrado-precio p {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.filtrado-input-precio {
+  display: flex;
+  margin-left: 3px;
+}
+
+/* filtrado categoría */
+.filtrado-categoria {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filtrado-categoria p {
+  margin-left: 3px;
+}
+
+.filtrado-checkbox-categoria {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoria-scroll {
+  height: 83px;
+  width: 120px;
+  overflow-y: scroll;
+  margin-left: 3px;
+}
+
+.label-checkbox {
+  display: flex;
+  gap: 3px;
+}
