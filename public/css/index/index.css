@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  font-family: "BhuTuka Expanded One", cursive;
+  font-family: "Karla", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #f0f0f0;
+}
+
+.logo {
+  height: 20%;
+  width: 20%;
+  margin-top: 8px;
+}
+
+.configuracion {
+  height: 20px;
+  width: 20px;
+  margin-top: 9px;
+  margin-right: 8px;
+}
+
+.usuario-datos {
+  display: flex;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.usuario-texto {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.usuario-texto p:first-child {
+  font-weight: bold;
+}
+
+.imagen-usuario {
+  height: 30px;
+  width: 30px;
+}
+
+.nivel-icon {
+  margin-top: 5px;
+  margin-right: 3px;
+  height: 27px;
+  width: 27px;
+}
+
+.texto-gris {
+  color: gray;
+}
+
+.recomendados {
+  height: 130px;
+}
+
+.contenido-principal {
+  display: flex;
+}
+
+.buscador-buscados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.lista-buscados {
+  list-style: none;
+  padding: 0;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-buscados li div:first-child {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.requisitos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.requisitos {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.requisitos div {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.requisitos div p {
+  background-color: #3a7fff;
+  border-radius: 10px;
+  padding: 4px;
+  font-weight: 100;
+}
+
+.elemento-lista-buscados {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: #f0f0f0;
+  text-align: justify;
+  margin-right: 8px;
+}
+
+.input-buscar {
+  width: 170px;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.boton-buscar {
+  align-self: flex-start;
+}
+
+.boton-boton {
+  display: none;
+}
+
+/* filtrado */
+
+.filtrado {
+  margin-top: 60px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* filtrado precio */
+.filtrado-precio {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: #f0f0f0;
+  width: 120px;
+  align-items: center;
+}
+
+.filtrado-precio p:first-child {
+  background-color: #16c153;
+  width: 95px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.input-precio {
+  width: 35px;
+  height: 10px;
+  font-size: 12px;
+}
+
+.filtrado-precio p {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.filtrado-input-precio {
+  display: flex;
+  margin-left: 3px;
+}
+
+/* filtrado categoría */
+.filtrado-categoria {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #f0f0f0;
+  margin-right: 10px;
+  width: 120px;
+  align-items: center;
+}
+
+.filtrado-categoria p {
+  margin-left: 3px;
+}
+
+.filtrado-categoria p:first-child {
+  background-color: #16c153;
+  width: 95px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.filtrado-checkbox-categoria {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoria-scroll {
+  height: 83px;
+  width: 120px;
+  overflow-y: scroll;
+  margin-left: 3px;
+}
+
+.label-checkbox {
+  display: flex;
+  gap: 3px;
+}
