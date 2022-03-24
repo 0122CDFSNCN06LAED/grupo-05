@@ -13,11 +13,13 @@ img {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  background-color: #f0f0f0;
 }
 
 .logo {
   height: 20%;
   width: 20%;
+  margin-top: 8px;
 }
 
 .configuracion {
@@ -40,9 +42,13 @@ img {
   align-items: flex-end;
 }
 
+.usuario-texto p:first-child {
+  font-weight: bold;
+}
+
 .imagen-usuario {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
 }
 
 .nivel-icon {
@@ -115,12 +121,13 @@ img {
   gap: 4px;
   background-color: #f0f0f0;
   text-align: justify;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 .input-buscar {
-  width: 120px;
+  width: 170px;
   border-radius: 15px;
+  padding: 5px;
 }
 
 .boton-buscar {
@@ -134,7 +141,7 @@ img {
 /* filtrado */
 
 .filtrado {
-  margin-top: 30px;
+  margin-top: 60px;
   font-size: 12px;
   display: flex;
   flex-direction: column;
@@ -146,6 +153,16 @@ img {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  background-color: #f0f0f0;
+  width: 120px;
+  align-items: center;
+}
+
+.filtrado-precio p:first-child {
+  background-color: #16c153;
+  width: 95px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .input-precio {
@@ -168,11 +185,22 @@ img {
 .filtrado-categoria {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
+  background-color: #f0f0f0;
+  margin-right: 10px;
+  width: 120px;
+  align-items: center;
 }
 
 .filtrado-categoria p {
   margin-left: 3px;
+}
+
+.filtrado-categoria p:first-child {
+  background-color: #16c153;
+  width: 95px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .filtrado-checkbox-categoria {
