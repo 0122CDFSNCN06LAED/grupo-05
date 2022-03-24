@@ -3,6 +3,7 @@
   font-family: "BhuTuka Expanded One", cursive;
   font-family: "Karla", sans-serif;
   font-family: "Roboto", sans-serif;
+  /* background-color: #f0f0f0; */
 }
 
 img {
@@ -62,12 +63,63 @@ img {
   color: gray;
 }
 
+/* recomendados */
 .recomendados {
+  display: flex;
+  flex-direction: column;
+}
+
+.recomendados-text-requisitos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recomendado-titulo {
+  padding: 5px;
+  margin-top: 3px;
+  background-color: #16c153;
+  text-align: center;
+}
+
+.lista-recomendados {
+  display: flex;
+  list-style: none;
+  font-size: 10px;
+  padding: 5px;
+  gap: 8px;
+  overflow-x: scroll;
   height: 130px;
+}
+
+.lista-recomendados li div:first-child {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.elemento-lista-recomendados {
+  text-align: justify;
+  width: 170px;
+  background-color: #f0f0f0;
+}
+
+.requisitos-recomendados {
+  display: flex;
+  font-size: 9px;
+  gap: 4px;
+}
+
+.requisitos-recomendados p {
+  background-color: #3a7fff;
+  border-radius: 10px;
+  padding: 3px;
+  color: #ffffff;
 }
 
 .contenido-principal {
   display: flex;
+  margin-top: 6px;
 }
 
 .buscador-buscados {
@@ -125,17 +177,27 @@ img {
 }
 
 .input-buscar {
-  width: 170px;
+  width: 120px;
   border-radius: 15px;
-  padding: 5px;
+  padding: 3px;
 }
 
 .boton-buscar {
   align-self: flex-start;
+  display: flex;
+  gap: 5px;
 }
 
-.boton-boton {
-  display: none;
+.ordenar {
+  font-size: 9px;
+}
+
+.ordenar p {
+  font-weight: bold;
+}
+
+.ordenar-opciones {
+  font-size: 9px;
 }
 
 /* filtrado */
@@ -156,6 +218,8 @@ img {
   background-color: #f0f0f0;
   width: 120px;
   align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .filtrado-precio p:first-child {
@@ -190,6 +254,8 @@ img {
   margin-right: 10px;
   width: 120px;
   align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .filtrado-categoria p {
