@@ -11,11 +11,12 @@ img {
 
 p {
   margin: 0;
+  font-size: 10px;
 }
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   background-color: #f0f0f0;
 }
@@ -24,6 +25,7 @@ p {
   height: 20%;
   width: 20%;
   margin-top: 8px;
+  margin-left: 5px;
 }
 
 .configuracion {
@@ -40,7 +42,6 @@ p {
 }
 
 .usuario-texto {
-  margin-top: 6px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -48,6 +49,7 @@ p {
 
 .usuario-texto p:first-child {
   font-weight: bold;
+  font-size: 14px;
 }
 
 .imagen-usuario {
@@ -72,17 +74,18 @@ p {
   flex-direction: column;
 }
 
-.recomendados-text-requisitos {
+/* .recomendados-text-requisitos {
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
+} */
 
 .recomendado-titulo {
   padding: 5px;
   text-align: center;
   background-color: #5d737e;
   font-weight: bold;
+  font-size: 12px;
 }
 
 .lista-recomendados {
@@ -95,7 +98,7 @@ p {
   height: 130px;
 }
 
-.lista-recomendados li div:first-child {
+/* .lista-recomendados li div:first-child {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -105,7 +108,7 @@ p {
   text-align: justify;
   width: 170px;
   background-color: #f0f0f0;
-}
+} */
 
 .requisitos-recomendados {
   display: flex;
@@ -134,7 +137,7 @@ p {
   gap: 8px;
 }
 
-.lista-buscados {
+/* .lista-buscados {
   list-style: none;
   padding: 0;
   font-size: 10px;
@@ -204,12 +207,15 @@ p {
 
 .ordenar-opciones {
   font-size: 9px;
-}
+} */
 
+.d-flex {
+  width: 90vw;
+}
 /* filtrado */
 
 .filtrado {
-  margin-top: 60px;
+  margin-top: 10px;
   font-size: 12px;
   display: flex;
   flex-direction: column;
@@ -309,19 +315,14 @@ p {
   margin: 0;
 }
 
-.boton-tarjeta {
+/* .boton-tarjeta {
   font-size: 10px;
   width: 40px;
 }
 
 .btn-primary {
   height: 15px;
-}
-
-.container-fluid {
-  padding: 0px;
-  margin-right: 3px;
-}
+} */
 
 .boton-cancel {
   display: block;
@@ -367,4 +368,8 @@ p {
 
 .d-flex {
   height: 30px;
+}
+
+.bg-light {
+  background-color: #e6ebe0 !important;
 }
