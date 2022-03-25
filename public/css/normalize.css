@@ -7,9 +7,17 @@
 
 * {
   font-family: "Open Sans", sans-serif;
-  font-size: 40px;
+  font-size: 24px;
 }
-
+.header {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #f0f0f0;
+}
+.footer {
+  font-size: small;
+}
 .title {
   color: black;
   font-weight: bold;
