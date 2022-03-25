@@ -3,10 +3,14 @@
   font-family: "BhuTuka Expanded One", cursive;
   font-family: "Karla", sans-serif;
   font-family: "Roboto", sans-serif;
-  /* background-color: #f0f0f0;*/
+  /* background-color: #f0f0f0; */
 }
 img {
   max-width: 100%;
+}
+
+p {
+  margin: 0;
 }
 
 .header {
@@ -76,9 +80,9 @@ img {
 
 .recomendado-titulo {
   padding: 5px;
-  margin-top: 3px;
-  background-color: #16c153;
   text-align: center;
+  background-color: #5d737e;
+  font-weight: bold;
 }
 
 .lista-recomendados {
@@ -106,7 +110,8 @@ img {
 .requisitos-recomendados {
   display: flex;
   font-size: 9px;
-  gap: 4px;
+  gap: 5px;
+  padding: 3px;
 }
 
 .requisitos-recomendados p {
@@ -114,6 +119,7 @@ img {
   border-radius: 10px;
   padding: 3px;
   color: #ffffff;
+  margin-bottom: 0px;
 }
 
 .contenido-principal {
@@ -185,6 +191,7 @@ img {
   align-self: flex-start;
   display: flex;
   gap: 5px;
+  margin: 0;
 }
 
 .ordenar {
@@ -214,23 +221,21 @@ img {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background-color: #f0f0f0;
   width: 120px;
-  align-items: center;
   padding-top: 3px;
   padding-bottom: 3px;
 }
 
 .filtrado-precio p:first-child {
-  background-color: #16c153;
+  background-color: #64b6ac;
   width: 95px;
   text-align: center;
   font-weight: bold;
 }
 
 .input-precio {
-  width: 35px;
-  height: 10px;
+  width: 43px;
+  height: 20px;
   font-size: 12px;
 }
 
@@ -249,10 +254,8 @@ img {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background-color: #f0f0f0;
   margin-right: 10px;
   width: 120px;
-  align-items: center;
   padding-top: 3px;
   padding-bottom: 3px;
 }
@@ -262,7 +265,7 @@ img {
 }
 
 .filtrado-categoria p:first-child {
-  background-color: #16c153;
+  background-color: #64b6ac;
   width: 95px;
   text-align: center;
   font-weight: bold;
@@ -274,7 +277,7 @@ img {
 }
 
 .categoria-scroll {
-  height: 83px;
+  height: 88px;
   width: 120px;
   overflow-y: scroll;
   margin-left: 3px;
@@ -283,4 +286,85 @@ img {
 .label-checkbox {
   display: flex;
   gap: 3px;
+}
+
+.tarjeta {
+  display: flex;
+  gap: 5px;
+}
+
+.card {
+  width: 166px;
+}
+
+.card-header {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #64b6ac;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 10px;
+  margin: 0;
+}
+
+.boton-tarjeta {
+  font-size: 10px;
+  width: 40px;
+}
+
+.btn-primary {
+  height: 15px;
+}
+
+.container-fluid {
+  padding: 0px;
+  margin-right: 3px;
+}
+
+.boton-cancel {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.lupa {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 9px;
+}
+
+.card-body {
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #c0fdfb;
+}
+
+.tarjeta-buscados {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-right: 7px;
+}
+
+.card-buscados {
+  width: 223px;
+}
+
+.d-flex {
+  height: 30px;
 }
