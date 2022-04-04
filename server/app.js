@@ -7,7 +7,7 @@ const path = require("path");
 app.use(express.static("public")); //sirve para establecer donde estan ubicados los archivos estaticos de nuestra aplicacion
 
 /* Routing*/
-app.get("/index", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
 });
 app.get("/register", (req, res) => {

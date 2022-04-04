@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Karla:wght@200&family=Roboto&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/register&login/theme.css" />
-    <link rel="stylesheet" href="./css/register&login/register.css" />
+    <link rel="stylesheet" href="./css/register&login/register-and-login.css" />
     <link rel="stylesheet" href="./css/register&login/breakpoints.css" />
   </head>
   <body>
@@ -27,31 +27,50 @@
       </div>
     </header>
     <main class="main-register">
-      <form action="/views/home.html" method="get" class="main-form">
+      <form action="/views/index.html" method="get" class="main-form">
         <h2 class="form-info">Crea una cuenta</h2>
-        <div class="register-section">
-          <input type="button" name="facebook" id="facebook" value="facebook" />
-          <input type="button" name="google" id="google" value="google" />
-          <input type="button" name="linkedin" id="linkedin" value="linkedin" />
+        <div class="hidden">
+          <div class="register-section">
+            <input type="button" name="facebook" id="facebook" value="facebook" />
+            <input type="button" name="google" id="google" value="google" />
+            <input type="button" name="linkedin" id="linkedin" value="linkedin" />
+          </div>
+          <hr class="solid" />
         </div>
-        <hr class="solid" />
         <div class="register-section">
-          <div class="email-input-div">
-            <label for="user-email">Ingresá tu email</label>
-            <input type="email" name="user-email" id="user-email" placeholder="Ingresa tu email" />
+          <div class="input-div">
+            <label class="input-label" for="user-firstname">Ingresá tu nombre</label>
+            <input class="input-text" type="text" name="user-firstname" id="user-firstname" placeholder="Nombre" required />
+          </div>
+          <div class="input-div">
+            <label class="input-label" for="user-surname">Ingresá tu apellido</label>
+            <input class="input-text" type="text" name="user-surname" id="user-surname" placeholder="Apellido" required />
+          </div>
+          <div class="input-div">
+            <label class="input-label" for="user-email ">Ingresá tu email</label>
+            <input class="input-text" type="email" name="user-email" id="user-email" placeholder="Email" required />
           </div>
           <div>
-            <div class="password-input-div">
-              <label for="user-password">Ingresá tu contraseña</label>
-              <input type="password" name="user-password" id="user-password" />
+            <div class="input-div">
+              <label class="input-label" for="user-password">Ingresá tu contraseña</label>
+              <input class="input-text" type="password" name="user-password" id="user-password" placeholder="Contraseña" required />
             </div>
-            <div>
-              <label for="user-password-confirm">Repetí tu contraseña</label>
-              <input type="password" name="user-password-confirmation" id="user-password-confirmation" />
+            <div class="input-div">
+              <label class="input-label" for="user-password-confirm">Repetir contraseña</label>
+              <input
+                class="input-text"
+                type="password"
+                name="user-password-confirmation"
+                id="user-password-confirmation"
+                placeholder="Repetir contraseña"
+                required
+              />
             </div>
           </div>
-          <input type="submit" value="Continuar" />
-          <h2 class="form-info">Al unirme, acepto recibir correos de proyectos</h2>
+          <div class="input-div">
+            <input class="input-button" type="submit" value="Registrarme" />
+            <h2 class="form-info">Al unirme, acepto recibir correos de proyectos</h2>
+          </div>
         </div>
       </form>
     </main>
