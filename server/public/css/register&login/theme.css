@@ -1,0 +1,17 @@
+.main-form {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  margin: auto;
+  margin-top: 10px;
+}
+.register-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+}
