@@ -27,8 +27,6 @@ p {
 .configuracion {
   height: 20px;
   width: 20px;
-  margin-top: 9px;
-  margin-right: 8px;
 }
 
 .usuario-datos {
@@ -54,8 +52,6 @@ p {
 }
 
 .nivel-icon {
-  margin-top: 5px;
-  margin-right: 3px;
   height: 27px;
   width: 27px;
 }
@@ -70,12 +66,6 @@ p {
   display: flex;
   flex-direction: column;
 }
-
-/* .recomendados-text-requisitos {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-} */
 
 .recomendado-titulo {
   padding: 5px;
@@ -92,7 +82,7 @@ p {
   padding: 5px;
   gap: 8px;
   overflow-x: scroll;
-  height: 130px;
+  /* height: 130px; */
 }
 
 .requisitos-recomendados {
@@ -100,12 +90,15 @@ p {
   font-size: 9px;
   gap: 5px;
   padding: 3px;
+  align-items: center;
 }
 
 .requisitos-recomendados p {
   background-color: #3a7fff;
   border-radius: 10px;
   padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
   color: #ffffff;
   margin-bottom: 0px;
 }
@@ -207,14 +200,18 @@ p {
   gap: 3px;
 }
 
+.label-checkbox input {
+  margin-top: 1.7px;
+}
+
 .tarjeta {
   display: flex;
   gap: 5px;
 }
 
-.card {
+/* .card {
   width: 166px;
-}
+} */
 
 .card-header {
   font-size: 12px;
@@ -245,6 +242,18 @@ p {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.boton-desplegable::after {
+  display: none;
+}
+
+.boton-desplegable:hover {
+  background-color: hsl(200, 15%, 33%);
+}
+
+.boton-desplegable {
+  background-color: #5d737e;
+}
+
 .lupa {
   width: 22px;
   height: 22px;
@@ -270,10 +279,6 @@ p {
   flex-direction: column;
   gap: 5px;
   margin-right: 7px;
-}
-
-.card-buscados {
-  /*   width: 70vw; */
 }
 
 .d-flex {
@@ -339,7 +344,7 @@ p {
 
   .card {
     width: 45vw;
-    max-width: 235px;
+    /*   max-width: 235px; */
   }
 
   .contenido-principal {
@@ -350,7 +355,7 @@ p {
   .d-flex {
     width: 57vw;
     margin: 0 auto;
-    min-width: 476px;
+    min-width: 340px;
   }
 }
 
@@ -380,7 +385,7 @@ p {
   }
 
   .d-flex {
-    width: 508px;
+    min-width: 485px;
   }
 }
 
@@ -444,6 +449,8 @@ p {
     width: 40vw;
   }
   .d-flex {
-    width: 52vw;
+    width: 60vw;
+    min-width: 650px;
+    margin-left: 22%;
   }
 }
