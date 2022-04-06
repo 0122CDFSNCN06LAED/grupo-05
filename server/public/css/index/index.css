@@ -27,12 +27,15 @@ p {
 .configuracion {
   height: 20px;
   width: 20px;
+  margin-bottom: 6px;
+  margin-right: 3px;
 }
 
 .usuario-datos {
   display: flex;
   margin-top: 10px;
   gap: 5px;
+  margin-right: 3px;
 }
 
 .usuario-texto {
@@ -252,6 +255,24 @@ p {
 
 .boton-desplegable {
   background-color: #5d737e;
+  width: 45px;
+  height: 32px;
+  border-radius: 5px;
+}
+
+.desplegable-opciones {
+  background-color: #5d737e;
+}
+
+.dropdown-item {
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .lupa {
@@ -293,10 +314,10 @@ p {
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: 5px;
   left: 50%;
   transform: translateX(-55%);
   gap: 22px;
+  margin-top: 25px;
 }
 
 .footer p {
