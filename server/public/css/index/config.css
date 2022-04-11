@@ -1,0 +1,44 @@
+.contenido-datos {
+  display: flex;
+  margin-top: 25px;
+  gap: 20px;
+}
+
+.form-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.item-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  height: 25px;
+  background-color: rgb(138 145 177 / 44%);
+  border: 0.5px solid black;
+  font-size: 14px;
+  width: 50vw;
+}
+
+input::placeholder {
+  color: black;
+  font-size: 14px;
+  padding-left: 1px;
+}
+
+.label-form {
+  font-weight: bold;
+}
+
+.footer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -80%;
+}

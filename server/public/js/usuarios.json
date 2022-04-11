@@ -1,0 +1,20 @@
+[
+  {
+    "idUsuario": "1111",
+    "username": "juan97",
+    "firstName": "Juan",
+    "lastName": "Guerrero",
+    "profileURL": "images/fotos-usuarios/1111.png",
+    "email": "juan@mail.com",
+    "fk_Nivel": "1112"
+  },
+  {
+    "idUsuario": "1112",
+    "username": "andrea123",
+    "firstName": "Andrea",
+    "lastName": "Silva",
+    "profileURL": "images/fotos-usuarios/1112.png",
+    "email": "andrea@mail.com",
+    "fk_Nivel": "1114"
+  }
+]

@@ -10,6 +10,19 @@ app.use(express.static("public")); //sirve para establecer donde estan ubicados 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
 });
+
+app.get("/mailbox", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/mailbox.html"));
+});
+
+app.get("/portfolio", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/portfolio.html"));
+});
+
+app.get("/config", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/config.html"));
+});
+
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/register.html"));
 });
@@ -23,4 +36,8 @@ app.get("/bidding-detail", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/bidding-detail.html"));
 });
 /*SErver */
-app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}`));
+app.listen(port, () =>
+  console.log(
+    `Servidor levantado en el puerto ${port}\n http://localhost:${port}`
+  )
+);
