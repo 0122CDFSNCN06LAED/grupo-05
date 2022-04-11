@@ -305,6 +305,24 @@ p {
 
 .boton-desplegable {
   background-color: #5d737e;
+  width: 45px;
+  height: 32px;
+  border-radius: 5px;
+}
+
+.desplegable-opciones {
+  background-color: #5d737e;
+}
+
+.dropdown-item {
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .lupa {
