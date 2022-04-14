@@ -1,3 +1,4 @@
+# Sprint 2:
 # Cambios: 
 ## General: Una persona puede cumplir tanto el rol de contratista como de freelancer (se cambia desde la configuración)
 
@@ -51,3 +52,12 @@
 # :sparkles:Chiches:sparkles::
 - Rankeo por puntos.
 - Apartado de recomendados o en base a tus aptitudes en el homepage.
+- Agregar sección en cuenta de empresa para seleccionar postulantes y mandar un mail en cadena con actualización de la postulación (finalizó, pedir reunión, confirmar contrato, etc).
+
+# Sprint 3:
+- Mejorar estilos visuales.
+- Agregar nombre y logo.
+- Agregar paddings a los laterales en bidding detail.
+- Boton de carrito en el home.
+- Paleta de colores en login y register.
+- 
