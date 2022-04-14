@@ -41,4 +41,5 @@ module.exports = {
   ejemplo: (req, res) => {
     res.render("ejemplo");
   },
+  biddingDetail,
 };

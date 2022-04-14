@@ -9,7 +9,7 @@ mainRouter.get("/register", mainController.register);
 // mainRouter.get("/config", mainController.config);
 // mainRouter.get("/login", mainController.login);
 // mainRouter.get("/proposal-list", mainController.proposal - list);
-// mainRouter.get("/bidding-detail", mainController.bidding - detail);
+mainRouter.get("/bidding-detail", mainController.biddingDetail);
 //Cómo llamamos a un objeto nombrado con kebab case?
 
 module.exports = mainRouter;
