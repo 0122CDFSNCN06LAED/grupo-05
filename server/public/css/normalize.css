@@ -14,7 +14,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: inherit;
+  color: black;
 }
 .header {
   display: flex;
