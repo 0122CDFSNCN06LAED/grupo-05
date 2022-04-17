@@ -38,8 +38,22 @@ module.exports = {
   register: (req, res) => {
     res.render("register");
   },
-  ejemplo: (req, res) => {
-    res.render("ejemplo");
+  login: (req, res) => {
+    res.render("login");
   },
-  biddingDetail,
+  mailbox: (req, res) => {
+    res.render("mailbox");
+  },
+  portfolio: (req, res) => {
+    res.render("portfolio");
+  },
+  config: (req, res) => {
+    res.render("config");
+  },
+  proposalList: (req, res) => {
+    res.render("proposal-list");
+  },
+  biddingDetail: (req, res) => {
+    res.render("bidding-detail");
+  },
 };
