@@ -1,0 +1,88 @@
+.header {
+    display: flex;
+    /*     flex-direction: row; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #e6ebe0;
+    align-items: center;
+    border: 1px solid orange;
+}
+
+
+
+.link-logo {
+    width: 100%;
+    max-width: 100px;
+}
+
+.usuario-datos {
+    display: flex;
+    margin-top: 10px;
+    gap: 5px;
+    margin-right: 5px;
+
+}
+
+.logo {
+    width: 100%;
+    margin-left: 15px;
+}
+
+.usuario-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.usuario-texto p:first-child {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.imagen-usuario {
+    height: 30px;
+    width: 30px;
+}
+
+.nivel-icon {
+    height: 27px;
+    width: 27px;
+}
+
+.hipervinculo {
+    text-decoration: none;
+    color: black;
+}
+
+.hipervinculo:hover {
+    color: black;
+}
+
+.dropdown-menu {
+    background-color: #e6ebe0;
+}
+
+.dropdown-item a {
+    color: black;
+}
+
+.config-icon {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 1px;
+}
+
+.opciones-desplegable {
+    display: flex;
+    gap: 6px;
+}
+
+.texto-gris {
+    color: gray;
+    font-size: 14px;
+}
+
+.configuracion {
+    height: 22px;
+    margin-top: 2px;
+}

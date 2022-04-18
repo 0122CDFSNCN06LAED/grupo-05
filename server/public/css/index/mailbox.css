@@ -1,6 +1,9 @@
 .contenedor-lista {
   display: flex;
   justify-content: flex-start;
+
+
+  /* border: 2px solid orange; */
 }
 
 .lista-contactos {
@@ -29,9 +32,15 @@
 }
 
 .footer {
-  position: absolute;
+  /*  position: absolute; */
+  /*BEL - Se lo saque porque me tapaba todo el contenido hay que corregir esto*/
+
   top: 0;
   left: 0;
   right: 0;
   bottom: -80%;
+}
+
+body {
+  position: relative;
 }

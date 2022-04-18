@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 13%;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+
+}
+
+.margin-footer-quien {
+    margin-right: 3px;
+}
+
+.footer p {
+    min-width: 60px;
+    text-align: center;
+}
+
+.footer p {
+    font-weight: bold;
+    font-size: 12px;
+}
