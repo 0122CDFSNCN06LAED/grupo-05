@@ -10,5 +10,6 @@ mainRouter.get("/portfolio", mainController.portfolio);
 mainRouter.get("/config", mainController.config);
 mainRouter.get("/proposal-list", mainController.proposalList);
 mainRouter.get("/bidding-detail", mainController.biddingDetail);
-
+mainRouter.get("/bidding-creation", mainController.biddingCreation);
+mainRouter.get("/bidding-edition", mainController.biddingEdition);
 module.exports = mainRouter;
