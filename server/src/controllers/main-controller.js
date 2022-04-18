@@ -56,4 +56,10 @@ module.exports = {
   biddingDetail: (req, res) => {
     res.render("bidding-detail");
   },
+  biddingCreation: (req, res) => {
+    res.render("bidding-creation");
+  },
+  biddingEdition: (req, res) => {
+    res.render("bidding-edition");
+  },
 };
