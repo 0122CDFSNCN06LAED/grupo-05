@@ -1,5 +1,6 @@
 .contenido-datos {
   display: flex;
+  flex-direction: column;
   margin-top: 25px;
   gap: 20px;
 }
@@ -7,7 +8,6 @@
 .form-datos {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
   margin: 0 auto;
 }
@@ -22,7 +22,7 @@
   background-color: rgb(138 145 177 / 44%);
   border: 0.5px solid black;
   font-size: 14px;
-  width: 50vw;
+  width: 70vw;
 }
 
 input::placeholder {
@@ -35,10 +35,424 @@ input::placeholder {
   font-weight: bold;
 }
 
-.footer {
+.input-imagen-usuario {
+  margin-left: 12px;
+}
+
+.input-imagen-usuario::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.input-imagen-usuario::before {
+  content: "Cambiar foto";
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  /* -webkit-user-select: none; */
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.input-imagen-usuario:hover::before {
+  border-color: black;
+}
+.input-imagen-usuario:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.input-imagen-usuario {
+  margin-left: 35%;
+}
+
+.contenedor-imagen {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  max-width: 90vw;
+  gap: 10px;
+}
+
+#display_image {
+  width: 250px;
+  height: 169px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+  align-self: center;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: 10px;
+  line-height: inherit;
+}
+
+.desactivado::placeholder {
+  color: rgb(65, 61, 61);
+  /* font-weight: bold; */
+}
+
+.boton-guardar {
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: 0.5em 2em 0.55em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+  text-decoration: none;
+}
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* nuevo */
+
+.contenido-datos {
+  gap: 10px;
+}
+
+.contenido-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.editar-contenedor {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.item {
+  justify-content: left;
+}
+
+.imagen-usuario-config {
+  width: 40%;
+  height: 40%;
+}
+
+.camara {
+  width: 6%;
+  height: 6%;
+  align-self: flex-end;
+}
+
+.lapiz {
+  width: 6%;
+  height: 6%;
+  align-self: flex-end;
+}
+
+.contenedor-datos-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.datos-usuario {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.username {
+  font-weight: 300;
+  color: #110ea3;
+}
+
+.contenedor-porcentajes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contenedor-porcentaje-dentro {
+  max-width: 70px;
+  text-align: center;
+}
+
+.porcentaje {
+  color: rgb(17, 226, 86);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contenedor-promedio-reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.contenedor-estrella {
+  display: flex;
+  gap: 8px;
+}
+
+.estrella {
+  width: 10px;
+  height: 10px;
+  margin-top: 1px;
+}
+
+.pais {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.bandera {
+  width: 7%;
+  height: 7%;
+}
+
+.pais p {
+  color: rgba(15, 89, 199, 0.884);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.contenedor-descripcion {
+  background-color: #5f6f79;
+  font-size: 13px;
+  font-family: oblique;
+  width: 90%;
+  height: 90%;
+  align-self: center;
+  padding: 9px;
+}
+
+.contenedor-header-descripcion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.descripcion {
+  width: 12px;
+  height: 12px;
+}
+
+.contenedor-descripcion div {
+  font-family: oblique;
+}
+
+.contenedor-descripcion p {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.contenedor-portafolio {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  align-self: center;
+  padding: 9px;
+  background-color: #5f6f79;
+}
+
+.contenedor-portafolio p {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.reseña-seccion {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.contenedor-elementos-portafolio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.elemento-portafolio {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.elemento-portafolio:hover .titulo-portafolio {
+  display: block;
+}
+
+.portafolio-imagen {
+  width: 90%;
+  height: 90%;
+}
+
+.portafolio-imagen:hover {
+}
+
+.titulo-portafolio {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -80%;
+  left: 10px;
+  bottom: 20px;
+  width: 101%;
+  display: none;
+  text-align: center;
+}
+
+.item-portafolio-contenedor {
+  background-color: white;
+  width: 81.5%;
+  border-radius: 8px;
+}
+
+.contenedor-reseñas {
+  width: 90%;
+  height: 90%;
+  align-self: center;
+  padding: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #5f6f79;
+}
+
+.contenedor-reseñas p {
+  font-size: 13px;
+}
+
+#reseña-seccion {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contenedor-elemento-reseña {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid black;
+}
+
+.reseña-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.datos-reseña {
+  display: flex;
+  flex-direction: column;
+}
+
+.autor-reseña {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.titulo-reseña {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.editable {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contenedor-editar {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editar-datos {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 3px;
+}
+
+.editar-botones {
+  display: flex;
+}
+
+.editar-boton {
+  display: flex;
+  gap: 5px;
+}
+
+.guardar-boton {
+  background-color: rgb(72, 163, 72);
+  font-family: "Roboto";
+  width: 55px;
+  height: 22px;
+}
+
+.boton-cancelar {
+  background-color: rgb(212, 32, 32);
+  font-family: "Roboto";
+  width: 55px;
+  height: 22px;
+}
+
+.textarea-descrip {
+  width: 100%;
+  text-align: justify;
+}
+
+.editar-boton-descrip {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+@media (min-width: 481px) {
+  .contenedor-imagen {
+    margin-left: 8%;
+  }
+
+  .input-imagen-usuario {
+    margin-left: 32%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .input-imagen-usuario {
+    margin-left: 36%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .input-imagen-usuario {
+    margin-left: 40%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .input-imagen-usuario {
+    margin-left: 42.8%;
+  }
 }

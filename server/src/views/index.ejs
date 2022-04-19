@@ -4,9 +4,9 @@
 <head>
   <title>Document</title>
   <%- include('./partials/head') %>
-    <!-- Espacio para estilos de esta pantalla-->
-    <link rel="stylesheet" href="./root.html">
-    <link rel="stylesheet" href="./css/index/index.css" />
+  <!-- Espacio para estilos de esta pantalla-->
+  <link rel="stylesheet" href="./root.html">
+  <link rel="stylesheet" href="./css/index/index.css" />
 
 
 </head>
@@ -60,14 +60,17 @@
     <div class="buscador-buscados">
       <!--ponerle evento onclick al botón -->
       <div class="boton-all">
-        <p>Últimos proyectos</p>
-        <button>
+        <p class="boton-texto">Últimos proyectos</p>
+        <!--  <button class="boton-boton" onclick="clickBoton()">
           <a class="ver-todo hipervinculo view-all" href="#">Ver todos</a>
-        </button>
+        </button> -->
       </div>
       <div class="tarjeta-buscados">
         <!--  -->
       </div>
+      <button class="boton-boton" onclick="clickBoton()">
+        <a class="ver-todo hipervinculo view-all" href="#">Ver todos</a>
+      </button>
     </div>
   </div>
   <footer class="footer">
@@ -77,7 +80,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="./js/index.js"></script>
 </body>
 

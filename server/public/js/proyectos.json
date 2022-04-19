@@ -4,27 +4,55 @@
     "tituloProyecto": "Mantenimiento web",
     "descripcionProyecto": "Se busca persona para mantener una página web",
     "precioProyecto": 2000,
-    "fechaProyecto": "01-02-2022"
+    "fechaProyecto": "20220109",
+    "fechaFormateada": "09-01-2022"
   },
   {
     "idProyecto": "1112",
     "tituloProyecto": "Desarrollador Backend",
     "descripcionProyecto": "Se busca desarrollador backend para proyecto interesante",
     "precioProyecto": 6000,
-    "fechaProyecto": "16-03-2022"
+    "fechaProyecto": "20210919",
+    "fechaFormateada": "19-09-2021"
   },
   {
     "idProyecto": "1113",
     "tituloProyecto": "Desarrollador Frontend",
     "descripcionProyecto": "Se busca desarrollador frontend para proyecto interesante",
     "precioProyecto": 10000,
-    "fechaProyecto": "29-02-2022"
+    "fechaProyecto": "20210920",
+    "fechaFormateada": "20-09-2021"
   },
   {
     "idProyecto": "1114",
     "tituloProyecto": "Rebranding logo",
     "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
     "precioProyecto": 12000,
-    "fechaProyecto": "01-03-2022"
+    "fechaProyecto": "20220228",
+    "fechaFormateada": "28-02-2022"
+  },
+  {
+    "idProyecto": "1114",
+    "tituloProyecto": "Rebranding logo",
+    "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
+    "precioProyecto": 12000,
+    "fechaProyecto": "20220228",
+    "fechaFormateada": "28-02-2022"
+  },
+  {
+    "idProyecto": "1114",
+    "tituloProyecto": "Rebranding logo",
+    "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
+    "precioProyecto": 12000,
+    "fechaProyecto": "20220228",
+    "fechaFormateada": "28-02-2022"
+  },
+  {
+    "idProyecto": "1114",
+    "tituloProyecto": "Rebranding logo",
+    "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
+    "precioProyecto": 12000,
+    "fechaProyecto": "20220228",
+    "fechaFormateada": "28-02-2022"
   }
 ]

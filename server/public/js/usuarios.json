@@ -16,5 +16,14 @@
     "profileURL": "images/fotos-usuarios/1112.png",
     "email": "andrea@mail.com",
     "fk_Nivel": "1114"
+  },
+  {
+    "idUsuario": "1113",
+    "username": "RicardoMercado",
+    "firstName": "Ricardo",
+    "lastName": "Mercado",
+    "profileURL": "images/fotos-usuarios/1112.png",
+    "email": "mercado@mail.com",
+    "fk_Nivel": "1113"
   }
 ]
