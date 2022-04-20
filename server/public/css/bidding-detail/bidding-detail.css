@@ -1,6 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+   header{
+       width: 100%;
+       display: flex;
+   }
+
+     /* BODY */
+  body {
+    background-color: hsl(200, 17%, 55%);
+    font-size: 12px;
+  }
+  
+  /* MAIN */
+main{
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    width: 90%;
+}
+  h1{
+      margin: 0;
+      font-size: large;
+      display: block;
+      padding-bottom: 6px;
+  }
+
+  h6{
+      margin: 0;
+      font-size: medium;
+  }
+  p {
+    margin: 0;
+    font-size: small;
+  }
+  a {
+    text-decoration: none;
+    margin: 0;
+    font-size: small;
+  }
+  
+    .productImage  {
+     width: 60%;
+
+  }
+  input{
+width: auto;
+  }
+  .elemento{
+      width: 90%;
+      display: block;
+      margin-bottom: 3px;
+
+
+  }
 input#boton{
     padding: 3px 9px;
-    font-size:  1em;
+    font-size:  15px;
     background-color: #5dade2;
     transition: background-color 0.9s;
     border:0px;
@@ -18,5 +77,7 @@ input#boton:hover{
 input#mensaje{
     padding: 18px 54px;
     margin-bottom: 18px;
+    font-size: smaller;
 }
+
 
