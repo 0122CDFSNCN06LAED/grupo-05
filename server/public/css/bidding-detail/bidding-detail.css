@@ -5,15 +5,10 @@
   font-family: "Roboto", sans-serif;
 }
 
-header {
-  width: 100%;
-  display: flex;
-}
-
 /* BODY */
 body {
   background-color: hsl(200, 17%, 55%);
-  font-size: 12px;
+  font-size: 20px;
 }
 
 /* MAIN */

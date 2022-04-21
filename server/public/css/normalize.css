@@ -99,3 +99,6 @@ p {
 .hidden {
   display: none;
 }
+.header {
+  justify-content: space-evenly;
+}

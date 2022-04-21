@@ -1,8 +1,7 @@
 .header {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #f0f0f0;
+    /*background-color: #f0f0f0;*/
   }
 
   .tarjeta-buscados {
