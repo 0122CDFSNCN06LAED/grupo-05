@@ -111,7 +111,7 @@ async function renderCategorias() {
   container.innerHTML = html;
 }
 
-renderCategorias();
+/* renderCategorias(); */
 
 async function getProyectos() {
   let url = "./js/proyectos.json";
@@ -186,7 +186,7 @@ async function renderProyectos() {
   container1.innerHTML = html;
 }
 
-renderProyectos();
+/* renderProyectos(); */
 
 //creo las tarjetas cuando ingresa un input el usuario
 async function renderProyectosBuscar(
@@ -304,7 +304,7 @@ async function renderUsuarioDatos() {
   let container = document.querySelector(".header");
   container.innerHTML = htmlSegment;
 }
-renderUsuarioDatos();
+/* renderUsuarioDatos(); */
 
 async function renderMensajes(idUsuario) {
   let mensajes = await getMensajes();
@@ -642,7 +642,7 @@ async function renderMensajes(idUsuario) {
     );
   }
 }
-mensajeDesplegar();
+/* mensajeDesplegar(); */
 
 function renderAuxDest(mensaje) {
   let fecha = mensaje.fechaMensaje;
@@ -689,13 +689,6 @@ function renderAuxRem(mensaje) {
                         </div>
                         </div>`;
   return htmlSegment3;
-  /* let htmlSegment3 = `<div class="mensaje-contenedor remitente ">
-                        <div class="color-rem">
-                            <p class="mensaje-unico">${mensajesTotales[j].contenidoMensaje}</p>
-                            <p class="fecha-mensaje">6626</p>
-                        </div>
-                        </div>`;
-  return htmlSegment3; */
 }
 
 /* let MsjsOrdenados = bubbleSort(msjDest);
@@ -828,11 +821,14 @@ const clickBoton = async () => {
   let inputValueBuscador = document.getElementById("buscador").value;
   let inputValueMin = document.getElementById("minPrecio").value;
   let inputValueMax = document.getElementById("maxPrecio").value;
+  console.log(inputValueBuscador, inputValueMin, inputValueMax);
   //obtengo las categorías para iterarlas y utilizar el id
   let cat = await getCategorias();
   let catIds = [];
   for (let i = 0; i < cat.length; i++) {
+    /* let check = document.getElementById(cat[i].idCategoria); */
     let check = document.getElementById(cat[i].idCategoria);
+    console.log("check", check);
     //veo si está con tick el casillero
     if (check.checked == true) {
       catIds.push(cat[i].idCategoria);

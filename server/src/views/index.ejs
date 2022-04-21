@@ -19,8 +19,57 @@
     <p class="recomendado-titulo">RECOMENDADOS PARA TI</p>
     <ul class="lista-recomendados">
       <div class="tarjeta">
-        <!--  -->
-      </div>
+        <!-- hacerlo dinámico trayendo los json, preguntar cómo se hace -->
+        <% for(let i=0; i<proyectos.length; i++){ %>
+        <!-- método para sacar las categorias de un proyecto en particular -->
+        <%  let catProy = categorProy(proyectos[i].idProyecto); %>
+
+        <% function categorProy(idProyecto) {%>
+        <% try { %>
+        <% let Categorias = []; %>
+        <% let proyCat = proyectoCategoria; %>
+
+        <% for (c of proyCat) { %>
+        <%  if (c.fk_Proyecto == idProyecto) { %>
+        <% let nombreCat = categoriaIndividual(c.fk_Categoria); %>
+        <% Categorias.push(nombreCat); %>
+        <% }%>
+        <% } %>
+        <% return Categorias;%>
+        <% } catch (error) {%>
+        <%  console.log(error);%>
+        <% }%>
+        <% }%>
+        <% function categoriaIndividual(idCategor) {%>
+        <% try {%>
+        <% const data = categorias;%>
+        <%  for (let i = 0; i < data.length; i++) {%>
+        <% if (data[i].idCategoria == idCategor) { %>
+        <%  let categoria = data[i].nombreCategoria;%>
+        <% return categoria;%>
+        <% }%>
+        <% }%>
+        <%  } catch (error) {%>
+        <%  console.log(error);%>
+        <% } %>
+        <% }%>
+        <a href="#" class="card hipervinculo">
+          <h5 class="card-header"><%= proyectos[i].tituloProyecto%></h5>
+          <div class="card-body">
+            <div class="fecha-horario">
+              <p class="price"> <%= proyectos[i].precioProyecto%></p>
+              <p class="fecha"> <%= proyectos[i].fechaProyecto%></p>
+            </div>
+            <p class="card-text"><%= proyectos[i].descripcionProyecto%></p>
+            <div class="requisitos-recomendados">
+              <% for(let j = 0; j<catProy.length; j++){ %>
+              <p><%=catProy[j] %></p>
+              <%}%>
+            </div>
+          </div>
+        </a>
+        <% } %>
+            </div>
     </ul>
   </div>
   <nav class="navbar navbar-light bg-light">
@@ -53,6 +102,13 @@
         <div>
           <form class="filtrado-checkbox-categoria categoria-scroll" action="/filtrado-categoria">
             <!--  -->
+            <% for(let i=0; i<categorias.length; i++){ %>
+            <div class="label-checkbox">
+              <input type="checkbox" name="categoria" value=<%=categorias[i].idCategoria%> class="cat"
+                id=<%=categorias[i].idCategoria%>>
+              <label for="${categorias[index].idCategoria}"> <%=categorias[i].nombreCategoria%></label>
+            </div>
+            <% } %>
           </form>
         </div>
       </div>
@@ -67,6 +123,21 @@
       </div>
       <div class="tarjeta-buscados">
         <!--  -->
+        <% for(let i=0; i<proyectos.length; i++){ %>
+        <a href="#" class="card hipervinculo">
+          <h5 class="card-header"><%= proyectos[i].tituloProyecto%></h5>
+          <div class="card-body">
+            <div class="fecha-horario">
+              <p class="price"> <%= proyectos[i].precioProyecto%></p>
+              <p class="fecha"> <%= proyectos[i].fechaProyecto%></p>
+            </div>
+            <p class="card-text"><%= proyectos[i].descripcionProyecto%></p>
+            <div class="requisitos-recomendados">
+              categoria(arreglar)
+            </div>
+          </div>
+        </a>
+        <% } %>
       </div>
       <button class="boton-boton" onclick="clickBoton()">
         <a class="ver-todo hipervinculo view-all" href="#">Ver todos</a>
