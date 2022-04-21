@@ -12,7 +12,7 @@
     margin-right: 7px;
   }
   
-.card-buscados {
+  .card-buscados {
     /*   width: 70vw; */
   }
 
@@ -58,4 +58,10 @@
     border-radius: 10px;
     padding: 3px;
     margin-bottom: 2px;
+}
+.dropdown {
+  position: relative;
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
