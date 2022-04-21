@@ -306,7 +306,7 @@ p {
 .desplegable-opciones {
   background-color: #5d737e;
 }
-
+/* 
 .dropdown-item {
   font-weight: bold;
 }
@@ -316,7 +316,7 @@ p {
   height: 30px;
   display: flex;
   align-items: center;
-}
+} */
 
 .lupa {
   width: 22px;

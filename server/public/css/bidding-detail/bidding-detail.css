@@ -1,83 +1,88 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-  }
-   header{
-       width: 100%;
-       display: flex;
-   }
-
-     /* BODY */
-  body {
-    background-color: hsl(200, 17%, 55%);
-    font-size: 12px;
-  }
-  
-  /* MAIN */
-main{
-    margin: 0 auto;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    width: 90%;
-}
-  h1{
-      margin: 0;
-      font-size: large;
-      display: block;
-      padding-bottom: 6px;
-  }
-
-  h6{
-      margin: 0;
-      font-size: medium;
-  }
-  p {
-    margin: 0;
-    font-size: small;
-  }
-  a {
-    text-decoration: none;
-    margin: 0;
-    font-size: small;
-  }
-  
-    .productImage  {
-     width: 60%;
-
-  }
-  input{
-width: auto;
-  }
-  .elemento{
-      width: 90%;
-      display: block;
-      margin-bottom: 3px;
-
-
-  }
-input#boton{
-    padding: 3px 9px;
-    font-size:  15px;
-    background-color: #5dade2;
-    transition: background-color 0.9s;
-    border:0px;
-    border-radius: 18px;
-    /*box-shadow: 0px 4px 0px #4AA4DF;*/
-    margin-bottom: 18px;
-    margin-top: 3px;
-    position:static;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-input#boton:hover{
-    background-color: #7ABBE7;
+header {
+  width: 100%;
+  display: flex;
 }
 
-input#mensaje{
-    padding: 18px 54px;
-    margin-bottom: 18px;
-    font-size: smaller;
+/* BODY */
+body {
+  background-color: hsl(200, 17%, 55%);
+  font-size: 12px;
 }
 
+/* MAIN */
+main {
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  width: 90%;
+}
 
+h1 {
+  margin: 0;
+  font-size: large;
+  display: block;
+  padding-bottom: 6px;
+}
+
+h6 {
+  margin: 0;
+  font-size: medium;
+}
+
+p {
+  margin: 0;
+  font-size: small;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  font-size: small;
+}
+
+.productImage {
+  width: 60%;
+
+}
+
+input {
+  width: auto;
+}
+
+.elemento {
+  width: 90%;
+  display: block;
+  margin-bottom: 3px;
+
+
+}
+
+input#boton {
+  padding: 3px 9px;
+  font-size: 15px;
+  background-color: #5dade2;
+  transition: background-color 0.9s;
+  border: 0px;
+  border-radius: 18px;
+  /*box-shadow: 0px 4px 0px #4AA4DF;*/
+  margin-bottom: 18px;
+  margin-top: 3px;
+  position: static;
+}
+
+input#boton:hover {
+  background-color: #7ABBE7;
+}
+
+input#mensaje {
+  padding: 18px 54px;
+  margin-bottom: 18px;
+  font-size: smaller;
+}
