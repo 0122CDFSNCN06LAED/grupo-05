@@ -86,3 +86,21 @@
     height: 22px;
     margin-top: 2px;
 }
+
+.dropdown-item {
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    padding: 0.2rem 0.35rem;
+    border-radius: 0px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
