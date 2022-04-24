@@ -1,0 +1,76 @@
+.contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-small {
+  height: 20px;
+}
+
+.input {
+  height: 200px;
+}
+
+label {
+  font-size: 16px;
+}
+
+.item-form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 60%;
+}
+
+.item-form label {
+  font-weight: bold;
+}
+
+.prec {
+  align-self: flex-start;
+  margin-left: 20%;
+  width: 100px;
+}
+
+.categorias-check {
+  display: grid;
+  margin-left: 20%;
+}
+
+.botones {
+  display: flex;
+  margin-top: 20px;
+  gap: 10%;
+}
+
+.guardar-boton {
+  background-color: rgb(72, 163, 72);
+  font-family: "Roboto";
+  margin-left: 30%;
+  width: 105px;
+  height: 35px;
+  font-size: 13px;
+}
+
+.boton-cancelar {
+  background-color: rgb(212, 32, 32);
+  font-family: "Roboto";
+  font-size: 13px;
+  width: 105px;
+  height: 35px;
+}
+
+.checkbox {
+  align-self: center;
+}
+
+.checkbox-item {
+  display: flex;
+  align-content: center;
+  gap: 20px;
+}
+
+.label-checkbox {
+  width: 110px;
+}

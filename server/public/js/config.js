@@ -6,10 +6,14 @@ function editarPerfilDatos() {
                           </div>
                           <form class="contenedor-editar" action="/configEditarUsuario" method="POST"> 
                               <div class="editar-datos"> 
-                                <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Juan" >
-                                <input type="text" name="apellidoUsuario" id="apellidoUsuario" placeholder="Quiroga">
-                                <input type="mail" name="mailUsuario" id="mailUsuario" placeholder="Quiroga@hotmail.com">
-                                <input type="text" name="username" id="username" placeholder="juan_quiroga97">
+                                <label class="label-formu" for="nombreUsuario">Nombre</label>
+                                <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Juan" class="input">
+                                <label class="label-formu" for="apellidoUsuario">Apellido</label>
+                                <input type="text" name="apellidoUsuario" id="apellidoUsuario" placeholder="Quiroga" class="input">
+                                <label class="label-formu" for="mailUsuario">Email</label>
+                                <input type="mail" name="mailUsuario" id="mailUsuario" placeholder="Quiroga@hotmail.com" class="input">
+                                <label class="label-formu" for="nombreUsuario">Nombre de usuario</label>
+                                <input type="text" name="username" id="username" placeholder="juan_quiroga97" class="input">
                               </div>
                               <div class="editar-boton"> 
                                 <button class="guardar-boton" type="submit" onclick="epa()">Guardar</button>

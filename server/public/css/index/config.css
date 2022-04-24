@@ -395,6 +395,11 @@ textarea {
   gap: 3px;
 }
 
+.input {
+  background-color: #8093a8;
+  font-size: 14px;
+}
+
 .editar-botones {
   display: flex;
 }
@@ -421,6 +426,11 @@ textarea {
 .textarea-descrip {
   width: 100%;
   text-align: justify;
+  background-color: #8093a8;
+}
+
+.label-formu {
+  font-size: 12px;
 }
 
 .editar-boton-descrip {

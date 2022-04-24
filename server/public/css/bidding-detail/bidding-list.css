@@ -1,0 +1,102 @@
+.contenido {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.contenedor-proyectos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.proyecto {
+  margin: 0 auto;
+}
+
+.datos-proyecto {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #c0fdfb;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.descripcion {
+  text-align: justify;
+}
+
+.titulo-edicion {
+  display: flex;
+  align-items: center;
+}
+
+.titulo {
+  font-weight: bold;
+  justify-self: center;
+}
+
+.categorias-proyecto {
+  display: flex;
+  gap: 5px;
+  padding: 3px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.categorias-proyecto p {
+  background-color: #3a7fff;
+  border-radius: 10px;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #ffffff;
+  margin-bottom: 0px;
+}
+
+.precio-proyecto {
+  color: #41b141;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.basura {
+  width: 15px;
+  height: 15px;
+}
+
+.lapiz {
+  width: 15px;
+  height: 15px;
+}
+
+.boton-agregar {
+  align-self: flex-start;
+  position: relative;
+}
+
+.agregar-proyecto-text {
+  color: black;
+}
+
+.agregar-proyecto-contenedor {
+  position: absolute;
+  left: 40px;
+  background-color: #64b6ac;
+  padding: 3px;
+  width: max-content;
+  display: none;
+}
+
+.boton-agregar:hover .agregar-proyecto-contenedor {
+  display: block;
+}
+
+.agregar {
+  width: 30px;
+  height: 30px;
+}

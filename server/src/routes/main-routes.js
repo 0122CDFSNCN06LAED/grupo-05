@@ -26,6 +26,7 @@ mainRouter.post(
 );
 mainRouter.get("/proposal-list", mainController.proposalList);
 mainRouter.get("/bidding-detail", mainController.biddingDetail);
+mainRouter.get("/bidding-list", mainController.biddingList);
 mainRouter.get("/bidding-creation", mainController.biddingCreation);
 mainRouter.get("/bidding-edition", mainController.biddingEdition);
 module.exports = mainRouter;

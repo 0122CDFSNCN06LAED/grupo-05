@@ -243,6 +243,9 @@ module.exports = {
   biddingDetail: (req, res) => {
     res.render("bidding-detail");
   },
+  biddingList: (req, res) => {
+    res.render("bidding-list");
+  },
   biddingCreation: (req, res) => {
     res.render("bidding-creation");
   },
