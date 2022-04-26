@@ -3,6 +3,19 @@
     "idProyecto": "1111",
     "tituloProyecto": "Mantenimiento web",
     "descripcionProyecto": "Se busca persona para mantener una página web",
+    "imagenProyecto": "",
+    "categoria": "",
+    "precioProyecto": 2000,
+    "fechaProyecto": "20220109", 
+    /* Revisar las fechas (publicación, inicio, fin, actualización ) */
+    "estadoProyecto": "", //revisar posibles valores que puede tomar el campo.
+    "fechaInicio": "",
+    "fechaFormateada": "09-01-2022"
+  },
+  {
+    "idProyecto": "1111",
+    "tituloProyecto": "Mantenimiento web",
+    "descripcionProyecto": "Se busca persona para mantener una página web",
     "precioProyecto": 2000,
     "fechaProyecto": "20220109",
     "fechaFormateada": "09-01-2022"
