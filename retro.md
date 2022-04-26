@@ -43,16 +43,12 @@
 - Botones:
   - Contactarte.
   - Contratar.
-  
+ 
 ### Mostrar postulantes recomendados.
 
 # Operación: 
 - Método de aprobación de proyecto terminado, para avanzar al pago.
 
-# :sparkles:Chiches:sparkles::
-- Rankeo por puntos.
-- Apartado de recomendados o en base a tus aptitudes en el homepage.
-- Agregar sección en cuenta de empresa para seleccionar postulantes y mandar un mail en cadena con actualización de la postulación (finalizó, pedir reunión, confirmar contrato, etc).
 
 # Sprint 3:
 - Mejorar estilos visuales.
@@ -60,4 +56,21 @@
 - Agregar paddings a los laterales en bidding detail.
 - Boton de carrito en el home.
 - Paleta de colores en login y register.
+
+# Sprint 4:
+Tareas del sprint 4:
 - 
+
+
+Pendiente del sprint 3:
+- Consultar sobre "Separar los componentes repetidos (head, navbar, footer, etc) en archivos parciales". Menu dentro de un ejs aparte?.
+- Crear ejs de creación y edición de productos.
+- Crear biddingRoutes y biddingController. Enlazar con biddingCreation y biddingEdition.
+- Crear userRoutes y userController. Enlazar con userCreation, userEdition y portfolio.
+
+
+
+# :sparkles:Chiches:sparkles::
+- Rankeo por puntos.
+- Apartado de recomendados o en base a tus aptitudes en el homepage.
+- Agregar sección en cuenta de empresa para seleccionar postulantes y mandar un mail en cadena con actualización de la postulación (finalizó, pedir reunión, confirmar contrato, etc).
