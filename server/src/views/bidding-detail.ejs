@@ -5,9 +5,10 @@
   <title>Bidding-Deatail</title>
   <!-- Espacio para estilos de esta pantalla-->
   <%- include('./partials/head') %>
-   <!-- <link rel="stylesheet" href="./css/bidding-detail/bidding-detail.css" />-->
+   <link rel="stylesheet" href="./css/bidding-detail/bidding-detail.css" />
     <link rel="stylesheet" href="./css/register&login/normalize.css" />
     <link rel="stylesheet" href="./css/index/index.css" />
+    
     
     
     
@@ -25,18 +26,15 @@
     <h1>{$product->business-name}</h1>
 
     <div class="product-block">
-      <img class="productImage" src="./images/perfil-bussines.jpeg" width="150">
-    </div>
-
-    <div class="product-block">
+      <img class="productImage" src="./images/bidding-detail-image.jpg">
       <hr>
       <div class="product-info">
         <h6>{{product->description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua.</h6>
-        <p>Pago: Lorem ipsum. </p>
-        <p>Metodologia de Trabajo: Lorem ipsum dolor sit amet. </p>
-        <p> <a href="#">Agregar a favoritos</a></p>
-        <p> <a href="{{route('actually')}}">Compartir</a></p>
+        <h6>Pago: Lorem ipsum. </h6>
+        <h6>Metodologia de Trabajo: Lorem ipsum dolor sit amet. </h6>
+        <h6> <a href="#">Agregar a favoritos</a></h6>
+        <h6> <a href="{{route('actually')}}">Compartir</a></h6>
         <form action="" metodh="post">
           <div class="seccion1">
             <div class="elemento">
