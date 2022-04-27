@@ -1,206 +1,51 @@
 const { validationResult } = require("express-validator");
+const fs = require("fs")
+const path = require("path");
 
-/* index */
+/* Mensajes*/
+const mensajesFilePath = path.join(__dirname, "../data/mensajes.json");
+const mensajes = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
+/* Usuarios */
+const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
+const usuarios = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
 
-/* falta lo de usuarios --> hacer */
-const usuarios = [
-  {
-    idUsuario: "1111",
-    username: "juan97",
-    firstName: "Juan",
-    lastName: "Guerrero",
-    profileURL: "images/fotos-usuarios/1111.png",
-    email: "juan@mail.com",
-    fk_Nivel: "1112",
-  },
-  {
-    idUsuario: "1112",
-    username: "andrea123",
-    firstName: "Andrea",
-    lastName: "Silva",
-    profileURL: "images/fotos-usuarios/1112.png",
-    email: "andrea@mail.com",
-    fk_Nivel: "1114",
-  },
-  {
-    idUsuario: "1113",
-    username: "RicardoMercado",
-    firstName: "Ricardo",
-    lastName: "Mercado",
-    profileURL: "images/fotos-usuarios/1112.png",
-    email: "mercado@mail.com",
-    fk_Nivel: "1113",
-  },
-];
+/* Proyectos */
+const proyectosFilePath = path.join(__dirname, "../data/proyectos.json");
+const proyectos = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
 
-const proyects = [
-  {
-    idProyecto: "1111",
-    tituloProyecto: "Mantenimiento web",
-    descripcionProyecto: "Se busca persona para mantener una página web",
-    precioProyecto: 2000,
-    fechaProyecto: "01-02-2022",
-  },
-  {
-    idProyecto: "1112",
-    tituloProyecto: "Desarrollador Backend",
-    descripcionProyecto:
-      "Se busca desarrollador backend para proyecto interesante",
-    precioProyecto: 6000,
-    fechaProyecto: "16-03-2022",
-  },
-  {
-    idProyecto: "1113",
-    tituloProyecto: "Desarrollador Frontend",
-    descripcionProyecto:
-      "Se busca desarrollador frontend para proyecto interesante",
-    precioProyecto: 10000,
-    fechaProyecto: "29-02-2022",
-  },
-  {
-    idProyecto: "1114",
-    tituloProyecto: "Rebranding logo",
-    descripcionProyecto: "Se busca persona para realizar rebranding de logo",
-    precioProyecto: 12000,
-    fechaProyecto: "01-03-2022",
-  },
-];
+/* Categorias */
+const categoriasFilePath = path.join(__dirname, "../data/categorias.json");
+const categorias = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
 
-const categorias = [
-  {
-    idCategoria: "1111",
-    nombreCategoria: "Web",
-  },
-  {
-    idCategoria: "1112",
-    nombreCategoria: "Base de datos",
-  },
-  {
-    idCategoria: "1113",
-    nombreCategoria: "Backend",
-  },
-  {
-    idCategoria: "1114",
-    nombreCategoria: "Frontend",
-  },
-  {
-    idCategoria: "1115",
-    nombreCategoria: "Desarrollo",
-  },
-  {
-    idCategoria: "1116",
-    nombreCategoria: "Diseño",
-  },
-];
+/* Categorias */
+const proyCatFilePath = path.join(__dirname, "../data/proyectoCategoria.json");
+const proyCat = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
 
-const proyectoCategoria = [
-  {
-    idProyectoCategoria: "1111",
-    fk_Categoria: "1111",
-    fk_Proyecto: "1111",
-  },
-  {
-    idProyectoCategoria: "1112",
-    fk_Categoria: "1114",
-    fk_Proyecto: "1111",
-  },
-  {
-    idProyectoCategoria: "1113",
-    fk_Categoria: "1112",
-    fk_Proyecto: "1112",
-  },
-  {
-    idProyectoCategoria: "1114",
-    fk_Categoria: "1114",
-    fk_Proyecto: "1113",
-  },
-  {
-    idProyectoCategoria: "1115",
-    fk_Categoria: "1111",
-    fk_Proyecto: "1114",
-  },
-  {
-    idProyectoCategoria: "1116",
-    fk_Categoria: "1113",
-    fk_Proyecto: "1115",
-  },
-];
 
-/* mensajes */
-const mensajes = [
-  {
-    idMensaje: "1111",
-    contenidoMensaje: "Buenos días, cómo te va?",
-    fechaMensaje: "20220109",
-    fk_Remitente: "1111",
-    fk_Destinatario: "1112",
-  },
-  {
-    idMensaje: "1112",
-    contenidoMensaje: "Buenos días, te quería consultar por tu servicio",
-    fechaMensaje: "20210608",
-    fk_Remitente: "1111",
-    fk_Destinatario: "1112",
-  },
-  {
-    idMensaje: "1113",
-    contenidoMensaje: "Dale mañana coordinamos",
-    fechaMensaje: "20210521",
-    fk_Remitente: "1111",
-    fk_Destinatario: "1112",
-  },
-  {
-    idMensaje: "1114",
-    contenidoMensaje: "Eso es lo más alto que podés ofrecer?",
-    fechaMensaje: "20220303",
-    fk_Remitente: "1112",
-    fk_Destinatario: "1111",
-  },
-  {
-    idMensaje: "1115",
-    contenidoMensaje: "Excelente, quedamos así",
-    fechaMensaje: "20220422",
-    fk_Remitente: "1112",
-    fk_Destinatario: "1111",
-  },
-  {
-    idMensaje: "1116",
-    contenidoMensaje: "Me parece bien lo que se dispone",
-    fechaMensaje: "20220101",
-    fk_Remitente: "1112",
-    fk_Destinatario: "1113",
-  },
-  {
-    idMensaje: "1117",
-    contenidoMensaje: "Muy bueno tu trabajo",
-    fechaMensaje: "20220505",
-    fk_Remitente: "1112",
-    fk_Destinatario: "1113",
-  },
-  {
-    idMensaje: "1118",
-    contenidoMensaje: "Perfecto!",
-    fechaMensaje: "20210224",
-    fk_Remitente: "1113",
-    fk_Destinatario: "1112",
-  },
-];
+
 
 module.exports = {
   index: (req, res) => {
+    const listaProyectos = proyectos;
+    const listaCategorias = categorias;
+
+    /* 
     let proyectos = [];
-    for (let i = 0; i < proyects.length; i++) {
-      proyectos.push(proyects[i]);
-      //categorias de un proyecto en específico
-    }
     let cats = [];
-    for (let j = 0; j < categorias.length; j++) {
-      cats.push(categorias[j]);
-    }
+    
+       //categorias de un proyecto en específico
+    for (let i = 0; i < proyects.length; i++) {
+       proyectos.push(proyects[i]);   
+     }
+     
+     for (let j = 0; j < categorias.length; j++) {
+       cats.push(categorias[j]);
+     }*/
+
     res.render("index", {
-      proyectos: proyectos,
-      categorias: cats,
-      proyectoCategoria: proyectoCategoria,
+      listaProyectos: listaProyectos,
+      listaCategorias: listaCategorias,
+      proyectoCategoria: proyCat,
     });
   },
   register: (req, res) => {
@@ -210,15 +55,13 @@ module.exports = {
     res.render("login");
   },
   mailbox: (req, res) => {
-    let msj = [];
-    for (let i = 0; i < mensajes.length; i++) {
-      msj.push(mensajes[i]);
-    }
-    console.log("msj", msj);
+    const emails = mensajes
+    const listaUsuarios = usuarios
+
     res.render("mailbox", {
-      msj: msj,
-      usuarios: usuarios,
-      proyectos: proyects,
+      emails: emails,
+      listaUsuarios: listaUsuarios,
+      /*  proyectos: proyects, */
     });
   },
   portfolio: (req, res) => {
