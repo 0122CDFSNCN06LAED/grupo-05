@@ -4,10 +4,16 @@
     "tituloProyecto": "",
     "descripcionProyecto": "",
     "imagenProyecto": "",
-    "categoria0": "",
-    "categoria1": "",
-    "categoria2": "",
-    "categoria3": "",
+    "categoria": [
+      {
+        "id": 1,
+        "descripcion": "Programador Full Stack"
+      },
+      {
+        "id": 2,
+        "descripcion": "Adm. de BD"
+      }
+    ],
     "precioProyecto": "",
     "estadoProyecto": "",
     "fechaCreacionProyecto": "20220109",
