@@ -1,0 +1,32 @@
+[
+  {
+    "idProyectoCategoria": "1111",
+    "fk_Categoria": "1111",
+    "fk_Proyecto": "1111"
+  },
+  {
+    "idProyectoCategoria": "1112",
+    "fk_Categoria": "1114",
+    "fk_Proyecto": "1111"
+  },
+  {
+    "idProyectoCategoria": "1113",
+    "fk_Categoria": "1112",
+    "fk_Proyecto": "1112"
+  },
+  {
+    "idProyectoCategoria": "1114",
+    "fk_Categoria": "1114",
+    "fk_Proyecto": "1113"
+  },
+  {
+    "idProyectoCategoria": "1115",
+    "fk_Categoria": "1111",
+    "fk_Proyecto": "1114"
+  },
+  {
+    "idProyectoCategoria": "1116",
+    "fk_Categoria": "1113",
+    "fk_Proyecto": "1115"
+  }
+]
