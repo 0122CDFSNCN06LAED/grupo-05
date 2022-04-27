@@ -24,7 +24,7 @@ mainRouter.post(
   validation,
   mainController.configEditarUsuario
 );
-mainRouter.get("/proposal-list", mainController.proposalList);
+mainRouter.get("/proposalList", mainController.proposalList);
 mainRouter.get("/bidding-detail", mainController.biddingDetail);
 mainRouter.get("/bidding-list", mainController.biddingList);
 mainRouter.get("/bidding-creation", mainController.biddingCreation);

@@ -238,7 +238,7 @@ module.exports = {
     /*  res.render("config"); */
   },
   proposalList: (req, res) => {
-    res.render("proposal-list");
+    res.render("proposalList");
   },
   biddingDetail: (req, res) => {
     res.render("bidding-detail");
