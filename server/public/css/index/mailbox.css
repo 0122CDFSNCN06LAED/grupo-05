@@ -1,8 +1,23 @@
+h2 {
+  text-align: start;
+  font-size: 24px;
+  margin-left: 18px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+
+}
+
 .contenedor-lista {
   display: flex;
-  justify-content: flex-start;
-
-
+  text-align: center;
+  align-items: center;
   /* border: 2px solid orange; */
 }
 
