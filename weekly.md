@@ -31,7 +31,7 @@ Entregable: A
 
 - Tenemos dos index? Una para usuarios y otra para empresas? Por ahora usamos uno solo?
 
-## 27/04:
+## 02/05:
 
 ### Hecho:
 
@@ -43,4 +43,20 @@ Entregable: A
 
 ### Hacer:
 
--
+- En register: 
+ - Preguntar si es freelancer o empresa.
+   - Pedir datos correspondientes al rol.
+   -Empresa: PENDIENTE
+   
+- Si el usuario es empresa:
+ - En hamburger menu:
+   - mostrar carrito con postulantes.
+   - Botón de crear proyecto.
+   - listar proyectos creados.
+    - una vez que están listados, mostrar botones de edición y eliminación.
+ - En index mostrar los mismos proyectos que vería un freelancer.
+- Si es freelancer:
+  - En hamburger menu:
+   - Mostrar proyectos en los que se postuló (Con ícono de clipoard-list).
+   - Mostrar proyectos en los que está trabajando.
+   - Config: PENDIENTE
