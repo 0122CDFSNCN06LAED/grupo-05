@@ -6,19 +6,19 @@
     "imagenProyecto": "",
     "categoria": [
       {
-        "id": 1,
-        "descripcion": "Programador Full Stack"
+        "idCategoria": 1
       },
       {
-        "id": 2,
-        "descripcion": "Adm. de BD"
+        "idCategoria": 2
       }
     ],
     "precioProyecto": "",
-    "estadoProyecto": "",
-    "fechaCreacionProyecto": "20220109",
+    "estadoProyecto": "0,1,2,3",
+    "fechaCreacion": "20220109",
     "fechaInicio": "",
-    "fechaFinalizacion": ""
+    "fechaFinalizacion": "",
+    "developer": "",
+    "creador": ""
   },
   {
     "idProyecto": "1110",
