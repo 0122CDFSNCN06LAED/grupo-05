@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const fs = require("fs")
+const fs = require("fs");
 const path = require("path");
 
 /* Mensajes*/
@@ -20,9 +20,6 @@ const categorias = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
 /* Categorias */
 const proyCatFilePath = path.join(__dirname, "../data/proyectoCategoria.json");
 const proyCat = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
-
-
-
 
 module.exports = {
   index: (req, res) => {
@@ -55,8 +52,8 @@ module.exports = {
     res.render("login");
   },
   mailbox: (req, res) => {
-    const emails = mensajes
-    const listaUsuarios = usuarios
+    const emails = mensajes;
+    const listaUsuarios = usuarios;
 
     res.render("mailbox", {
       emails: emails,
@@ -81,7 +78,7 @@ module.exports = {
     /*  res.render("config"); */
   },
   proposalList: (req, res) => {
-    res.render("proposalList");
+    res.render("proposal-list");
   },
   biddingDetail: (req, res) => {
     res.render("bidding-detail");
