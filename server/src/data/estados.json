@@ -1,0 +1,6 @@
+[
+  { "id": "0", "estado": "activo" },
+  { "id": "1", "estado": "asignado" },
+  { "id": "2", "estado": "eliminado" },
+  { "id": "3", "estado": "finalizado" }
+]
