@@ -17,7 +17,7 @@
         <%- include('./partials/header') %>
     </header>
     <div class="contenido">
-        <div class="contenedor-proyectos">
+      <div class="contenedor-proyectos">
             <% for(let i=0; i<listaProyectos.length; i++){ %>
             <div class="proyecto">
                 <div class="datos-proyecto">
@@ -51,17 +51,14 @@
                 </div>
             </div>
                 <% } %>
-
-                    </div>
-                    <a href="" class="boton-agregar">
-                        <div class="agregar-proyecto-contenedor">
-                            <p class="agregar-proyecto-text">Agregar nuevo proyecto</p>
-                        </div>
-                        <img class="agregar" src="./images/agregar.png" alt="camara">
-                    </a>
-
+        </div>
+            <a href="" class="boton-agregar">
+                <div class="agregar-proyecto-contenedor">
+                    <p class="agregar-proyecto-text">Agregar nuevo proyecto</p>
                 </div>
-
+                <img class="agregar" src="./images/agregar.png" alt="camara">
+            </a>
+    </div>
                 <footer class="footer">
                     <%- include('./partials/footer') %>
                 </footer>
