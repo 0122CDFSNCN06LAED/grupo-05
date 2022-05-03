@@ -74,3 +74,4 @@ Entregable: A
 ### Hacer:
 - En register: Primero preguntar datos básicos y si se va a crear usuario de freelancer o empresa, luego redirigir a página de registro correspondiente y pedir datos correspondientes al rol.
 - Cambiar todas las referencias a "bidding" y reemplazarlas por "proyects".
+- Hacer header sin hamburger menu para mostrar en register y login.
