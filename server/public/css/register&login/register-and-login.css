@@ -7,7 +7,23 @@
   flex-direction: column;
   align-items: center;
 }
+
 .form-info {
+  font-size: larger;
+  text-align: center;
+  padding: 6px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.info-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  margin: auto;
+  margin-top: 16px;
+}
+.info {
   font-size: larger;
   text-align: center;
   padding: 6px;
