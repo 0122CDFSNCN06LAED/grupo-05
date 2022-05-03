@@ -1,5 +1,3 @@
-# Sprint 3:
-
 # Sprint 4:
 
 ## 25/04:
@@ -46,7 +44,6 @@ Entregable: A
 - En register: 
  - Preguntar si es freelancer o empresa.
    - Pedir datos correspondientes al rol.
-   -Empresa: PENDIENTE
    
 - Si el usuario es empresa:
  - En hamburger menu:
@@ -60,3 +57,20 @@ Entregable: A
    - Mostrar proyectos en los que se postuló (Con ícono de clipoard-list).
    - Mostrar proyectos en los que está trabajando.
    - Config: PENDIENTE
+## 03/05:
+
+### Hecho:
+- Se agregó botón en el login que redirige al register, para que el usuario cree una cuenta en caso de no tener.
+- Se dejó fijo qué campos va a tener el objeto de proyecto en proyectos.json.
+- Get de proyectos en el index y bidding-list.
+- 
+
+### Haciendo:
+- Get de proyect-detail.
+- Archivo de bidding-routes y bidding-controller.
+- Formulario de creación de proyectos que agregue el mismo a proyect.json y rediriga al listado de proyectos creados  (o detalle del proyecto creado) por ese usuario.
+- Rutas de edición y eliminación de biddings.
+
+### Hacer:
+- En register: Primero preguntar datos básicos y si se va a crear usuario de freelancer o empresa, luego redirigir a página de registro correspondiente y pedir datos correspondientes al rol.
+- Cambiar todas las referencias a "bidding" y reemplazarlas por "proyects".
