@@ -7,37 +7,24 @@ const mensajesFilePath = path.join(__dirname, "../data/mensajes.json");
 const mensajes = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
 /* Usuarios */
 const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
-const usuarios = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
+const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
 /* Proyectos */
 const proyectosFilePath = path.join(__dirname, "../data/proyectos.json");
-const proyectos = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
+const proyectos = JSON.parse(fs.readFileSync(proyectosFilePath, "utf-8"));
 
 /* Categorias */
 const categoriasFilePath = path.join(__dirname, "../data/categorias.json");
-const categorias = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
+const categorias = JSON.parse(fs.readFileSync(categoriasFilePath, "utf-8"));
 
 /* Categorias */
 const proyCatFilePath = path.join(__dirname, "../data/proyectoCategoria.json");
-const proyCat = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
+const proyCat = JSON.parse(fs.readFileSync(proyCatFilePath, "utf-8"));
 
 module.exports = {
   index: (req, res) => {
     const listaProyectos = proyectos;
     const listaCategorias = categorias;
-
-    /* 
-    let proyectos = [];
-    let cats = [];
-    
-       //categorias de un proyecto en específico
-    for (let i = 0; i < proyects.length; i++) {
-       proyectos.push(proyects[i]);   
-     }
-     
-     for (let j = 0; j < categorias.length; j++) {
-       cats.push(categorias[j]);
-     }*/
 
     res.render("index", {
       listaProyectos: listaProyectos,
@@ -83,8 +70,24 @@ module.exports = {
   biddingDetail: (req, res) => {
     res.render("bidding-detail");
   },
+  /* detalle específico proyecto */
+  detail: (req, res) => {
+    const id = req.params.id;
+
+    const proyecto = proyectos.find((p) => id == p.idProyecto);
+    res.render("bidding-detail", {
+      proyecto: proyecto,
+    });
+  },
   biddingList: (req, res) => {
-    res.render("bidding-list");
+    const listaProyectos = proyectos;
+    const listaCategorias = categorias;
+
+    res.render("bidding-list", {
+      listaProyectos: listaProyectos,
+      listaCategorias: listaCategorias,
+      proyectoCategoria: proyCat,
+    });
   },
   biddingCreation: (req, res) => {
     res.render("bidding-creation");

@@ -1,47 +1,37 @@
 [
   {
-    "idProyecto": "",
-    "tituloProyecto": "",
-    "descripcionProyecto": "",
-    "imagenProyecto": "",
-    "categoria": [
-      {
-        "idCategoria": 1
-      },
-      {
-        "idCategoria": 2
-      }
-    ],
-    "precioProyecto": "",
-    "estadoProyecto": "0,1,2,3",
-    "fechaCreacion": "20220109",
-    "fechaInicio": "",
-    "fechaFinalizacion": "",
-    "developer": "",
-    "creador": ""
-  },
-  {
     "idProyecto": "1110",
     "tituloProyecto": "Mantenimiento web",
     "descripcionProyecto": "Se busca persona para mantener una página web",
-    "imagenProyecto": "",
-    "categoria0": "",
-    "categoria1": "",
-    "categoria2": "",
-    "categoria3": "",
+    "imagenProyecto": "images/bidding-detail-image.jpg",
+    "categoria": [
+      {
+        "idCategoria": 1111
+      },
+      {
+        "idCategoria": 1112
+      }
+    ],
     "precioProyecto": 2000,
     "estadoProyecto": "",
-    "fechaCreacionProyecto": "20220109",
+    "fechaCreacionProyecto": "01-27-2021",
     "fechaInicio": "",
     "fechaFinalizacion": ""
   },
   {
     "idProyecto": "1111",
-    "tituloProyecto": "Mantenimiento web",
+    "tituloProyecto": "Mantenimiento base de datos",
     "descripcionProyecto": "Se busca persona para mantener una página web",
     "precioProyecto": 2000,
-    "fechaProyecto": "20220109",
-    "fechaFormateada": "09-01-2022"
+    "fechaCreacionProyecto": "09-01-2022",
+    "categoria": [
+      {
+        "idCategoria": 1113
+      },
+      {
+        "idCategoria": 1111
+      }
+    ]
   },
   {
     "idProyecto": "1112",
@@ -49,7 +39,15 @@
     "descripcionProyecto": "Se busca desarrollador backend para proyecto interesante",
     "precioProyecto": 6000,
     "fechaProyecto": "20210919",
-    "fechaFormateada": "19-09-2021"
+    "fechaCreacionProyecto": "19-09-2021",
+    "categoria": [
+      {
+        "idCategoria": 1114
+      },
+      {
+        "idCategoria": 1112
+      }
+    ]
   },
   {
     "idProyecto": "1113",
@@ -57,14 +55,30 @@
     "descripcionProyecto": "Se busca desarrollador frontend para proyecto interesante",
     "precioProyecto": 10000,
     "fechaProyecto": "20210920",
-    "fechaFormateada": "20-09-2021"
+    "fechaCreacionProyecto": "20-09-2021",
+    "categoria": [
+      {
+        "idCategoria": 1113
+      },
+      {
+        "idCategoria": 1112
+      }
+    ]
   },
   {
     "idProyecto": "1114",
-    "tituloProyecto": "Rebranding logo",
+    "tituloProyecto": "Rebranding de logotipo",
     "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
     "precioProyecto": 12000,
     "fechaProyecto": "20220228",
-    "fechaFormateada": "28-02-2022"
+    "fechaCreacionProyecto": "28-02-2022",
+    "categoria": [
+      {
+        "idCategoria": 1111
+      },
+      {
+        "idCategoria": 1114
+      }
+    ]
   }
 ]

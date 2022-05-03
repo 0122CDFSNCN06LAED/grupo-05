@@ -5,13 +5,13 @@
   <title>Bidding-Deatail</title>
   <!-- Espacio para estilos de esta pantalla-->
   <%- include('./partials/head') %>
-   <link rel="stylesheet" href="./css/bidding-detail/bidding-detail.css" />
-    <link rel="stylesheet" href="./css/register&login/normalize.css" />
-    <link rel="stylesheet" href="./css/index/index.css" />
-    
-    
-    
-    
+  <link rel="stylesheet" href="./css/bidding-detail/bidding-detail.css" />
+  <link rel="stylesheet" href="./css/register&login/normalize.css" />
+  <link rel="stylesheet" href="./css/index/index.css" />
+
+
+
+
 </head>
 
 <body>
@@ -24,14 +24,13 @@
 
   <main>
     <h1>{$product->business-name}</h1>
-
     <div class="product-block">
-      <img class="productImage" src="./images/bidding-detail-image.jpg">
+      <%if(proyecto != null || proyecto != undefined){%>
+      <img class="productImage" src="<%=proyecto.imagenProyecto%>">
       <hr>
       <div class="product-info">
-        <h6>{{product->description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.</h6>
-        <h6>Pago: Lorem ipsum. </h6>
+        <h6><%=proyecto.descripcionProyecto%></h6>
+        <h6><%=proyecto.precioProyecto%></h6>
         <h6>Metodologia de Trabajo: Lorem ipsum dolor sit amet. </h6>
         <h6> <a href="#">Agregar a favoritos</a></h6>
         <h6> <a href="{{route('actually')}}">Compartir</a></h6>
@@ -43,6 +42,28 @@
               <input type="submit" value="enviar" id="boton">
         </form>
       </div>
+      <%} else{%>
+      <img class="productImage" src="images/bidding-detail-image.jpg">
+      <hr>
+      <div class="product-info">
+        <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, ad ab? Distinctio vitae debitis fugit
+          accusamus voluptatibus, repellat totam exercitationem aliquid ex iste aperiam culpa facilis esse itaque
+          obcaecati earum!</h6>
+        <h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic commodi ipsa ipsam corrupti eaque, aspernatur
+          debitis quos voluptatem similique nam ad reprehenderit illo tempora autem natus fugiat odio voluptas?
+          Doloribus?</h6>
+        <h6>Metodologia de Trabajo: Lorem ipsum dolor sit amet. </h6>
+        <h6> <a href="#">Agregar a favoritos</a></h6>
+        <h6> <a href="{{route('actually')}}">Compartir</a></h6>
+        <form action="" metodh="post">
+          <div class="seccion1">
+            <div class="elemento">
+              <label for="mensaje"></label>
+              <input class="input" type="text" id="mensaje" name="mensaje" placeholder="Escribir Mensaje">
+              <input type="submit" value="enviar" id="boton">
+        </form>
+      </div>
+      <%}%>
     </div>
 
     <p><a href="/">Regresar</a></p>
@@ -51,7 +72,7 @@
 
     <%- include('./partials/footer') %>
 
-  </footer>
+      </footer>
 
 </body>
 

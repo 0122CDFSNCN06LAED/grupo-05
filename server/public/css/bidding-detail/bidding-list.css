@@ -13,10 +13,6 @@
   margin-top: 20px;
 }
 
-.proyecto {
-  margin: 0 auto;
-}
-
 .datos-proyecto {
   display: flex;
   flex-direction: column;
