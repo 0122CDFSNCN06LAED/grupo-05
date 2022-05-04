@@ -75,3 +75,22 @@ Entregable: A
 - En register: Primero preguntar datos básicos y si se va a crear usuario de freelancer o empresa, luego redirigir a página de registro correspondiente y pedir datos correspondientes al rol.
 - Cambiar todas las referencias a "bidding" y reemplazarlas por "proyects".
 - Hacer header sin hamburger menu para mostrar en register y login.
+
+## 04/05
+### Hecho:
+- Cambiamos nombres de bidding por proyect.
+- js de proyect-controller y proyect-routes.
+- Formulario de creación de proyectos que agregue el mismo a proyect.json y rediriga al listado de proyectos creados  (o detalle del proyecto creado) por   ese usuario.
+- Formulario de creación de proyectos.
+- Get de todos los proyectos.
+- Get de detalles de un proyecto.
+
+### Haciendo:
+- Get de edición de proyectos.
+- Put de edición de proyectos.
+- 
+### Hacer:
+- Permitir editar las categorías en el formulario de edición.
+- En register: Primero preguntar datos básicos y si se va a crear usuario de freelancer o empresa, luego redirigir a página de registro correspondiente y   pedir datos correspondientes al rol.
+- Hacer header sin hamburger menu para mostrar en register y login.
+-Hacer delete de proyect.
