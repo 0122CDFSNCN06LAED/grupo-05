@@ -4,19 +4,15 @@
     <title>Propuesta</title>
     <%- include('./partials/head') %>
     <!-- Espacio para estilos de esta pantalla-->
-    <link rel="stylesheet" href="./root.html">
-    <link rel="stylesheet" href="./css/index/index.css" />
-    <link rel="stylesheet" href="./css/index/config.css" />
-    <link rel="stylesheet" href="./css/proposal-list/theme.css" />
-    <link rel="stylesheet" href="./css/register&login/normalize.css" />
+    <link rel="stylesheet" href="/css/index/index.css" />
+    <link rel="stylesheet" href="/css/index/config.css" />
+    <link rel="stylesheet" href="/css/proposal-list/theme.css" />
   </head>
   <body>
-    <header class="header">
-      <%- include('./partials/header') %> 
-    </header>
+    <header class="header"><%- include('./partials/header') %></header>
     <main class="main-register">
       <section>
-        <h2 style="font-size: 24px; margin-top: 10px;">Confirmar propuestas</h2>
+        <h2 style="font-size: 24px; margin-top: 10px">Confirmar propuestas</h2>
       </section>
       <form action="">
         <div class="tarjeta-buscados">
@@ -28,10 +24,10 @@
                 <p>Diseño web</p>
                 <p>Proactividad</p>
               </div>
-            <button class="button-primary button-blue" type="submit">contactarse</button>
-            <button class="button-primary button-blue" type="submit">contratar</button>
+              <button class="button-primary button-blue" type="submit">contactarse</button>
+              <button class="button-primary button-blue" type="submit">contratar</button>
+            </div>
           </div>
-        </div>
           <div class="card-buscados">
             <h5 class="card-header">Simulink Scape</h5>
             <div class="card-body">
@@ -70,12 +66,7 @@
           </div>
         </div>
       </form>
-      
     </main>
-    <footer class="footer">
-
-      <%- include('./partials/footer') %>
-  
-    </footer>
+    <footer class="footer"><%- include('./partials/footer') %></footer>
   </body>
 </html>

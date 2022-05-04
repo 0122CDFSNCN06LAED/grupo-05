@@ -1,70 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Registro</title>
-  <%- include('./partials/head') %>
+  <head>
+    <title>Registro</title>
+    <%- include('./partials/head') %>
     <!-- Espacio para estilos de esta pantalla-->
-    <link rel="stylesheet" href="./css/index/index.css" />
-    <link rel="stylesheet" href="./css/register&login/theme.css" />
-    <link rel="stylesheet" href="./css/register&login/register-and-login.css" />
-    <link rel="stylesheet" href="./css/register&login/breakpoints.css" />
+    <link rel="stylesheet" href="/css/index/index.css" />
+    <link rel="stylesheet" href="/css/register&login/theme.css" />
+    <link rel="stylesheet" href="/css/register&login/register-and-login.css" />
+    <link rel="stylesheet" href="/css/register&login/breakpoints.css" />
+  </head>
 
-</head>
-
-<body>
-  <header class="header">
-    <%- include('./partials/header') %> 
-  </header>
-  <main class="main-register">
-    <form action="/views/index.html" method="get" class="main-form">
-      <h2 class="form-info">Crea una cuenta</h2>
-      <div class="hidden">
+  <body>
+    <header class="header"><%- include('./partials/header') %></header>
+    <main class="main-register">
+      <form action="/views/index.html" method="get" class="main-form">
+        <h2 class="form-info">Crea una cuenta</h2>
+        <div class="hidden">
+          <div class="register-section">
+            <input type="button" name="facebook" id="facebook" value="facebook" />
+            <input type="button" name="google" id="google" value="google" />
+            <input type="button" name="linkedin" id="linkedin" value="linkedin" />
+          </div>
+          <hr class="solid" />
+        </div>
         <div class="register-section">
-          <input type="button" name="facebook" id="facebook" value="facebook" />
-          <input type="button" name="google" id="google" value="google" />
-          <input type="button" name="linkedin" id="linkedin" value="linkedin" />
-        </div>
-        <hr class="solid" />
-      </div>
-      <div class="register-section">
-        <div class="input-div">
-          <label class="input-label" for="user-firstname">Ingresá tu nombre</label>
-          <input class="input-text" type="text" name="user-firstname" id="user-firstname" placeholder="Nombre"
-            required />
-        </div>
-        <div class="input-div">
-          <label class="input-label" for="user-surname">Ingresá tu apellido</label>
-          <input class="input-text" type="text" name="user-surname" id="user-surname" placeholder="Apellido" required />
-        </div>
-        <div class="input-div">
-          <label class="input-label" for="user-email ">Ingresá tu email</label>
-          <input class="input-text" type="email" name="user-email" id="user-email" placeholder="Email" required />
-        </div>
-        <div>
           <div class="input-div">
-            <label class="input-label" for="user-password">Ingresá tu contraseña</label>
-            <input class="input-text" type="password" name="user-password" id="user-password" placeholder="Contraseña"
-              required />
+            <label class="input-label" for="user-firstname">Ingresá tu nombre</label>
+            <input class="input-text" type="text" name="user-firstname" id="user-firstname" placeholder="Nombre" required />
           </div>
           <div class="input-div">
-            <label class="input-label" for="user-password-confirm">Repetir contraseña</label>
-            <input class="input-text" type="password" name="user-password-confirmation" id="user-password-confirmation"
-              placeholder="Repetir contraseña" required />
+            <label class="input-label" for="user-surname">Ingresá tu apellido</label>
+            <input class="input-text" type="text" name="user-surname" id="user-surname" placeholder="Apellido" required />
+          </div>
+          <div class="input-div">
+            <label class="input-label" for="user-email ">Ingresá tu email</label>
+            <input class="input-text" type="email" name="user-email" id="user-email" placeholder="Email" required />
+          </div>
+          <div>
+            <div class="input-div">
+              <label class="input-label" for="user-password">Ingresá tu contraseña</label>
+              <input class="input-text" type="password" name="user-password" id="user-password" placeholder="Contraseña" required />
+            </div>
+            <div class="input-div">
+              <label class="input-label" for="user-password-confirm">Repetir contraseña</label>
+              <input
+                class="input-text"
+                type="password"
+                name="user-password-confirmation"
+                id="user-password-confirmation"
+                placeholder="Repetir contraseña"
+                required
+              />
+            </div>
+          </div>
+          <div class="input-div">
+            <input class="input-button" type="submit" value="Registrarme" />
+            <h2 class="form-info">Al unirme, acepto recibir correos de proyectos</h2>
           </div>
         </div>
-        <div class="input-div">
-          <input class="input-button" type="submit" value="Registrarme" />
-          <h2 class="form-info">Al unirme, acepto recibir correos de proyectos</h2>
-        </div>
-      </div>
-    </form>
-  </main>
-  <footer class="footer">
-
-    <%- include('./partials/footer') %>
-
-  </footer>
-</body>
-
+      </form>
+    </main>
+    <footer class="footer"><%- include('./partials/footer') %></footer>
+  </body>
 </html>
