@@ -21,35 +21,24 @@ const proyectController = {
     });
   },
   proyectProposals: (req, res) => {
-    res.render("proposal-list");
-  },
-  biddingDetail: (req, res) => {
-    res.render("bidding-detail");
+    res.render("proyect-proposals");
   },
   /* detalle específico proyecto */
   detail: (req, res) => {
     const id = req.params.id;
-
     const proyecto = proyectos.find((p) => id == p.idProyecto);
-    res.render("bidding-detail", {
+    res.render("proyect-detail", {
       proyecto: proyecto,
     });
   },
-  biddingList: (req, res) => {
-    const listaProyectos = proyectos;
-    const listaCategorias = categorias;
-
-    res.render("bidding-list", {
-      listaProyectos: listaProyectos,
-      listaCategorias: listaCategorias,
-      proyectoCategoria: proyCat,
-    });
+  create: (req, res) => {
+    res.render("proyect-creation");
   },
-  biddingCreation: (req, res) => {
-    res.render("bidding-creation");
+  edit: (req, res) => {
+    res.render("proyect-edition");
   },
-  biddingEdition: (req, res) => {
-    res.render("bidding-edition");
+  delete: (req, res) => {
+    res.render("proyect-edition");
   },
 };
 module.exports = proyectController;
@@ -77,7 +66,7 @@ module.exports = proyectController;
 //   const jsonTxt = JSON.stringify(proyectos, null, 2);
 //   fs.writeFileSync(productsFilePath, jsonTxt, "utf-8");
 
-//   res.redirect("/bidding-list");
+//   res.redirect("/proyect-list");
 // },
 // destroy: (req, res) => {
 //   res.send("Borré el proyecto: " + req.params.id);
@@ -89,5 +78,5 @@ module.exports = proyectController;
 //   const jsonTxt = JSON.stringify(proyectos, null, 2);
 //   fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
 
-//   res.redirect("/bidding-list");
+//   res.redirect("/proyect-list");
 // },

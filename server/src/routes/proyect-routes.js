@@ -3,12 +3,10 @@ const proyectController = require("../controllers/proyect-controller");
 const proyectRouter = Router();
 
 proyectRouter.get("/", proyectController.proyectsList);
-proyectRouter.get("/proposal-list", proyectController.proyectProposals);
-proyectRouter.get("/bidding-detail", proyectController.biddingDetail);
+proyectRouter.get("/proposals", proyectController.proyectProposals);
 /* obtener un detalle en específico */
-proyectRouter.get("/bidding-detail/:id/", proyectController.detail);
-proyectRouter.get("/bidding-list", proyectController.biddingList);
-proyectRouter.get("/bidding-creation", proyectController.biddingCreation);
-proyectRouter.get("/bidding-edition", proyectController.biddingEdition);
-
+proyectRouter.get("/detail/:id/", proyectController.detail);
+proyectRouter.get("/create", proyectController.create);
+proyectRouter.get("/edit/:id", proyectController.edit);
+proyectRouter.get("/delete/:id", proyectController.delete);
 module.exports = proyectRouter;
