@@ -74,8 +74,79 @@ const proyectController = {
   },
 
   edit: (req, res) => {
-    res.render("proyect-edition");
+    const id = req.params.id;
+    const proyecto = proyectos.find((p) => id == p.idProyecto);
+
+      res.render("proyect-edition", {
+        proyecto: proyecto,
+        categorias: categorias,
+      });
+    },
+    /*const id = req.params.id;
+    const proyecto = proyectos.find((p) => id == p.idProyecto);
+    res.render("proyect-edition", {
+      proyecto: proyecto,
+    });*/
+
+
+  update: (req, res) => {
+    const id = req.params.id;
+    const proyecto = proyectos.find((p) => id == p.idProyecto);
+    Object.assign(proyecto, {
+      ...req.body,
+      tituloProyecto: req.body.titulo,
+      descripcionProyecto: req.body.descripcion,
+      //categoria: arrayCategorias,
+      // imagenProyecto: req.body.titulo,
+      categoriaProyecto: null,
+      precioProyecto: req.body.precio,
+    });
+    
+    const jsonTxt = JSON.stringify(proyectos, null, 2);
+    fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
+
+    res.redirect("/proyect");
+
+
+
+    /*const lastIndex = proyectos.length - 1;
+    const lastProyect = proyectos[lastIndex];
+    const biggestId = lastProyect.idProyecto ? lastProyect.idProyecto : 0;
+    const newId = Number(biggestId) + 1;
+    const nombresCategorias = req.body.categoria;
+    const arrayCategorias = [];
+
+    nombresCategorias.forEach((nombre) => {
+      for (let i = 0; i < categorias.length; i++) {
+        if (categorias[i].nombreCategoria == nombre) {
+          arrayCategorias.push(categorias[i].idCategoria);
+        }
+      }
+    });
+
+    const proyect = {
+      ...req.body,
+      idProyecto: newId,
+      tituloProyecto: req.body.titulo,
+      descripcionProyecto: req.body.descripcion,
+      categoria: arrayCategorias,
+      // imagenProyecto: req.body.titulo,
+      categoriaProyecto: null,
+      precioProyecto: req.body.precio,
+      fechaCreacion: new Date(),
+      fechaFinalizacion: null,
+      fechaInicio: null,
+      developer: null,
+      creador: "empresa",
+    };
+    proyectos.push(proyect);
+
+    const jsonTxt = JSON.stringify(proyectos, null, 2);
+    fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
+
+    res.redirect("/proyect");*/
   },
+
   delete: (req, res) => {
     res.render("proyect-edition");
   },

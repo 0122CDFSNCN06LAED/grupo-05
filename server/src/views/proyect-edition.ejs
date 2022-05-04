@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Proyects creation</title>
+    <title>Proyect-edition</title>
     <%- include('./partials/head') %>
     <!-- Espacio para estilos de esta pantalla-->
     <link rel="stylesheet" href="/css/index/index.css" />
@@ -13,50 +13,51 @@
   <body>
     <header class="header"><%- include('./partials/header') %></header>
 
+    <h1 class="products-title">
+      Estás editando:
+    </h1>
+
     <div class="contenido">
-      <form action="/proyectoCreate" method="PUT"></form>
+      <form action="/proyect/<%= proyecto.idProyecto %>?_method=PUT" method="POST">
       <div class="item-form">
         <label for="titulo">Ingrese un título</label>
-        <input class="input-small" type="text" name="titulo" id="titulo" />
+        <input class="input-small" type="text" name="titulo" id="titulo" value="<%=proyecto.tituloProyecto%>" />
       </div>
       <div class="item-form descrip">
         <label for="descripcion">Describa su proyecto</label>
-        <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+        <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10" "><%=proyecto.descripcionProyecto%></textarea>
       </div>
       <div class="item-form prec">
         <label for="precio">Precio</label>
-        <input class="input-small" type="text" name="precio" id="precio" />
+        <input class="input-small" type="text" name="precio" id="precio" value="<%=proyecto.precioProyecto%>" />
       </div>
       <div class="item-form">
         <label for="categorias">Seleccione las categorías</label>
       </div>
+      <%console.log(proyecto)%>
       <div class="categorias-check">
-        <div class="checkbox-item">
-          <label class="label-checkbox" for="categorias">Base de datos</label>
-          <input class="checkbox" type="checkbox" name="categoria" value="baseDatos" />
-        </div>
-        <div class="checkbox-item">
-          <label class="label-checkbox" for="categorias">Web</label>
-          <input class="checkbox" type="checkbox" name="categoria" value="web" />
-        </div>
-        <div class="checkbox-item">
-          <label class="label-checkbox" for="categorias">Backend</label>
-          <input class="checkbox" type="checkbox" name="categoria" value="backend" />
-        </div>
-        <div class="checkbox-item">
-          <label class="label-checkbox" for="categorias">Frontend</label>
-          <input class="checkbox" type="checkbox" name="categoria" value="frontend" />
-        </div>
-        <div class="checkbox-item">
-          <label class="label-checkbox" for="categorias">Backend</label>
-          <input class="checkbox" type="checkbox" name="categoria" value="frontend" />
-        </div>
+        <% for (let i = 0; i < categorias.length; i++) { %>
+          <div class="checkbox-item">
+            <label class="label-checkbox" for="categorias"><%=categorias[i].nombreCategoria%></label>
+            <% for (let j = 0; j < proyecto.categoria.length; j++) { %>
+            <% if (categorias[i]==proyecto.categoria[j]) {%> 
+
+            <input class="checkbox" type="checkbox" name="categoria" value="<%=categorias[i].nombreCategoria%>" checked/>
+            <%}else{%>
+            
+              <input class="checkbox" type="checkbox" name="categoria" value="<%=categorias[i].nombreCategoria%>"/>
+            <%}%>
+            <%}%>
+          </div>
+        <%}%>
+        
       </div>
       <div class="botones">
         <button class="guardar-boton" type="submit">Guardar</button>
         <button class="boton-cancelar" type="cancel">Cancelar</button>
         <button class="boton-cancelar" type="cancel">Eliminar</button>
       </div>
+    </form>
     </div>
 
     <footer class="footer"><%- include('./partials/footer') %></footer>

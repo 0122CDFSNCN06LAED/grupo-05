@@ -4,7 +4,10 @@
     "tituloProyecto": "Mantenimiento web",
     "descripcionProyecto": "Se busca persona para mantener una página web",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": ["1111", "1112"],
+    "categoria": [
+      "1111",
+      "1112"
+    ],
     "precioProyecto": "2000",
     "estadoProyecto": "0,1,2,3",
     "fechaCreacion": "20220109",
@@ -18,7 +21,10 @@
     "tituloProyecto": "Mantenimiento base de datos",
     "descripcionProyecto": "Se busca persona para mantener una página web",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": ["1113", "1111"],
+    "categoria": [
+      "1113",
+      "1111"
+    ],
     "precioProyecto": "2000",
     "estadoProyecto": "0",
     "fechaCreacion": "20220109",
@@ -32,7 +38,10 @@
     "tituloProyecto": "Desarrollador Frontend",
     "descripcionProyecto": "Se busca desarrollador backend para proyecto interesante",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": ["1114", "1113"],
+    "categoria": [
+      "1114",
+      "1113"
+    ],
     "precioProyecto": "6000",
     "estadoProyecto": "0,1,2,3",
     "fechaCreacion": "20220109",
@@ -43,24 +52,34 @@
   },
   {
     "idProyecto": "1113",
-    "tituloProyecto": "Desarrollador Frontend",
-    "descripcionProyecto": "Se busca desarrollador frontend para proyecto interesante",
+    "tituloProyecto": "yyy",
+    "descripcionProyecto": "zzz",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": ["1114", "1112"],
-    "precioProyecto": "10000",
+    "categoria": [
+      "backend",
+      "frontend"
+    ],
+    "precioProyecto": "666",
     "estadoProyecto": "0,1,2,3",
     "fechaCreacion": "20220109",
     "fechaInicio": "",
     "fechaFinalizacion": "",
     "developer": "",
-    "creador": ""
+    "creador": "",
+    "titulo": "yyy",
+    "descripcion": "zzz",
+    "precio": "666",
+    "categoriaProyecto": null
   },
   {
     "idProyecto": "1114",
     "tituloProyecto": "Rebranding de logotipo",
     "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": ["1114", "1113"],
+    "categoria": [
+      "1114",
+      "1113"
+    ],
     "precioProyecto": "12000",
     "estadoProyecto": "0,1,2,3",
     "fechaCreacion": "20220109",

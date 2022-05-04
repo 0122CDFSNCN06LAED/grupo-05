@@ -1,6 +1,7 @@
 const express = require("express");
 const port = 3000;
 const path = require("path");
+const methodOverride = require("method-override");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.listen(port, () =>
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 //Route system
 const mainRouter = require("./routes/main-routes");
