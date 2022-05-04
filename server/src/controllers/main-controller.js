@@ -64,35 +64,4 @@ module.exports = {
     }
     /*  res.render("config"); */
   },
-  proposalList: (req, res) => {
-    res.render("proposal-list");
-  },
-  biddingDetail: (req, res) => {
-    res.render("bidding-detail");
-  },
-  /* detalle específico proyecto */
-  detail: (req, res) => {
-    const id = req.params.id;
-
-    const proyecto = proyectos.find((p) => id == p.idProyecto);
-    res.render("bidding-detail", {
-      proyecto: proyecto,
-    });
-  },
-  biddingList: (req, res) => {
-    const listaProyectos = proyectos;
-    const listaCategorias = categorias;
-
-    res.render("bidding-list", {
-      listaProyectos: listaProyectos,
-      listaCategorias: listaCategorias,
-      proyectoCategoria: proyCat,
-    });
-  },
-  biddingCreation: (req, res) => {
-    res.render("bidding-creation");
-  },
-  biddingEdition: (req, res) => {
-    res.render("bidding-edition");
-  },
 };
