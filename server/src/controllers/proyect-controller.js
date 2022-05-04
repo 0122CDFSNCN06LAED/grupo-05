@@ -34,6 +34,36 @@ const proyectController = {
   create: (req, res) => {
     res.render("proyect-creation");
   },
+
+  store: (req, res) => {
+    const lastIndex = proyectos.length - 1;
+    const lastProyect = proyectos[lastIndex];
+    const biggestId = lastProyect ? lastProyect.id : 0;
+    const newId = biggestId + 1;
+    console.log("HOLA", req.body);
+
+    const proyect = {
+      ...req.body,
+      idProyecto: newId,
+      tituloProyecto: req.body.titulo,
+      descripcionProyecto: req.body.descripcion,
+      // imagenProyecto: req.body.titulo,
+      categoriaProyecto: req.body.categoria,
+      precioProyecto: req.body.precio,
+      fechaCreacion: new Date(),
+      fechaFinalizacion: null,
+      fechaInicio: null,
+      developer: null,
+      creador: "empresa",
+    };
+    proyectos.push(proyect);
+
+    const jsonTxt = JSON.stringify(proyectos, null, 2);
+    fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
+
+    res.redirect("/");
+  },
+
   edit: (req, res) => {
     res.render("proyect-edition");
   },
@@ -42,41 +72,3 @@ const proyectController = {
   },
 };
 module.exports = proyectController;
-// store: (req, res) => {
-//   res.send(req.body);
-//   const lastIndex = proyectos.length - 1;
-//   const lastProyecto = proyectos[lastIndex];
-//   const biggestId = lastProyecto ? lastProyecto.id : 0;
-//   const newId = biggestId + 1;
-
-//   const proyecto = {
-//     ...req.body,
-//     precioProyecto: Number(req.body.price),
-//     tituloProyecto: newTitle,
-//     descripcionProyecto: newDescription,
-//     categoria: categorias,
-//     estado: estado,
-//     fechaDeInicio: Date,
-//     fechaDeFinalizacion: Date,
-//     idProyecto: newId,
-//   };
-
-//   proyectos.push(proyecto);
-
-//   const jsonTxt = JSON.stringify(proyectos, null, 2);
-//   fs.writeFileSync(productsFilePath, jsonTxt, "utf-8");
-
-//   res.redirect("/proyect-list");
-// },
-// destroy: (req, res) => {
-//   res.send("Borré el proyecto: " + req.params.id);
-//   const id = req.params.id;
-//   const proyectoIndex = proyectos.findIndex((p) => id == p.id);
-
-//   proyectos.splice(proyectoIndex, 1);
-
-//   const jsonTxt = JSON.stringify(proyectos, null, 2);
-//   fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
-
-//   res.redirect("/proyect-list");
-// },

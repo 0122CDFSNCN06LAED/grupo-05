@@ -3,14 +3,10 @@
     "idProyecto": "1110",
     "tituloProyecto": "Mantenimiento web",
     "descripcionProyecto": "Se busca persona para mantener una página web",
-    "imagenProyecto": "images/bidding-detail-image.jpg",
+    "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
-      {
-        "idCategoria": "1111"
-      },
-      {
-        "idCategoria": "1112"
-      }
+      "1111",
+      "1112"
     ],
     "precioProyecto": "2000",
     "estadoProyecto": "0,1,2,3",
@@ -24,7 +20,7 @@
     "idProyecto": "1111",
     "tituloProyecto": "Mantenimiento base de datos",
     "descripcionProyecto": "Se busca persona para mantener una página web",
-    "imagenProyecto": "images/bidding-detail-image.jpg",
+    "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
       {
         "idCategoria": "1113"
@@ -45,7 +41,7 @@
     "idProyecto": "1112",
     "tituloProyecto": "Desarrollador Frontend",
     "descripcionProyecto": "Se busca desarrollador backend para proyecto interesante",
-    "imagenProyecto": "images/bidding-detail-image.jpg",
+    "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
       {
         "idCategoria": "1114"
@@ -66,7 +62,7 @@
     "idProyecto": "1113",
     "tituloProyecto": "Desarrollador Frontend",
     "descripcionProyecto": "Se busca desarrollador frontend para proyecto interesante",
-    "imagenProyecto": "images/bidding-detail-image.jpg",
+    "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
       {
         "idCategoria": "1113"
@@ -83,12 +79,11 @@
     "developer": "",
     "creador": ""
   },
-
   {
     "idProyecto": "1114",
     "tituloProyecto": "Rebranding de logotipo",
     "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
-    "imagenProyecto": "images/bidding-detail-image.jpg",
+    "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
       {
         "idCategoria": "1113"
@@ -104,5 +99,37 @@
     "fechaFinalizacion": "",
     "developer": "",
     "creador": ""
+  },
+  {
+    "idProyecto": null,
+    "fechaCreacion": "2022-05-04T16:53:39.049Z",
+    "fechaFinalizacion": null,
+    "fechaInicio": null,
+    "developer": null,
+    "creador": "empresa"
+  },
+  {
+    "idProyecto": null,
+    "fechaCreacion": "2022-05-04T16:53:58.733Z",
+    "fechaFinalizacion": null,
+    "fechaInicio": null,
+    "developer": null,
+    "creador": "empresa"
+  },
+  {
+    "idProyecto": null,
+    "fechaCreacion": "2022-05-04T16:55:34.323Z",
+    "fechaFinalizacion": null,
+    "fechaInicio": null,
+    "developer": null,
+    "creador": "empresa"
+  },
+  {
+    "idProyecto": null,
+    "fechaCreacion": "2022-05-04T16:56:16.495Z",
+    "fechaFinalizacion": null,
+    "fechaInicio": null,
+    "developer": null,
+    "creador": "empresa"
   }
 ]

@@ -4,18 +4,17 @@
     <title>Proyects creation</title>
     <%- include('./partials/head') %>
     <!-- Espacio para estilos de esta pantalla-->
-    <!--
     <link rel="stylesheet" href="/css/index/index.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/footer.css" /> -->
-    <!-- <link rel="stylesheet" href="/css/bidding-detail/bidding-creation.css" /> -->
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/bidding-detail/bidding-creation.css" />
   </head>
 
   <body>
     <header class="header"><%- include('./partials/header') %></header>
 
     <div class="contenido">
-      <form action="/bidding-list" method="POST">
+      <form action="/proyect" method="POST">
         <div class="item-form">
           <label for="titulo">Ingrese un título</label>
           <input class="input-small" type="text" name="titulo" id="titulo" />

@@ -8,15 +8,9 @@
   <link rel="stylesheet" href="/css/bidding-detail/bidding-detail.css" />
   <link rel="stylesheet" href="/css/register&login/normalize.css" />
   <link rel="stylesheet" href="/css/index/index.css" />
-
-
-
-
 </head>
 
 <body>
-
-
   <header class="header">
     <%- include('./partials/header') %>
 
@@ -26,7 +20,6 @@
     <h1>{$product->business-name}</h1>
     <div class="product-block">
       <%if(proyecto != null || proyecto != undefined){%>
-      <img class="productImage" src="<%=proyecto.imagenProyecto%>">
       <hr>
       <div class="product-info">
         <h6><%=proyecto.descripcionProyecto%></h6>
