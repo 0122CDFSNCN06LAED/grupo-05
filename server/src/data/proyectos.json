@@ -35,12 +35,12 @@
   },
   {
     "idProyecto": "1112",
-    "tituloProyecto": "Desarrollador Frontend",
+    "tituloProyecto": "Desarrollador de angular",
     "descripcionProyecto": "Se busca desarrollador backend para proyecto interesante",
     "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
-      "1114",
-      "1113"
+      "backend",
+      "frontend"
     ],
     "precioProyecto": "6000",
     "estadoProyecto": "0,1,2,3",
@@ -48,7 +48,11 @@
     "fechaInicio": "",
     "fechaFinalizacion": "",
     "developer": "",
-    "creador": ""
+    "creador": "",
+    "titulo": "Desarrollador de angular",
+    "descripcion": "Se busca desarrollador backend para proyecto interesante",
+    "precio": "6000",
+    "categoriaProyecto": null
   },
   {
     "idProyecto": "1113",

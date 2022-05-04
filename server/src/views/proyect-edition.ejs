@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Proyect-edition</title>
-    <%- include('./partials/head') %>
-    <!-- Espacio para estilos de esta pantalla-->
-    <link rel="stylesheet" href="/css/index/index.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/footer.css" />
-    <link rel="stylesheet" href="/css/bidding-detail/bidding-creation.css" />
-  </head>
 
-  <body>
-    <header class="header"><%- include('./partials/header') %></header>
+<head>
+  <title>Proyect-edition</title>
+  <%- include('./partials/head') %>
+  <!-- Espacio para estilos de esta pantalla-->
+  <link rel="stylesheet" href="/css/index/index.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/bidding-detail/bidding-creation.css" />
+</head>
 
-    <h1 class="products-title">
-      Estás editando:
-    </h1>
+<body>
+  <header class="header"><%- include('./partials/header') %></header>
 
-    <div class="contenido">
-      <form action="/proyect/<%= proyecto.idProyecto %>?_method=PUT" method="POST">
+  <h1 class="products-title">
+    Estás editando:
+  </h1>
+
+  <div class="contenido">
+    <form action="/proyect/<%= proyecto.idProyecto %>?_method=PUT" method="POST">
       <div class="item-form">
         <label for="titulo">Ingrese un título</label>
         <input class="input-small" type="text" name="titulo" id="titulo" value="<%=proyecto.tituloProyecto%>" />
@@ -27,27 +28,31 @@
         <label for="descripcion">Describa su proyecto</label>
         <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10" "><%=proyecto.descripcionProyecto%></textarea>
       </div>
-      <div class="item-form prec">
+      <div class=" item-form prec">
         <label for="precio">Precio</label>
         <input class="input-small" type="text" name="precio" id="precio" value="<%=proyecto.precioProyecto%>" />
       </div>
       <div class="item-form">
         <label for="categorias">Seleccione las categorías</label>
       </div>
-      <%console.log(proyecto)%>
       <div class="categorias-check">
-        <% for (let i = 0; i < categorias.length; i++) { %>
+        <% for (let i = 0; i < categorias.length; i++) {%>
+          <%let k = false%>
           <div class="checkbox-item">
             <label class="label-checkbox" for="categorias"><%=categorias[i].nombreCategoria%></label>
             <% for (let j = 0; j < proyecto.categoria.length; j++) { %>
-            <% if (categorias[i]==proyecto.categoria[j]) {%> 
-
-            <input class="checkbox" type="checkbox" name="categoria" value="<%=categorias[i].nombreCategoria%>" checked/>
+            <% if (categorias[i].idCategoria==proyecto.categoria[j]) {%>
+              <%k = true%>
+              <%console.log('entre al if', k)%> 
+            <%}%>
+            <%}%>
+            <%console.log("jjjjjjjj", k)%> 
+            <%if(k == true){%>
+              <%console.log('segundo if')%> 
+              <input class="checkbox" type="checkbox" name="categoria" value="<%=categorias[i].nombreCategoria%>" checked/>
             <%}else{%>
-            
-              <input class="checkbox" type="checkbox" name="categoria" value="<%=categorias[i].nombreCategoria%>"/>
-            <%}%>
-            <%}%>
+            <input class="checkbox" type="checkbox" name="categoria" value="<%=categorias[i].nombreCategoria%>" />
+          <%}%>
           </div>
         <%}%>
         
