@@ -93,4 +93,5 @@ Entregable: A
 - Permitir editar las categorías en el formulario de edición.
 - En register: Primero preguntar datos básicos y si se va a crear usuario de freelancer o empresa, luego redirigir a página de registro correspondiente y   pedir datos correspondientes al rol.
 - Hacer header sin hamburger menu para mostrar en register y login.
--Hacer delete de proyect.
+- Hacer delete de proyect.
+- Mostrar bien las etiquetas de categorías en la vista de edit.
