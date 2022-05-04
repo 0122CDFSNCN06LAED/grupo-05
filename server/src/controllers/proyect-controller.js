@@ -44,14 +44,11 @@ const proyectController = {
 
     nombresCategorias.forEach((nombre) => {
       for (let i = 0; i < categorias.length; i++) {
-        console.log("dddddddddddd", nombre, categorias[i].nombreCategoria);
         if (categorias[i].nombreCategoria == nombre) {
           arrayCategorias.push(categorias[i].idCategoria);
         }
       }
     });
-
-    console.log(arrayCategorias, "pppppppppppppppppppp");
 
     const proyect = {
       ...req.body,
@@ -73,7 +70,7 @@ const proyectController = {
     const jsonTxt = JSON.stringify(proyectos, null, 2);
     fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
 
-    res.redirect("/");
+    res.redirect("/proyect");
   },
 
   edit: (req, res) => {

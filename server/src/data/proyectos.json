@@ -4,10 +4,7 @@
     "tituloProyecto": "Mantenimiento web",
     "descripcionProyecto": "Se busca persona para mantener una página web",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": [
-      "1111",
-      "1112"
-    ],
+    "categoria": ["1111", "1112"],
     "precioProyecto": "2000",
     "estadoProyecto": "0,1,2,3",
     "fechaCreacion": "20220109",
@@ -21,10 +18,7 @@
     "tituloProyecto": "Mantenimiento base de datos",
     "descripcionProyecto": "Se busca persona para mantener una página web",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": [
-      "1113",
-      "1111"
-    ],
+    "categoria": ["1113", "1111"],
     "precioProyecto": "2000",
     "estadoProyecto": "0",
     "fechaCreacion": "20220109",
@@ -38,10 +32,7 @@
     "tituloProyecto": "Desarrollador Frontend",
     "descripcionProyecto": "Se busca desarrollador backend para proyecto interesante",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": [
-      "1114",
-      "1113"
-    ],
+    "categoria": ["1114", "1113"],
     "precioProyecto": "6000",
     "estadoProyecto": "0,1,2,3",
     "fechaCreacion": "20220109",
@@ -55,10 +46,7 @@
     "tituloProyecto": "Desarrollador Frontend",
     "descripcionProyecto": "Se busca desarrollador frontend para proyecto interesante",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": [
-      "1114",
-      "1112"
-    ],
+    "categoria": ["1114", "1112"],
     "precioProyecto": "10000",
     "estadoProyecto": "0,1,2,3",
     "fechaCreacion": "20220109",
@@ -72,10 +60,7 @@
     "tituloProyecto": "Rebranding de logotipo",
     "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
     "imagenProyecto": "bidding-detail-image.jpg",
-    "categoria": [
-      "1114",
-      "1113"
-    ],
+    "categoria": ["1114", "1113"],
     "precioProyecto": "12000",
     "estadoProyecto": "0,1,2,3",
     "fechaCreacion": "20220109",
@@ -83,24 +68,5 @@
     "fechaFinalizacion": "",
     "developer": "",
     "creador": ""
-  },
-  {
-    "titulo": "aaaaaaaaaaaaaa",
-    "descripcion": "ddddddddddd",
-    "precio": "2000",
-    "categoria": [
-      "1112",
-      "1111"
-    ],
-    "idProyecto": 1115,
-    "tituloProyecto": "aaaaaaaaaaaaaa",
-    "descripcionProyecto": "ddddddddddd",
-    "categoriaProyecto": null,
-    "precioProyecto": "2000",
-    "fechaCreacion": "2022-05-04T18:42:23.913Z",
-    "fechaFinalizacion": null,
-    "fechaInicio": null,
-    "developer": null,
-    "creador": "empresa"
   }
 ]
