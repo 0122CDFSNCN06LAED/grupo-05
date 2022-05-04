@@ -1,26 +1,26 @@
 [
   {
     "idCategoria": "1111",
-    "nombreCategoria": "Web"
+    "nombreCategoria": "web"
   },
   {
     "idCategoria": "1112",
-    "nombreCategoria": "Base de datos"
+    "nombreCategoria": "baseDatos"
   },
   {
     "idCategoria": "1113",
-    "nombreCategoria": "Backend"
+    "nombreCategoria": "backend"
   },
   {
     "idCategoria": "1114",
-    "nombreCategoria": "Frontend"
+    "nombreCategoria": "frontend"
   },
   {
     "idCategoria": "1115",
-    "nombreCategoria": "Desarrollo"
+    "nombreCategoria": "desarrollo"
   },
   {
     "idCategoria": "1116",
-    "nombreCategoria": "Diseño"
+    "nombreCategoria": "diseño"
   }
 ]

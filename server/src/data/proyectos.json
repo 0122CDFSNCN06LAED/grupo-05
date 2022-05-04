@@ -22,12 +22,8 @@
     "descripcionProyecto": "Se busca persona para mantener una página web",
     "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
-      {
-        "idCategoria": "1113"
-      },
-      {
-        "idCategoria": "1111"
-      }
+      "1113",
+      "1111"
     ],
     "precioProyecto": "2000",
     "estadoProyecto": "0",
@@ -43,12 +39,8 @@
     "descripcionProyecto": "Se busca desarrollador backend para proyecto interesante",
     "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
-      {
-        "idCategoria": "1114"
-      },
-      {
-        "idCategoria": "1112"
-      }
+      "1114",
+      "1113"
     ],
     "precioProyecto": "6000",
     "estadoProyecto": "0,1,2,3",
@@ -64,12 +56,8 @@
     "descripcionProyecto": "Se busca desarrollador frontend para proyecto interesante",
     "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
-      {
-        "idCategoria": "1113"
-      },
-      {
-        "idCategoria": "1112"
-      }
+      "1114",
+      "1112"
     ],
     "precioProyecto": "10000",
     "estadoProyecto": "0,1,2,3",
@@ -85,12 +73,8 @@
     "descripcionProyecto": "Se busca persona para realizar rebranding de logo",
     "imagenProyecto": "bidding-detail-image.jpg",
     "categoria": [
-      {
-        "idCategoria": "1113"
-      },
-      {
-        "idCategoria": "1112"
-      }
+      "1114",
+      "1113"
     ],
     "precioProyecto": "12000",
     "estadoProyecto": "0,1,2,3",
@@ -101,32 +85,19 @@
     "creador": ""
   },
   {
-    "idProyecto": null,
-    "fechaCreacion": "2022-05-04T16:53:39.049Z",
-    "fechaFinalizacion": null,
-    "fechaInicio": null,
-    "developer": null,
-    "creador": "empresa"
-  },
-  {
-    "idProyecto": null,
-    "fechaCreacion": "2022-05-04T16:53:58.733Z",
-    "fechaFinalizacion": null,
-    "fechaInicio": null,
-    "developer": null,
-    "creador": "empresa"
-  },
-  {
-    "idProyecto": null,
-    "fechaCreacion": "2022-05-04T16:55:34.323Z",
-    "fechaFinalizacion": null,
-    "fechaInicio": null,
-    "developer": null,
-    "creador": "empresa"
-  },
-  {
-    "idProyecto": null,
-    "fechaCreacion": "2022-05-04T16:56:16.495Z",
+    "titulo": "aaaaaaaaaaaaaa",
+    "descripcion": "ddddddddddd",
+    "precio": "2000",
+    "categoria": [
+      "1112",
+      "1111"
+    ],
+    "idProyecto": 1115,
+    "tituloProyecto": "aaaaaaaaaaaaaa",
+    "descripcionProyecto": "ddddddddddd",
+    "categoriaProyecto": null,
+    "precioProyecto": "2000",
+    "fechaCreacion": "2022-05-04T18:42:23.913Z",
     "fechaFinalizacion": null,
     "fechaInicio": null,
     "developer": null,

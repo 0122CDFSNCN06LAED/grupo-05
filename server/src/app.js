@@ -4,10 +4,15 @@ const path = require("path");
 
 const app = express();
 
-app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}`));
+app.listen(port, () =>
+  console.log(
+    `Servidor levantado en el puerto ${port}\n http://localhost:${port}`
+  )
+);
 
 //Middlewares
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //Route system

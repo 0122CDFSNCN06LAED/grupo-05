@@ -12,7 +12,6 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const proyectController = {
   proyectsList: (req, res) => {
-    // res.send("HOLA");
     const listaProyectos = proyectos;
     const listaCategorias = categorias;
     res.render("proyects-list", {
@@ -38,17 +37,30 @@ const proyectController = {
   store: (req, res) => {
     const lastIndex = proyectos.length - 1;
     const lastProyect = proyectos[lastIndex];
-    const biggestId = lastProyect ? lastProyect.id : 0;
-    const newId = biggestId + 1;
-    console.log("HOLA", req.body);
+    const biggestId = lastProyect.idProyecto ? lastProyect.idProyecto : 0;
+    const newId = Number(biggestId) + 1;
+    const nombresCategorias = req.body.categoria;
+    const arrayCategorias = [];
+
+    nombresCategorias.forEach((nombre) => {
+      for (let i = 0; i < categorias.length; i++) {
+        console.log("dddddddddddd", nombre, categorias[i].nombreCategoria);
+        if (categorias[i].nombreCategoria == nombre) {
+          arrayCategorias.push(categorias[i].idCategoria);
+        }
+      }
+    });
+
+    console.log(arrayCategorias, "pppppppppppppppppppp");
 
     const proyect = {
       ...req.body,
       idProyecto: newId,
       tituloProyecto: req.body.titulo,
       descripcionProyecto: req.body.descripcion,
+      categoria: arrayCategorias,
       // imagenProyecto: req.body.titulo,
-      categoriaProyecto: req.body.categoria,
+      categoriaProyecto: null,
       precioProyecto: req.body.precio,
       fechaCreacion: new Date(),
       fechaFinalizacion: null,
