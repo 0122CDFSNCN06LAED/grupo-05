@@ -57,9 +57,18 @@
       <div class="botones">
         <button class="guardar-boton" type="submit">Guardar</button>
         <button class="boton-cancelar" type="cancel">Cancelar</button>
-        <button class="boton-cancelar" type="cancel">Eliminar</button>
+        
+        <!-- <button class="boton-cancelar" type="cancel">Eliminar</button> -->
       </div>
     </form>
+    <div class="item-form"><form
+        action="/proyect/<%= proyecto.idProyecto%>?_method=DELETE"
+        method="POST"
+      >
+        <button type="submit" class="boton-cancelar">
+          Eliminar
+        </button>
+      </form></div>
     </div>
 
     <footer class="footer"><%- include('./partials/footer') %></footer>

@@ -13,5 +13,5 @@ proyectRouter.post("/", proyectController.store);
 proyectRouter.get("/edit/:id", proyectController.edit);
 proyectRouter.put("/:id", proyectController.update);
 /*** ELIMINAR UN PRODUCTO ***/
-proyectRouter.get("/delete/:id", proyectController.delete);
+proyectRouter.delete("/:id", proyectController.delete);
 module.exports = proyectRouter;
