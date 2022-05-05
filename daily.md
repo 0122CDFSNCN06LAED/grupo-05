@@ -84,14 +84,13 @@ Entregable: A
 - Formulario de creación de proyectos.
 - Get de todos los proyectos.
 - Get de detalles de un proyecto.
-
-### Haciendo:
 - Get de edición de proyectos.
 - Put de edición de proyectos.
-- 
-### Hacer:
+ -Delete de proyecto.
+### Haciendo:
 - Permitir editar las categorías en el formulario de edición.
+- Mostrar bien las etiquetas de categorías en la vista de edit.
+### Hacer:
 - En register: Primero preguntar datos básicos y si se va a crear usuario de freelancer o empresa, luego redirigir a página de registro correspondiente y   pedir datos correspondientes al rol.
 - Hacer header sin hamburger menu para mostrar en register y login.
-- Hacer delete de proyect.
-- Mostrar bien las etiquetas de categorías en la vista de edit.
+-Organizar estilos en común en normalize.css y eliminar etiquetas de estilos repetidas.
