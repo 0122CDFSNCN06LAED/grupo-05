@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon src/app.js",
+    "start": "nodemon -e js src/app.js",
     "watch": "nodemon src/app.js --ext ejs"
   },
   "keywords": [],
