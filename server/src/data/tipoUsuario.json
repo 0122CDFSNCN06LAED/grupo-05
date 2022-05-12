@@ -1,0 +1,10 @@
+[
+  {
+    "idTipoUsuario": 1,
+    "nombreTipoUsuario": "freelancer"
+  },
+  {
+    "idTipoUsuario": 2,
+    "nombreTipoUsuario": "empresa"
+  }
+]

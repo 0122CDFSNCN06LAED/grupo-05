@@ -13,7 +13,6 @@
   <body>
     <header class="header"><%- include('./partials/header') %></header>
     <main class="main-register">
-      <form action="/views/index.html" method="get" class="main-form">
         <h2 class="form-info">Crea una cuenta</h2>
         <div class="hidden">
           <div class="register-section">
@@ -23,38 +22,44 @@
           </div>
           <hr class="solid" />
         </div>
+        <form action="/user/register" method="POST">
         <div class="register-section">
           <div class="input-div">
-            <label class="input-label" for="user-firstname">Ingresá tu nombre</label>
-            <input class="input-text" type="text" name="user-firstname" id="user-firstname" placeholder="Nombre" required />
+            <label class="input-label" for="name">Ingresá tu nombre</label>
+            <input class="input-text" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && old.name%>" />
+            <%console.log(locals.old && old.name)%>
+            <% if(locals.errors && errors.name){%>
+              <p><%=errors.name.msg%></p>
+            <%}%>
+    
           </div>
           <div class="input-div">
             <label class="input-label" for="user-surname">Ingresá tu apellido</label>
-            <input class="input-text" type="text" name="user-surname" id="user-surname" placeholder="Apellido" required />
+            <input class="input-text" type="text" name="user-surname" id="user-surname" placeholder="Apellido"  />
           </div>
           <div class="input-div">
             <label class="input-label" for="user-email ">Ingresá tu email</label>
-            <input class="input-text" type="email" name="user-email" id="user-email" placeholder="Email" required />
+            <input class="input-text" type="email" name="user-email" id="user-email" placeholder="Email"  />
           </div>
           <div>
             <div class="input-div">
               <label class="input-label" for="user-password">Ingresá tu contraseña</label>
-              <input class="input-text" type="password" name="user-password" id="user-password" placeholder="Contraseña" required />
+              <input class="input-text" type="password" name="user-password" id="user-password" placeholder="Contraseña"  />
             </div>
             <div class="input-div">
-              <label class="input-label" for="user-password-confirm">Repetir contraseña</label>
+              <label class="input-label" for="user-password-confirmation">Repetir contraseña</label>
               <input
                 class="input-text"
                 type="password"
                 name="user-password-confirmation"
                 id="user-password-confirmation"
                 placeholder="Repetir contraseña"
-                required
+                
               />
             </div>
           </div>
           <div class="input-div">
-            <input class="input-button" type="submit" value="Registrarme" />
+            <button>Registrame</button>
             <h2 class="form-info">Al unirme, acepto recibir correos de proyectos</h2>
           </div>
         </div>
