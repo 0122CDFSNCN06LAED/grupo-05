@@ -122,9 +122,9 @@
             <div class="requisitos-recomendados">
               <% let categorias = listaProyectos[i].categoria%>
               <%categorias.forEach((e)=>{%>
-              <%console.log('eee', e)%>
-              <%const categoria = listaCategorias.find((p) => p.idCategoria == e);%>
-              <p><%=categoria.nombreCategoria%></p>
+                <%console.log('eee', e)%>
+                <%const categoria = listaCategorias.find((p) => p.idCategoria == e);%>
+                <p><%=categorias.nombreCategoria%></p>
               <%})%>
             </div>
           </div>
