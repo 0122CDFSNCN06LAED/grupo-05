@@ -14,17 +14,23 @@
   <body>
     <header class="header"><%- include('./partials/header') %></header>
     <main class="main-register">
-      <form action="/views/index.html" method="get" class="main-form">
+      <form action="/user/login" method="POST" class="main-form">
         <h2 class="form-info">Ingresar a la página</h2>
         <div class="register-section">
           <div class="input-div">
-            <label class="input-label" for="user-email ">Ingresá tu email</label>
-            <input class="input-text" type="email" name="user-email" id="user-email" placeholder="Email" required />
+            <label class="input-label" for="email ">Ingresá tu email</label>
+            <input class="input-text" type="text" name="email" id="email" placeholder="Email" value="<%= locals.old && old.email%>" />
+            <% if(locals.errors && errors.email){%>
+              <p><%=errors.email.msg%></p>
+            <%}%>
           </div>
 
           <div class="input-div">
-            <label class="input-label" for="user-password">Ingresá tu contraseña</label>
-            <input class="input-text" type="password" name="user-password" id="user-password" placeholder="Contraseña" required />
+            <label class="input-label" for="password">Ingresá tu contraseña</label>
+            <input class="input-text" type="password" name="password" id="password" placeholder="Contraseña" value="<%= locals.old && old.password%>" />
+            <% if(locals.errors && errors.password){%>
+              <p><%=errors.password.msg%></p>
+            <%}%>
           </div>
           <div class="remember-div">
             <input class="remember-checkbox" type="checkbox" checked="checked" name="remember" id="remember" />

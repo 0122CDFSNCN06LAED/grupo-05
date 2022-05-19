@@ -27,35 +27,47 @@
           <div class="input-div">
             <label class="input-label" for="name">Ingresá tu nombre</label>
             <input class="input-text" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && old.name%>" />
-            <%console.log(locals.old && old.name)%>
+            <%console.log('eee',locals.old && old.name)%>
             <% if(locals.errors && errors.name){%>
               <p><%=errors.name.msg%></p>
             <%}%>
     
           </div>
           <div class="input-div">
-            <label class="input-label" for="user-surname">Ingresá tu apellido</label>
-            <input class="input-text" type="text" name="user-surname" id="user-surname" placeholder="Apellido"  />
+            <label class="input-label" for="surname">Ingresá tu apellido</label>
+            <input class="input-text" type="text" name="surname" id="surname" placeholder="Apellido" value="<%= locals.old && old.surname%>" />
+            <%console.log('rrr',locals.old && old.surname)%>
+            <% if(locals.errors && errors.surname){%>
+              <p><%=errors.surname.msg%></p>
+            <%}%>
           </div>
           <div class="input-div">
-            <label class="input-label" for="user-email ">Ingresá tu email</label>
-            <input class="input-text" type="email" name="user-email" id="user-email" placeholder="Email"  />
+            <label class="input-label" for="email ">Ingresá tu email</label>
+            <input class="input-text" type="email" name="email" id="email" placeholder="Email"  value="<%= locals.old && old.email%>" />
+            <% if(locals.errors && errors.email){%>
+              <p><%=errors.email.msg%></p>
+            <%}%>
           </div>
           <div>
             <div class="input-div">
-              <label class="input-label" for="user-password">Ingresá tu contraseña</label>
-              <input class="input-text" type="password" name="user-password" id="user-password" placeholder="Contraseña"  />
+              <label class="input-label" for="password">Ingresá tu contraseña</label>
+              <input class="input-text" type="password" name="password" id="password" placeholder="Contraseña" />
+              <% if(locals.errors && errors.password){%>
+                <p><%=errors.password.msg%></p>
+              <%}%>
             </div>
             <div class="input-div">
-              <label class="input-label" for="user-password-confirmation">Repetir contraseña</label>
+              <label class="input-label" for="passwordConfirmation">Repetir contraseña</label>
               <input
                 class="input-text"
                 type="password"
-                name="user-password-confirmation"
-                id="user-password-confirmation"
+                name="passwordConfirmation"
+                id="passwordConfirmation"
                 placeholder="Repetir contraseña"
-                
-              />
+                />
+              <% if(locals.errors && errors.passwordConfirmation){%>
+                <p><%=errors.passwordConfirmation.msg%></p>
+              <%}%>
             </div>
           </div>
           <div class="input-div">

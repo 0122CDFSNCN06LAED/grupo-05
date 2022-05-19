@@ -17,15 +17,24 @@
       <form action="/proyect" method="POST">
         <div class="item-form">
           <label for="titulo">Ingrese un título</label>
-          <input class="input-small" type="text" name="titulo" id="titulo" />
+          <input class="input-small" type="text" name="titulo" id="titulo" value="<%= locals.old && old.titulo%>" />
+          <% if(locals.errors && errors.titulo){%>
+            <p><%=errors.titulo.msg%></p>
+          <%}%>
         </div>
         <div class="item-form descrip">
           <label for="descripcion">Describa su proyecto</label>
-          <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+          <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10" ><%= locals.old && old.descripcion%></textarea>
+          <% if(locals.errors && errors.descripcion){%>
+            <p><%=errors.descripcion.msg%></p>
+          <%}%>
         </div>
         <div class="item-form prec">
           <label for="precio">Precio</label>
-          <input class="input-small" type="text" name="precio" id="precio" />
+          <input class="input-small" type="text" name="precio" id="precio" value="<%= locals.old && old.precio%>" />
+          <% if(locals.errors && errors.precio){%>
+            <p><%=errors.precio.msg%></p>
+          <%}%>
         </div>
         <div class="item-form">
           <label for="categorias">Seleccione las categorías</label>

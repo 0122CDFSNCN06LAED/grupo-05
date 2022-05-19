@@ -3,27 +3,30 @@
     "idUsuario": "1111",
     "username": "juan97",
     "name": "Juan",
-    "lastName": "Guerrero",
+    "surname": "Guerrero",
     "profileURL": "images/fotos-usuarios/1111.png",
     "email": "juan@mail.com",
+    "password": "1111",
     "fk_tipoUsuario": "1"
   },
   {
     "idUsuario": "1112",
     "username": "andrea123",
     "name": "Andrea",
-    "lastName": "Silva",
+    "surname": "Silva",
     "profileURL": "images/fotos-usuarios/1112.png",
     "email": "andrea@mail.com",
+    "password": "1111",
     "fk_tipoUsuario": "1"
   },
   {
     "idUsuario": "1113",
     "username": "RicardoMercado",
     "name": "Ricardo",
-    "lastName": "Mercado",
+    "surname": "Mercado",
     "profileURL": "images/fotos-usuarios/1112.png",
     "email": "mercado@mail.com",
+    "password": "1111",
     "fk_tipoUsuario": "2"
   }
 ]

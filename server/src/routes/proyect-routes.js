@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const proyectController = require("../controllers/proyect-controller");
+const validacion = require("../middlewares/proyecto-middleware");
 const proyectRouter = Router();
 
 proyectRouter.get("/", proyectController.proyectsList);
@@ -8,7 +9,7 @@ proyectRouter.get("/proposals", proyectController.proyectProposals);
 proyectRouter.get("/detail/:id/", proyectController.detail);
 /*** CREAR UN PRODUCTO ***/
 proyectRouter.get("/create", proyectController.create);
-proyectRouter.post("/", proyectController.store);
+proyectRouter.post("/", validacion.validacionCreate, proyectController.store);
 /*** EDITAR UN PRODUCTO ***/
 proyectRouter.get("/edit/:id", proyectController.edit);
 proyectRouter.put("/:id", proyectController.update);

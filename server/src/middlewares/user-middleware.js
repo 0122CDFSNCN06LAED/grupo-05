@@ -5,36 +5,54 @@ let validacionRegistro = [
   check("name")
     .isLength({ min: 3 })
     .withMessage("El nombre debe tener al menos 3 caracteres"),
-  check("user-surname")
-    .notEmpty()
-    .withMessage("Debe ingresar un apellido")
-    .bail(),
-  check("user-surname")
+  check("surname").notEmpty().withMessage("Debe ingresar un apellido").bail(),
+  check("surname")
     .isLength({ min: 3 })
     .withMessage("El apellido debe tener al menos 3 caracteres"),
-  check("user-email").notEmpty().withMessage("Debe ingresar un mail").bail(),
-  check("user-email")
+  check("email").notEmpty().withMessage("Debe ingresar un mail").bail(),
+  check("email")
     .isEmail()
-    .withMessage("El mail debe tener un formato válido"),
-  check("user-email")
-    .notEmpty()
-    .withMessage("Debe ingresar una contraseña")
+    .withMessage("El mail debe tener un formato válido")
     .bail(),
-  check("user-email")
+  check("email").notEmpty().withMessage("Debe ingresar una contraseña").bail(),
+  check("email")
     .isLength({ min: 5 })
     .withMessage("La contraseña debe contener al menos 5 caracteres")
     .bail(),
-  check("user-password")
+  check("password")
     .notEmpty()
     .withMessage("Debe ingresar una contraseña")
     .bail(),
-  check("user-password")
+  check("password")
     .isLength({ min: 5 })
     .withMessage("La contraseña debe contener al menos 5 caracteres"),
-  check("user-password-confirmation")
+  check("passwordConfirmation")
     .notEmpty()
     .withMessage("Debe repetir la contraseña")
     .bail(),
 ];
 
-module.exports = validacionRegistro;
+let validacionLogin = [
+  check("email").notEmpty().withMessage("Debe ingresar un mail").bail(),
+  check("email")
+    .isEmail()
+    .withMessage("El mail debe tener un formato válido")
+    .bail(),
+  check("email").notEmpty().withMessage("Debe ingresar una contraseña").bail(),
+  check("email")
+    .isLength({ min: 5 })
+    .withMessage("La contraseña debe contener al menos 5 caracteres")
+    .bail(),
+  check("password")
+    .notEmpty()
+    .withMessage("Debe ingresar una contraseña")
+    .bail(),
+  check("password")
+    .isLength({ min: 5 })
+    .withMessage("La contraseña debe contener al menos 5 caracteres"),
+];
+
+module.exports = {
+  validacionRegistro,
+  validacionLogin,
+};

@@ -28,7 +28,7 @@ module.exports = {
   registerBoton: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      res.render("login", { errors: errors.mapped() });
+      res.render("index", { errors: errors.mapped() });
     } else {
       res.render("register", { errors: errors.mapped(), old: req.body });
     }
@@ -37,7 +37,12 @@ module.exports = {
     res.render("login");
   },
   loginBoton: (req, res) => {
-    res.render("login");
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      res.render("index", { errors: errors.mapped() });
+    } else {
+      res.render("login", { errors: errors.mapped(), old: req.body });
+    }
   },
   mailbox: (req, res) => {
     const emails = mensajes;
@@ -56,14 +61,7 @@ module.exports = {
     res.render("config");
   },
   configEditarUsuario: (req, res) => {
-    if (errors.isEmpty()) {
-      /* const data = req.body;
-      req.session.userData = data;
-      res.redirect("/"); */
-    } else {
-      /* req.session.errors = errors.mapped();
-      res.redirect("/"); */
-    }
+    res.render("portfolio");
   },
   configUpdateUsuario: (req, res) => {},
 };

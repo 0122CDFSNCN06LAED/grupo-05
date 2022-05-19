@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 /* Proyectos */
 const proyectosFilePath = path.join(__dirname, "../data/proyectos.json");
 const proyectos = JSON.parse(fs.readFileSync(proyectosFilePath, "utf-8"));
@@ -42,13 +43,15 @@ const proyectController = {
     const nombresCategorias = req.body.categoria;
     const arrayCategorias = [];
 
-    nombresCategorias.forEach((nombre) => {
-      for (let i = 0; i < categorias.length; i++) {
-        if (categorias[i].nombreCategoria == nombre) {
-          arrayCategorias.push(categorias[i].idCategoria);
+    if (nombresCategorias) {
+      nombresCategorias.forEach((nombre) => {
+        for (let i = 0; i < categorias.length; i++) {
+          if (categorias[i].nombreCategoria == nombre) {
+            arrayCategorias.push(categorias[i].idCategoria);
+          }
         }
-      }
-    });
+      });
+    }
 
     const proyect = {
       ...req.body,
@@ -67,10 +70,17 @@ const proyectController = {
     };
     proyectos.push(proyect);
 
-    const jsonTxt = JSON.stringify(proyectos, null, 2);
-    fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
-
-    res.redirect("/proyect");
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      const jsonTxt = JSON.stringify(proyectos, null, 2);
+      fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
+      res.render("proyects-list", { errors: errors.mapped() });
+    } else {
+      res.render("proyect-creation", {
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    }
   },
 
   edit: (req, res) => {
