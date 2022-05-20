@@ -86,7 +86,6 @@ const proyectController = {
   edit: (req, res) => {
     const id = req.params.id;
     const proyecto = proyectos.find((p) => id == p.idProyecto);
-
     res.render("proyect-edition", {
       proyecto: proyecto,
       categorias: categorias,
@@ -108,10 +107,19 @@ const proyectController = {
       categoriaProyecto: null,
       precioProyecto: req.body.precio,
     });
-    const jsonTxt = JSON.stringify(proyectos, null, 2);
-    fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
-
-    res.redirect("/proyect");
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      const jsonTxt = JSON.stringify(proyectos, null, 2);
+      fs.writeFileSync(proyectosFilePath, jsonTxt, "utf-8");
+      res.render("proyects-list", { errors: errors.mapped() });
+    } else {
+      res.render("proyect-edition", {
+        errors: errors.mapped(),
+        old: req.body,
+        proyecto: proyecto,
+        categorias: categorias,
+      });
+    }
   },
 
   // delete: (req, res) => {

@@ -12,7 +12,11 @@ proyectRouter.get("/create", proyectController.create);
 proyectRouter.post("/", validacion.validacionCreate, proyectController.store);
 /*** EDITAR UN PRODUCTO ***/
 proyectRouter.get("/edit/:id", proyectController.edit);
-proyectRouter.put("/:id", proyectController.update);
+proyectRouter.put(
+  "/:id",
+  validacion.validacionCreate,
+  proyectController.update
+);
 /*** ELIMINAR UN PRODUCTO ***/
 proyectRouter.delete("/:id", proyectController.delete);
 module.exports = proyectRouter;
