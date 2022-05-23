@@ -28,5 +28,15 @@
     "email": "mercado@mail.com",
     "password": "1111",
     "fk_tipoUsuario": "2"
+  },
+  {
+    "idUsuario": "1114",
+    "username": "juan123",
+    "name": "juan",
+    "surname": "juanPerez",
+    "profileURL": "images/fotos-usuarios/undefined.png",
+    "email": "juan@mail.com",
+    "password": "$2a$10$a/7HspysjEpZTe/pfqEBAeE5EeDEHLQtC7EWvdzEwSrwzU19W6buu",
+    "fk_tipoUsuario": "1"
   }
 ]

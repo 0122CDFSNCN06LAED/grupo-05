@@ -35,10 +35,10 @@
             <%= listaProyectos[i].descripcionProyecto%>
           </p>
           <div class="requisitos-recomendados">
-            <% let categorias = listaProyectos[i] %>
+            <% let categorias = listaProyectos[i].categoria %>
             <% for(let i=0; i<categorias.length; i++){ %>
             <% for(let j=0; j<listaCategorias.length; j++){ %>
-            <%if(categorias[i].idCategoria==listaCategorias[j].idCategoria){%>
+            <%if(categorias[i]==listaCategorias[j].idCategoria){%>
             <p><%=listaCategorias[j].nombreCategoria%></p>
             <%}%>
               <%}%>
@@ -120,13 +120,15 @@
               <%= listaProyectos[i].descripcionProyecto%>
             </p>
             <div class="requisitos-recomendados">
-              <% let categorias = listaProyectos[i].categoria%>
-              <%categorias.forEach((e)=>{%>
-                <%console.log('eee', e)%>
-                <%const categoria = listaCategorias.find((p) => p.idCategoria == e);%>
-                <p><%=categorias.nombreCategoria%></p>
-              <%})%>
-            </div>
+              <% let categorias = listaProyectos[i].categoria %>
+              <% for(let i=0; i<categorias.length; i++){ %>
+              <% for(let j=0; j<listaCategorias.length; j++){ %>
+              <%if(categorias[i]==listaCategorias[j].idCategoria){%>
+              <p><%=listaCategorias[j].nombreCategoria%></p>
+              <%}%>
+                <%}%>
+              <%}%>
+              </div>
           </div>
         </a>
         <% } %>

@@ -1,8 +1,8 @@
 <a href="/" class="link-logo"><img class="logo" src="/images/logo-icon.png" alt="Logo" /></a>
 <div class="usuario-datos">
     <div class="usuario-texto">
-        <p>Juan Quiroga </p>
-        <p class="texto-gris">freelancer</p>
+        <p><%=locals.userLogged.username%></p>
+        <p class="texto-gris"><%=locals.userLogged.tipoUsuario%></p>
     </div>
     <img class="imagen-usuario" src=/images/usuario.png alt="Imagen Usuario" />
     <img class="nivel-icon" src="/images/level-icon.png" alt="Icono Nivel" />

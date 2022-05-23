@@ -3,6 +3,7 @@ const port = 3000;
 const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
+const userLoggedMiddleware = require("./middlewares/user-logged-middleware");
 
 const app = express();
 
@@ -17,6 +18,14 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(
+  session({
+    secret: "proyecto digital house",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+app.use(userLoggedMiddleware);
 
 //Route system
 const mainRouter = require("./routes/main-routes");

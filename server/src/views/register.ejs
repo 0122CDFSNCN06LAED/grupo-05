@@ -11,7 +11,6 @@
   </head>
 
   <body>
-    <header class="header"><%- include('./partials/header') %></header>
     <main class="main-register">
         <h2 class="form-info">Crea una cuenta</h2>
         <div class="hidden">
@@ -27,16 +26,22 @@
           <div class="input-div">
             <label class="input-label" for="name">Ingresá tu nombre</label>
             <input class="input-text" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && old.name%>" />
-            <%console.log('eee',locals.old && old.name)%>
             <% if(locals.errors && errors.name){%>
               <p><%=errors.name.msg%></p>
             <%}%>
     
           </div>
           <div class="input-div">
+            <label class="input-label" for="usuarioNombre">Ingresá tu nombre de usuario</label>
+            <input class="input-text" type="text" name="usuarioNombre" id="usuarioNombre" placeholder="Nombre usuario" value="<%= locals.old && old.usuarioNombre%>" />
+            <% if(locals.errors && errors.usuarioNombre){%>
+              <p><%=errors.usuarioNombre.msg%></p>
+            <%}%>
+    
+          </div>
+          <div class="input-div">
             <label class="input-label" for="surname">Ingresá tu apellido</label>
             <input class="input-text" type="text" name="surname" id="surname" placeholder="Apellido" value="<%= locals.old && old.surname%>" />
-            <%console.log('rrr',locals.old && old.surname)%>
             <% if(locals.errors && errors.surname){%>
               <p><%=errors.surname.msg%></p>
             <%}%>

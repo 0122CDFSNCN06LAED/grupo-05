@@ -5,6 +5,13 @@ let validacionRegistro = [
   check("name")
     .isLength({ min: 3 })
     .withMessage("El nombre debe tener al menos 3 caracteres"),
+  check("usuarioNombre")
+    .notEmpty()
+    .withMessage("Debe ingresar un nombre de usuario")
+    .bail(),
+  check("usuarioNombre")
+    .isLength({ min: 3 })
+    .withMessage("El nombre de usuario debe tener al menos 3 caracteres"),
   check("surname").notEmpty().withMessage("Debe ingresar un apellido").bail(),
   check("surname")
     .isLength({ min: 3 })
