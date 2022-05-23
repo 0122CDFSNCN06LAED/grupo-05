@@ -57,7 +57,6 @@ module.exports = {
   loginBoton: (req, res) => {
     let errors = validationResult(req);
     let usuarioEncontrado;
-
     usuarios.forEach((element) => {
       if (element.email == req.body.email) {
         usuarioEncontrado = element;
@@ -70,9 +69,9 @@ module.exports = {
           req.body.password,
           usuarioEncontrado.password
         );
+        console.log("correccctooo", correcto);
         if (correcto == true) {
           req.session.usuarioLogged = usuarioEncontrado;
-          console.log(req.session, "siuuuuuuuuuu");
           //busco el nombre de tipo de usuario para enviarlo al header
           let usuarioTipo;
           usuariosTipo.forEach((element) => {
@@ -83,8 +82,13 @@ module.exports = {
             }
           });
           req.session.usuarioLogged.tipoUsuario = usuarioTipo;
+          if (req.body.remember == "on") {
+            res.cookie("emailUsuario", req.body.email, {
+              maxAge: 1000 * 60 * 2,
+            });
+          }
           res.render("index", {
-            usuario: req.session,
+            usuario: req.session.usuarioLogged,
             /* tipoUsuario: usuarioTipo, */
             listaProyectos: proyectos,
             listaCategorias: categorias,

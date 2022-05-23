@@ -12,6 +12,7 @@
   </head>
 
   <body>
+
     <main class="main-register">
       <form action="/user/login" method="POST" class="main-form">
         <h2 class="form-info">Ingresar a la página</h2>
@@ -27,7 +28,6 @@
             <%}%>
            
           </div>
-
           <div class="input-div">
             <label class="input-label" for="password">Ingresá tu contraseña</label>
             <input class="input-text" type="password" name="password" id="password" placeholder="Contraseña" value="<%= locals.old && old.password%>" />
@@ -40,7 +40,7 @@
           </div>
           <div class="remember-div">
             <input class="remember-checkbox" type="checkbox" checked="checked" name="remember" id="remember" />
-            <label class="remember-label" for="remember">Recordar mi contraseña</label>
+            <label class="remember-label" for="remember">Recordar mi usuario</label>
           </div>
           <div class="input-div">
             <input class="input-button" type="submit" value="Ingresar" />
