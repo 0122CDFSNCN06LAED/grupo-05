@@ -55,6 +55,7 @@ module.exports = {
     res.render("login");
   },
   loginBoton: (req, res) => {
+    //Guardar datos del usuario logueado
     let errors = validationResult(req);
     let usuarioEncontrado;
     usuarios.forEach((element) => {
@@ -65,19 +66,14 @@ module.exports = {
     if (errors.isEmpty()) {
       if (usuarioEncontrado) {
         //verifico contraseña
-        let correcto = bcrypt.compareSync(
-          req.body.password,
-          usuarioEncontrado.password
-        );
+        let correcto = bcrypt.compareSync(req.body.password, usuarioEncontrado.password);
         console.log("correccctooo", correcto);
         if (correcto == true) {
           req.session.usuarioLogged = usuarioEncontrado;
           //busco el nombre de tipo de usuario para enviarlo al header
           let usuarioTipo;
           usuariosTipo.forEach((element) => {
-            if (
-              element.idTipoUsuario == req.session.usuarioLogged.fk_tipoUsuario
-            ) {
+            if (element.idTipoUsuario == req.session.usuarioLogged.fk_tipoUsuario) {
               usuarioTipo = element.nombreTipoUsuario;
             }
           });
