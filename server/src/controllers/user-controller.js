@@ -52,7 +52,7 @@ module.exports = {
     }
   },
   login: (req, res) => {
-    res.render("login");
+    res.render("login", { noUsuario: "", malContrasenia: "" });
   },
   loginBoton: (req, res) => {
     let errors = validationResult(req);
@@ -126,8 +126,8 @@ module.exports = {
     }
   },
   logout: (req, res) => {
-    console.log(req.session);
-    res.render("register");
+    req.session.destroy();
+    console.log("que tal?");
   },
   mailbox: (req, res) => {
     const emails = mensajes;

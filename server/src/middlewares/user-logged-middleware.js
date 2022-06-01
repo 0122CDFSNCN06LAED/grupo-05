@@ -17,12 +17,19 @@ function userLoggedMiddleware(req, res, next) {
   if (req.session.usuarioLogged) {
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.usuarioLogged;
-  } /* else {
-    if (req.url != "/user/login") {
-      console.log("holis");
-      res.render("login", { noUsuario: "", malContrasenia: "" });
-    }
-  } */
+  } else {
+    console.log("else");
+    let usuarioEncontrado;
+    usuarios.forEach((element) => {
+      if (element.email == req.body.email) {
+        console.log("for", element.email, req.body.email);
+        usuarioEncontrado = element;
+        console.log("elemento", usuarioEncontrado);
+        res.locals.userLogged = usuarioEncontrado;
+        console.log(res.locals.userLogged, "localss");
+      }
+    });
+  }
   next();
 }
 

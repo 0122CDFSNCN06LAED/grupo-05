@@ -1,35 +1,5 @@
 [
   {
-    "idUsuario": "1111",
-    "username": "juan97",
-    "name": "Juan",
-    "surname": "Guerrero",
-    "profileURL": "images/fotos-usuarios/1111.png",
-    "email": "juan@mail.com",
-    "password": "1111",
-    "fk_tipoUsuario": "1"
-  },
-  {
-    "idUsuario": "1112",
-    "username": "andrea123",
-    "name": "Andrea",
-    "surname": "Silva",
-    "profileURL": "images/fotos-usuarios/1112.png",
-    "email": "andrea@mail.com",
-    "password": "1111",
-    "fk_tipoUsuario": "1"
-  },
-  {
-    "idUsuario": "1113",
-    "username": "RicardoMercado",
-    "name": "Ricardo",
-    "surname": "Mercado",
-    "profileURL": "images/fotos-usuarios/1112.png",
-    "email": "mercado@mail.com",
-    "password": "1111",
-    "fk_tipoUsuario": "2"
-  },
-  {
     "idUsuario": "1114",
     "username": "juan123",
     "name": "juan",
