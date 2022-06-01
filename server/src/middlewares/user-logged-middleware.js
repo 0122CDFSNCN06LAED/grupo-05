@@ -18,15 +18,11 @@ function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.usuarioLogged;
   } else {
-    console.log("else");
     let usuarioEncontrado;
     usuarios.forEach((element) => {
       if (element.email == req.body.email) {
-        console.log("for", element.email, req.body.email);
         usuarioEncontrado = element;
-        console.log("elemento", usuarioEncontrado);
         res.locals.userLogged = usuarioEncontrado;
-        console.log(res.locals.userLogged, "localss");
       }
     });
   }

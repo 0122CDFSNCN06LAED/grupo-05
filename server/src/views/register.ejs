@@ -21,7 +21,7 @@
           </div>
           <hr class="solid" />
         </div>
-        <form action="/user/register" method="POST">
+        <form action="/user/register" method="POST" enctype="multipart/form-data">
         <div class="register-section">
           <div class="input-div">
             <label class="input-label" for="name">Ingresá tu nombre</label>
@@ -73,6 +73,10 @@
               <% if(locals.errors && errors.passwordConfirmation){%>
                 <p><%=errors.passwordConfirmation.msg%></p>
               <%}%>
+            </div>
+            <div>
+              <label for="foto">Subir Imagen</label>
+              <input type="file" name="avatar" />
             </div>
           </div>
           <div class="input-div">

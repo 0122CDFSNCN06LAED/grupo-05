@@ -4,16 +4,13 @@ const validacion = require("../middlewares/user-middleware");
 const userRouter = Router();
 const guestMiddleware = require("../middlewares/guest-middleware");
 const authGuestMiddleware = require("../middlewares/auth-guest-middleware");
+const uploadImages = require("../middlewares/uploadImagen");
 
 userRouter.get("/", userController.config);
-userRouter.get(
-  "/register",
-  guestMiddleware,
-  authGuestMiddleware,
-  userController.register
-);
+userRouter.get("/register", guestMiddleware, userController.register);
 userRouter.post(
   "/register",
+  uploadImages.single("avatar"),
   validacion.validacionRegistro,
   userController.registerBoton
 );
@@ -37,5 +34,7 @@ userRouter.put(
   authGuestMiddleware,
   userController.configUpdateUsuario
 );
+
+/* router.post("/subir-archivo", upload.any(), fileController.upload); */
 
 module.exports = userRouter;
