@@ -2,11 +2,12 @@
 <a href="/" class="link-logo"><img class="logo" src="/images/logo-icon.png" alt="Logo" /></a>
 <div class="usuario-datos">
     <div class="usuario-texto">
-        <%console.log('loggeddd', locals.userLogged)%>
+        <%console.log('loggeddd', locals.userLogged.profileURL)%>
         <p><%=locals.userLogged.username%></p>
         <p class="texto-gris"><%=locals.userLogged.tipoUsuario%></p>
     </div>
-    <img class="imagen-usuario" src=/images/usuario.png alt="Imagen Usuario" />
+    <%let url = locals.userLogged.profileURL%>
+    <img class="imagen-usuario" src=<%=url%> alt="Imagen Usuario"  />
     <img class="nivel-icon" src="/images/level-icon.png" alt="Icono Nivel" />
     <div class="dropdown">
         <img class="configuracion btn btn-secondary dropdown-toggle boton-desplegable" src="/images/config-icon.svg"

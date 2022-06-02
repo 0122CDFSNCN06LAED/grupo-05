@@ -31,12 +31,13 @@ module.exports = {
     res.render("register");
   },
   registerBoton: (req, res) => {
+    console.log("fileee", req.file);
     let newUsuario = {
       idUsuario: "1114",
       username: req.body.usuarioNombre,
       name: req.body.name,
       surname: req.body.surname,
-      profileURL: `images/fotos-usuarios/${req.body.idUsuario}.png`, //cuando guardemos la imagen el nombre tendría que ser el id de la persona
+      profileURL: `/images/fotos-usuarios/${req.file.filename}`,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       fk_tipoUsuario: "1",
@@ -55,7 +56,6 @@ module.exports = {
     res.render("login", { noUsuario: "", malContrasenia: "" });
   },
   loginBoton: (req, res) => {
-    //Guardar datos del usuario logueado
     let errors = validationResult(req);
     let usuarioEncontrado;
     usuarios.forEach((element) => {
@@ -127,8 +127,8 @@ module.exports = {
     }
   },
   logout: (req, res) => {
-    req.session.destroy();
-    console.log("que tal?");
+    console.log(req.session);
+    res.render("register");
   },
   mailbox: (req, res) => {
     const emails = mensajes;
