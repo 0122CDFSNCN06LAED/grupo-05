@@ -37,7 +37,7 @@ module.exports = {
       username: req.body.usuarioNombre,
       name: req.body.name,
       surname: req.body.surname,
-      profileURL: `/images/fotos-usuarios/${req.file.filename}`,
+      profileURL: `/images/user-images/${req.file.filename}`,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       fk_tipoUsuario: "1",

@@ -17,6 +17,7 @@ function userLoggedMiddleware(req, res, next) {
   if (req.session.usuarioLogged) {
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.usuarioLogged;
+    console.log("ifff", res.locals);
   } else {
     let usuarioEncontrado;
     usuarios.forEach((element) => {
@@ -25,6 +26,7 @@ function userLoggedMiddleware(req, res, next) {
         res.locals.userLogged = usuarioEncontrado;
       }
     });
+    console.log("resss", res.locals);
   }
   next();
 }
