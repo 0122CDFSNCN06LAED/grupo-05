@@ -79,6 +79,7 @@ Entregable: A
 - Cambiar todas las referencias a "bidding" y reemplazarlas por "proyects".
 - Hacer header sin hamburger menu para mostrar en register y login.
 
+# Sprint 5:
 ## 04/05
 
 ### Hecho:
@@ -114,3 +115,30 @@ Entregable: A
 - Validación para el campo nombre, con express-validator en el register
 - Tener cuidado con los nombres de los checks en el middleware user-middleware(camelCase vs kebab-case)
 - Eliminamos niveles
+
+# Sprint 5:
+## 06/06
+
+### Hacer:
+- Actualizar tablero de trabajo
+- Script de creación de estructuras de bases de datos con:
+  - Creación de base de datos y de todas sus tablas.
+  - Tipos de datos de los campos y sus restricciones
+  - Relaciones entre las diferentes tablas
+- Script de datos de base de datos para:
+  - Tablas de usuarios
+  - Tablas de productos
+  - Tablas secundarias
+  - Tabla de carrito de compras y productos de carrito de compras
+- Creacion de carpetas Sequelize con:
+  - Archivos de configuración
+  - Modelos con sus relaciones
+- BREAD 
+  - De productos
+  - De usuarios
+  - De tablas secundarias
+### Haciendo:
+- Diagrama de base de datos
+- 
+### Hecho:
+- 
