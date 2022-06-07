@@ -12,7 +12,6 @@
   </head>
 
   <body>
-
     <main class="main-register">
       <form action="/user/login" method="POST" class="main-form">
         <h2 class="form-info">Ingresar a la página</h2>
@@ -21,20 +20,18 @@
             <label class="input-label" for="email ">Ingresá tu email</label>
             <input class="input-text" type="text" name="email" id="email" placeholder="Email" value="<%= locals.old && old.email%>" />
             <% if(locals.errors && errors.email){%>
-              <p><%=errors.email.msg%></p>
-            <%}%>
-            <% if(noUsuario != ""){%>
-              <p><%=noUsuario%></p>
+            <p><%=errors.email.msg%></p>
+            <%}%> <% if(noUsuario != ""){%>
+            <p><%=noUsuario%></p>
             <%}%>
           </div>
           <div class="input-div">
             <label class="input-label" for="password">Ingresá tu contraseña</label>
             <input class="input-text" type="password" name="password" id="password" placeholder="Contraseña" value="<%= locals.old && old.password%>" />
             <% if(locals.errors && errors.password){%>
-              <p><%=errors.password.msg%></p>
-            <%}%>
-            <% if(malContrasenia != ""){%>
-              <p><%=malContrasenia%></p>
+            <p><%=errors.password.msg%></p>
+            <%}%> <% if(malContrasenia != ""){%>
+            <p><%=malContrasenia%></p>
             <%}%>
           </div>
           <div class="remember-div">
@@ -49,7 +46,7 @@
       <div class="info-div">
         <h2 class="info">Todavía no tenés cuenta?</h2>
         <label class="input-label" for="crear-cuenta">Crea tu cuenta</label>
-        <a href="/register"><button class="input-button" name="crear-cuenta">Crear cuenta</button> </a>
+        <a href="/user/register"><button class="input-button" name="crear-cuenta">Crear cuenta</button> </a>
       </div>
     </main>
     <footer class="footer"><%- include('./partials/footer') %></footer>

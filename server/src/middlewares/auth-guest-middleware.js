@@ -1,8 +1,9 @@
 function authGuestMiddleware(req, res, next) {
   if (!req.session.usuarioLogged) {
-    return res.render("notFound");
+    return res.redirect('user/login');
+  } else {
+    next();
   }
-  next();
 }
 
 module.exports = authGuestMiddleware;
