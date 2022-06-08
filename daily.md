@@ -80,6 +80,7 @@ Entregable: A
 - Hacer header sin hamburger menu para mostrar en register y login.
 
 # Sprint 5:
+
 ## 04/05
 
 ### Hecho:
@@ -117,9 +118,11 @@ Entregable: A
 - Eliminamos niveles
 
 # Sprint 5:
+
 ## 06/06
 
 ### Hacer:
+
 - Actualizar tablero de trabajo
 - Script de creación de estructuras de bases de datos con:
   - Creación de base de datos y de todas sus tablas.
@@ -133,12 +136,39 @@ Entregable: A
 - Creacion de carpetas Sequelize con:
   - Archivos de configuración
   - Modelos con sus relaciones
-- BREAD 
+- BREAD
   - De productos
   - De usuarios
   - De tablas secundarias
+
 ### Haciendo:
+
 - Diagrama de base de datos
-- 
+-
+
 ### Hecho:
-- 
+
+-
+
+## 08/06
+
+### Hacer
+
+- Crear scrpit de base de datos.
+- Armar modelos y relaciones.
+- Enlazar modelos a la DB.
+-
+
+### Haciendo
+
+- Verificar validaciones del register
+- Agregar imagen predetermianda a los usuarios que no suban una.
+- Hacer que el ID sea autoincremental.
+- Verificar que el username no se repita y pedir que cambie el nombre en el register form.
+
+### Hecho
+
+- Solucionamos bugs del login y register, redirección de rutas.
+- Instalación de sequelize. Se usó npx sequeize init para inicializar sequelize, hay que ver si está bien.
+- Terminamios diagrama de relaciones.
+-
