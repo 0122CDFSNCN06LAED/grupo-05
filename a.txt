@@ -1,4 +1,0 @@
-Sobre este sprint: Tienen un error en la linea 127 del index, les falta una letra nomas. Muy bien que hayan hecho la redirección cuando crean un proyecto y también cuando se edita.
- El CRUD les está funcionando bien, se puede agregar. editar y borrar sin inconvenientes.
-Vayan considerando la posibilidad de poder ingresar a un proposal de manera individual, para visualizarlo o editarlo sin necesidad de escribir en el navegador el numero de id (que va a ser un numero asignado internamente y desconocido para quienes accedan a la pagina)
-Sigan asi que van re bien!
