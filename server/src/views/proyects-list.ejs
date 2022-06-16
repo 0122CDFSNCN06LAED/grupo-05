@@ -17,31 +17,36 @@
     </header>
     <div class="contenido">
       <div class="contenedor-proyectos">
+        <% console.log('jjjjj', listaProyectos, listaCategorias, listaProyCat) %>
             <% for(let i=0; i<listaProyectos.length; i++){ %>
             <div class="proyecto">
                 <div class="datos-proyecto">
                     <p class="titulo">
-                        <%= listaProyectos[i].tituloProyecto%>
+                        <%= listaProyectos[i].titulo%>
                     </p>
 
                     <p class="precio-proyecto">
-                        <%= listaProyectos[i].precioProyecto%>
+                        <%= listaProyectos[i].precio%>
                     </p>
                     <p>
-                        <%= listaProyectos[i].fechaCreacionProyecto%>
+                        <%= listaProyectos[i].fechaCreacion%>
                     </p>
                     <p class="descripcion">
-                        <%= listaProyectos[i].descripcionProyecto%>
+                        <%= listaProyectos[i].descripcion%>
                     </p>
                     <div class="categorias-proyecto">
-                        <% let categorias = listaProyectos[i].categoria %>
-                        <% for(let i=0; i<categorias.length; i++){ %>
-                        <% for(let j=0; j<listaCategorias.length; j++){ %>
-                        <%if(categorias[i].idCategoria==listaCategorias[j].idCategoria){%>
+                        <!-- proyCat contiene la instancia que pertenece al proyecto y le saco la/s categoría/s -->
+                        <% for(let i=0; i<listaProyCat; i++){ %>
+                        <% if(listaProyCat[i].proyectoId==listaProyectos[i].id){ %>
+                        <!-- busco la categoria (nombre) -->
+                        <% let categId = listaProyCat[i].proyectoId %>
+                        <% for(let j=0; j<listaCategorias; j++) { %>
+                        <% if(categId == listaCategorias[j].id){ %>
                         <p><%=listaCategorias[j].nombreCategoria%></p>
-                        <%}%>
-                        <%}%>
-                        <%}%>
+                        <% } %>
+                        <% } %>
+                        <% } %>
+                        <% } %>
                     </div>
                     <div class="edicion">
                         <img class="basura" src="/images/basura.png" alt="camara">

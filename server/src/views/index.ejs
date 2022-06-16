@@ -20,29 +20,32 @@
       <% for(let i=0; i<listaProyectos.length; i++){ %>
       <a href="#" class="card hipervinculo">
         <h5 class="card-header">
-          <%= listaProyectos[i].tituloProyecto%>
+          <%= listaProyectos[i].titulo%>
         </h5>
         <div class="card-body">
           <div class="fecha-horario">
             <p class="price">
-              <%= listaProyectos[i].precioProyecto%>
+              <%= listaProyectos[i].precio%>
             </p>
             <p class="fecha">
-              <%= listaProyectos[i].fechaCreacionProyecto%>
+              <%= listaProyectos[i].fechaCreacion%>
             </p>
           </div>
           <p class="card-text">
-            <%= listaProyectos[i].descripcionProyecto%>
+            <%= listaProyectos[i].descripcion%>
           </p>
           <div class="requisitos-recomendados">
-            <% let categorias = listaProyectos[i].categoria %>
-            <% for(let i=0; i<categorias.length; i++){ %>
-            <% for(let j=0; j<listaCategorias.length; j++){ %>
-            <%if(categorias[i]==listaCategorias[j].idCategoria){%>
-            <p><%=listaCategorias[j].nombreCategoria%></p>
-            <%}%>
-              <%}%>
-            <%}%>
+            <% for(let j=0; j<listaProyCat.length; j++){ %>
+              <% if(listaProyCat[j].proyectoId==listaProyectos[i].id){ %>
+              <!-- busco la categoria (nombre) -->
+              <% let categId = listaProyCat[j].categoriaId %>
+              <% for(let k=0; k<listaCategorias.length; k++) { %>
+              <% if(categId == listaCategorias[k].id){ %>
+              <p><%=listaCategorias[k].nombre%></p>
+              <% } %>
+              <% } %>
+              <% } %>
+              <% } %>
             </div>
           </div>
         </a>
@@ -81,10 +84,10 @@
             <!--  -->
             <% for(let i=0; i<listaCategorias.length; i++){ %>
             <div class="label-checkbox">
-              <input type="checkbox" name="categoria" value=<%=listaCategorias[i].idCategoria%> class="cat"
-                id=<%=listaCategorias[i].idCategoria%>>
-              <label for="${listaCategorias[index].idCategoria}">
-                <%=listaCategorias[i].nombreCategoria%>
+              <input type="checkbox" name="categoria" value=<%=listaCategorias[i].id%> class="cat"
+                id=<%=listaCategorias[i].id%>>
+              <label for="${listaCategorias[index].id}">
+                <%=listaCategorias[i].nombre%>
               </label>
             </div>
             <% } %>
@@ -105,29 +108,32 @@
         <% for(let i=0; i<listaProyectos.length; i++){ %>
         <a href="#" class="card hipervinculo">
           <h5 class="card-header">
-            <%= listaProyectos[i].tituloProyecto%>
+            <%= listaProyectos[i].titulo%>
           </h5>
           <div class="card-body">
             <div class="fecha-horario">
               <p class="price">
-                <%= listaProyectos[i].precioProyecto%>
+                <%= listaProyectos[i].precio%>
               </p>
               <p class="fecha">
-                <%= listaProyectos[i].fechaCreacionProyecto%>
+                <%= listaProyectos[i].fechaCreacion%>
               </p>
             </div>
             <p class="card-text">
-              <%= listaProyectos[i].descripcionProyecto%>
+              <%= listaProyectos[i].descripcion%>
             </p>
             <div class="requisitos-recomendados">
-              <% let categorias = listaProyectos[i].categoria %>
-              <% for(let i=0; i<categorias.length; i++){ %>
-              <% for(let j=0; j<listaCategorias.length; j++){ %>
-              <%if(categorias[i]==listaCategorias[j].idCategoria){%>
-              <p><%=listaCategorias[j].nombreCategoria%></p>
-              <%}%>
-                <%}%>
-              <%}%>
+              <% for(let j=0; j<listaProyCat.length; j++){ %>
+                <% if(listaProyCat[j].proyectoId==listaProyectos[i].id){ %>
+                <!-- busco la categoria (nombre) -->
+                <% let categId = listaProyCat[j].categoriaId %>
+                <% for(let k=0; k<listaCategorias.length; k++) { %>
+                <% if(categId == listaCategorias[k].id){ %>
+                <p><%=listaCategorias[k].nombre%></p>
+                <% } %>
+                <% } %>
+                <% } %>
+                <% } %>
               </div>
           </div>
         </a>

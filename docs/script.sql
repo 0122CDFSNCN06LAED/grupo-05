@@ -4,8 +4,8 @@ CREATE DATABASE grupo_05
 USE grupo_05
 
 CREATE TABLE `categorias` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `nombreCategoria` varchar(100) DEFAULT NULL,
+  `id` varchar(45) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -13,7 +13,7 @@ CREATE TABLE `categorias` (
 -- grupo_05.estados definition
 
 CREATE TABLE `estados` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(45) unsigned NOT NULL AUTO_INCREMENT,
   `nombreEstado` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -22,7 +22,7 @@ CREATE TABLE `estados` (
 -- grupo_05.tipoUsuario definition
 
 CREATE TABLE `tipoUsuario` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(45) unsigned NOT NULL AUTO_INCREMENT,
   `rol` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -34,10 +34,11 @@ CREATE TABLE `usuarios` (
   `username` varchar(100) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `surname` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `profileURL` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   `imagenUsuario` varchar(10000) DEFAULT NULL,
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(45) unsigned NOT NULL AUTO_INCREMENT,
   `tipoUsuarioId` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `tipoUsuario_FK` (`tipoUsuarioId`),
@@ -48,9 +49,9 @@ CREATE TABLE `usuarios` (
 -- grupo_05.mensajes definition
 
 CREATE TABLE `mensajes` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `contenidoMensaje` varchar(100) DEFAULT NULL,
-  `fechaMensaje` date NOT NULL,
+  `id` varchar(45) unsigned NOT NULL AUTO_INCREMENT,
+  `contenido` varchar(100) DEFAULT NULL,
+  `fecha` date NOT NULL,
   `destinatarioId` int unsigned DEFAULT NULL,
   `remitenteId` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -64,7 +65,7 @@ CREATE TABLE `mensajes` (
 -- grupo_05.proyectos definition
 
 CREATE TABLE `proyectos` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(45) unsigned NOT NULL AUTO_INCREMENT,
   `titulo` varchar(100) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
   `imagenProyecto` varchar(10000) DEFAULT NULL,
@@ -73,20 +74,21 @@ CREATE TABLE `proyectos` (
   `updatedAt` timestamp NULL DEFAULT NULL,
   `fechaInicio` date DEFAULT NULL,
   `fechaFinalizacion` varchar(100) DEFAULT NULL,
+  `fechaCreacion` date DEFAULT NULL,
   `estadoId` int unsigned DEFAULT NULL,
   `creador` int unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `creador_FK` (`creador`),
   KEY `estado_FK` (`estadoId`),
   CONSTRAINT `creador_FK` FOREIGN KEY (`creador`) REFERENCES `usuarios` (`id`),
-  CONSTRAINT `estado_FK` FOREIGN KEY (`estadoId`) REFERENCES `estados` (`id`)
+  CONSTRAINT `estado_FK` FOREIGN KEY (`estadoId`) REFERENCES `estados` (`id`),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 -- grupo_05.proyectousuario definition
 
 CREATE TABLE `proyectousuario` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(45) unsigned NOT NULL AUTO_INCREMENT,
   `postulanteId` int unsigned DEFAULT NULL,
   `proyectoId` int unsigned DEFAULT NULL,
   `ganador` tinyint(1) DEFAULT NULL,
@@ -101,7 +103,7 @@ CREATE TABLE `proyectousuario` (
 -- grupo_05.proyectoCategoria definition
 
 CREATE TABLE `proyectoCategoria` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(45) unsigned NOT NULL AUTO_INCREMENT,
   `categoriaId` int unsigned DEFAULT NULL,
   `proyectoId` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
