@@ -16,12 +16,8 @@ const proyectController = {
   proyectsList: async (req, res) => {
     try {
       const proyectos = await db.Proyectos.findAll();
-      console.log(proyectos, "proyectos");
-      /* acá hay que cambiar cosas, ya que antes no existía proyectosCategorias */
       const categorias = await db.Categorias.findAll();
-      console.log(categorias, "categorias");
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
-      console.log(proyectoCategoria, "proyectoCategoria");
       /* const listaProyectos = proyectos;
       const listaCategorias = categorias; */
       res.render("proyects-list", {

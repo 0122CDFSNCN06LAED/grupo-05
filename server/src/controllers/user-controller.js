@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const db = require("../../database/models");
+const { v1: uuidv1, v4: uuidv4 } = require("uuid");
 
 /* Mensajes*/
 const mensajesFilePath = path.join(__dirname, "../data/mensajes.json");
@@ -33,30 +34,33 @@ module.exports = {
   },
   registerForm: async (req, res) => {
     try {
+      const proyectos = await db.Proyectos.findAll();
+      const categorias = await db.Categorias.findAll();
+      const proyectoCategoria = await db.ProyectoCategoria.findAll();
       let newUser = {
-        id: "1114",
+        id: uuidv1(),
         username: req.body.usuarioNombre,
         name: req.body.name,
         surname: req.body.surname,
-        profileURL: `/images/user-images/${req.file.filename}`,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         tipoUsuarioId: "1",
       };
-      const usuarito = await db.Usuarios.create(newUser);
-      console.log("usuarito", usuarito);
+      if (req.file) {
+        newUser.profileURL = `/images/user-images/${req.file.filename}`;
+      }
+      await db.Usuarios.create(newUser);
       users.push(newUser);
       let errors = validationResult(req);
       if (errors.isEmpty()) {
         res.locals.userLogged = newUser;
-        const jsonTxt = JSON.stringify(users, null, 2);
-        fs.writeFileSync(usuariosFilePath, jsonTxt, "utf-8");
         req.session.userLogged = newUser;
         res.render("index", {
           errors: errors.mapped(),
           user: req.session.userLogged,
           listaProyectos: proyectos,
           listaCategorias: categorias,
+          listaProyCat: proyectoCategoria,
           noUsuario: "",
           malContrasenia: "",
         });
@@ -82,7 +86,6 @@ module.exports = {
           email: req.body.email,
         },
       });
-      console.log("user", user);
       if (user) {
         usuarioEncontrado = user;
       }
@@ -110,6 +113,9 @@ module.exports = {
                 maxAge: 1000 * 60 * 2,
               });
             }
+            let proyectos = await db.Proyectos.findAll();
+            let categorias = await db.Categorias.findAll();
+            let proyCat = await db.ProyectoCategoria.findAll();
             res.render("index", {
               user: req.session.userLogged,
               /* tipoUsuario: usuarioTipo, */
@@ -156,8 +162,8 @@ module.exports = {
     res.render("register");
   },
   mailbox: (req, res) => {
-    const emails = mensajes;
-    const listaUsuarios = users;
+    const emails = db.Mensajes.findAll();
+    const listaUsuarios = db.Usuarios.findAll();
 
     res.render("mailbox", {
       emails: emails,
