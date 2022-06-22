@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
-  const alias = 'Mensajes';
+  const alias = "Mensajes";
   const columns = {
     id: {
       type: Sequelize.STRING,
@@ -14,17 +14,21 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const config = {
-    tableName: 'mensajes',
+    tableName: "mensajes",
     timestamps: false,
   };
 
   const Mensajes = sequelize.define(alias, columns, config);
 
   // relaciones
-    Usuarios.belongsTo(models.Usuarios, {
-      as: "mensaje",
-      foreignKey: "destinatarioId",
-    });
+  Mensajes.hasMany(models.usuarios, {
+    as: "mensajeDes",
+    foreignKey: "destinatarioId",
+  });
+  Mensajes.hasMany(models.usuarios, {
+    as: "mensajeRemi",
+    foreignKey: "remitenteId",
+  });
 
   return Mensajes;
 };
