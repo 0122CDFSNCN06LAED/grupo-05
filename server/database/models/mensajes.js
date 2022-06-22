@@ -21,13 +21,10 @@ module.exports = (sequelize, dataTypes) => {
   const Mensajes = sequelize.define(alias, columns, config);
 
   // relaciones
-
-  /* Genres.associate = (models) => {
-    Genres.hasMany(models.Movies, {
-      as: 'movies',
-      foreignKey: 'genre_id',
+    Usuarios.belongsTo(models.Usuarios, {
+      as: "mensaje",
+      foreignKey: "destinatarioId",
     });
-  }; */
 
   return Mensajes;
 };
