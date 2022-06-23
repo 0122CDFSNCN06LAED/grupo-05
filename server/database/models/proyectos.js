@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
     fechaCreacion: dataTypes.DATE,
     fechaInicio: dataTypes.DATE,
     fechaFinalizacion: dataTypes.DATE,
-    developer: dataTypes.STRING,
+    creadorId: dataTypes.STRING,
   };
 
   const config = {
@@ -30,19 +30,19 @@ module.exports = (sequelize, dataTypes) => {
 
   Proyectos.associate = (models) => {
     Proyectos.hasMany(models.Estados, {
-      as: "estadoId",
+      as: "estadoid",
       foreignKey: "estadoId",
     });
     Proyectos.hasMany(models.Usuarios, {
-      as: "creadorP",
-      foreignKey: "creador",
+      as: "creadorid",
+      foreignKey: "creadorId",
     });
     Proyectos.hasMany(models.ProyectoCategoria, {
-      as: "categorias",
+      as: "proyectoid",
       foreignKey: "proyectoId",
     });
     Proyectos.hasMany(models.ProyectoUsuario, {
-      as: "postulaciones",
+      as: "proyectoidU",
       foreignKey: "proyectoId",
     });
   };

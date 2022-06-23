@@ -20,15 +20,17 @@ module.exports = (sequelize, dataTypes) => {
 
   const Mensajes = sequelize.define(alias, columns, config);
 
-  // relaciones
-  Mensajes.hasMany(models.Usuarios, {
-    as: "mensajeDes",
+  //relaciones
+  Mensajes.associate = (models) => {
+  Mensajes.belongsTo(models.Usuarios, {
+    as: "destinatarioid",
     foreignKey: "destinatarioId",
   });
-  Mensajes.hasMany(models.Usuarios, {
-    as: "mensajeRemi",
+  Mensajes.belongsTo(models.Usuarios, {
+    as: "remitenteid",
     foreignKey: "remitenteId",
   });
+};
 
   return Mensajes;
 };

@@ -22,11 +22,11 @@ module.exports = (sequelize, dataTypes) => {
 
   ProyectoCategoria.associate = (models) => {
     ProyectoCategoria.belongsTo(models.Categorias, {
-      as: "categoriaId",
+      as: "categoriaid",
       foreignKey: "categoriaId",
     });
     ProyectoCategoria.belongsTo(models.Proyectos, {
-      as: "proyectoId",
+      as: "proyectoid",
       foreignKey: "proyectoId",
     });
   };

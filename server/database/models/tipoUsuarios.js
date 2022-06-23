@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
 
   tipoUsuarios.associate = (models) => {
     tipoUsuarios.belongsTo(models.Usuarios, {
-      as: "usuario",
+      as: "tipousuarioid",
       foreignKey: "tipoUsuarioId",
     });
   };

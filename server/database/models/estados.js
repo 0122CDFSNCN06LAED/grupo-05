@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
       primaryKey: true,
       unique: true,
     },
-    nombre: dataTypes.STRING,
+    nombreEstado: dataTypes.STRING,
   };
 
   const config = {
@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
 
   Estados.associate = (models) => {
     Estados.belongsTo(models.Proyectos, {
-      as: "estadoId",
+      as: "estadoid",
       foreignKey: "estadoId",
     });
   };
