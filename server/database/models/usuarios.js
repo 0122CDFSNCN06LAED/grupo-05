@@ -28,22 +28,22 @@ module.exports = (sequelize, dataTypes) => {
 
   Usuarios.associate = (models) => {
     Usuarios.hasMany(models.proyectoUsuario, {
-      as: "postulante",
+      as: "postulanteId",
       foreignKey: "postulanteId",
     });
     Usuarios.hasMany(models.tipoUsuarios, {
       as: "tipousuario",
       foreignKey: "tipoUsuarioId",
     });
-    Usuarios.belongsTo(models.mensajes, {
+    Usuarios.belongsTo(models.Mensajes, {
       as: "mensajeDes",
       foreignKey: "destinatarioId",
     });
-    Usuarios.belongsTo(models.mensajes, {
+    Usuarios.belongsTo(models.Mensajes, {
       as: "mensajeRemi",
       foreignKey: "remitenteId",
     });
-    Usuarios.belongsTo(models.proyectos, {
+    Usuarios.belongsTo(models.Proyectos, {
       as: "creadorP",
       foreignKey: "tipoUsuarioId",
     });

@@ -21,11 +21,11 @@ module.exports = (sequelize, dataTypes) => {
   const Mensajes = sequelize.define(alias, columns, config);
 
   // relaciones
-  Mensajes.hasMany(models.usuarios, {
+  Mensajes.hasMany(models.Usuarios, {
     as: "mensajeDes",
     foreignKey: "destinatarioId",
   });
-  Mensajes.hasMany(models.usuarios, {
+  Mensajes.hasMany(models.Usuarios, {
     as: "mensajeRemi",
     foreignKey: "remitenteId",
   });

@@ -29,19 +29,19 @@ module.exports = (sequelize, dataTypes) => {
   // relaciones
 
   Proyectos.associate = (models) => {
-    Proyectos.hasMany(models.estados, {
-      as: "estado",
+    Proyectos.hasMany(models.Estados, {
+      as: "estadoId",
       foreignKey: "estadoId",
     });
-    Proyectos.hasMany(models.usuarios, {
+    Proyectos.hasMany(models.Usuarios, {
       as: "creadorP",
       foreignKey: "creador",
     });
-    Proyectos.hasMany(models.proyectoCategoria, {
-      as: "proyecto",
+    Proyectos.hasMany(models.ProyectoCategoria, {
+      as: "categorias",
       foreignKey: "proyectoId",
     });
-    Proyectos.hasMany(models.proyectoUsuario, {
+    Proyectos.hasMany(models.ProyectoUsuario, {
       as: "postulaciones",
       foreignKey: "proyectoId",
     });

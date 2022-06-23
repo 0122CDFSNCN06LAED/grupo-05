@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
   // relaciones
 
   tipoUsuarios.associate = (models) => {
-    tipoUsuarios.belongsTo(models.usuarios, {
+    tipoUsuarios.belongsTo(models.Usuarios, {
       as: "usuario",
       foreignKey: "tipoUsuarioId",
     });

@@ -117,7 +117,7 @@ Entregable: A
 - Tener cuidado con los nombres de los checks en el middleware user-middleware(camelCase vs kebab-case)
 - Eliminamos niveles
 
-# Sprint 5:
+# Sprint 6:
 
 ## 06/06
 
@@ -171,4 +171,19 @@ Entregable: A
 - Solucionamos bugs del login y register, redirección de rutas.
 - Instalación de sequelize. Se usó npx sequeize init para inicializar sequelize, hay que ver si está bien.
 - Terminamios diagrama de relaciones.
--
+
+## 22/6
+
+### Hecho:
+
+- diagrama de base de datos
+- script base de datos
+- modelos y relaciones
+- enlazar modelos a la base de datos
+- Hacer que el ID sea autoincremental.
+
+### Haciendo:
+
+- verificar validaciones del register
+- Agregar imagen predetermianda a los usuarios que no suban una.
+- Verificar que el username no se repita y pedir que cambie el nombre en el register form.

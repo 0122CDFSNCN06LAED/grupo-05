@@ -22,8 +22,8 @@ module.exports = (sequelize, dataTypes) => {
   // relaciones
 
   Estados.associate = (models) => {
-    Estados.belongsTo(models.proyectos, {
-      as: "estado",
+    Estados.belongsTo(models.Proyectos, {
+      as: "estadoId",
       foreignKey: "estadoId",
     });
   };

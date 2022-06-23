@@ -21,12 +21,12 @@ module.exports = (sequelize, dataTypes) => {
   // relaciones
 
   ProyectoCategoria.associate = (models) => {
-    ProyectoCategoria.belongsTo(models.categorias, {
-      as: "categoria",
+    ProyectoCategoria.belongsTo(models.Categorias, {
+      as: "categoriaId",
       foreignKey: "categoriaId",
     });
-    ProyectoCategoria.belongsTo(models.proyectos, {
-      as: "proyecto",
+    ProyectoCategoria.belongsTo(models.Proyectos, {
+      as: "proyectoId",
       foreignKey: "proyectoId",
     });
   };
