@@ -30,6 +30,7 @@ const proyCat = JSON.parse(fs.readFileSync(proyCatFilePath, "utf-8"));
 
 module.exports = {
   register: (req, res) => {
+    //realizar findAll de tipoUsuarios
     res.render("register");
   },
   registerForm: async (req, res) => {

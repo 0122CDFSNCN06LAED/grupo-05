@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
   // relaciones
 
   Estados.associate = (models) => {
-    Estados.belongsTo(models.Proyectos, {
+    Estados.hasMany(models.Proyectos, {
       as: "estadoid",
       foreignKey: "estadoId",
     });

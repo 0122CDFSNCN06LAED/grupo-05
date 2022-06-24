@@ -29,11 +29,11 @@ module.exports = (sequelize, dataTypes) => {
   // relaciones
 
   Proyectos.associate = (models) => {
-    Proyectos.hasMany(models.Estados, {
+    Proyectos.belongsTo(models.Estados, {
       as: "estadoid",
       foreignKey: "estadoId",
     });
-    Proyectos.hasMany(models.Usuarios, {
+    Proyectos.belongsTo(models.Usuarios, {
       as: "creadorid",
       foreignKey: "creadorId",
     });

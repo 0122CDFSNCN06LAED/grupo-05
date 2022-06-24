@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
       primaryKey: true,
       unique: true,
     },
-    nombre: dataTypes.STRING,
+    nombreCategoria: dataTypes.STRING,
   };
 
   const config = {

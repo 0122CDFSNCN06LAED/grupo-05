@@ -31,21 +31,21 @@ module.exports = (sequelize, dataTypes) => {
       as: "postulanteid",
       foreignKey: "postulanteId",
     });
-    Usuarios.hasMany(models.TipoUsuarios, {
+    Usuarios.belongsTo(models.TipoUsuarios, {
       as: "tipoUsuarioidTipo",
       foreignKey: "tipoUsuarioId",
     });
-    Usuarios.belongsTo(models.Mensajes, {
+    Usuarios.hasMany(models.Mensajes, {
       as: "destinatarioid",
       foreignKey: "destinatarioId",
     });
-    Usuarios.belongsTo(models.Mensajes, {
+    Usuarios.hasMany(models.Mensajes, {
       as: "remitenteid",
       foreignKey: "remitenteId",
     });
-    Usuarios.belongsTo(models.Proyectos, {
-      as: "tipoUsuarioidProye",
-      foreignKey: "tipoUsuarioId",
+    Usuarios.hasMany(models.Proyectos, {
+      as: "creadorId",
+      foreignKey: "creadorId",
     });
   };
 
