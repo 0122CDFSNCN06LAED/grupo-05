@@ -38,6 +38,10 @@ module.exports = {
       // const proyectos = await db.Proyectos.findAll();
       const categorias = await db.Categorias.findAll();
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
+      const tipoUsuarioId = 1;
+      if (req.body.tipoUsuarioId == 'freelancer') {
+        tipoUsuarioId = 2;
+      }
       let newUser = {
         id: uuidv1(),
         username: req.body.usuarioNombre,
@@ -45,7 +49,7 @@ module.exports = {
         surname: req.body.surname,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        tipoUsuarioId: req.body.tipoUsuarioId,
+        tipoUsuarioId: tipoUsuarioId,
       };
       if (req.file) {
         newUser.profileURL = `/images/user-images/${req.file.filename}`;
