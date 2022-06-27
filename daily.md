@@ -187,3 +187,16 @@ Entregable: A
 - verificar validaciones del register
 - Agregar imagen predetermianda a los usuarios que no suban una.
 - Verificar que el username no se repita y pedir que cambie el nombre en el register form.
+
+## 27/06
+
+### Hecho:
+
+- Seleccionar tipoUsuarioId en formulario de registro
+- Guardar tipoUsuarioId en newUser, con el dato obtenido del formulario de registro.
+- Creamos tipoUsuarioId = 1 para empresa y tipoUsuarioId = 2 para freelancer.
+-
+
+### Haciendo
+
+### Hacer

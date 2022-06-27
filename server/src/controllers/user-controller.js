@@ -35,10 +35,11 @@ module.exports = {
   registerForm: async (req, res) => {
     //realizar findAll de tipoUsuarios
     try {
-      // const proyectos = await db.Proyectos.findAll();
+      //Por qué en el registerForm y no en el login?
+      const proyectos = await db.Proyectos.findAll();
       const categorias = await db.Categorias.findAll();
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
-      const tipoUsuarioId = 1;
+      let tipoUsuarioId = 1;
       if (req.body.tipoUsuarioId == 'freelancer') {
         tipoUsuarioId = 2;
       }
