@@ -1,14 +1,8 @@
-const Sequelize = require("sequelize");
+const Sequelize = require('sequelize');
 
 module.exports = (sequelize, dataTypes) => {
-  const alias = "Usuarios";
+  const alias = 'Usuarios';
   const columns = {
-    id: {
-      type: Sequelize.STRING,
-      allowNull: false,
-      primaryKey: true,
-      unique: true,
-    },
     username: dataTypes.STRING,
     name: dataTypes.STRING,
     surname: dataTypes.STRING,
@@ -18,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const config = {
-    tableName: "usuarios",
+    tableName: 'usuarios',
     timestamps: false,
   };
 
@@ -28,24 +22,24 @@ module.exports = (sequelize, dataTypes) => {
 
   Usuarios.associate = (models) => {
     Usuarios.hasMany(models.ProyectoUsuario, {
-      as: "postulanteid",
-      foreignKey: "postulanteId",
+      as: 'postulanteid',
+      foreignKey: 'postulanteId',
     });
     Usuarios.belongsTo(models.TipoUsuarios, {
-      as: "tipoUsuarioidTipo",
-      foreignKey: "tipoUsuarioId",
+      as: 'tipoUsuarioidTipo',
+      foreignKey: 'tipoUsuarioId',
     });
     Usuarios.hasMany(models.Mensajes, {
-      as: "destinatarioid",
-      foreignKey: "destinatarioId",
+      as: 'destinatarioid',
+      foreignKey: 'destinatarioId',
     });
     Usuarios.hasMany(models.Mensajes, {
-      as: "remitenteid",
-      foreignKey: "remitenteId",
+      as: 'remitenteid',
+      foreignKey: 'remitenteId',
     });
     Usuarios.hasMany(models.Proyectos, {
-      as: "creadorId",
-      foreignKey: "creadorId",
+      as: 'creadorId',
+      foreignKey: 'creadorId',
     });
   };
 

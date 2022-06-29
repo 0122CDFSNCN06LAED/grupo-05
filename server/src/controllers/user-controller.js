@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const db = require('../../database/models');
-const { v1: uuidv1, v4: uuidv4 } = require('uuid');
 
 /* Mensajes*/
 const mensajesFilePath = path.join(__dirname, '../data/mensajes.json');
@@ -44,7 +43,6 @@ module.exports = {
         tipoUsuarioId = 2;
       }
       let newUser = {
-        id: uuidv1(),
         username: req.body.usuarioNombre,
         name: req.body.name,
         surname: req.body.surname,
