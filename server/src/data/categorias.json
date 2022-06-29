@@ -1,11 +1,7 @@
 [
   {
-    "idCategoria": "1111",
-    "nombreCategoria": "web"
-  },
-  {
     "idCategoria": "1112",
-    "nombreCategoria": "baseDatos"
+    "nombreCategoria": "data Analytics"
   },
   {
     "idCategoria": "1113",
@@ -17,10 +13,10 @@
   },
   {
     "idCategoria": "1115",
-    "nombreCategoria": "desarrollo"
+    "nombreCategoria": "UX"
   },
   {
     "idCategoria": "1116",
-    "nombreCategoria": "diseño"
+    "nombreCategoria": "UI"
   }
 ]
