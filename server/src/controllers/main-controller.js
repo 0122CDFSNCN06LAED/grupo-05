@@ -4,7 +4,6 @@ const db = require("../../database/models");
 
 /* Proyectos */
 const proyectosFilePath = path.join(__dirname, "../data/proyectos.json");
-const proyectos = JSON.parse(fs.readFileSync(proyectosFilePath, "utf-8"));
 
 /* Categorias */
 const categoriasFilePath = path.join(__dirname, "../data/categorias.json");

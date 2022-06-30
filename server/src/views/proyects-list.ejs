@@ -17,7 +17,6 @@
     </header>
     <div class="contenido">
       <div class="contenedor-proyectos">
-        <% console.log('jjjjj', listaProyectos, listaCategorias, listaProyCat) %>
             <% for(let i=0; i<listaProyectos.length; i++){ %>
             <div class="proyecto">
                 <div class="datos-proyecto">
@@ -36,13 +35,16 @@
                     </p>
                     <div class="categorias-proyecto">
                         <!-- proyCat contiene la instancia que pertenece al proyecto y le saco la/s categoría/s -->
-                        <% for(let i=0; i<listaProyCat; i++){ %>
-                        <% if(listaProyCat[i].proyectoId==listaProyectos[i].id){ %>
+                        <% for(let j=0; j<listaProyCat.length; j++){ %>
+                        <% if(listaProyCat[j].proyectoId==listaProyectos[i].id){ %>
                         <!-- busco la categoria (nombre) -->
-                        <% let categId = listaProyCat[i].proyectoId %>
-                        <% for(let j=0; j<listaCategorias; j++) { %>
-                        <% if(categId == listaCategorias[j].id){ %>
-                        <p><%=listaCategorias[j].nombreCategoria%></p>
+                        <% let categId = listaProyCat[j].proyectoId %>
+                        <% for(let k=0; k<listaCategorias.length; k++) { %>
+                            <%if(listaCategorias[k] != undefined){%>
+                                <%console.log('ttttt', categId, listaCategorias[k])%>
+                        <% if(categId == listaCategorias[k].id){ %>
+                        <p><%=listaCategorias[k].nombre%></p>
+                        <% } %>
                         <% } %>
                         <% } %>
                         <% } %>

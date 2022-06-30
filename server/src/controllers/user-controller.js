@@ -106,7 +106,7 @@ module.exports = {
             let usuarioTipo;
             usuariosTipo.forEach((element) => {
               if (
-                element.idTipoUsuario == req.session.userLogged.fk_tipoUsuario
+                element.idTipoUsuario == req.session.userLogged.tipoUsuarioId
               ) {
                 usuarioTipo = element.nombreTipoUsuario;
               }

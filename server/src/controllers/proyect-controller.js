@@ -30,8 +30,39 @@ const proyectController = {
   },
   proyectProposals: async (req, res) => {
     try {
-      /* Esta pantalla no es dinámica, habría que arreglarla */
-      res.render("proyect-proposals");
+      let proyectos = [];
+      const categorias = await db.Categorias.findAll();
+      const proyectoCategoria = await db.ProyectoCategoria.findAll();
+      if (req.session.userLogged.tipoUsuarioId == 2) {
+        //busco si es freelancer
+        const proyectoUsuario = await db.ProyectoUsuario.findAll({
+          where: {
+            postulanteId: req.session.userLogged.id,
+          },
+        });
+        for (let i = 0; i < proyectoUsuario.length; i++) {
+          const proy = await db.Proyectos.findOne({
+            where: {
+              id: proyectoUsuario[i].proyectoId,
+            },
+          });
+          proyectos.push(proy);
+        }
+      } else if (req.session.userLogged.tipoUsuarioId == 1) {
+        //busco si es empresa
+        const proyectoCreador = await db.Proyectos.findAll({
+          where: {
+            creadorId: req.session.userLogged.id,
+          },
+        });
+        console.log("whatt", proyectoCreador);
+        proyectos = proyectoCreador;
+      }
+      res.render("proyects-list", {
+        listaProyectos: proyectos,
+        listaCategorias: categorias,
+        listaProyCat: proyectoCategoria,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -67,6 +98,7 @@ const proyectController = {
     try {
       const proyect = {
         ...req.body,
+        id: "",
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
         imagenProyecto: "" /* req.body.titulo */ /* Ver si queda o se saca */,
@@ -76,21 +108,30 @@ const proyectController = {
         fechaInicio: null,
         developer: null,
         estadoId: 1,
-        creador: req.session.userLogged.id,
+        creadorId: req.session.userLogged.id,
       };
       await db.Proyectos.create(proyect);
 
+      //cuando creo automáticamente no se carga el id (no sé cual es el motivo) por lo que no puedo crear el proycat, por eso realizo la siguiente búsqueda
+      const totalProyectos = await db.Proyectos.findAll();
+      console.log();
+      let proyectoUltimo = totalProyectos[0];
+      totalProyectos.forEach((p) => {
+        if (p.id > proyectoUltimo.id) {
+          proyectoUltimo = p;
+        }
+      });
       const categorias = req.body.categoria;
       for (let i = 0; i < categorias.length; i++) {
         const categoria = await db.Categorias.findOne({
           where: {
-            nombre: categorias[i],
+            id: categorias[i],
           },
         });
-
         const proyCat = {
+          id: "",
           categoriaId: categoria.id,
-          proyectoId: proyect.id,
+          proyectoId: proyectoUltimo.id,
         };
         await db.ProyectoCategoria.create(proyCat);
       }
