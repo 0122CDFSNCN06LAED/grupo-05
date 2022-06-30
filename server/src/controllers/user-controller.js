@@ -1,35 +1,35 @@
-const { validationResult } = require('express-validator');
-const fs = require('fs');
-const path = require('path');
-const bcrypt = require('bcryptjs');
-const db = require('../../database/models');
+const { validationResult } = require("express-validator");
+const fs = require("fs");
+const path = require("path");
+const bcrypt = require("bcryptjs");
+const db = require("../../database/models");
 
 /* Mensajes*/
-const mensajesFilePath = path.join(__dirname, '../data/mensajes.json');
-const mensajes = JSON.parse(fs.readFileSync(mensajesFilePath, 'utf-8'));
+const mensajesFilePath = path.join(__dirname, "../data/mensajes.json");
+const mensajes = JSON.parse(fs.readFileSync(mensajesFilePath, "utf-8"));
 /* Usuarios */
-const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
-const users = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
+const users = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
 /* Tipo usuario */
-const usuariosTipoFilePath = path.join(__dirname, '../data/tipoUsuario.json');
-const usuariosTipo = JSON.parse(fs.readFileSync(usuariosTipoFilePath, 'utf-8'));
+const usuariosTipoFilePath = path.join(__dirname, "../data/tipoUsuario.json");
+const usuariosTipo = JSON.parse(fs.readFileSync(usuariosTipoFilePath, "utf-8"));
 
 /* Proyectos */
-const proyectosFilePath = path.join(__dirname, '../data/proyectos.json');
-const proyectos = JSON.parse(fs.readFileSync(proyectosFilePath, 'utf-8'));
+const proyectosFilePath = path.join(__dirname, "../data/proyectos.json");
+const proyectos = JSON.parse(fs.readFileSync(proyectosFilePath, "utf-8"));
 
 /* Categorias */
-const categoriasFilePath = path.join(__dirname, '../data/categorias.json');
-const categorias = JSON.parse(fs.readFileSync(categoriasFilePath, 'utf-8'));
+const categoriasFilePath = path.join(__dirname, "../data/categorias.json");
+const categorias = JSON.parse(fs.readFileSync(categoriasFilePath, "utf-8"));
 
 /* Categorias */
-const proyCatFilePath = path.join(__dirname, '../data/proyectoCategoria.json');
-const proyCat = JSON.parse(fs.readFileSync(proyCatFilePath, 'utf-8'));
+const proyCatFilePath = path.join(__dirname, "../data/proyectoCategoria.json");
+const proyCat = JSON.parse(fs.readFileSync(proyCatFilePath, "utf-8"));
 
 module.exports = {
   register: (req, res) => {
-    res.render('register');
+    res.render("register");
   },
   registerForm: async (req, res) => {
     //realizar findAll de tipoUsuarios
@@ -39,7 +39,7 @@ module.exports = {
       const categorias = await db.Categorias.findAll();
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
       let tipoUsuarioId = 1;
-      if (req.body.tipoUsuarioId == 'freelancer') {
+      if (req.body.tipoUsuarioId == "freelancer") {
         tipoUsuarioId = 2;
       }
       let newUser = {
@@ -59,17 +59,17 @@ module.exports = {
       if (errors.isEmpty()) {
         res.locals.userLogged = newUser;
         req.session.userLogged = newUser;
-        res.render('index', {
+        res.render("index", {
           errors: errors.mapped(),
           user: req.session.userLogged,
           listaProyectos: proyectos,
           listaCategorias: categorias,
           listaProyCat: proyectoCategoria,
-          noUsuario: '',
-          malContrasenia: '',
+          noUsuario: "",
+          malContrasenia: "",
         });
       } else {
-        res.render('register', { errors: errors.mapped(), old: req.body });
+        res.render("register", { errors: errors.mapped(), old: req.body });
       }
     } catch (error) {
       console.log(error);
@@ -77,7 +77,7 @@ module.exports = {
   },
 
   login: (req, res) => {
-    res.render('login', { noUsuario: '', malContrasenia: '' });
+    res.render("login", { noUsuario: "", malContrasenia: "" });
   },
 
   loginForm: async (req, res) => {
@@ -112,50 +112,50 @@ module.exports = {
               }
             });
             req.session.userLogged.tipoUsuario = usuarioTipo;
-            if (req.body.remember == 'on') {
-              res.cookie('emailUsuario', req.body.email, {
+            if (req.body.remember == "on") {
+              res.cookie("emailUsuario", req.body.email, {
                 maxAge: 1000 * 60 * 2,
               });
             }
             let proyectos = await db.Proyectos.findAll();
             let categorias = await db.Categorias.findAll();
             let proyCat = await db.ProyectoCategoria.findAll();
-            res.render('index', {
+            res.render("index", {
               user: req.session.userLogged,
               /* tipoUsuario: usuarioTipo, */
               listaProyectos: proyectos,
               listaCategorias: categorias,
               listaProyCat: proyCat,
-              noUsuario: '',
-              malContrasenia: '',
+              noUsuario: "",
+              malContrasenia: "",
             });
           } else {
-            res.render('login', {
-              malContrasenia: 'Contraseña incorrecta',
-              noUsuario: '',
+            res.render("login", {
+              malContrasenia: "Contraseña incorrecta",
+              noUsuario: "",
               old: req.body,
-              usuario: '',
-              tipoUsuario: '',
+              usuario: "",
+              tipoUsuario: "",
             });
           }
         } else {
-          res.render('login', {
+          res.render("login", {
             errors: errors.mapped(),
-            noUsuario: 'Usuario no registrado',
-            malContrasenia: '',
+            noUsuario: "Usuario no registrado",
+            malContrasenia: "",
             old: req.body,
-            usuario: '',
-            tipoUsuario: '',
+            usuario: "",
+            tipoUsuario: "",
           });
         }
       } else {
-        res.render('login', {
+        res.render("login", {
           errors: errors.mapped(),
-          noUsuario: 'Usuario no registrado',
-          malContrasenia: '',
+          noUsuario: "Usuario no registrado",
+          malContrasenia: "",
           old: req.body,
-          usuario: '',
-          tipoUsuario: '',
+          usuario: "",
+          tipoUsuario: "",
         });
       }
     } catch (error) {
@@ -163,26 +163,26 @@ module.exports = {
     }
   },
   logout: (req, res) => {
-    res.render('register');
+    res.render("register");
   },
   mailbox: (req, res) => {
     const emails = db.Mensajes.findAll();
     const listaUsuarios = db.Usuarios.findAll();
 
-    res.render('mailbox', {
+    res.render("mailbox", {
       emails: emails,
       listaUsuarios: listaUsuarios,
       /*  proyectos: proyects, */
     });
   },
   portfolio: (req, res) => {
-    res.render('portfolio');
+    res.render("portfolio");
   },
   config: (req, res) => {
-    res.render('config');
+    res.render("config");
   },
   configEditarUsuario: (req, res) => {
-    res.render('portfolio');
+    res.render("portfolio");
   },
   configUpdateUsuario: (req, res) => {},
 };

@@ -95,6 +95,11 @@
         </div>
       </div>
     </div>
+    <%if(listaProyectos.length == 0){%>
+      <div>
+        No hay proyectos disponibles por el momento
+      </div>
+      <%} else {%>
     <div class="buscador-buscados">
       <!--ponerle evento onclick al botón -->
       <div class="boton-all">
@@ -143,6 +148,7 @@
         <a class="ver-todo hipervinculo view-all" href="#">Ver todos</a>
       </button>
     </div>
+  <%}%>
   </div>
   <footer class="footer">
 
