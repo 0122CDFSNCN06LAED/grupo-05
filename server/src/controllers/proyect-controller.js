@@ -101,7 +101,6 @@ const proyectController = {
         id: "",
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
-        imagenProyecto: "" /* req.body.titulo */ /* Ver si queda o se saca */,
         precio: req.body.precio,
         fechaCreacion: new Date(),
         fechaFinalizacion: null,
