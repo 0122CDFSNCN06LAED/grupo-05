@@ -165,15 +165,35 @@ module.exports = {
   logout: (req, res) => {
     res.render("register");
   },
-  mailbox: (req, res) => {
-    const emails = db.Mensajes.findAll();
-    const listaUsuarios = db.Usuarios.findAll();
-
-    res.render("mailbox", {
-      emails: emails,
-      listaUsuarios: listaUsuarios,
-      /*  proyectos: proyects, */
-    });
+  mailbox: async (req, res) => {
+    try {
+      const mensajes = await db.Mensajes.findAll();
+      const listaUsuarios = await db.Usuarios.findAll();
+      let mensajesRemitente = [];
+      let mensajesDestinatario = [];
+      mensajes.forEach((m) => {
+        if (m.destinatarioId == req.session.userLogged.id) {
+          mensajesRemitente.push(m);
+        } else if (m.remitenteId == req.session.userLogged.id) {
+          mensajesDestinatario.push(m);
+        }
+      });
+      console.log(
+        "mensajesRem",
+        mensajesRemitente,
+        "mensajesDest",
+        mensajesDestinatario
+      );
+      if (mensajesRemitente || mensajesDestinatario) {
+        res.render("mailbox", {
+          mensajesRemitente: mensajesRemitente,
+          mensajesDestinatario: mensajesDestinatario,
+          /*  proyectos: proyects, */
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   },
   portfolio: (req, res) => {
     res.render("portfolio");
