@@ -55,7 +55,6 @@ const proyectController = {
             creadorId: req.session.userLogged.id,
           },
         });
-        console.log("whatt", proyectoCreador);
         proyectos = proyectoCreador;
       }
       res.render("proyects-list", {
@@ -153,7 +152,6 @@ const proyectController = {
     try {
       const id = req.params.id;
       const proyecto = proyectos.find((p) => id == p.idProyecto);
-      console.log("p", proyecto, "c", categorias);
       const idParam = req.params.id;
       /* const proyecto = await db.Proyectos.findOne({
         where: {
@@ -208,16 +206,13 @@ const proyectController = {
       //creo las instancias de proyectoCategorias y las asocio al proyecto y la categoría correspondiente
       let cats = [];
       cats.push(req.body.categoria);
-      console.log("catsss", cats.length, req.body.categoria);
       for (let i = 0; i < cats.length; i++) {
-        console.log("helloooo");
         //busco el id de la categoria
         const categ = await db.Categorias.findOne({
           where: {
             nombre: cats[i],
           },
         });
-        console.log("categggg", categ);
         let py = {
           categoriaId: categ.id,
           proyectoId: idParam,

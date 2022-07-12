@@ -11,7 +11,7 @@ const userLoggedMiddleware = async (req, res, next) => {
     res.locals.isLogged = false;
     let emailCookie = req.cookies.emailUsuario;
     usuarios.forEach((element) => {
-      if ((element.emailUsuario = emailCookie)) {
+      if (element.emailUsuario == emailCookie) {
         req.session.userLogged = element;
       }
     });
