@@ -59,6 +59,12 @@ const proyectController = {
       console.log(error);
     }
   },
+  proposalsList: async (req, res) => {
+    /*
+    lista de propuestas filtradas por id del postulante
+    */
+    res.render('proposals-list');
+  },
   /* detalle específico proyecto */
   detail: async (req, res) => {
     try {
