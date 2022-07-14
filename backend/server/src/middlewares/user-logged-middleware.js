@@ -1,9 +1,4 @@
-/* const Usuario = require('../models/usuario') */
-/* por ahora esto, hasta que no estén los modelos */
-const fs = require("fs");
-const path = require("path");
-const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
-const db = require("../../database/models");
+const db = require('../../database/models');
 
 const userLoggedMiddleware = async (req, res, next) => {
   try {
@@ -30,7 +25,7 @@ const userLoggedMiddleware = async (req, res, next) => {
     }
     next();
   } catch (error) {
-    console.log("error", error);
+    console.log('error', error);
   }
 };
 
