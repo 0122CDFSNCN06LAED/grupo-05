@@ -6,17 +6,28 @@
         <p class="texto-gris"><%=locals.userLogged.tipoUsuario%></p>
     </div>
     <%let url = locals.userLogged.profileURL%>
-    <img class="imagen-usuario" src=<%=url%> alt="Imagen Usuario"  />
-    <img class="nivel-icon" src="/images/level-icon.png" alt="Icono Nivel" />
+    
+    <img class="imagen-usuario" src=<%if (url){%>
+        <%=url%>
+        <%}else{%>
+        "/images/user-images/usuario.png" 
+        <% }%>  alt="profile pic"  />
     <div class="dropdown">
         <img class="configuracion btn btn-secondary dropdown-toggle boton-desplegable" src="/images/config-icon.svg"
             alt="icono-config" id="dropdownMenuButton1" data-bs-toggle="dropdown" />
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li>
-                <div class="dropdown-item opciones-desplegable">
-                    <a class="hipervinculo" href="/proyect/proposals">Carrito</a>
-                    <a href="/proyect/proposals"><i class="fa-solid fa-cart-shopping"></i></a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">    
+            <li <% if (locals.userLogged.tipoUsuarioId!=1){ %>style='display: none'<% } %>> <%# lo que ve la empresa %>
+                <div class="dropdown-item opciones-desplegable ">
+                    <a class="hipervinculo" href="/proyect/proposals-list">Mis propuestas</a>
+                    <a href="/proyect/proposals-list"><i class="fa-solid fa-hand"></i></a>
                 </div>
+            </li>
+            <li <% if (locals.userLogged.tipoUsuarioId!=2){ %>style='display: none'<% } %>> <%# lo que ve un freelancer %>
+                <div class="dropdown-item opciones-desplegable ">
+                    <a class="hipervinculo" href="/proyect/">Mis proyectos</a>
+                    <a href="/proyect/proposals"><i class="fa-solid fa-clipboard-list-check"></i></a>
+                </div>
+                
             </li>
             <li>
                 <div class="dropdown-item opciones-desplegable">
