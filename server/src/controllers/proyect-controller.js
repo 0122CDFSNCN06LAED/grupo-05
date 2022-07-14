@@ -1,15 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const { validationResult } = require("express-validator");
-const db = require("../../database/models");
-
-/* Proyectos */
-const proyectosFilePath = path.join(__dirname, "../data/proyectos.json");
-const proyectos = JSON.parse(fs.readFileSync(proyectosFilePath, "utf-8"));
-
-/* Categorias */
-const categoriasFilePath = path.join(__dirname, "../data/categorias.json");
-const categorias = JSON.parse(fs.readFileSync(categoriasFilePath, "utf-8"));
+const fs = require('fs');
+const path = require('path');
+const { validationResult } = require('express-validator');
+const db = require('../../database/models');
 
 const proyectController = {
   proyectsList: async (req, res) => {
@@ -19,7 +11,7 @@ const proyectController = {
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
       /* const listaProyectos = proyectos;
       const listaCategorias = categorias; */
-      res.render("proyects-list", {
+      res.render('proyects-list', {
         listaProyectos: proyectos,
         listaCategorias: categorias,
         listaProyCat: proyectoCategoria,
@@ -55,10 +47,10 @@ const proyectController = {
             creadorId: req.session.userLogged.id,
           },
         });
-        console.log("whatt", proyectoCreador);
+        console.log('whatt', proyectoCreador);
         proyectos = proyectoCreador;
       }
-      res.render("proyects-list", {
+      res.render('proyects-list', {
         listaProyectos: proyectos,
         listaCategorias: categorias,
         listaProyCat: proyectoCategoria,
@@ -77,7 +69,7 @@ const proyectController = {
           id: idParam,
         },
       });
-      res.render("proyect-detail", {
+      res.render('proyect-detail', {
         proyecto: proyecto,
       });
     } catch (error) {
@@ -88,9 +80,9 @@ const proyectController = {
   create: async (req, res) => {
     try {
       const categorias = await db.Categorias.findAll();
-      res.render("proyect-creation", { listaCategorias: categorias });
+      res.render('proyect-creation', { listaCategorias: categorias });
     } catch (error) {
-      res.render("proyect-creation");
+      res.render('proyect-creation');
     }
   },
 
@@ -98,7 +90,7 @@ const proyectController = {
     try {
       const proyect = {
         ...req.body,
-        id: "",
+        id: '',
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
         precio: req.body.precio,
@@ -128,7 +120,7 @@ const proyectController = {
           },
         });
         const proyCat = {
-          id: "",
+          id: '',
           categoriaId: categoria.id,
           proyectoId: proyectoUltimo.id,
         };
@@ -137,9 +129,9 @@ const proyectController = {
 
       let errors = validationResult(req);
       if (errors.isEmpty()) {
-        res.render("proyects-list", { errors: errors.mapped() });
+        res.render('proyects-list', { errors: errors.mapped() });
       } else {
-        res.render("proyect-creation", {
+        res.render('proyect-creation', {
           errors: errors.mapped(),
           old: req.body,
         });
@@ -153,7 +145,7 @@ const proyectController = {
     try {
       const id = req.params.id;
       const proyecto = proyectos.find((p) => id == p.idProyecto);
-      console.log("p", proyecto, "c", categorias);
+      console.log('p', proyecto, 'c', categorias);
       const idParam = req.params.id;
       /* const proyecto = await db.Proyectos.findOne({
         where: {
@@ -161,7 +153,7 @@ const proyectController = {
         },
       });
       const categorias = await db.Categorias.findAll(); */
-      res.render("proyect-edition", {
+      res.render('proyect-edition', {
         proyecto: proyecto,
         categorias: categorias,
       });
@@ -208,16 +200,16 @@ const proyectController = {
       //creo las instancias de proyectoCategorias y las asocio al proyecto y la categoría correspondiente
       let cats = [];
       cats.push(req.body.categoria);
-      console.log("catsss", cats.length, req.body.categoria);
+      console.log('catsss', cats.length, req.body.categoria);
       for (let i = 0; i < cats.length; i++) {
-        console.log("helloooo");
+        console.log('helloooo');
         //busco el id de la categoria
         const categ = await db.Categorias.findOne({
           where: {
             nombre: cats[i],
           },
         });
-        console.log("categggg", categ);
+        console.log('categggg', categ);
         let py = {
           categoriaId: categ.id,
           proyectoId: idParam,
@@ -227,9 +219,9 @@ const proyectController = {
 
       let errors = validationResult(req);
       if (errors.isEmpty()) {
-        res.render("proyects-list", { errors: errors.mapped() });
+        res.render('proyects-list', { errors: errors.mapped() });
       } else {
-        res.render("proyect-edition", {
+        res.render('proyect-edition', {
           errors: errors.mapped(),
           old: req.body,
           proyecto: proyecto,
@@ -251,7 +243,7 @@ const proyectController = {
         },
       });
 
-      res.redirect("/proyect");
+      res.redirect('/proyect');
     } catch (error) {
       console.log(error);
     }
