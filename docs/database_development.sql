@@ -118,7 +118,7 @@ DROP TABLE IF EXISTS `estados`;
 CREATE TABLE
     `estados` (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-        `nombre` varchar(100) DEFAULT NULL,
+        `nombreEstado` varchar(100) DEFAULT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB AUTO_INCREMENT = 5 DEFAULT CHARSET = utf8mb4;
 
@@ -166,8 +166,8 @@ DROP TABLE IF EXISTS `mensajes`;
 CREATE TABLE
     `mensajes` (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-        `contenido` varchar(100) DEFAULT NULL,
-        `fecha` date NOT NULL,
+        `contenidoMensaje` varchar(100) DEFAULT NULL,
+        `fechaMensaje` date NOT NULL,
         `destinatarioId` int(10) unsigned DEFAULT NULL,
         `remitenteId` int(10) unsigned DEFAULT NULL,
         PRIMARY KEY (`id`),
@@ -175,7 +175,7 @@ CREATE TABLE
         KEY `remitente_FK` (`remitenteId`),
         CONSTRAINT `destinatario_FK` FOREIGN KEY (`destinatarioId`) REFERENCES `usuarios` (`id`),
         CONSTRAINT `remitente_FK` FOREIGN KEY (`remitenteId`) REFERENCES `usuarios` (`id`)
-    ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+    ) ENGINE = InnoDB AUTO_INCREMENT = 4 DEFAULT CHARSET = utf8mb4;
 
 /*!40101 SET character_set_client = @saved_cs_client */
 
@@ -192,6 +192,27 @@ LOCK TABLES `mensajes` WRITE;
 /*!40000 ALTER TABLE `mensajes` DISABLE KEYS */
 
 ;
+
+INSERT INTO `mensajes`
+VALUES (
+        1,
+        'Hola, cÃƒÂ³mo va?',
+        '2022-08-07',
+        10,
+        9
+    ), (
+        2,
+        'Todo bien',
+        '2022-08-08',
+        11,
+        9
+    ), (
+        3,
+        'SÃƒÂ­, no hay drama',
+        '2022-08-09',
+        9,
+        11
+    );
 
 /*!40000 ALTER TABLE `mensajes` ENABLE KEYS */
 
@@ -225,7 +246,7 @@ CREATE TABLE
         KEY `categoria_FK` (`categoriaId`),
         CONSTRAINT `categoria_FK` FOREIGN KEY (`categoriaId`) REFERENCES `categorias` (`id`),
         CONSTRAINT `proyectoCategoria_FK` FOREIGN KEY (`proyectoId`) REFERENCES `proyectos` (`id`)
-    ) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8mb4;
+    ) ENGINE = InnoDB AUTO_INCREMENT = 12 DEFAULT CHARSET = utf8mb4;
 
 /*!40101 SET character_set_client = @saved_cs_client */
 
@@ -242,6 +263,8 @@ LOCK TABLES `proyectocategoria` WRITE;
 /*!40000 ALTER TABLE `proyectocategoria` DISABLE KEYS */
 
 ;
+
+INSERT INTO `proyectocategoria` VALUES (1,1,1);
 
 /*!40000 ALTER TABLE `proyectocategoria` ENABLE KEYS */
 
@@ -270,6 +293,7 @@ CREATE TABLE
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
         `titulo` varchar(100) NOT NULL,
         `descripcion` varchar(150) NOT NULL,
+        `imagenProyecto` varchar(10000) DEFAULT NULL,
         `precio` int(11) NOT NULL,
         `fechaInicio` date DEFAULT NULL,
         `estadoId` int(10) unsigned DEFAULT NULL,
@@ -279,9 +303,9 @@ CREATE TABLE
         PRIMARY KEY (`id`),
         KEY `creador_FK` (`creadorId`),
         KEY `estado_FK` (`estadoId`),
-        CONSTRAINT `creador_FK` FOREIGN KEY (`creadorId`) REFERENCES `usuarios` (`id`) ON UPDATE CASCADE,
-        CONSTRAINT `estado_FK` FOREIGN KEY (`estadoId`) REFERENCES `estados` (`id`) ON UPDATE CASCADE
-    ) ENGINE = InnoDB AUTO_INCREMENT = 4 DEFAULT CHARSET = utf8mb4;
+        CONSTRAINT `creador_FK` FOREIGN KEY (`creadorId`) REFERENCES `usuarios` (`id`),
+        CONSTRAINT `estado_FK` FOREIGN KEY (`estadoId`) REFERENCES `estados` (`id`)
+    ) ENGINE = InnoDB AUTO_INCREMENT = 28 DEFAULT CHARSET = utf8mb4;
 
 /*!40101 SET character_set_client = @saved_cs_client */
 
@@ -298,6 +322,20 @@ LOCK TABLES `proyectos` WRITE;
 /*!40000 ALTER TABLE `proyectos` DISABLE KEYS */
 
 ;
+
+INSERT INTO `proyectos`
+VALUES (
+        1,
+        'titulo',
+        'descrp',
+        NULL,
+        20000,
+        '2022-06-29',
+        1,
+        9,
+        '2022-06-29',
+        '2022-06-29'
+    );
 
 /*!40000 ALTER TABLE `proyectos` ENABLE KEYS */
 
@@ -332,7 +370,7 @@ CREATE TABLE
         KEY `proyecto_FK` (`proyectoId`),
         CONSTRAINT `postulante_FK` FOREIGN KEY (`postulanteId`) REFERENCES `usuarios` (`id`),
         CONSTRAINT `proyecto_FK` FOREIGN KEY (`proyectoId`) REFERENCES `proyectos` (`id`)
-    ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+    ) ENGINE = InnoDB AUTO_INCREMENT = 4 DEFAULT CHARSET = utf8mb4;
 
 /*!40101 SET character_set_client = @saved_cs_client */
 
@@ -349,6 +387,8 @@ LOCK TABLES `proyectousuario` WRITE;
 /*!40000 ALTER TABLE `proyectousuario` DISABLE KEYS */
 
 ;
+
+INSERT INTO `proyectousuario` VALUES (1,9,1,NULL);
 
 /*!40000 ALTER TABLE `proyectousuario` ENABLE KEYS */
 
@@ -457,18 +497,27 @@ VALUES (
         'admin',
         'admin',
         NULL,
-        '$2a$10$3o7nuJnFb4W51a3X34eWquJ.ezyQZuKJ6Li5G7ujJsSoC/t62MJTu',
-        'admin@mail.com',
+        '$2a$10$b.vLRRQaCJwFCHC3rSiE8uS5dSwEGBI6FfHWqpyW53nfy81P2lnH2',
+        'admin@admin.com',
         9,
-        3
+        1
     ), (
-        'Pepsi.Ok',
-        'Pepsi',
-        'Pepsico&Co',
-        '/images/user-images/1656620135697cabecera-pepsi.jpg',
-        '$2a$10$5bbza.pTKubsvL73kjPsHepVhUXeKl9g5HmM1ObfqTuY5t624AOse',
-        'pepsico@mail.com',
-        12,
+        'pedro',
+        'pedro',
+        'admin',
+        'sosa',
+        '$2a$10$b.vLRRQaCJwFCHC3rSiE8uS5dSwEGBI6FfHWqpyW53nfy81P2lnH2',
+        'pedro@.com',
+        10,
+        1
+    ), (
+        'gonzalo',
+        'gonzalo',
+        'admin',
+        'herrero',
+        '$2a$10$b.vLRRQaCJwFCHC3rSiE8uS5dSwEGBI6FfHWqpyW53nfy81P2lnH2',
+        'gonzalo@.com',
+        11,
         1
     );
 
@@ -516,4 +565,4 @@ UNLOCK TABLES;
 
 ;
 
--- Dump completed on 2022-06-30 18:25:04
+-- Dump completed on 2022-07-18 15:58:54
