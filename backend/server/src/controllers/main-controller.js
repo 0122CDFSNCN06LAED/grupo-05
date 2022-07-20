@@ -1,27 +1,18 @@
-const fs = require("fs");
-const path = require("path");
-const db = require("../../database/models");
-const bcrypt = require("bcryptjs");
-const { validationResult } = require("express-validator");
-
-/* Proyectos */
-const proyectosFilePath = path.join(__dirname, "../data/proyectos.json");
-
-/* Categorias */
-const categoriasFilePath = path.join(__dirname, "../data/categorias.json");
-const categorias = JSON.parse(fs.readFileSync(categoriasFilePath, "utf-8"));
+const db = require('../../database/models');
+const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 
 module.exports = {
   index: async (req, res) => {
     try {
       const proyectos = await db.Proyectos.findAll();
-      console.log(proyectos, "proyectos");
+      console.log(proyectos, 'proyectos');
       const categorias = await db.Categorias.findAll();
-      console.log(categorias, "categorias");
+      console.log(categorias, 'categorias');
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
-      console.log(proyectoCategoria, "proyectoCategoria");
+      console.log(proyectoCategoria, 'proyectoCategoria');
 
-      res.render("index", {
+      res.render('index', {
         listaProyectos: proyectos,
         listaCategorias: categorias,
         listaProyCat: proyectoCategoria,
@@ -60,50 +51,50 @@ module.exports = {
               }
             });
             req.session.userLogged.tipoUsuario = usuarioTipo;
-            if (req.body.remember == "on") {
-              res.cookie("emailUsuario", req.body.email, {
+            if (req.body.remember == 'on') {
+              res.cookie('emailUsuario', req.body.email, {
                 maxAge: 1000 * 60 * 2,
               });
             }
             let proyectos = await db.Proyectos.findAll();
             let categorias = await db.Categorias.findAll();
             let proyCat = await db.ProyectoCategoria.findAll();
-            res.render("index", {
+            res.render('index', {
               user: req.session.userLogged,
               /* tipoUsuario: usuarioTipo, */
               listaProyectos: proyectos,
               listaCategorias: categorias,
               listaProyCat: proyCat,
-              noUsuario: "",
-              malContrasenia: "",
+              noUsuario: '',
+              malContrasenia: '',
             });
           } else {
-            res.render("login", {
-              malContrasenia: "Contraseña incorrecta",
-              noUsuario: "",
+            res.render('login', {
+              malContrasenia: 'Contraseña incorrecta',
+              noUsuario: '',
               old: req.body,
-              usuario: "",
-              tipoUsuario: "",
+              usuario: '',
+              tipoUsuario: '',
             });
           }
         } else {
-          res.render("login", {
+          res.render('login', {
             errors: errors.mapped(),
-            noUsuario: "Usuario no registrado",
-            malContrasenia: "",
+            noUsuario: 'Usuario no registrado',
+            malContrasenia: '',
             old: req.body,
-            usuario: "",
-            tipoUsuario: "",
+            usuario: '',
+            tipoUsuario: '',
           });
         }
       } else {
-        res.render("login", {
+        res.render('login', {
           errors: errors.mapped(),
-          noUsuario: "Usuario no registrado",
-          malContrasenia: "",
+          noUsuario: 'Usuario no registrado',
+          malContrasenia: '',
           old: req.body,
-          usuario: "",
-          tipoUsuario: "",
+          usuario: '',
+          tipoUsuario: '',
         });
       }
     } catch (error) {
