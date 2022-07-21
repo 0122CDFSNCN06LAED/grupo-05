@@ -109,8 +109,7 @@
         </button> -->
       </div>
       <div class="tarjeta-buscados">
-        <!--  -->
-        <% for(let i=0; i<listaProyectos.length; i++){ %>
+        <% for(let i=0; i<4; i++){ %>
         <a href="#" class="card hipervinculo">
           <h5 class="card-header">
             <%= listaProyectos[i].titulo%>
@@ -145,7 +144,7 @@
         <% } %>
       </div>
       <button class="boton-boton" onclick="clickBoton()">
-        <a class="ver-todo hipervinculo view-all" href="/proyect/proposals">Ver todos</a>
+        <a class="ver-todo hipervinculo view-all" href="/proyect/proyectosAll">Ver todos</a>
       </button>
     </div>
   <%}%>

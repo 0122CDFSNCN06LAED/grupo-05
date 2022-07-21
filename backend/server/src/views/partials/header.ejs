@@ -1,12 +1,11 @@
 
 <a href="/" class="link-logo"><img class="logo" src="/images/logo-icon.png" alt="Logo" /></a>
+<p><%=locals.userLogged.username%></p>
 <div class="usuario-datos">
     <div class="usuario-texto">
-        <!-- <p><%=locals.userLogged.username%></p> -->
         <p class="texto-gris"><%=locals.userLogged.tipoUsuario%></p>
     </div>
     <%let url = locals.userLogged.profileURL%>
-    
     <img class="imagen-usuario" src=<%if (url){%>
         <%=url%>
         <%}else{%>
@@ -16,18 +15,19 @@
         <img class="configuracion btn btn-secondary dropdown-toggle boton-desplegable" src="/images/config-icon.svg"
             alt="icono-config" id="dropdownMenuButton1" data-bs-toggle="dropdown" />
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">    
-            <li <% if (locals.userLogged.tipoUsuarioId!=1){ %>style='display: none'<% } %>> <%# lo que ve la empresa %>
+            <li <% if (locals.userLogged.tipoUsuarioId !=1 ){ %>>
                 <div class="dropdown-item opciones-desplegable ">
                     <a class="hipervinculo" href="/proyect/proposals-list">Mis propuestas</a>
                     <a href="/proyect/proposals-list"><i class="fa-solid fa-hand"></i></a>
                 </div>
+                <% } %>
             </li>
-            <li <% if (locals.userLogged.tipoUsuarioId!=2){ %>style='display: none'<% } %>> <%# lo que ve un freelancer %>
+            <li <% if (locals.userLogged.tipoUsuarioId!=2){ %>>
                 <div class="dropdown-item opciones-desplegable ">
                     <a class="hipervinculo" href="/proyect/">Mis proyectos</a>
                     <a href="/proyect/proposals"><i class="fa-solid fa-clipboard-list-check"></i></a>
                 </div>
-                
+                <% } %>
             </li>
             <li>
                 <div class="dropdown-item opciones-desplegable">
@@ -41,11 +41,22 @@
                     <a href="config"><img class="config-icon" src="/images/usuario.png" alt="usuario"></i></a>
                 </div>
             </li>
+
+            <!-- <li class="nav-item">
+                        <form action="/logout" method="POST">
+                            <button class="btn" type="submit">
+                                Salir
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </button>
+                        </form>
+                    </li> -->
             <li>
-                <div class="dropdown-item opciones-desplegable">
-                    <a class="hipervinculo" href="/user/login">Cerrar sesión</a>
-                    <a href="/user/login"><i class="fa-solid fa-right-from-bracket"></i></a>
-                </div>
+                <form action="/user/logout" method="POST">
+                    <button class="btn" type="submit">
+                        Salir
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </button>
+                </form>
             </li>
         </ul>
     </div>

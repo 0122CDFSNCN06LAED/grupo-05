@@ -2,15 +2,17 @@ const db = require('../../database/models');
 
 const userLoggedMiddleware = async (req, res, next) => {
   try {
+    /* Reemplazar por findOne, con el where */
     const usuarios = await db.Usuarios.findAll();
-    res.locals.isLogged = false;
-    let emailCookie = req.cookies.emailUsuario;
-    usuarios.forEach((element) => {
-      if (element.emailUsuario == emailCookie) {
-        req.session.userLogged = element;
-      }
-    });
-
+    /*
+   res.locals.isLogged = false;
+   let emailCookie = req.cookies.emailUsuario;
+   usuarios.forEach((element) => {
+     if (element.emailUsuario == emailCookie) {
+       req.session.userLogged = element;
+     }
+   });
+*/
     if (req.session.userLogged) {
       res.locals.isLogged = true;
       res.locals.userLogged = req.session.userLogged;

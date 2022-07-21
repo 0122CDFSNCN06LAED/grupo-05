@@ -19,7 +19,7 @@ userRouter.post(
 userRouter.get("/login", userController.login);
 /* userRouter.post("/", validacion.validacionLogin, userController.loginForm); */
 
-userRouter.get("/logout", userController.logout);
+userRouter.post("/logout", userController.logout);
 userRouter.get("/mailbox", authGuestMiddleware, userController.mailbox);
 userRouter.get("/portfolio", authGuestMiddleware, userController.portfolio);
 userRouter.get("/config", authGuestMiddleware, userController.config);

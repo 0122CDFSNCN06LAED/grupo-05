@@ -20,6 +20,22 @@ const proyectController = {
       console.log(error);
     }
   },
+  proyectosAll: async (req, res) => {
+    try {
+      const proyectos = await db.Proyectos.findAll();
+      const categorias = await db.Categorias.findAll();
+      const proyectoCategoria = await db.ProyectoCategoria.findAll();
+      /* const listaProyectos = proyectos;
+      const listaCategorias = categorias; */
+      res.render('proyect-proposals', {
+        listaProyectos: proyectos,
+        listaCategorias: categorias,
+        listaProyCat: proyectoCategoria,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
   proyectProposals: async (req, res) => {
     try {
       let proyectos = [];
@@ -48,6 +64,8 @@ const proyectController = {
           },
         });
         proyectos = proyectoCreador;
+      } else if (req.session.userLogged.tipoUsuarioId == 3) {
+        proyectos = await db.Proyectos.findAll()
       }
       res.render('proyects-list', {
         listaProyectos: proyectos,
@@ -57,12 +75,6 @@ const proyectController = {
     } catch (error) {
       console.log(error);
     }
-  },
-  proposalsList: async (req, res) => {
-    /*
-    lista de propuestas filtradas por id del postulante
-    */
-    res.render('proposals-list');
   },
   /* detalle específico proyecto */
   detail: async (req, res) => {

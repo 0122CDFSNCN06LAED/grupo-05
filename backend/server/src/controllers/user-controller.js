@@ -30,8 +30,8 @@ module.exports = {
       if (req.file) {
         newUser.profileURL = `/images/user-images/${req.file.filename}`;
       }
+      console.log('new userr', newUser)
       await db.Usuarios.create(newUser);
-      users.push(newUser);
       let errors = validationResult(req);
       if (errors.isEmpty()) {
         res.locals.userLogged = newUser;
@@ -140,7 +140,12 @@ module.exports = {
   //   }
   // },
   logout: (req, res) => {
-    res.render('register');
+    console.log('logoutttt')
+    res.locals.userLogged = null
+    req.session.userLogged = null
+    /*res.cookie = null  ver borrar cookie */
+    console.log('local', res.locals.userLogged, 'session', req.session.userLogged, /* 'cookie', req.cookie */)
+    res.redirect('/user/login')
   },
   mailbox: async (req, res) => {
     try {
@@ -181,5 +186,5 @@ module.exports = {
   configEditarUsuario: (req, res) => {
     res.render('portfolio');
   },
-  configUpdateUsuario: (req, res) => {},
+  configUpdateUsuario: (req, res) => { },
 };

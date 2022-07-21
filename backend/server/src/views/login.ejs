@@ -27,9 +27,9 @@
               value="<%= locals.old && old.email%>"
             />
             <% if(locals.errors && errors.email){%>
-            <p><%=errors.email.msg%></p>
+            <p class="text-danger"><%=errors.email.msg%></p>
             <%}%> <% if(noUsuario != ""){%>
-            <p><%=noUsuario%></p>
+            <p class="text-danger"><%=noUsuario%></p>
             <%}%>
           </div>
           <div class="input-div">
@@ -45,9 +45,9 @@
               value="<%= locals.old && old.password%>"
             />
             <% if(locals.errors && errors.password){%>
-            <p><%=errors.password.msg%></p>
+            <p class="text-danger"><%=errors.password.msg%></p>
             <%}%> <% if(malContrasenia != ""){%>
-            <p><%=malContrasenia%></p>
+            <p class="text-danger"><%=malContrasenia%></p>
             <%}%>
           </div>
           <div class="remember-div">

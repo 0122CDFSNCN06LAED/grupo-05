@@ -10,18 +10,18 @@ proyectRouter.get(
   authGuestMiddleware,
   proyectController.proyectProposals
 );
-
 proyectRouter.get(
-  '/proposals-list',
+  '/proyectosAll', //muestra la lista de propuestas de un proyecto puntual. (vista de empresa)
   authGuestMiddleware,
-  proyectController.proposalsList
-), //muestra todas las propuestas de un freelancer a diferentes proyectos. (vista de freelancer)
-  /* obtener un detalle en específico */
-  proyectRouter.get(
-    '/detail/:id/',
-    authGuestMiddleware,
-    proyectController.detail
-  );
+  proyectController.proyectosAll
+);
+
+/* obtener un detalle en específico */
+proyectRouter.get(
+  '/detail/:id/',
+  authGuestMiddleware,
+  proyectController.detail
+);
 /*** CREAR UN PRODUCTO ***/
 proyectRouter.get('/create', authGuestMiddleware, proyectController.create);
 proyectRouter.post(
