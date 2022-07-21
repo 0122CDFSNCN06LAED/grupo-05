@@ -79,7 +79,6 @@ const proyectController = {
   /* detalle específico proyecto */
   detail: async (req, res) => {
     try {
-      /* Esta pantalla no es dinámica, habría que arreglarla */
       const idParam = req.params.id;
       const proyecto = await db.Proyectos.findOne({
         where: {

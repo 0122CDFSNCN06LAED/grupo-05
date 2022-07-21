@@ -9,9 +9,7 @@ module.exports = {
     res.render('register');
   },
   registerForm: async (req, res) => {
-    //realizar findAll de tipoUsuarios
     try {
-      //Por qué en el registerForm y no en el login?
       const proyectos = await db.Proyectos.findAll();
       const categorias = await db.Categorias.findAll();
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
