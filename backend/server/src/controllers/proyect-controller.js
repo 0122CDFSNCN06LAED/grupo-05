@@ -79,13 +79,14 @@ const proyectController = {
   /* detalle específico proyecto */
   detail: async (req, res) => {
     try {
-      /* Esta pantalla no es dinámica, habría que arreglarla */
+
       const idParam = req.params.id;
       const proyecto = await db.Proyectos.findOne({
         where: {
           id: idParam,
         },
       });
+      console.log('proyectooooo', idParam)
       res.render('proyect-detail', {
         proyecto: proyecto,
       });
@@ -118,6 +119,7 @@ const proyectController = {
         estadoId: 1,
         creadorId: req.session.userLogged.id,
       };
+      console.log('proyecttt', proyect)
       await db.Proyectos.create(proyect);
 
       //cuando creo automáticamente no se carga el id (no sé cual es el motivo) por lo que no puedo crear el proycat, por eso realizo la siguiente búsqueda
@@ -143,14 +145,24 @@ const proyectController = {
         };
         await db.ProyectoCategoria.create(proyCat);
       }
-
       let errors = validationResult(req);
+      const listaProyectos = await db.Proyectos.findAll();
+      const listaCategorias = await db.Categorias.findAll();
+      const listaProyectoCategoria = await db.ProyectoCategoria.findAll();
       if (errors.isEmpty()) {
-        res.render('proyects-list', { errors: errors.mapped() });
+        res.render('proyects-list', {
+          errors: errors.mapped(),
+          listaProyectos: listaProyectos,
+          listaCategorias: listaCategorias,
+          listaProyCat: listaProyectoCategoria,
+        });
       } else {
         res.render('proyect-creation', {
           errors: errors.mapped(),
           old: req.body,
+          listaProyectos: listaProyectos,
+          listaCategorias: listaCategorias,
+          listaProyCat: listaProyectoCategoria,
         });
       }
     } catch (error) {
@@ -160,28 +172,61 @@ const proyectController = {
 
   edit: async (req, res) => {
     try {
-      const id = req.params.id;
-      const proyecto = proyectos.find((p) => id == p.idProyecto);
+      const proyectos = await db.Proyectos.findAll();
+      const categorias = await db.Categorias.findAll();
+      const proyectoCategoria = await db.ProyectoCategoria.findAll();
       const idParam = req.params.id;
-      /* const proyecto = await db.Proyectos.findOne({
+      const proyecto = await db.Proyectos.findOne({
         where: {
-          id: idParam,
-        },
-      });
-      const categorias = await db.Categorias.findAll(); */
+          id: idParam
+        }
+      })
       res.render('proyect-edition', {
         proyecto: proyecto,
         categorias: categorias,
+        proyectos: proyectos,
+        proyectoCategoria: proyectoCategoria
       });
     } catch (error) {
       console.log(error);
     }
   },
-  /*const id = req.params.id;
-    const proyecto = proyectos.find((p) => id == p.idProyecto);
-    res.render("proyect-edition", {
-      proyecto: proyecto,
-    });*/
+  delete: async (req, res) => {
+    try {
+      const idParam = req.params.id;
+      const proyecto = await db.Proyectos.findOne({
+        where: {
+          id: idParam
+        }
+      })
+      //primero borro todos los proyectoCategoria
+
+      const proyectosCat = await db.ProyectoCategoria.findAll({
+        where: {
+          proyectoId: idParam
+        }
+      })
+      for (let i = 0; i < proyectosCat.length; i++) {
+        db.ProyectoCategoria.destroy({
+          where: {
+            id: proyectosCat[i].id
+          }
+        })
+      }
+      db.Proyectos.destroy({
+        where: {
+          id: idParam,
+        },
+      });
+
+      res.render('proyect-delete', {
+        proyecto: proyecto,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
 
   update: async (req, res) => {
     try {
@@ -246,20 +291,20 @@ const proyectController = {
     }
   },
 
-  delete: async (req, res) => {
-    try {
-      /* Hay que arreglar el botón, con js llamar a este método :) */
-      const idParam = req.params.id;
-      db.Proyectos.destroy({
-        where: {
-          id: idParam,
-        },
-      });
+  // delete: async (req, res) => {
+  //   try {
+  //     /* Hay que arreglar el botón, con js llamar a este método :) */
+  //     const idParam = req.params.id;
+  //     db.Proyectos.destroy({
+  //       where: {
+  //         id: idParam,
+  //       },
+  //     });
 
-      res.redirect('/proyect');
-    } catch (error) {
-      console.log(error);
-    }
-  },
+  //     res.redirect('/proyect');
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // },
 };
 module.exports = proyectController;

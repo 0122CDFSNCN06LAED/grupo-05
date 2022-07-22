@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
       unique: true,
     },
     contenidoMensaje: dataTypes.STRING,
-    fechaMensaje: dataTypes.STRING,
+    fechaMensaje: dataTypes.DATE,
   };
 
   const config = {

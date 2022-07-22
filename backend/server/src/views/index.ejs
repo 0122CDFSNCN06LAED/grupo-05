@@ -109,7 +109,9 @@
         </button> -->
       </div>
       <div class="tarjeta-buscados">
-        <% for(let i=0; i<4; i++){ %>
+        <% let long = listaProyectos.length %>
+        <% if (long > 4) { long = 4} %>
+        <% for(let i=0; i<long; i++){ %>
         <a href="#" class="card hipervinculo">
           <h5 class="card-header">
             <%= listaProyectos[i].titulo%>

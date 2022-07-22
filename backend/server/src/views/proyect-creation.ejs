@@ -19,7 +19,7 @@
           <label for="titulo">Ingrese un título</label>
           <input class="input-small" type="text" name="titulo" id="titulo" value="<%= locals.old && old.titulo%>" />
           <% if(locals.errors && errors.titulo){%>
-            <p><%=errors.titulo.msg%></p>
+            <p class="text-danger"><%=errors.titulo.msg%></p>
           <%}%>
         </div>
         <div class="item-form descrip">

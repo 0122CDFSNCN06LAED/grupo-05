@@ -32,6 +32,7 @@ proyectRouter.post(
 );
 /*** EDITAR UN PRODUCTO ***/
 proyectRouter.get('/edit/:id', authGuestMiddleware, proyectController.edit);
+proyectRouter.get('/delete/:id', authGuestMiddleware, proyectController.delete);
 proyectRouter.put(
   '/:id',
   validacion.validacionCreate,

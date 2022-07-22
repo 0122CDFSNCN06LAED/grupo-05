@@ -59,7 +59,16 @@ let validacionLogin = [
     .withMessage("La contraseña debe contener al menos 5 caracteres"),
 ];
 
+let validacionMensaje = [
+  check("mensaje").notEmpty().withMessage("El mensaje no puede ser vacío").bail(),
+  check("destinatario")
+    .notEmpty()
+    .withMessage("Debe elegir un usuario")
+    .bail()
+];
+
 module.exports = {
   validacionRegistro,
   validacionLogin,
+  validacionMensaje
 };

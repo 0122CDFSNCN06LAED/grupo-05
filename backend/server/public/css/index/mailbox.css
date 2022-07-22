@@ -11,7 +11,10 @@ main {
   justify-content: center;
   text-align: center;
   flex-direction: column;
+}
 
+.dropdown {
+  margin-bottom: 5px;
 }
 
 .contenedor-lista {
@@ -58,4 +61,39 @@ main {
 
 body {
   position: relative;
+}
+
+.guardar-boton {
+  background-color: rgb(72, 163, 72);
+  font-family: "Roboto";
+  margin-left: 5%;
+  width: 15%;
+  height: 15%;
+  font-size: 10px;
+  text-align: center;
+}
+
+.users {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+}
+
+.enviado {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30%;
+}
+
+.blue {
+  color: blue;
+}
+.recibido {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.green {
+  color: green;
 }

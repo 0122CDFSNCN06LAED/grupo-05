@@ -19,25 +19,25 @@
   </h8>
 
   <div class="contenido">
-    <form action="/proyect/<%= proyecto.idProyecto %>?_method=PUT" method="POST">
+    <%console.log(proyecto,'lll')%>
+    <form action="/proyect/<%=proyecto.id %>?_method=PUT" method="POST">
       <div class="item-form">
         <label for="titulo">Ingrese un título</label>
-        <input class="input-small" type="text" name="titulo" id="titulo" value="<%=proyecto.tituloProyecto%>" />
-        <%console.log('wwwwwwww', proyecto, categorias)%>
+        <input class="input-small" type="text" name="titulo" id="titulo" value="<%=proyecto.titulo%>" />
         <% if(locals.errors && errors.titulo){%>
           <p><%=errors.titulo.msg%></p>
         <%}%>
       </div>
       <div class="item-form descrip">
         <label for="descripcion">Describa su proyecto</label>
-        <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10" "><%=proyecto.descripcionProyecto%></textarea>
+        <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10" "><%=proyecto.descripcion%></textarea>
         <% if(locals.errors && errors.descripcion){%>
           <p><%=errors.descripcion.msg%></p>
         <%}%>
       </div>
       <div class=" item-form prec">
         <label for="precio">Precio</label>
-        <input class="input-small" type="text" name="precio" id="precio" value="<%=proyecto.precioProyecto%>" />
+        <input class="input-small" type="text" name="precio" id="precio" value="<%=proyecto.precio%>" />
         <% if(locals.errors && errors.precio){%>
           <p><%=errors.precio.msg%></p>
         <%}%>
@@ -46,35 +46,34 @@
         <label for="categorias">Seleccione las categorías</label>
       </div>
       <div class="categorias-check">
-        <% for (let i = 0; i < categorias.length; i++) {%>
-          <%let k = false%>
-          <div class="checkbox-item">
-            <label class="label-checkbox" for="categorias"><%=categorias[i].nombreCategoria%></label>
-            <% for (let j = 0; j < proyecto.categoria.length; j++) { %>
-            <% if (categorias[i].nombreCategoria==proyecto.categoria[j]) {%>
-              <%k = true%>
-            <%}%>
-            <%}%>
-            <%if(k == true){%>
-              <input class="checkbox" type="checkbox" name="categoria" value="<%=categorias[i].nombreCategoria%>" checked/>
-            <%}else{%>
-            <input class="checkbox" type="checkbox" name="categoria" value="<%=categorias[i].nombreCategoria%>" />
-          <%}%>
-          </div>
-        <%}%>
+        <% for(let i=0; i<1; i++){ %>
+          <!-- proyCat contiene la instancia que pertenece al proyecto y le saco la/s categoría/s -->
+          <% for(let j=0; j<proyectoCategoria.length; j++){ %>
+          <% if(proyectoCategoria[j].proyectoId==proyectos[i].id){ %>
+          <!-- busco la categoria (nombre) -->
+          <% let categId = proyectoCategoria[j].proyectoId %>
+          <% for(let k=0; k<categorias.length; k++) { %>
+              <%if(categorias[k] != undefined){%>
+                  <%console.log('ttttt', categId, categorias[k])%>
+          <% if(categId == categorias[k].id){ %>
+          <p><%=categorias[k].nombre%></p>
+          <% } %>
+          <% } %>
+          <% } %>
+          <% } %>
+          <% } %>
+  <% } %>
         
       </div>
       <div class="botones">
         <button class="guardar-boton" type="submit">Guardar</button>
         <button class="boton-cancelar" type="cancel">Cancelar</button>
         <button class="boton-cancelar" type="cancel">Eliminar</button>
-        <!-- <div class="item-form">
-          <form action="/proyect/<%= proyecto.idProyecto%>?_method=DELETE">
-            <button class="guardar-cancelar"  type="submit">
-              Eliminar
-            </button>
-          </form>
-        </div>       -->  
+        
+        
+
+
+
       </div>
 
     <footer class="footer"><%- include('./partials/footer') %></footer>

@@ -18,9 +18,15 @@ userRouter.post(
 
 userRouter.get("/login", userController.login);
 /* userRouter.post("/", validacion.validacionLogin, userController.loginForm); */
-
 userRouter.post("/logout", userController.logout);
 userRouter.get("/mailbox", authGuestMiddleware, userController.mailbox);
+userRouter.get(
+  '/mailbox/:id/',
+  authGuestMiddleware,
+  userController.detailMessage
+);
+userRouter.get("/createMessage", authGuestMiddleware, userController.message);
+userRouter.post("/createMessage", authGuestMiddleware, validacion.validacionMensaje, userController.createMessage);
 userRouter.get("/portfolio", authGuestMiddleware, userController.portfolio);
 userRouter.get("/config", authGuestMiddleware, userController.config);
 userRouter.get(

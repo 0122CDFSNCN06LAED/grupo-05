@@ -5,10 +5,10 @@ const { validationResult } = require('express-validator');
 module.exports = {
   index: async (req, res) => {
     try {
+
       const proyectos = await db.Proyectos.findAll();
       const categorias = await db.Categorias.findAll();
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
-      console.log('usuario', res.locals.userLogged)
 
       res.render('index', {
         listaProyectos: proyectos,

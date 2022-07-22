@@ -1,0 +1,26 @@
+.tamanio {
+  width: 80%;
+  margin: 0 auto;
+}
+.tamanio-menor {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.guardar-boton {
+  background-color: rgb(72, 163, 72);
+  font-family: "Roboto";
+  width: 105px;
+  height: 35px;
+  font-size: 13px;
+}
+
+.mensaje {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#botonEnviar {
+  align-self: center;
+}

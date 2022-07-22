@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const db = require('../../database/models');
+const { Op } = require("sequelize");
 
 module.exports = {
   register: (req, res) => {
@@ -149,30 +150,164 @@ module.exports = {
   },
   mailbox: async (req, res) => {
     try {
-      const mensajes = await db.Mensajes.findAll();
-      const listaUsuarios = await db.Usuarios.findAll();
-      let mensajesRemitente = [];
-      let mensajesDestinatario = [];
-      mensajes.forEach((m) => {
-        if (m.destinatarioId == req.session.userLogged.id) {
-          mensajesRemitente.push(m);
-        } else if (m.remitenteId == req.session.userLogged.id) {
-          mensajesDestinatario.push(m);
+      const mensajes = await db.Mensajes.findAll({
+        where: {
+          [Op.or]: [
+            { destinatarioId: req.session.userLogged.id },
+            { remitenteId: req.session.userLogged.id }
+          ]
         }
+      })
+      let participantes = []
+      for (let i = 0; i < mensajes.length; i++) {
+        //busco el destinatarioId
+        if (mensajes[i].remitenteId == req.session.userLogged.id) {
+          let partipante = await db.Usuarios.findOne({
+            where: {
+              id: mensajes[i].destinatarioId
+            }
+          })
+          participantes.push(partipante)
+          //busco por remitente
+        } else {
+          let partipante = await db.Usuarios.findOne({
+            where: {
+              id: mensajes[i].remitenteId
+            }
+          })
+          participantes.push(partipante)
+        }
+      }
+      let participantesId = []
+      participantes.forEach(element => {
+        participantesId.push(element.id)
       });
-      console.log(
-        'mensajesRem',
-        mensajesRemitente,
-        'mensajesDest',
-        mensajesDestinatario
-      );
-      if (mensajesRemitente || mensajesDestinatario) {
+      //elimino los usuarios repetidos
+      let usuariosUnicosId = participantesId.filter((item, index) => {
+        return participantesId.indexOf(item) === index;
+      })
+      console.log('idddd', usuariosUnicosId)
+      let usuariosUnicos = []
+      for (let j = 0; j < usuariosUnicosId.length; j++) {
+        let user = await db.Usuarios.findOne({
+          where: {
+            id: usuariosUnicosId[j]
+          }
+        })
+        usuariosUnicos.push(user)
+      }
+      console.log('usuariosssss', usuariosUnicos)
+
+      if (usuariosUnicos) {
         res.render('mailbox', {
-          mensajesRemitente: mensajesRemitente,
-          mensajesDestinatario: mensajesDestinatario,
-          /*  proyectos: proyects, */
+          usuarios: usuariosUnicos
         });
       }
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  message: async (req, res) => {
+    try {
+      const usuarios = await db.Usuarios.findAll()
+      let mensajeEnviado = ''
+      res.render('create-message', { usuarios: usuarios, error: '', errors: '', mensajeEnviado: mensajeEnviado })
+    }
+    catch (error) {
+      console.log(error);
+    }
+  },
+  createMessage: async (req, res) => {
+    try {
+      const usuarios = await db.Usuarios.findAll()
+      let errors = validationResult(req);
+      let mensajeEnviado = ''
+      if (errors.isEmpty()) {
+        if (req.body.destinatario == req.session.userLogged.id) {
+          res.render('create-message', { usuarios: usuarios, old: req.body, error: 'No se puede enviar un mensaje a sí mismo', errors: '', mensajeEnviado: mensajeEnviado })
+        } else {
+          newMensaje = {
+            ...req.body,
+            id: '',
+            contenidoMensaje: req.body.mensaje,
+            fechaMensaje: new Date(),
+            destinatarioId: req.body.destinatario,
+            remitenteId: req.session.userLogged.id
+          }
+          console.log('newwwww', newMensaje)
+          await db.Mensajes.create(newMensaje)
+          mensajeEnviado = 'Mensaje Enviado'
+          res.render('create-message', { usuarios: usuarios, old: req.body, error: '', errors: '', mensajeEnviado: mensajeEnviado })
+        }
+      } else {
+        res.render('create-message', { usuarios: usuarios, old: req.body, error: '', errors: errors.mapped(), mensajeEnviado: mensajeEnviado })
+      }
+    }
+    catch (error) {
+      console.log(error);
+    }
+  },
+  detailMessage: async (req, res) => {
+    try {
+      /* Esta pantalla no es dinámica, habría que arreglarla */
+      const idParam = req.params.id;
+      const usuario = await db.Usuarios.findOne({
+        where: {
+          id: idParam,
+        },
+      });
+      const mensajes = await db.Mensajes.findAll({
+        where: {
+          [Op.or]: [
+            { destinatarioId: usuario.id },
+            { remitenteId: usuario.id }
+          ]
+        }
+      })
+      let mensajesUtiles = []
+      for (let i = 0; i < mensajes.length; i++) {
+        if (mensajes[i].remitenteId == req.session.userLogged.id || mensajes[i].destinatarioId == req.session.userLogged.id) {
+          mensajesUtiles.push(mensajes[i])
+        }
+      }
+
+      /* var array = [
+        {
+          fechas: "30-10",
+          registros: 52
+        },
+        {
+          fechas: "17-10",
+          registros: 9
+        },
+        {
+          fechas: "26-10",
+          registros: 8
+        },
+        {
+          fechas: "24-10",
+          registros: 5
+        }
+      ];
+      console.log('array1', array)
+      array.sort((a, b) => a.fechas - b.fechas);
+      console.log('array2', array) */
+
+      //ordeno los mensajes utiles para enviar a la vista
+      let mensajesOrdenados = mensajesUtiles.sort((o1, o2) => {
+        if (o1.fechaMensaje < o2.fechaMensaje) {
+          return -1;
+        } else if (o1.fechaMensaje > o2.fechaMensaje) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+
+      res.render('message-detail', {
+        mensajes: mensajesOrdenados,
+        usuario: usuario
+      });
     } catch (error) {
       console.log(error);
     }
