@@ -1,60 +1,73 @@
-
 <a href="/" class="link-logo"><img class="logo" src="/images/logo-icon.png" alt="Logo" /></a>
 <p><%=locals.userLogged.username%></p>
+
 <div class="usuario-datos">
-    <div class="usuario-texto">
-        <p class="texto-gris"><%=locals.userLogged.tipoUsuario%></p>
-    </div>
-    <%let url = locals.userLogged.profileURL%>
-    <img class="imagen-usuario" src=<%if (url){%>
+  <div class="usuario-texto">
+    <p class="texto-gris"><%=locals.userLogged.tipoUsuario%></p>
+  </div>
+  <%let url = locals.userLogged.profileURL%>
+  <img
+    class="imagen-usuario"
+    src="<%if (url){%>
         <%=url%>
         <%}else{%>
-        "/images/user-images/usuario.png"
-        <% }%>  alt="profile pic"  />
-    <div class="dropdown">
-        <img class="configuracion btn btn-secondary dropdown-toggle boton-desplegable" src="/images/config-icon.svg"
-            alt="icono-config" id="dropdownMenuButton1" data-bs-toggle="dropdown" />
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li <% if (locals.userLogged.tipoUsuarioId !=1 ){ %>>
-                <div class="dropdown-item opciones-desplegable ">
-                    <a class="hipervinculo" href="/proyect/proposals-list">Mis propuestas</a>
-                    <a href="/proyect/proposals-list"><i class="fa-solid fa-hand"></i></a>
-                </div>
-                <% } %>
-            </li>
-            <li <% if (locals.userLogged.tipoUsuarioId!=2){ %>>
-                <div class="dropdown-item opciones-desplegable ">
-                    <a class="hipervinculo" href="/proyect/proposals">Mis proyectos</a>
-                    <a href="/proyect/proposals"><i class="fa-solid fa-clipboard-list-check"></i></a>
-                </div>
-                <% } %>
-            </li>
-            <li>
-                <div class="dropdown-item opciones-desplegable">
-                    <a class="hipervinculo" href="/user/mailbox">Buzón</a>
-                    <a href="mailbox"><img class="config-icon" src="/images/buzon.png" alt="buzón"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="dropdown-item opciones-desplegable">
-                    <a class="hipervinculo" href="/user/config">Ver perfil</a>
-                    <a href="config"><i class="fa-solid fa-circle-user"></i></a>
-                </div>
-            </li>
+        /images/user-images/usuario.png 
+        <% }%>"
+    alt="profile pic"
+  />
 
-            <li>
-                <form action="/user/logout" method="POST">
-                    <button class="hipervinculo" type="submit">
-                        Salir
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    </button>
-                </form>
-            </li>
-        </ul>
-    </div>
+  <div class="dropdown">
+    <i
+      class="fa-solid fa-bars configuracion btn btn-secondary dropdown-toggle boton-desplegable"
+      alt="icono-config"
+      id="dropdownMenuButton1"
+      data-bs-toggle="dropdown"
+    ></i>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li <% if (locals.userLogged.tipoUsuarioId !="1" ){ %>
+        >
+        <div class="dropdown-item opciones-desplegable">
+          <a class="hipervinculo" href="/proyect/proposals">Mis propuestas</a>
+          <a href="/proyect/proposals-list"><i class="fa-solid fa-hand"></i></a>
+        </div>
+        <% } %>
+      </li>
+      <li <% if (locals.userLogged.tipoUsuarioId!="2" ){ %>
+        >
+        <div class="dropdown-item opciones-desplegable">
+          <a class="hipervinculo" href="/proyect/proposals">Mis proyectos</a>
+          <a href="/proyect/proposals"><i class="fa-solid fa-clipboard-list-check"></i></a>
+        </div>
+        <% } %>
+      </li>
+      <li>
+        <div class="dropdown-item opciones-desplegable">
+          <a class="hipervinculo" href="/user/mailbox">Buzón</a>
+          <a href="mailbox"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </li>
+      <li>
+        <div class="dropdown-item opciones-desplegable">
+          <a class="hipervinculo" href="/user/config">Ver perfil</a>
+          <a href="config"><i class="fa-solid fa-circle-user"></i></a>
+        </div>
+      </li>
+
+      <li>
+        <form action="/user/logout" method="POST">
+          <button class="hipervinculo" type="submit">
+            Salir
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </button>
+        </form>
+      </li>
+    </ul>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>

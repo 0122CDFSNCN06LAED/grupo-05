@@ -51,8 +51,9 @@
                         <% } %>
                     </div>
                     <div class="edicion">
-                        <a href="/proyect/delete/<%=listaProyectos[i].id%>"><img class="basura" src="/images/basura.png" alt="camara"></a>
-                        <a href="/proyect/edit/<%=listaProyectos[i].id%>"><img class="lapiz" src="/images/lapiz.png" alt="lápiz"></a>   
+                        <a href="/proyect/detail/<%=listaProyectos[i].id%>"><i class="fa-solid fa-eye"></i></a> 
+                        <a href="/proyect/delete/<%=listaProyectos[i].id%>"><i class="fa-solid fa-trash-can"></i></a>
+                        <a href="/proyect/edit/<%=listaProyectos[i].id%>"><i class="fa-solid fa-pencil"></i></a> 
                     </div>
                 </div>
             </div>
@@ -63,8 +64,7 @@
                 <div class="agregar-proyecto-contenedor">
                     <p class="agregar-proyecto-text">Agregar nuevo proyecto</p>
                 </div>
-                <img class="agregar" src="/images/agregar.png" alt="camara">
-            </a>
+            <i class="fa-solid fa-circle-plus"></i>
     </div>
                 <footer class="footer">
                     <%- include('./partials/footer') %>

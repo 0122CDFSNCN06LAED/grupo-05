@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../../database/models');
+const { debugPort } = require('process');
 
 const proyectController = {
   proyectsList: async (req, res) => {
@@ -65,7 +66,7 @@ const proyectController = {
         });
         proyectos = proyectoCreador;
       } else if (req.session.userLogged.tipoUsuarioId == 3) {
-        proyectos = await db.Proyectos.findAll()
+        proyectos = await db.Proyectos.findAll();
       }
       res.render('proyects-list', {
         listaProyectos: proyectos,
@@ -76,6 +77,37 @@ const proyectController = {
       console.log(error);
     }
   },
+  // async postular(req, res) {
+  //       const proyecto = await db.Proyectos.findByPk(req.params.id);
+  //       const pro = req.body.categoria;
+  //     for (let i = 0; i < categorias.length; i++) {
+  //       const categoria = await db.Categorias.findOne({
+  //         where: {
+  //           id: categorias[i],
+  //         },
+  //       });
+  //       const proyCat = {
+  //         id: '',
+  //         categoriaId: categoria.id,
+  //         proyectoId: proyectoUltimo.id,
+  //       };
+  //       await db.ProyectoCategoria.create(proyCat);
+  //       if (!req.session.cart[product.id]) {
+  //           req.session.cart[product.id] = {
+  //               id: product.id,
+  //               name: product.name,
+  //               image: product.image,
+  //               price: Number(
+  //                   (product.price - product.price * (product.discount / 100)).toFixed(2)
+  //               ),
+  //               count: 0,
+  //           };
+  //       }
+  //       req.session.cart[product.id].count++;
+
+  //       res.redirect("back");
+  //   },
+
   /* detalle específico proyecto */
   detail: async (req, res) => {
     try {
@@ -85,7 +117,7 @@ const proyectController = {
           id: idParam,
         },
       });
-      console.log('proyectooooo', idParam)
+      console.log('proyectooooo', idParam);
       res.render('proyect-detail', {
         proyecto: proyecto,
       });
@@ -118,7 +150,7 @@ const proyectController = {
         estadoId: 1,
         creadorId: req.session.userLogged.id,
       };
-      console.log('proyecttt', proyect)
+      console.log('proyecttt', proyect);
       await db.Proyectos.create(proyect);
 
       //cuando creo automáticamente no se carga el id (no sé cual es el motivo) por lo que no puedo crear el proycat, por eso realizo la siguiente búsqueda
@@ -177,14 +209,14 @@ const proyectController = {
       const idParam = req.params.id;
       const proyecto = await db.Proyectos.findOne({
         where: {
-          id: idParam
-        }
-      })
+          id: idParam,
+        },
+      });
       res.render('proyect-edition', {
         proyecto: proyecto,
         categorias: categorias,
         proyectos: proyectos,
-        proyectoCategoria: proyectoCategoria
+        proyectoCategoria: proyectoCategoria,
       });
     } catch (error) {
       console.log(error);
@@ -195,22 +227,22 @@ const proyectController = {
       const idParam = req.params.id;
       const proyecto = await db.Proyectos.findOne({
         where: {
-          id: idParam
-        }
-      })
+          id: idParam,
+        },
+      });
       //primero borro todos los proyectoCategoria
 
       const proyectosCat = await db.ProyectoCategoria.findAll({
         where: {
-          proyectoId: idParam
-        }
-      })
+          proyectoId: idParam,
+        },
+      });
       for (let i = 0; i < proyectosCat.length; i++) {
         db.ProyectoCategoria.destroy({
           where: {
-            id: proyectosCat[i].id
-          }
-        })
+            id: proyectosCat[i].id,
+          },
+        });
       }
       db.Proyectos.destroy({
         where: {
@@ -225,7 +257,6 @@ const proyectController = {
       console.log(error);
     }
   },
-
 
   update: async (req, res) => {
     try {

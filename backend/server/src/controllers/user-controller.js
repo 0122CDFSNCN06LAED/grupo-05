@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const db = require('../../database/models');
-const { Op } = require("sequelize");
+const { Op } = require('sequelize');
 
 module.exports = {
   register: (req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
       if (req.file) {
         newUser.profileURL = `/images/user-images/${req.file.filename}`;
       }
-      console.log('new userr', newUser)
+      console.log('new userr', newUser);
       await db.Usuarios.create(newUser);
       let errors = validationResult(req);
       if (errors.isEmpty()) {
@@ -139,12 +139,16 @@ module.exports = {
   //   }
   // },
   logout: (req, res) => {
-    console.log('logoutttt')
-    res.locals.userLogged = null
-    req.session.userLogged = null
-    /*res.cookie = null  ver borrar cookie */
-    console.log('local', res.locals.userLogged, 'session', req.session.userLogged, /* 'cookie', req.cookie */)
-    res.redirect('/user/login')
+    console.log('logoutttt');
+    res.locals.userLogged = null;
+    req.session.userLogged = null;
+    console.log(
+      'local',
+      res.locals.userLogged,
+      'session',
+      req.session.userLogged /* 'cookie', req.cookie */
+    );
+    res.redirect('/user/login');
   },
   mailbox: async (req, res) => {
     try {
@@ -152,53 +156,53 @@ module.exports = {
         where: {
           [Op.or]: [
             { destinatarioId: req.session.userLogged.id },
-            { remitenteId: req.session.userLogged.id }
-          ]
-        }
-      })
-      let participantes = []
+            { remitenteId: req.session.userLogged.id },
+          ],
+        },
+      });
+      let participantes = [];
       for (let i = 0; i < mensajes.length; i++) {
         //busco el destinatarioId
         if (mensajes[i].remitenteId == req.session.userLogged.id) {
           let partipante = await db.Usuarios.findOne({
             where: {
-              id: mensajes[i].destinatarioId
-            }
-          })
-          participantes.push(partipante)
+              id: mensajes[i].destinatarioId,
+            },
+          });
+          participantes.push(partipante);
           //busco por remitente
         } else {
           let partipante = await db.Usuarios.findOne({
             where: {
-              id: mensajes[i].remitenteId
-            }
-          })
-          participantes.push(partipante)
+              id: mensajes[i].remitenteId,
+            },
+          });
+          participantes.push(partipante);
         }
       }
-      let participantesId = []
-      participantes.forEach(element => {
-        participantesId.push(element.id)
+      let participantesId = [];
+      participantes.forEach((element) => {
+        participantesId.push(element.id);
       });
       //elimino los usuarios repetidos
       let usuariosUnicosId = participantesId.filter((item, index) => {
         return participantesId.indexOf(item) === index;
-      })
-      console.log('idddd', usuariosUnicosId)
-      let usuariosUnicos = []
+      });
+      console.log('idddd', usuariosUnicosId);
+      let usuariosUnicos = [];
       for (let j = 0; j < usuariosUnicosId.length; j++) {
         let user = await db.Usuarios.findOne({
           where: {
-            id: usuariosUnicosId[j]
-          }
-        })
-        usuariosUnicos.push(user)
+            id: usuariosUnicosId[j],
+          },
+        });
+        usuariosUnicos.push(user);
       }
-      console.log('usuariosssss', usuariosUnicos)
+      console.log('usuariosssss', usuariosUnicos);
 
       if (usuariosUnicos) {
         res.render('mailbox', {
-          usuarios: usuariosUnicos
+          usuarios: usuariosUnicos,
         });
       }
     } catch (error) {
@@ -207,22 +211,32 @@ module.exports = {
   },
   message: async (req, res) => {
     try {
-      const usuarios = await db.Usuarios.findAll()
-      let mensajeEnviado = ''
-      res.render('create-message', { usuarios: usuarios, error: '', errors: '', mensajeEnviado: mensajeEnviado })
-    }
-    catch (error) {
+      const usuarios = await db.Usuarios.findAll();
+      let mensajeEnviado = '';
+      res.render('create-message', {
+        usuarios: usuarios,
+        error: '',
+        errors: '',
+        mensajeEnviado: mensajeEnviado,
+      });
+    } catch (error) {
       console.log(error);
     }
   },
   createMessage: async (req, res) => {
     try {
-      const usuarios = await db.Usuarios.findAll()
+      const usuarios = await db.Usuarios.findAll();
       let errors = validationResult(req);
-      let mensajeEnviado = ''
+      let mensajeEnviado = '';
       if (errors.isEmpty()) {
         if (req.body.destinatario == req.session.userLogged.id) {
-          res.render('create-message', { usuarios: usuarios, old: req.body, error: 'No se puede enviar un mensaje a sí mismo', errors: '', mensajeEnviado: mensajeEnviado })
+          res.render('create-message', {
+            usuarios: usuarios,
+            old: req.body,
+            error: 'No se puede enviar un mensaje a sí mismo',
+            errors: '',
+            mensajeEnviado: mensajeEnviado,
+          });
         } else {
           newMensaje = {
             ...req.body,
@@ -230,18 +244,29 @@ module.exports = {
             contenidoMensaje: req.body.mensaje,
             fechaMensaje: new Date(),
             destinatarioId: req.body.destinatario,
-            remitenteId: req.session.userLogged.id
-          }
-          console.log('newwwww', newMensaje)
-          await db.Mensajes.create(newMensaje)
-          mensajeEnviado = 'Mensaje Enviado'
-          res.render('create-message', { usuarios: usuarios, old: req.body, error: '', errors: '', mensajeEnviado: mensajeEnviado })
+            remitenteId: req.session.userLogged.id,
+          };
+          console.log('newwwww', newMensaje);
+          await db.Mensajes.create(newMensaje);
+          mensajeEnviado = 'Mensaje Enviado';
+          res.render('create-message', {
+            usuarios: usuarios,
+            old: req.body,
+            error: '',
+            errors: '',
+            mensajeEnviado: mensajeEnviado,
+          });
         }
       } else {
-        res.render('create-message', { usuarios: usuarios, old: req.body, error: '', errors: errors.mapped(), mensajeEnviado: mensajeEnviado })
+        res.render('create-message', {
+          usuarios: usuarios,
+          old: req.body,
+          error: '',
+          errors: errors.mapped(),
+          mensajeEnviado: mensajeEnviado,
+        });
       }
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
   },
@@ -258,14 +283,17 @@ module.exports = {
         where: {
           [Op.or]: [
             { destinatarioId: usuario.id },
-            { remitenteId: usuario.id }
-          ]
-        }
-      })
-      let mensajesUtiles = []
+            { remitenteId: usuario.id },
+          ],
+        },
+      });
+      let mensajesUtiles = [];
       for (let i = 0; i < mensajes.length; i++) {
-        if (mensajes[i].remitenteId == req.session.userLogged.id || mensajes[i].destinatarioId == req.session.userLogged.id) {
-          mensajesUtiles.push(mensajes[i])
+        if (
+          mensajes[i].remitenteId == req.session.userLogged.id ||
+          mensajes[i].destinatarioId == req.session.userLogged.id
+        ) {
+          mensajesUtiles.push(mensajes[i]);
         }
       }
 
@@ -304,7 +332,7 @@ module.exports = {
 
       res.render('message-detail', {
         mensajes: mensajesOrdenados,
-        usuario: usuario
+        usuario: usuario,
       });
     } catch (error) {
       console.log(error);
@@ -319,5 +347,5 @@ module.exports = {
   configEditarUsuario: (req, res) => {
     res.render('portfolio');
   },
-  configUpdateUsuario: (req, res) => { },
+  configUpdateUsuario: (req, res) => {},
 };

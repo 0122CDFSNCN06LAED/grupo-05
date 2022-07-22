@@ -200,3 +200,36 @@ Entregable: A
 ### Haciendo
 
 ### Hacer
+
+## 22/07
+
+### Hacer
+
+- hacer que la empresa no vea el boton de postularme en el proyect detail
+
+- al hacer click en postularme siendo freelancer:
+
+  - guardar en la tabla proyecto usuario la postulacion del freelancer.
+  - deshabilitar boton de postularme en la vista de detalle de proyecto.
+
+- hacer que el freelancer vea la lista de sus postulaciones en /proyect/proposal (proyectProposals)
+
+- revisar vista de proposals
+
+- mensajes (página) --> mejorar funcionalidad y que permita crearlo
+
+- pantalla detalle --> hacerla dinámica, guiarse de la pantalla proposal list, teniendo en cuenta más atributos
+
+- pantalla proposal-list --> hacer la pantalla para freelancer y admin, (el backend ya envía los proyectos correctos), recordar agregar los 3 if
+
+- hacer pantalla config --> si es empresa en portafolio poner los proyectos que han sido creada por la misma, y si es freelancer poner los
+  proyectos que hayan sido tomados por la persona (y estén terminados, es decir, fecha finalización no vacía), lo que es trabajos completos,
+  en tiempo, etc y reseñas SACARLO
+
+- ARREGLAR EN GENERAL ESTILOS
+
+### Haciendo
+
+### Hecho
+
+- transiciones --> por ejemplo al hacer click en un proyecto que me lleve a su detalle (en todas las vistas, ya sea index, proposals, etc)

@@ -18,7 +18,7 @@
     <p class="recomendado-titulo">RECOMENDADOS PARA TI</p>
     <ul class="lista-recomendados">
       <% for(let i=0; i<listaProyectos.length; i++){ %>
-      <a href="#" class="card hipervinculo">
+      <a href="proyect/detail/ <%=listaProyectos[i].id %> " class="card hipervinculo">
         <h5 class="card-header">
           <%= listaProyectos[i].titulo%>
         </h5>
@@ -112,7 +112,7 @@
         <% let long = listaProyectos.length %>
         <% if (long > 4) { long = 4} %>
         <% for(let i=0; i<long; i++){ %>
-        <a href="#" class="card hipervinculo">
+        <a href="proyect/detail/ <%=listaProyectos[i].id %>" class="card hipervinculo">
           <h5 class="card-header">
             <%= listaProyectos[i].titulo%>
           </h5>
