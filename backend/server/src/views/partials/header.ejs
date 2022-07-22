@@ -9,12 +9,12 @@
     <img class="imagen-usuario" src=<%if (url){%>
         <%=url%>
         <%}else{%>
-        "/images/user-images/usuario.png" 
+        "/images/user-images/usuario.png"
         <% }%>  alt="profile pic"  />
     <div class="dropdown">
         <img class="configuracion btn btn-secondary dropdown-toggle boton-desplegable" src="/images/config-icon.svg"
             alt="icono-config" id="dropdownMenuButton1" data-bs-toggle="dropdown" />
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">    
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li <% if (locals.userLogged.tipoUsuarioId !=1 ){ %>>
                 <div class="dropdown-item opciones-desplegable ">
                     <a class="hipervinculo" href="/proyect/proposals-list">Mis propuestas</a>
@@ -38,21 +38,13 @@
             <li>
                 <div class="dropdown-item opciones-desplegable">
                     <a class="hipervinculo" href="/user/config">Ver perfil</a>
-                    <a href="config"><img class="config-icon" src="/images/usuario.png" alt="usuario"></i></a>
+                    <a href="config"><i class="fa-solid fa-circle-user"></i></a>
                 </div>
             </li>
 
-            <!-- <li class="nav-item">
-                        <form action="/logout" method="POST">
-                            <button class="btn" type="submit">
-                                Salir
-                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            </button>
-                        </form>
-                    </li> -->
             <li>
                 <form action="/user/logout" method="POST">
-                    <button class="btn" type="submit">
+                    <button class="hipervinculo" type="submit">
                         Salir
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </button>

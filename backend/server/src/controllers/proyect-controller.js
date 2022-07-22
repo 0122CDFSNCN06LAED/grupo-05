@@ -79,7 +79,6 @@ const proyectController = {
   /* detalle específico proyecto */
   detail: async (req, res) => {
     try {
-
       const idParam = req.params.id;
       const proyecto = await db.Proyectos.findOne({
         where: {

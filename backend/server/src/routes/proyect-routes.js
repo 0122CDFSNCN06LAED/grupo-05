@@ -4,7 +4,8 @@ const validacion = require('../middlewares/proyecto-middleware');
 const authGuestMiddleware = require('../middlewares/auth-guest-middleware');
 const proyectRouter = Router();
 
-proyectRouter.get('/', authGuestMiddleware, proyectController.proyectsList);
+proyectRouter.get('/',
+ authGuestMiddleware, proyectController.proyectsList);
 proyectRouter.get(
   '/proposals', //muestra la lista de propuestas de un proyecto puntual. (vista de empresa)
   authGuestMiddleware,

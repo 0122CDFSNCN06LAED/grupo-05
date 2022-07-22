@@ -2,13 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>Bidding-Deatail</title>
+  <title><%= proyecto.titulo %> </title>
   <!-- Espacio para estilos de esta pantalla-->
   <%- include('./partials/head') %>
-  <link rel="stylesheet" href="/css/bidding-detail/bidding-detail.css" />
-  <link rel="stylesheet" href="/css/register&login/normalize.css" />
-  <link rel="stylesheet" href="/css/index/index.css" />
-</head>
+  <!-- Espacio para estilos de esta pantalla-->
+  </head>
 
 <body>
   <header class="header">
@@ -16,56 +14,44 @@
 
   </header>
 
-  <main>
-    <div class="product-block">
-      <%if(proyecto != null || proyecto != undefined){%>
-      <hr>
-      <div class="product-info">
-        <h6><%=proyecto.descripcionProyecto%></h6>
-        <h6><%=proyecto.precioProyecto%></h6>
-        <h6>Metodologia de Trabajo: Lorem ipsum dolor sit amet. </h6>
-        <h6> <a href="#">Agregar a favoritos</a></h6>
-        <h6> <a href="{{route('actually')}}">Compartir</a></h6>
-        <form action="" metodh="post">
-          <div class="seccion1">
-            <div class="elemento">
-              <label for="mensaje"></label>
-              <input class="input" type="text" id="mensaje" name="mensaje" placeholder="Escribir Mensaje">
-              <input type="submit" value="enviar" id="boton">
-        </form>
+    <main class="flex-fill container py-3">
+      <div class="row bg-white border shadow p-1">
+        <div class="col col-md-8">
+          <!-- <img class="d-block mx-auto" src="<%# proyecto.image %>" alt="<%# product.name %>" /> -->
+          <div class="p-4">
+            <h2 class="text-lg">Descripción</h2>
+            <p class="text-md">
+              <%= proyecto.descripcion %>
+            </p>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div class="card shadow h-100">
+            <div class="card-body d-flex flex-column">
+              <h1 class="fs-2">
+                <%= proyecto.titulo %>
+              </h1>
+              <div class="d-flex align-items-center">
+                <p class="fs-1 me-2">$ <%= proyecto.precio %>
+                </p>
+              </div>
+              <div class="flex-fill"></div>
+              <div class="">
+                <form action="<%= proyecto.id %>" method="POST">
+                  <button class="fs-5 btn w-100 btn-primary text-white">
+                    Postularme
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <%} else{%>
-      <img class="productImage" src="images/bidding-detail-image.jpg">
-      <hr>
-      <div class="product-info">
-        <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, ad ab? Distinctio vitae debitis fugit
-          accusamus voluptatibus, repellat totam exercitationem aliquid ex iste aperiam culpa facilis esse itaque
-          obcaecati earum!</h6>
-        <h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic commodi ipsa ipsam corrupti eaque, aspernatur
-          debitis quos voluptatem similique nam ad reprehenderit illo tempora autem natus fugiat odio voluptas?
-          Doloribus?</h6>
-        <h6>Metodologia de Trabajo: Lorem ipsum dolor sit amet. </h6>
-        <h6> <a href="#">Agregar a favoritos</a></h6>
-        <h6> <a href="{{route('actually')}}">Compartir</a></h6>
-        <form action="" metodh="post">
-          <div class="seccion1">
-            <div class="elemento">
-              <label for="mensaje"></label>
-              <input class="input" type="text" id="mensaje" name="mensaje" placeholder="Escribir Mensaje">
-              <input type="submit" value="enviar" id="boton">
-        </form>
-      </div>
-      <%}%>
-    </div>
+    </main>
 
-    <p><a href="/">Regresar</a></p>
-  </main>
-  <footer class="footer">
-
-    <%- include('./partials/footer') %>
-
+      <footer class="footer">
+        <%- include('./partials/footer') %>
       </footer>
-
 </body>
 
 </html>
