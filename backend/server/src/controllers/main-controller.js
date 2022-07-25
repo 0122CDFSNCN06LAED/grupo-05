@@ -25,6 +25,8 @@ module.exports = {
       let usuarioEncontrado;
 
       if (errors.isEmpty()) {
+
+
         const user = await db.Usuarios.findOne({
           where: {
             email: req.body.email, /* include usuarioTipo */
@@ -33,6 +35,10 @@ module.exports = {
 
         if (user) {
           //verifico contraseña
+          /* BELEN - VER HASH de contraseña para hacer blanqueo de clave forzada 
+          let apss = bcrypt.hashSync('12345', 10);
+          console.log(apss);*/
+          
           let correcto = bcrypt.compareSync(
             req.body.password,
             user.password

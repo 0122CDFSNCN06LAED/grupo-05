@@ -5,9 +5,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-body {
-  background-color: hsl(200, 17%, 55%);
-}
+
 
 p {
   margin: 0;
@@ -15,47 +13,6 @@ p {
 }
 
 
-
-/* .logo {
-  width: 100%;
-  margin-left: 15px;
-} */
-
-
-
-/* .configuracion {
-  height: 22px;
-  margin-top: 2px;
-} */
-
-/* .usuario-datos {
-  display: flex;
-  margin-top: 10px;
-  gap: 5px;
-  margin-right: 5px;
-
-} */
-/* 
-.usuario-texto {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.usuario-texto p:first-child {
-  font-weight: bold;
-  font-size: 14px;
-} */
-/* 
-.imagen-usuario {
-  height: 30px;
-  width: 30px;
-}
-
-.nivel-icon {
-  height: 27px;
-  width: 27px;
-} */
 
 .hipervinculo {
   text-decoration: none;
@@ -66,44 +23,14 @@ p {
   color: black;
 }
 
-/* .dropdown-menu {
-  background-color: #e6ebe0;
-} */
-
-/* .dropdown-item a {
-  color: black;
-} */
-
-/* .config-icon {
-  width: 15px;
-  height: 15px;
-  margin-bottom: 1px;
-}
- */
-/* .opciones-desplegable {
-  display: flex;
-  gap: 6px;
-}
-
-.texto-gris {
-  color: gray;
-  font-size: 14px;
-}
- */
-/* recomendados */
+/* I - recomendados */
+/*Contenedor gral*/
 .recomendados {
   display: flex;
   flex-direction: column;
 }
 
-.recomendado-titulo {
-  padding: 5px;
-  text-align: center;
-  background-color: #425158;
-  font-size: 14px;
-  color: white;
-}
-
+/*Contenedor de carrousel*/
 .lista-recomendados {
   display: flex;
   list-style: none;
@@ -114,75 +41,68 @@ p {
   /* height: 130px; */
 }
 
-.requisitos-recomendados {
-  display: flex;
-  font-size: 9px;
-  gap: 5px;
-  padding: 3px;
-  align-items: center;
+.recomendado-titulo {
+  padding: 5px;
+  text-align: center;
+  background-color: #425158;
+  font-size: 14px;
+  color: white;
 }
 
-.requisitos-recomendados p {
-  background-color: #3a7fff;
-  border-radius: 10px;
-  padding: 3px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #ffffff;
-  margin-bottom: 0px;
-}
+/* F - Recomendados*/
 
+
+/* I -  Cuerpo */
 .contenido-principal {
   display: flex;
   margin-top: 15px;
 }
 
+/*Lista de publicaciones / resultado de la busqueda*/
 .buscador-buscados {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 5px;
   gap: 5px;
+
 }
 
-.d-flex {
-  width: 92vw;
-}
+/*F - Cuerpo*/
 
-/* filtrado */
 
+/* I - Parametros  */
+/*Precio*/
 .filtrado {
-  margin-top: 10px;
-  font-size: 12px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 30px;
+  font-size: 12px;
+  gap: 10px;
   margin-left: 5px;
+  margin-top: 10px;
+
 }
 
-/* filtrado precio */
 .filtrado-precio {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  width: 120px;
+  width: 250px;
   padding-top: 3px;
   padding-bottom: 3px;
-  background-color: #c0fdfb;
+  background-color: white;
   align-items: center;
   box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
 .filtrado-precio p:first-child {
-  background-color: #64b6ac;
-  width: 95px;
+  width: 100px;
   text-align: center;
   font-weight: bold;
 }
 
 .input-precio {
-  width: 43px;
+  width: 100px;
   height: 20px;
   font-size: 12px;
 }
@@ -196,16 +116,16 @@ p {
   display: flex;
 }
 
-/* filtrado categoría */
+/*Categoría */
 .filtrado-categoria {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-right: 10px;
-  width: 120px;
+  width: 250px;
   padding-top: 3px;
   padding-bottom: 3px;
-  background-color: #c0fdfb;
+  background-color: white;
   box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
@@ -213,13 +133,14 @@ p {
   align-self: center;
   margin-left: 3px;
   margin-right: 3px;
+
 }
 
 .filtrado-categoria p:first-child {
-  background-color: #64b6ac;
   width: 95px;
   text-align: center;
   font-weight: bold;
+
 }
 
 .filtrado-checkbox-categoria {
@@ -229,46 +150,46 @@ p {
 
 .categoria-scroll {
   height: 88px;
-  width: 120px;
+  /* width: 120px;  lo comento asi se agranda solo*/
   overflow-y: scroll;
-  margin-left: 3px;
+  margin-left: 1px;
 }
 
 .label-checkbox {
   display: flex;
   gap: 3px;
+  /* border: blue solid; */
+
 }
 
 .label-checkbox input {
+  /*No entiendo que hace esto*/
   margin-top: 1.7px;
+
 }
 
+.categorias-descripcion {
+
+  font-size: 14px;
+}
+
+/*
 .tarjeta {
   display: flex;
   gap: 5px;
-}
+  
+}*/
 
 .card {
   box-shadow: 0px 0px 10px rgb(0, 0, 0);
   /* box-shadow: 0px 0px 10px rgb(44, 150, 127); */
 }
 
-.card-header {
-  font-size: 12px;
-  font-weight: bold;
-  background-color: #64b6ac;
-  text-align: center;
-}
+
 
 .card-text {
   font-size: 10px;
   margin: 0;
-}
-
-.price {
-  color: #41b141;
-  font-weight: bold;
-  font-size: 14px;
 }
 
 .boton-cancel {
@@ -306,6 +227,7 @@ p {
 .desplegable-opciones {
   background-color: #5d737e;
 }
+
 /* 
 .dropdown-item {
   font-weight: bold;
@@ -318,10 +240,7 @@ p {
   align-items: center;
 } */
 
-.lupa {
-  width: 22px;
-  height: 22px;
-}
+
 
 .btn-primary {
   background-color: white !important;
@@ -360,25 +279,10 @@ p {
   border-bottom-right-radius: 3px;
 }
 
-.card-body {
-  padding: 3px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #c0fdfb;
-  gap: 5px;
-}
 
-.fecha-horario {
-  display: flex;
-  justify-content: space-between;
-}
 
-.tarjeta-buscados {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+
+
 
 .view-all {
   color: #772f7c;
@@ -405,9 +309,22 @@ p {
   height: 33px;
 }
 
-.bg-light {
-  background-color: #e6ebe0 !important;
+/* I - Barra de busqueda*/
+.d-flex {
+  width: 92vw;
 }
+
+.bg-light {
+  background-color: #f0f0f0 !important;
+}
+
+.lupa {
+  width: 20px;
+  height: 20px;
+  display: block
+}
+
+/*F - Barra de busqueda*/
 
 .no-scroll {
   overflow: hidden;
@@ -419,32 +336,12 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 13%;
-  margin-bottom: 10px;
-}
 
-.margin-footer-quien {
-  margin-right: 3px;
-}
-
-.footer p {
-  min-width: 60px;
-  text-align: center;
-}
-
-.footer p {
-  font-weight: bold;
-  font-size: 12px;
-}
- */
 .ver-todo {
   font-size: 12px;
 }
+
+
 
 /* Tablet */
 @media (min-width: 481px) {
@@ -465,9 +362,7 @@ input::-webkit-inner-spin-button {
     font-size: 11px;
   }
 
-  .card-text {
-    font-size: 11px;
-  }
+
 
   .filtrado {
     margin-left: 2%;
@@ -503,9 +398,7 @@ input::-webkit-inner-spin-button {
     gap: 25%;
   }
 
-  .card-header {
-    font-size: 13px;
-  }
+
 
   .card-text {
     font-size: 12px;

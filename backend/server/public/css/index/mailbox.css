@@ -1,99 +1,21 @@
-h2 {
-  text-align: start;
-  font-size: 24px;
-  margin-left: 18px;
-  margin-top: 9px;
-  margin-bottom: 9px;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-}
-
-.dropdown {
-  margin-bottom: 5px;
-}
-
 .contenedor-lista {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  /* border: 2px solid orange; */
+  border: 2px solid orange;
 }
 
 .lista-contactos {
-  list-style: none;
-  padding: 0;
-  width: 100%;
+  border: 2px solid red;
 }
 
-.imagen-usuario {
-  width: 25px;
-  height: 25px;
-}
-
-.elemento-lista {
-  background-color: rgb(138 145 177 / 44%);
-  border: 0.5px solid rgb(44, 43, 43);
-}
-
-.contacto {
-  text-decoration: none;
-  color: black;
-}
-
-.hipervinculo:hover {
-  color: black;
-}
-
-.footer {
-  /*  position: absolute; */
-  /*BEL - Se lo saque porque me tapaba todo el contenido hay que corregir esto*/
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -80%;
-}
-
-body {
-  position: relative;
-}
-
-.guardar-boton {
-  background-color: rgb(72, 163, 72);
-  font-family: "Roboto";
-  margin-left: 5%;
-  width: 15%;
-  height: 15%;
-  font-size: 10px;
-  text-align: center;
-}
-
-.users {
-  display: flex;
+.contenedor-elemento-lista {
+  border: 2px solid blue;
+  display: inline-flex;
   flex-direction: row;
-  margin-top: 5%;
+  flex-wrap: wrap;
+
 }
 
-.enviado {
-  display: flex;
-  flex-direction: column;
-  margin-left: 30%;
-}
+.mail-box {
+  border: 2px solid purple;
+  flex-basis: 100%;
 
-.blue {
-  color: blue;
-}
-.recibido {
-  display: flex;
-  flex-direction: column;
-  margin-left: 5%;
-}
-
-.green {
-  color: green;
 }

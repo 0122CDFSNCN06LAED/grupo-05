@@ -9,26 +9,22 @@
   font-family: "Open Sans", sans-serif;
   font-size: 24px;
 }
+
 li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: black;
 }
-.header {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  background-color: #f0f0f0;
-}
+
+
 body {
   background-color: #f0f0f0;
 }
-.footer {
-  font-size: small;
-  padding: 10px;
-}
+
+
 .title {
   color: black;
   font-weight: bold;
@@ -41,7 +37,8 @@ body {
 
 .tags {
   color: white;
-  background-color: #3a7fff;
+  background-color: #2b529c;
+  font-weight: 500;
   border-radius: 6px;
   padding: 4px;
 }
@@ -50,6 +47,7 @@ body {
   font-weight: 500;
   font-size: 0.8rem;
 }
+
 * {
   margin: 0;
   font-family: "BhuTuka Expanded One", cursive;
@@ -75,12 +73,14 @@ p {
   margin-top: 8px;
   margin-left: 5px;
 }
+
 .configuracion {
   height: 20px;
   width: 20px;
   margin-top: 9px;
   margin-right: 8px;
 }
+
 .footer {
   display: flex;
   width: 100%;
@@ -89,6 +89,7 @@ p {
   flex-wrap: wrap;
   background-color: #f0f0f0;
 }
+
 .footer-bar {
   display: flex;
   width: 100%;
@@ -96,9 +97,11 @@ p {
   justify-content: space-around;
   margin: auto;
 }
+
 .hidden {
   display: none;
 }
+
 .header {
   justify-content: space-evenly;
 }

@@ -1,69 +1,75 @@
 .header {
-    display: flex;
-    flex-wrap: wrap;
-    /*background-color: #f0f0f0;*/
-  }
-
-  h2 {
-    margin-left: 18px;
-    margin-top: 9px;
-    margin-bottom: 9px;
-  }
-
-
-  .tarjeta-buscados {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .card-buscados {
-   width: 0 auto;
-  }
-
-  .card-header {
-    font-size: 12px;
-    font-weight: bold;
-    background-color: #64b6ac;
-    text-align: center;
-  }
-
-  .card-body {
-    padding: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #c0fdfb;
-  }
-  .card-text {
-    font-size: 10px;
-    margin: 0;
-  }
-  .requisitos-recomendados {
-    display: flex;
-    font-size: 9px;
-    gap: 5px;
-    padding: 3px;
-  }
-  .requisitos-recomendados p {
-    background-color: #3a7fff;
-    border-radius: 10px;
-    padding: 3px;
-    color: #ffffff;
-    margin-bottom: 0px;
-  }
-  .button-primary {
-    background-color: #3a7fff;
-    color: white;
-    width: 100%;
-    display: block;
-    font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  /*background-color: #f0f0f0;*/
 }
-.button-blue{
-    border-radius: 10px;
-    padding: 3px;
-    margin-bottom: 2px;
+
+h2 {
+  margin-left: 18px;
+  margin-top: 9px;
+  margin-bottom: 9px;
 }
+
+
+.tarjeta-buscados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-buscados {
+  width: 0 auto;
+}
+
+.card-header {
+  font-size: 12px;
+  font-weight: bold;
+  /* background-color: #64b6ac; */
+  text-align: center;
+}
+
+.card-body {
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #c0fdfb;
+}
+
+.card-text {
+  font-size: 10px;
+  margin: 0;
+}
+
+.requisitos-recomendados {
+  display: flex;
+  font-size: 9px;
+  gap: 5px;
+  padding: 3px;
+}
+
+.requisitos-recomendados p {
+  background-color: #3a7fff;
+  border-radius: 10px;
+  padding: 3px;
+  color: #ffffff;
+  margin-bottom: 0px;
+}
+
+.button-primary {
+  background-color: #3a7fff;
+  color: white;
+  width: 100%;
+  display: block;
+  font-size: 12px;
+}
+
+.button-blue {
+  border-radius: 10px;
+  padding: 3px;
+  margin-bottom: 2px;
+}
+
 .dropdown {
   position: relative;
   height: 30px;

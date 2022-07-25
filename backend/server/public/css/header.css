@@ -3,15 +3,21 @@
   /*     flex-direction: row; */
   /*justify-content: space-between;*/
   flex-wrap: wrap;
-  background-color: #e6ebe0;
-  align-items: center;
-  border: 1px solid orange;
-}
+  background-color: #f0f0f0;
 
+  align-items: center;
+  /* border: 1px solid orange; */
+}
+/* I- Logo*/
 .link-logo {
   width: 100%;
-  max-width: 100px;
+  max-width: 180px;
 }
+.logo {
+  width: 100%;
+  margin-left: 15px;
+}
+/*F - Logo*/
 
 .usuario-datos {
   display: flex;
@@ -20,10 +26,7 @@
   margin-right: 5px;
 }
 
-.logo {
-  width: 100%;
-  margin-left: 15px;
-}
+
 
 .usuario-texto {
   display: flex;

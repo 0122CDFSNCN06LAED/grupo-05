@@ -320,6 +320,22 @@ const proyectController = {
       console.log(error);
     }
   },
+  postular: async (req, res) => {
+    try {
+      const idParam = req.params.id;
+      const proyecto = await db.Proyectos.findOne({
+        where: {
+          id: idParam,
+        },
+      });
+      console.log('proyectooooo', idParam);
+      res.render('proyect-detail', {
+        proyecto: proyecto,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
 
   // delete: async (req, res) => {
   //   try {

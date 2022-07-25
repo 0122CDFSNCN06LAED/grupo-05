@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
     password: dataTypes.STRING,
     email: dataTypes.STRING,
   };
-
+  
   const config = {
     tableName: 'usuarios',
     timestamps: false,

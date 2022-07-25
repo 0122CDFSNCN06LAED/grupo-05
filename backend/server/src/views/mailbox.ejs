@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Mail Box</title>
-    <%- include('./partials/head') %>
-    <!-- Espacio para estilos de esta pantalla-->
-    <link rel="stylesheet" href="/css/index/index.css" />
-    <link rel="stylesheet" href="/css/index/mailbox.css" />
-  </head>
 
-  <body>
-    <header class="header"><%- include('./partials/header') %></header>
-    <!--  -->
-    <main>
-      <div class="contenedor-lista">
-        <ul class="lista-contactos">
-          <%if(usuarios.length > 0){%>
+<head>
+  <title>Mail Box</title>
+  <%- include('./partials/head') %>
+    <!-- Espacio para estilos de esta pantalla-->
+    <!-- <link rel="stylesheet" href="/css/index/index.css" /> -->
+    <link rel="stylesheet" href="/css/index/mailbox.css" />
+</head>
+
+<body>
+  <header class="header">
+    <%- include('./partials/header') %>
+  </header>
+  <!--  -->
+  <main>
+    <div class="contenedor-lista">
+      <ul class="lista-contactos">
+        <%if(usuarios.length> 0){%>
           <h2>Usuarios</h2>
           <div class="contenedor-elemento-lista users">
-            <% usuarios.forEach(usuario => { %>
-            <div class="col-12 col-sm-6 col-lg-3">
+            <% usuarios.forEach(usuario=> { %>
+              <!-- <div class="col-12 col-sm-6 col-lg-3"> -->
               <section class="mail-box">
                 <a href="/user/mailbox/<%= usuario.id %>">
                   <article class="product-box_data">
-                    <span> <%= usuario.username %> - </span>
-                    <p><%= usuario.email %></p>
+                    <span>
+                      <%= usuario.username %> -
+                    </span>
+                    <p>
+                      <%= usuario.email %>
+                    </p>
                   </article>
                 </a>
               </section>
               <hr />
-            </div>
-            <%})%>
+              <!-- </div> -->
+              <%})%>
           </div>
           <% } %>
-          <!-- nuevo fin -->
-        </ul>
-      </div>
-      <button class="guardar-boton">
-        <a class="" href="/user/createMessage">Nuevo mensaje</a>
-      </button>
-    </main>
-    <footer class="footer"><%- include('./partials/footer') %></footer>
-  </body>
+            <!-- nuevo fin -->
+      </ul>
+    </div>
+    <button class="guardar-boton">
+      <a class="" href="/user/createMessage">Nuevo mensaje</a>
+    </button>
+  </main>
+  <footer class="footer">
+    <%- include('./partials/footer') %>
+  </footer>
+</body>
+
 </html>
