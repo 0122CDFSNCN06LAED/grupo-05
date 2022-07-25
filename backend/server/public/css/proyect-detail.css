@@ -1,0 +1,21 @@
+.titulo-puesto {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.descripcion-corta {
+    font-size: 14px;
+}
+
+.descripcion-detallada {
+    font-size: 12px;
+    margin-top: 2px;
+    max-height: fit-content;
+}
+
+/*Contenedor Gral*/
+.row {
+    display: flex;
+    flex-direction: column;
+
+}

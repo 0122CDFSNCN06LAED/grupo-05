@@ -173,6 +173,8 @@ p {
   font-size: 14px;
 }
 
+/*F- Parametros*/
+
 /*
 .tarjeta {
   display: flex;
@@ -193,6 +195,8 @@ p {
 }
 
 .boton-cancel {
+  /*Esto creo que no se usa aca*/
+
   display: block;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -222,6 +226,7 @@ p {
   width: 45px;
   height: 32px;
   border-radius: 5px;
+  border: 1px solid blue;
 }
 
 .desplegable-opciones {
@@ -297,6 +302,8 @@ p {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 50px;
+  border: 1px solid purple;
 }
 
 .boton-all p {

@@ -16,6 +16,7 @@ module.exports = (sequelize, dataTypes) => {
     fechaInicio: dataTypes.DATE,
     fechaFinalizacion: dataTypes.DATE,
     creadorId: dataTypes.STRING,
+    descripcionDetallada: dataTypes.STRING,
   };
 
   const config = {
