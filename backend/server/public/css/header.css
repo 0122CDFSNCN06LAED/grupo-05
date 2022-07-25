@@ -8,15 +8,18 @@
   align-items: center;
   /* border: 1px solid orange; */
 }
+
 /* I- Logo*/
 .link-logo {
   width: 100%;
   max-width: 180px;
 }
+
 .logo {
   width: 100%;
   margin-left: 15px;
 }
+
 /*F - Logo*/
 
 .usuario-datos {
@@ -25,8 +28,6 @@
   gap: 5px;
   margin-right: 5px;
 }
-
-
 
 .usuario-texto {
   display: flex;
@@ -59,7 +60,7 @@
 }
 
 .dropdown-menu {
-  background-color: #e6ebe0;
+  background-color: white;
 }
 
 .dropdown-item a {
@@ -108,3 +109,35 @@
 .propuestas {
   display: none;
 }
+
+/* I - Menu hamburguesa*/
+.boton-desplegable {
+  background-color: #5d737e;
+  width: 45px;
+  height: 32px;
+  border-radius: 5px;
+
+}
+
+.boton-desplegable::after {
+  display: none;
+}
+
+.boton-desplegable:hover {
+  background-color: hsl(200, 15%, 33%);
+}
+
+.desplegable-opciones {
+  background-color: #5d737e;
+
+}
+
+.btn {
+
+  padding: 0.2rem 0.35rem;
+  border-radius: 0px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/*F - Menu hamburguesa*/

@@ -44,11 +44,13 @@
             </div>
             <div class="flex-fill"></div>
             <div class="">
-              <form action="<%= proyecto.id %>" method="POST">
-                <button class="fs-5 btn w-100 btn-primary text-white">
-                  Postularme
-                </button>
-              </form>
+              <% if (locals.userLogged.tipoUsuarioId !="1" ){ %>
+                <form action="<%= proyecto.id %>" method="POST">
+                  <button class="fs-5 btn w-100 btn-primary text-white">
+                    Postularme
+                  </button>
+                </form>
+                <% } %>
             </div>
           </div>
         </div>

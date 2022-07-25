@@ -5,14 +5,10 @@
   font-family: "Roboto", sans-serif;
 }
 
-
-
 p {
   margin: 0;
   font-size: 10px;
 }
-
-
 
 .hipervinculo {
   text-decoration: none;
@@ -72,9 +68,10 @@ p {
 
 
 /* I - Parametros  */
-/*Precio*/
+
 .filtrado {
-  display: flex;
+  display: none;
+  /* display: flex; */
   flex-direction: column;
   font-size: 12px;
   gap: 10px;
@@ -83,6 +80,7 @@ p {
 
 }
 
+/*Precio*/
 .filtrado-precio {
   display: flex;
   flex-direction: column;
@@ -182,17 +180,9 @@ p {
   
 }*/
 
-.card {
-  box-shadow: 0px 0px 10px rgb(0, 0, 0);
-  /* box-shadow: 0px 0px 10px rgb(44, 150, 127); */
-}
 
 
 
-.card-text {
-  font-size: 10px;
-  margin: 0;
-}
 
 .boton-cancel {
   /*Esto creo que no se usa aca*/
@@ -211,27 +201,11 @@ p {
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
 }
 
-.boton-desplegable::after {
-  display: none;
-}
 
-.boton-desplegable:hover {
-  background-color: hsl(200, 15%, 33%);
-}
 
-.boton-desplegable {
-  background-color: #5d737e;
-  width: 45px;
-  height: 32px;
-  border-radius: 5px;
-  border: 1px solid blue;
-}
-
-.desplegable-opciones {
-  background-color: #5d737e;
-}
 
 /* 
 .dropdown-item {
@@ -247,18 +221,67 @@ p {
 
 
 
-.btn-primary {
-  background-color: white !important;
-  /* border: 1px solid #ced4da !important; */
-  border: none;
+
+
+
+
+/* border: 1px solid blue;*/
+
+
+
+
+/* I -Titulo de ultimos proyecots*/
+.boton-all {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+
+}
+
+.boton-all p {
+  align-self: center;
+  font-size: 19px;
+  font-weight: bold;
+
+}
+
+/* F - Titulo de ultimos proyectos*/
+
+.d-flex {
   height: 33px;
+
+}
+
+/* I - Barra de busqueda*/
+.d-flex {
+  width: 92vw;
+}
+
+.bg-light {
+  background-color: #f0f0f0 !important;
 }
 
 #myBtn {
   padding-right: 10px;
 }
 
+.lupa {
+  width: 20px;
+  height: 20px;
+  display: block
+}
+
+.btn-primary {
+  background-color: white !important;
+  /* border: 1px solid #ced4da !important; */
+  border: none;
+  height: 33px;
+
+}
+
 .form-control {
+
   border: none;
   border-radius: 0px;
   border-top-left-radius: 3px;
@@ -277,60 +300,6 @@ p {
   outline: none;
 }
 
-.btn {
-  padding: 0.2rem 0.35rem;
-  border-radius: 0px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-
-
-
-
-
-
-.view-all {
-  color: #772f7c;
-}
-
-.view-all:hover {
-  color: #34f6f2;
-  text-decoration: underline;
-}
-
-.boton-all {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 50px;
-  border: 1px solid purple;
-}
-
-.boton-all p {
-  align-self: center;
-  font-size: 1px;
-  font-weight: bold;
-}
-
-.d-flex {
-  height: 33px;
-}
-
-/* I - Barra de busqueda*/
-.d-flex {
-  width: 92vw;
-}
-
-.bg-light {
-  background-color: #f0f0f0 !important;
-}
-
-.lupa {
-  width: 20px;
-  height: 20px;
-  display: block
-}
-
 /*F - Barra de busqueda*/
 
 .no-scroll {
@@ -343,10 +312,23 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+/* I - boton ver todos*/
+.view-all {
+  color: #772f7c;
+
+}
 
 .ver-todo {
   font-size: 12px;
 }
+
+.view-all:hover {
+  color: #34f6f2;
+  text-decoration: underline;
+}
+
+/* F - boton ver todos*/
+
 
 
 

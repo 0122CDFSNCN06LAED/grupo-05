@@ -1,152 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
+
+<head>
+  <%- include('./partials/head') %>
     <title>Configuracion</title>
     <!-- Espacio para estilos de esta pantalla-->
-    <link rel="stylesheet" href="/css/index/index.css" />
+    <!-- <link rel="stylesheet" href="/css/index/index.css" /> -->
     <link rel="stylesheet" href="/css/index/config.css" />
-  </head>
+</head>
 
-  <body>
-    <header class="header"><%- include('./partials/header') %></header>
-    <div class="contenido-datos">
-      <div class="editable">
-        <div class="contenido-header">
-          <img class="imagen-usuario-config" src="/images/fotos-usuarios/yo.jpg" alt="foto-usuario" />
-          <div class="editar-contenedor">
-            <img class="camara" src="/images/camara.png" alt="camara" />
-            <img onclick="editarPerfilDatos()" class="lapiz" src="/images/lapiz.png" alt="lápiz" />
-          </div>
-        </div>
-        <div class="contenedor-datos-usuario">
-          <p class="datos-usuario">Juan Quiroga</p>
-          <p class="datos-usuario username">@Juan_Quiroga</p>
-        </div>
-      </div>
-      <div class="contenedor-promedio-reviews">
-        <div class="contenedor-estrella">
-          <img class="estrella" src="/images/estrella.png" alt="estrella" />
-          <p>4.8</p>
-        </div>
-        <p>(5000 reviews)</p>
-      </div>
-      <div class="pais">
-        <img class="bandera" src="/images/fotos-banderas/argentina.png" alt="" />
-        <p>Argentina</p>
-      </div>
-      <div class="contenedor-porcentajes">
-        <div class="contenedor-porcentaje-dentro">
-          <p class="porcentaje">100%</p>
-          <p>Trabajos completos</p>
-        </div>
-        <div class="contenedor-porcentaje-dentro">
-          <p class="porcentaje">100%</p>
-          <p>En tiempo</p>
-        </div>
-        <div class="contenedor-porcentaje-dentro">
-          <p class="porcentaje">20%</p>
-          <p>Recontrataciones</p>
-        </div>
-      </div>
-      <div class="contenedor-descripcion">
-        <div class="contenedor-header-descripcion">
-          <p>Descripción</p>
-          <div class="editar-contenedor">
-            <img class="camara descripcion" src="/images/basura.png" alt="camara" />
-            <img onclick="editarPerfilDescripcion()" class="lapiz descripcion" src="/images/lapiz.png" alt="lápiz" />
-          </div>
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente recusandae dolores suscipit officiis pariatur rem dolore velit fuga! Autem ducimus
-          maiores minus sunt ullam blanditiis voluptates eos, laborum similique ad.
-        </div>
-      </div>
-      <div class="contenedor-portafolio">
-        <div class="contenedor-header-descripcion">
-          <p>Portafolio</p>
-        </div>
-        <div class="contenedor-elementos-portafolio">
-          <div class="elemento-portafolio">
-            <img class="portafolio-imagen" src="/images/fotos-portafolio/1.jpg" alt="foto1" />
-            <div class="editar-contenedor item">
-              <img class="camara descripcion" src="/images/basura.png" alt="camara" />
-              <img class="lapiz descripcion" src="/images/lapiz.png" alt="lápiz" />
-            </div>
-            <div class="titulo-portafolio">
-              <div class="item-portafolio-contenedor">
-                <p>Título item portafolio</p>
+<body>
+  <header class="header">
+    <%- include('./partials/header') %>
+  </header>
+  <section class="h-100 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card">
+            <div class="rounded-top text-white d-flex flex-row" style="background-color: #5f6f79; height:200px;">
+              <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                  style="width: 150px; z-index: 1">
+                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
+                  Editar perfil
+                </button>
+              </div>
+              <div class="ms-3" style="margin-top: 130px;">
+                <% //if(usuarios.length> 0){%> -->
+                  <% //usuarios.forEach(usuario=> { %>
+                    <h5>
+                      <% //usuario.nombre%>
+                    </h5>
+                    <% //})%>
+                      <p>New York</p>
               </div>
             </div>
-          </div>
-          <div class="elemento-portafolio">
-            <img class="portafolio-imagen" src="/images/fotos-portafolio/2.jpg" alt="foto2" />
-            <div class="editar-contenedor item">
-              <img class="camara descripcion" src="/images/basura.png" alt="camara" />
-              <img class="lapiz descripcion" src="/images/lapiz.png" alt="lápiz" />
-            </div>
-            <div class="titulo-portafolio">
-              <div class="item-portafolio-contenedor">
-                <p>Título item portafolio</p>
+            <div class="p-4 text-black" style="background-color: #f8f9fa;">
+              <div class="d-flex justify-content-end text-center py-1">
+                <div>
+                  <p class="mb-1 h5">253</p>
+                  <p class="small text-muted mb-0">Photos</p>
+                </div>
+                <div class="px-3">
+                  <p class="mb-1 h5">1026</p>
+                  <p class="small text-muted mb-0">Followers</p>
+                </div>
+                <div>
+                  <p class="mb-1 h5">478</p>
+                  <p class="small text-muted mb-0">Following</p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="contenedor-reseñas">
-        <p id="reseña-seccion">Reseñas</p>
-
-        <div class="contenedor-elemento-reseña">
-          <div class="reseña-header">
-            <div>
-              <img class="estrella" src="/images/estrella.png" alt="estrella" />
-              <img class="estrella" src="/images/estrella.png" alt="estrella" />
-              <img class="estrella" src="/images/estrella.png" alt="estrella" />
-              <img class="estrella" src="/images/estrella.png" alt="estrella" />
+            <div class="card-body p-4 text-black">
+              <div class="mb-5">
+                <p class="lead fw-normal mb-1">About</p>
+                <div class="p-4" style="background-color: #f8f9fa;">
+                  <p class="font-italic mb-1">Web Developer</p>
+                  <p class="font-italic mb-1">Lives in New York</p>
+                  <p class="font-italic mb-0">Photographer</p>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <p class="lead fw-normal mb-0">Recent photos</p>
+                <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+              </div>
+              <div class="row g-2">
+                <div class="col mb-2">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp" alt="image 1"
+                    class="w-100 rounded-3">
+                </div>
+                <div class="col mb-2">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp" alt="image 1"
+                    class="w-100 rounded-3">
+                </div>
+              </div>
+              <div class="row g-2">
+                <div class="col">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp" alt="image 1"
+                    class="w-100 rounded-3">
+                </div>
+                <div class="col">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp" alt="image 1"
+                    class="w-100 rounded-3">
+                </div>
+              </div>
             </div>
-            <p>Precio del proyecto</p>
-          </div>
-          <div class="datos-reseña">
-            <p class="titulo-reseña">Título reseña</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel perspiciatis quod quis porro labore sint, exercitationem debitis dolore natus?
-              Numquam voluptatibus tempore harum maxime asperiores. Minima officiis magni facere totam?
-            </p>
-            <div class="autor-reseña">
-              <img class="bandera" src="/images/fotos-banderas/argentina.png" alt="" />
-              <p>Joaquín Pérez</p>
-            </div>
-          </div>
-        </div>
-        <div class="contenedor-elemento-reseña">
-          <div class="reseña-header">
-            <div>
-              <img class="estrella" src="/images/estrella.png" alt="estrella" />
-              <img class="estrella" src="/images/estrella.png" alt="estrella" />
-              <img class="estrella" src="/images/estrella.png" alt="estrella" />
-            </div>
-            <p>Precio del proyecto</p>
-          </div>
-        </div>
-        <div class="datos-reseña">
-          <p class="titulo-reseña">Título reseña</p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut quasi minima quaerat, iusto quidem earum itaque, dicta minus dolor, molestias inventore
-            laborum? Expedita distinctio aliquam modi numquam neque. Nam, laborum.
-          </p>
-          <div class="autor-reseña">
-            <img class="bandera" src="/images/fotos-banderas/chile.png" alt="" />
-            <p>Laura Giménez</p>
           </div>
         </div>
       </div>
     </div>
-    <footer class="footer"><%- include('./partials/footer') %></footer>
+  </section>
+  <!-- Datos del usuario -->
+  <div class="contenido-datos">
+    <div class="editable">
+      <div class="contenido-header">
+        <img class="imagen-usuario-config" src="/images/fotos-usuarios/yo.jpg" alt="foto-usuario" />
+        <div class="editar-contenedor">
+          <img class="camara" src="/images/camara.png" alt="camara" />
+          <img onclick="editarPerfilDatos()" class="lapiz" src="/images/lapiz.png" alt="lápiz" />
+        </div>
+      </div>
+      <div class="contenedor-datos-usuario">
+        <p class="datos-usuario">Juan Quiroga</p>
+        <p class="datos-usuario username">@Juan_Quiroga</p>
+      </div>
+    </div>
+    <div class="contenedor-promedio-reviews">
+      <div class="contenedor-estrella">
+        <img class="estrella" src="/images/estrella.png" alt="estrella" />
+        <p>4.8</p>
+      </div>
+      <p>(5000 reviews)</p>
+    </div>
+    <div class="pais">
+      <img class="bandera" src="/images/fotos-banderas/argentina.png" alt="" />
+      <p>Argentina</p>
+    </div>
+    <div class="contenedor-porcentajes">
+      <div class="contenedor-porcentaje-dentro">
+        <p class="porcentaje">100%</p>
+        <p>Trabajos completos</p>
+      </div>
+      <div class="contenedor-porcentaje-dentro">
+        <p class="porcentaje">100%</p>
+        <p>En tiempo</p>
+      </div>
+      <div class="contenedor-porcentaje-dentro">
+        <p class="porcentaje">20%</p>
+        <p>Recontrataciones</p>
+      </div>
+    </div>
+    <div class="contenedor-descripcion">
+      <div class="contenedor-header-descripcion">
+        <p>Descripción</p>
+        <div class="editar-contenedor">
+          <img class="camara descripcion" src="/images/basura.png" alt="camara" />
+          <img onclick="editarPerfilDescripcion()" class="lapiz descripcion" src="/images/lapiz.png" alt="lápiz" />
+        </div>
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente recusandae dolores suscipit officiis pariatur
+        rem dolore velit fuga! Autem ducimus
+        maiores minus sunt ullam blanditiis voluptates eos, laborum similique ad.
+      </div>
+    </div>
+    <div class="contenedor-portafolio">
+      <div class="contenedor-header-descripcion">
+        <p>Portafolio</p>
+      </div>
+      <div class="contenedor-elementos-portafolio">
+        <div class="elemento-portafolio">
+          <img class="portafolio-imagen" src="/images/fotos-portafolio/1.jpg" alt="foto1" />
+          <div class="editar-contenedor item">
+            <img class="camara descripcion" src="/images/basura.png" alt="camara" />
+            <img class="lapiz descripcion" src="/images/lapiz.png" alt="lápiz" />
+          </div>
+          <div class="titulo-portafolio">
+            <div class="item-portafolio-contenedor">
+              <p>Título item portafolio</p>
+            </div>
+          </div>
+        </div>
+        <div class="elemento-portafolio">
+          <img class="portafolio-imagen" src="/images/fotos-portafolio/2.jpg" alt="foto2" />
+          <div class="editar-contenedor item">
+            <img class="camara descripcion" src="/images/basura.png" alt="camara" />
+            <img class="lapiz descripcion" src="/images/lapiz.png" alt="lápiz" />
+          </div>
+          <div class="titulo-portafolio">
+            <div class="item-portafolio-contenedor">
+              <p>Título item portafolio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contenedor-reseñas">
+      <p id="reseña-seccion">Reseñas</p>
 
-    <!-- Lo comento porque hace que no funcione el menu  BEL  
+      <div class="contenedor-elemento-reseña">
+        <div class="reseña-header">
+          <div>
+            <img class="estrella" src="/images/estrella.png" alt="estrella" />
+            <img class="estrella" src="/images/estrella.png" alt="estrella" />
+            <img class="estrella" src="/images/estrella.png" alt="estrella" />
+            <img class="estrella" src="/images/estrella.png" alt="estrella" />
+          </div>
+          <p>Precio del proyecto</p>
+        </div>
+        <div class="datos-reseña">
+          <p class="titulo-reseña">Título reseña</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel perspiciatis quod quis porro labore sint,
+            exercitationem debitis dolore natus?
+            Numquam voluptatibus tempore harum maxime asperiores. Minima officiis magni facere totam?
+          </p>
+          <div class="autor-reseña">
+            <img class="bandera" src="/images/fotos-banderas/argentina.png" alt="" />
+            <p>Joaquín Pérez</p>
+          </div>
+        </div>
+      </div>
+      <div class="contenedor-elemento-reseña">
+        <div class="reseña-header">
+          <div>
+            <img class="estrella" src="/images/estrella.png" alt="estrella" />
+            <img class="estrella" src="/images/estrella.png" alt="estrella" />
+            <img class="estrella" src="/images/estrella.png" alt="estrella" />
+          </div>
+          <p>Precio del proyecto</p>
+        </div>
+      </div>
+      <div class="datos-reseña">
+        <p class="titulo-reseña">Título reseña</p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut quasi minima quaerat, iusto quidem earum itaque,
+          dicta minus dolor, molestias inventore
+          laborum? Expedita distinctio aliquam modi numquam neque. Nam, laborum.
+        </p>
+        <div class="autor-reseña">
+          <img class="bandera" src="/images/fotos-banderas/chile.png" alt="" />
+          <p>Laura Giménez</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <%- include('./partials/footer') %>
+  </footer>
+
+  <!-- Lo comento porque hace que no funcione el menu  BEL  
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <script src="/js/config.js"></script> -->
-  </body>
+</body>
+
 </html>
