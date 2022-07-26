@@ -14,7 +14,7 @@ class ProyectsList extends Component {
 
     async updateProyects() {
         const response = await fetch(
-            `http://localhost:3001/api/proyects?page=${this.state.page}`
+            `http://localhost:3001/api/proyect?page=${this.state.page}`
         );
         const proyectsData = await response.json();
 
