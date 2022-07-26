@@ -48,3 +48,7 @@ app.use(
 //Template engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
+
+//Colección de recursos de (APIs)
+app.use("/api/proyect", apiProyectRouter);
+app.use("/api/user", apiUserRouter);
