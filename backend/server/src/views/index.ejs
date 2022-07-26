@@ -26,32 +26,39 @@
             <img class="lupa" src="/images/lupa-icon.png" alt="lupa">
           </a>
         </p>
+        <a href="/proyect/create" class="boton-agregar" <% if (locals.userLogged.tipoUsuarioId==2){
+          %>style='display: none'<% } %>>
+              <div class="agregar-proyecto-contenedor">
+                  <p class="agregar-proyecto-text">Agregar nuevo proyecto</p>
+              </div>
+              <i class="fa-solid fa-circle-plus"></i>  
+      </form>
     </div>
-    </form>
+   
   </nav>
   <div class="recomendados">
     <p class="recomendado-titulo">RECOMENDADOS PARA TI</p>
     <ul class="lista-recomendados">
-      <% for(let i=0; i<listaProyectos.length; i++){ %>
-        <a href="proyect/detail/ <%=listaProyectos[i].id %> " class="card hipervinculo">
+      <% for(let i=0; i<4; i++){ %>
+        <a href="proyect/detail/ <%=ultimosProyectos[i].id %> " class="card hipervinculo">
           <h5 class="card-header">
-            <%= listaProyectos[i].titulo%>
+            <%= ultimosProyectos[i].titulo%>
           </h5>
           <div class="card-body">
             <div class="fecha-horario">
               <p class="price">
-                <%= listaProyectos[i].precio%>
+                <%= ultimosProyectos[i].precio%>
               </p>
               <p class="fecha">
-                <%= listaProyectos[i].fechaCreacion%>
+                <%= ultimosProyectos[i].fechaCreacion%>
               </p>
             </div>
             <p class="card-text">
-              <%= listaProyectos[i].descripcion%>
+              <%= ultimosProyectos[i].descripcion%>
             </p>
             <div class="requisitos-recomendados">
               <% for(let j=0; j<listaProyCat.length; j++){ %>
-                <% if(listaProyCat[j].proyectoId==listaProyectos[i].id){ %>
+                <% if(listaProyCat[j].proyectoId==ultimosProyectos[i].id){ %>
                   <!-- busco la categoria (nombre) -->
                   <% let categId=listaProyCat[j].categoriaId %>
                     <% for(let k=0; k<listaCategorias.length; k++) { %>

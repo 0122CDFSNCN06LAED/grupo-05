@@ -1,4 +1,6 @@
-<a href="/" class="link-logo"><img class="logo" src="/images/logo-icon.png" alt="Logo" /></a>
+<a href="/" class="link-logo"
+  ><img class="logo" src="/images/logo-icon.png" alt="Logo"
+/></a>
 <p><%=locals.userLogged.username%></p>
 
 <div class="usuario-datos">
@@ -37,7 +39,9 @@
         >
         <div class="dropdown-item opciones-desplegable">
           <a class="hipervinculo" href="/proyect/proposals">Mis proyectos</a>
-          <a href="/proyect/proposals"><i class="fa-solid fa-clipboard-list-check"></i></a>
+          <a href="/proyect/proposals"
+            ><i class="fa-solid fa-clipboard-list-check"></i
+          ></a>
         </div>
         <% } %>
       </li>
@@ -57,10 +61,17 @@
       <li>
         <form action="/user/logout" method="POST">
           <button class="hipervinculo" type="submit">
+            <div class="dropdown-item opciones-desplegable">
+              Salir <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </div>
+          </button>
+        </form>
+        <!-- <form action="/user/logout" method="POST">
+          <button class="hipervinculo" type="submit">
             Salir
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
           </button>
-        </form>
+        </form> -->
       </li>
     </ul>
   </div>

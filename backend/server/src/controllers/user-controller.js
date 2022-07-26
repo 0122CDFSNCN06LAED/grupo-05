@@ -1,19 +1,28 @@
 const { validationResult } = require('express-validator');
-const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcryptjs');
 const db = require('../../database/models');
 const { Op } = require('sequelize');
 
 module.exports = {
   register: (req, res) => {
-    res.render('register');
+    res.render('register', { repetidoEmail: '', repetidoUsername: '' });
   },
   registerForm: async (req, res) => {
     try {
       const proyectos = await db.Proyectos.findAll();
       const categorias = await db.Categorias.findAll();
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
+      //últimos 5 proyectos creados activos
+      let ultimosProyectos = proyectos.sort((o1, o2) => {
+        if (o1.fechaCreacion < o2.fechaCreacion) {
+          return -1;
+        } else if (o1.fechaCreacion > o2.fechaCreacion) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      console.log('kkkkkk', ultimosProyectos)
       let tipoUsuarioId = 1;
       if (req.body.tipoUsuarioId == 'freelancer') {
         tipoUsuarioId = 2;
@@ -29,9 +38,29 @@ module.exports = {
       if (req.file) {
         newUser.profileURL = `/images/user-images/${req.file.filename}`;
       }
-      console.log('new userr', newUser);
-      await db.Usuarios.create(newUser);
       let errors = validationResult(req);
+
+
+      const usuario = await db.Usuarios.findOne({
+        where: {
+          email: req.body.email
+        }
+      })
+      if (usuario) {
+        res.render('register', { errors: errors.mapped(), old: req.body, repetidoEmail: 'Ya existe un usuario con este email', repetidoUsername: '' });
+        return
+      }
+      const usuario2 = await db.Usuarios.findOne({
+        where: {
+          username: req.body.usuarioNombre
+        }
+      })
+      if (usuario2) {
+        res.render('register', { errors: errors.mapped(), old: req.body, repetidoEmail: '', repetidoUsername: 'Ya existe un usuario con este nombre' });
+        return
+      }
+
+      await db.Usuarios.create(newUser);
       if (errors.isEmpty()) {
         res.locals.userLogged = newUser;
         req.session.userLogged = newUser;
@@ -43,9 +72,12 @@ module.exports = {
           listaProyCat: proyectoCategoria,
           noUsuario: '',
           malContrasenia: '',
+          repetidoEmail: '',
+          repetidoUsername: '',
+          ultimosProyectos: ultimosProyectos
         });
       } else {
-        res.render('register', { errors: errors.mapped(), old: req.body });
+        res.render('register', { errors: errors.mapped(), old: req.body, repetidoEmail: '', repetidoUsername: '' });
       }
     } catch (error) {
       console.log(error);
@@ -347,5 +379,5 @@ module.exports = {
   configEditarUsuario: (req, res) => {
     res.render('portfolio');
   },
-  configUpdateUsuario: (req, res) => {},
+  configUpdateUsuario: (req, res) => { },
 };
