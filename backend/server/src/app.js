@@ -6,6 +6,9 @@ const session = require("express-session");
 const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middlewares/user-logged-middleware");
 
+const apiProyectRouter = require("./routes/api/proyect");
+const apiUserRouter = require("./routes/api/user");
+
 const app = express();
 
 app.listen(port, () =>
