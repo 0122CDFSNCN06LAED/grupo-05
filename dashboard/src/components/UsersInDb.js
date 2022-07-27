@@ -16,7 +16,10 @@ class UsersInDb extends Component {
 
     return (
       <div className={`row ${this.state.bgColor}`}>
+
+
         {this.state.users.map((user) => {
+
           return (
             <div key={user.id} className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
@@ -30,8 +33,9 @@ class UsersInDb extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch("http://localhost:3001/api/userApiRouter");
+    const response = await fetch("http://localhost:3000/api/userApiRouter");
     const usersListData = await response.json();
+
     this.setState({
       users: usersListData.data,
     });

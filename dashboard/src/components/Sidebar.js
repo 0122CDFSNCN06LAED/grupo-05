@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import logo from "../assets/logo-DH.png";
+// import logo from "../assets/logo-DH.png"; poner nuestro logo
 
 function SideBar() {
     return (
