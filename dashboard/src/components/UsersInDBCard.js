@@ -1,10 +1,10 @@
 import BigCard from "./BigCard";
-import ProyectsInDb from "./ProyectsInDb";
+import UsersInDb from "./UsersInDb";
 
-export default function ProyectsInDbCard() {
-    return (
-        <BigCard title=" in database">
-            <UsersInDb />
-        </BigCard>
-    );
+export default function UsersInDbCard() {
+  return (
+    <BigCard title=" in database">
+      <UsersInDb />
+    </BigCard>
+  );
 }
