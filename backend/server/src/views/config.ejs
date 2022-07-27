@@ -22,31 +22,19 @@
               <!-- <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;"> -->
               <div class="imagen-perfil">
                 <%let url=locals.userLogged.profileURL%>
-                  <!-- <img onclick="editarPerfilDescripcion()" class="lapiz descripcion" src="/images/lapiz.png"
-                    alt="lápiz" /> -->
                   <img class="img-fluid img-thumbnail mt 2 mb-8" style="width: 150px; z-index:1" src="<%if (url){%>
                           <%=url%>
                           <%}else{%>
                           /images/user-images/usuario.png 
                           <% }%>" alt="profile pic" />
-                  <!-- <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
-                    Guardar Cambios
-                  </button> -->
+
               </div>
-              <!-- <div class="ms-3" style="margin-top: 130px;">
-                <h5>
-                  <%=locals.userLogged.name%>
-                    <%=locals.userLogged.surname%>
-                </h5>
-                <p>
-                  <%=locals.userLogged.tipoUsuarioId%>
-                </p>
-              </div> -->
+
             </div>
             <div class="p-4 text-black" style="background-color: #f8f9fa;">
 
               <div class="contenedor-datos">
-                <form action="/user/register" method="POST" enctype="multipart/form-data">
+                <form action="/user/configEditarUsuario" method="PUT" enctype="multipart/form-data">
                   <!--         Acceso           -->
                   <div class="input-div">
                     <label class="input-titulo">Datos Personales</label>
