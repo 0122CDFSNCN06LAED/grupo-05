@@ -16,11 +16,11 @@ class UsersInDb extends Component {
 
         return (
             <div className={`row ${this.state.bgColor}`}>
-                {this.state.users.map((genre) => {
+                {this.state.users.map((user) => {
                     return (
-                        <div key={genre.id} className="col-lg-6 mb-4">
+                        <div key={user.id} className="col-lg-6 mb-4">
                             <div className="card bg-dark text-white shadow">
-                                <div className="card-body">{genre.name}</div>
+                                <div className="card-body">{user.name}</div>
                             </div>
                         </div>
                     );
@@ -30,7 +30,7 @@ class UsersInDb extends Component {
     }
 
     async componentDidMount() {
-        const response = await fetch("http://localhost:3001/api/users");
+        const response = await fetch("http://localhost:3001/api/user");
         const usersListData = await response.json();
         this.setState({
             users: usersListData.data,

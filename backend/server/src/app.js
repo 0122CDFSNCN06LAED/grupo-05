@@ -6,6 +6,9 @@ const session = require("express-session");
 const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middlewares/user-logged-middleware");
 
+const apiProyectRouter = require("./routes/api/proyect");
+const apiUserRouter = require("./routes/api/user");
+
 const app = express();
 
 app.listen(port, () =>
@@ -48,3 +51,7 @@ app.use(
 //Template engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
+
+//Colección de recursos de (APIs)
+app.use("/api/proyect", apiProyectRouter);
+app.use("/api/user", apiUserRouter);

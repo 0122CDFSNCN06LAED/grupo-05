@@ -6,14 +6,31 @@ module.exports = {
   index: async (req, res) => {
     try {
 
-      const proyectos = await db.Proyectos.findAll();
+      const proyectos = await db.Proyectos.findAll({
+        where: {
+          estadoId: 1
+        }
+      });
       const categorias = await db.Categorias.findAll();
       const proyectoCategoria = await db.ProyectoCategoria.findAll();
+
+      //últimos 5 proyectos creados activos
+      let ultimosProyectos = proyectos.sort((o1, o2) => {
+        if (o1.fechaCreacion < o2.fechaCreacion) {
+          return -1;
+        } else if (o1.fechaCreacion > o2.fechaCreacion) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      console.log('kkkkkk', ultimosProyectos)
 
       res.render('index', {
         listaProyectos: proyectos,
         listaCategorias: categorias,
         listaProyCat: proyectoCategoria,
+        ultimosProyectos: ultimosProyectos
       });
     } catch (error) {
       console.log(error);
@@ -38,7 +55,7 @@ module.exports = {
           /* BELEN - VER HASH de contraseña para hacer blanqueo de clave forzada 
           let apss = bcrypt.hashSync('12345', 10);
           console.log(apss);*/
-          
+
           let correcto = bcrypt.compareSync(
             req.body.password,
             user.password
@@ -58,9 +75,23 @@ module.exports = {
                               maxAge: 1000 * 60 * 2,
                             }); */
             }
-            let proyectos = await db.Proyectos.findAll();
+            let proyectos = await db.Proyectos.findAll({
+              where: {
+                estadoId: 1
+              }
+            });
             let categorias = await db.Categorias.findAll();
             let proyCat = await db.ProyectoCategoria.findAll();
+            let ultimosProyectos = proyectos.sort((o1, o2) => {
+              if (o1.fechaCreacion < o2.fechaCreacion) {
+                return -1;
+              } else if (o1.fechaCreacion > o2.fechaCreacion) {
+                return 1;
+              } else {
+                return 0;
+              }
+            });
+            console.log('kkkkkk', ultimosProyectos)
             res.render('index', {
               user: req.session.userLogged,
               /* tipoUsuario: usuarioTipo, */
@@ -69,6 +100,7 @@ module.exports = {
               listaProyCat: proyCat,
               noUsuario: '',
               malContrasenia: '',
+              ultimosProyectos: ultimosProyectos
             });
           } else {
             res.render('login', {
