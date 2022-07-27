@@ -1,9 +1,11 @@
 .contenedor-lista {
   border: 2px solid orange;
+  height: 50px;
 }
 
 .lista-contactos {
   border: 2px solid red;
+  height: 150px;
 }
 
 .contenedor-elemento-lista {

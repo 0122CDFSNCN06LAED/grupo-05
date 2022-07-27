@@ -377,7 +377,7 @@ module.exports = {
     res.render('config');
   },
   configEditarUsuario: (req, res) => {
-    res.render('portfolio');
+    res.render('config');
   },
   configUpdateUsuario: (req, res) => { },
 };

@@ -8,3 +8,4 @@ export default function UsersInDbCard() {
     </BigCard>
   );
 }
+

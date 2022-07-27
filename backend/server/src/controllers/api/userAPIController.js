@@ -5,9 +5,10 @@ const userAPIController = {
     const page = Number(req.query.page) || 0;
     const pageSize = req.query.pageSize ?? 10;
 
-    db.usuarios
+
+    db.Usuarios
       .findAndCountAll({
-        include: ["proyect"],
+        // include: ["proyect"],
         limit: pageSize,
         offset: pageSize * page,
       })
