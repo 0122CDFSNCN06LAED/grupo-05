@@ -35,6 +35,7 @@ class UsersInDb extends Component {
   async componentDidMount() {
     const response = await fetch("http://localhost:3000/api/userApiRouter");
     const usersListData = await response.json();
+    console.log('usuarioss', usersListData)
 
     this.setState({
       users: usersListData.data,

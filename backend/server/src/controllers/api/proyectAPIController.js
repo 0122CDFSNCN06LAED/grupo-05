@@ -5,9 +5,9 @@ const proyectAPIController = {
     const page = Number(req.query.page) || 0;
     const pageSize = req.query.pageSize ?? 10;
 
-    db.proyectos
+    db.Proyectos
       .findAndCountAll({
-        include: ["user"],
+        /* include: ["user"], */
         limit: pageSize,
         offset: pageSize * page,
       })
@@ -27,9 +27,9 @@ const proyectAPIController = {
   },
 
   detail: (req, res) => {
-    db.proyectos
+    db.Proyectos
       .findByPk(req.params.id, {
-        include: ["user"],
+        /* include: ["user"], */
       })
       .then((proyect) => {
         let respuesta = {
