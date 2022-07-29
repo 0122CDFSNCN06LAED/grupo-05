@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-// import logo from "../assets/logo-DH.png"; poner nuestro logo
+import logo from "../assets/logo-icon.png";
 
 function SideBar() {
     return (
@@ -15,9 +15,9 @@ function SideBar() {
                     className="sidebar-brand d-flex align-items-center justify-content-center"
                     href="/"
                 >
-                    {/* <div className="sidebar-brand-icon">
+                    <div className="sidebar-brand-icon">
             <img className="w-100" src={logo} alt="Digital House" />
-          </div> */}
+          </div>
                 </a>
             }
 
@@ -50,20 +50,8 @@ function SideBar() {
                     to="/users"
                     activeClassName="active"
                 >
-                    <i className="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </NavLink>
-            </li>
-
-            {/* <!-- Nav Item - Charts --> */}
-            <li className="nav-item">
-                <NavLink
-                    className="nav-link"
-                    to="/last-proyect"
-                    activeClassName="active"
-                >
-                    <i className="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <span>Usuarios</span>
                 </NavLink>
             </li>
 
@@ -75,7 +63,7 @@ function SideBar() {
                     activeClassName="active"
                 >
                     <i className="fas fa-fw fa-table"></i>
-                    <span>Tables</span>
+                    <span>Proyectos</span>
                 </NavLink>
             </li>
 
