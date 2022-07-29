@@ -43,19 +43,19 @@ class SmallCardRow extends Component {
         {
             title: "Proyectos en la base de datos",
             value: null,
-            icon: "fa-film",
+            icon: "fas fa-fw fa-table",
             color: "primary",
         },
         {
             title: "Total empresas",
             value: null,
-            icon: "fa-award",
+            icon: "fa fa-building",
             color: "success",
         },
         {
             title: "Total Freelancers",
             value: null,
-            icon: "fa-user",
+            icon: "fa fa-users",
             color: "warning",
         },
     ];
