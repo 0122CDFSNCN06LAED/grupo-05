@@ -38,6 +38,7 @@
   </nav>
   <div class="recomendados">
     <p class="recomendado-titulo">RECOMENDADOS PARA TI</p>
+    <%if(listaProyectos.length >= 4){%>
     <ul class="lista-recomendados">
       <% for(let i=0; i<4; i++){ %>
         <a href="proyect/detail/ <%=ultimosProyectos[i].id %> " class="card hipervinculo">
@@ -75,6 +76,7 @@
         </a>
         <% } %>
     </ul>
+  <%}%>
   </div>
   <div class="contenido-principal">
     <div class="filtrado">
@@ -122,6 +124,7 @@
           <a class="ver-todo hipervinculo view-all" href="#">Ver todos</a>
         </button> -->
           </div>
+          <%if (listaProyectos.length >= 4){%>
           <div class="tarjeta-buscados">
             <% let long=listaProyectos.length %>
               <% if (long> 4) { long = 4} %>
@@ -161,7 +164,7 @@
                   </a>
                   <% } %>
           </div>
-       
+          <%}%>
         </div>
         <%}%>
   </div>
