@@ -3,7 +3,6 @@ import { Component } from "react";
 class ProyectsList extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       proyects: [],
       page: 0,
@@ -14,14 +13,14 @@ class ProyectsList extends Component {
 
   async updateProyects() {
     const response = await fetch(
-      `http://localhost:3001/api/proyectApiRouter?page=${this.state.page}`
-    );
+      `http://localhost:3000/api/proyectApiRouter?page=${this.state.page}`);
     const proyectsData = await response.json();
+      console.log('proyectoss',proyectsData);
 
     this.setState({
       proyects: proyectsData.data,
-      hasNextPage: proyectsData.meta.hasNextPage,
-      hasPrevPage: proyectsData.meta.hasPrevPage,
+       hasNextPage: proyectsData.meta.hasNextPage,
+      hasPrevPage: proyectsData.meta.hasPrevPage, 
     });
   }
 
@@ -36,6 +35,9 @@ class ProyectsList extends Component {
   }
 
   render() {
+    if (!this.state.proyects) {
+      return "Cargando...";
+    }
     return (
       <>
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
@@ -46,7 +48,6 @@ class ProyectsList extends Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Title</th>
-              <th scope="col">User</th>
             </tr>
           </thead>
           <tbody>

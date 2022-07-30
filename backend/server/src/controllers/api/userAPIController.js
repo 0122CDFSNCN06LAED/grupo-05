@@ -5,7 +5,6 @@ const userAPIController = {
     const page = Number(req.query.page) || 0;
     const pageSize = req.query.pageSize ?? 10;
 
-
     db.Usuarios
       .findAndCountAll({
         // include: ["proyect"],
@@ -30,16 +29,16 @@ const userAPIController = {
   detail: (req, res) => {
     db.usuarios
       .findByPk(req.params.id, {
-        include: ["proyect"],
+        /* include: ["proyect"], */
       })
-      .then((usuarios) => {
+      .then((usuario) => {
         let respuesta = {
           meta: {
             status: 200,
             total: proyect.length,
             url: req.originalUrl,
           },
-          data: movie,
+          data: usuario,
         };
         res.json(respuesta);
       });

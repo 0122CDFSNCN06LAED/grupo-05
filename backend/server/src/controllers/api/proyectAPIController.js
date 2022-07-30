@@ -31,14 +31,14 @@ const proyectAPIController = {
       .findByPk(req.params.id, {
         /* include: ["user"], */
       })
-      .then((proyect) => {
+      .then((proyecto) => {
         let respuesta = {
           meta: {
             status: 200,
             total: proyect.length,
             url: req.originalUrl,
           },
-          data: proyect,
+          data: proyecto,
         };
         res.json(respuesta);
       });
