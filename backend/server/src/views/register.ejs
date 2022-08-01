@@ -21,26 +21,22 @@
         </div>
         <hr class="solid" />
       </div>
-      <form action="/user/register" method="POST" enctype="multipart/form-data">
+      <form id="register-form" action="/user/register" method="POST" enctype="multipart/form-data">
         <div class="conteiner-fluid register-section">
+          
+          <!-- nombre -->
           <div class="input-div">
             <label class="input-label" for="name">Ingresá tu nombre</label>
-            <input
-              class="input-text"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Nombre"
-              value="<%= locals.old && old.name%>"
-            />
+            <input class="input-text" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && old.name%>" />
             <% if(locals.errors && errors.name){%>
             <p class="text-danger"><%=errors.name.msg%></p>
             <%}%>
+            <p class="errorNombre"></p>
           </div>
-          <div class="input-div">
-            <label class="input-label" for="usuarioNombre"
-              >Ingresá tu nombre de usuario</label
-            >
+
+          <!-- nombre de usuario -->
+          <div class="input-div"> 
+            <label class="input-label" for="usuarioNombre">Ingresá tu nombre de usuario</label>
             <input
               class="input-text"
               type="text"
@@ -49,68 +45,48 @@
               placeholder="Nombre usuario"
               value="<%= locals.old && old.usuarioNombre%>"
             />
+            <p class="errorUsuarioNombre"></p>
             <% if(locals.errors && errors.usuarioNombre){%>
             <p class="text-danger"><%=errors.usuarioNombre.msg%></p>
             <%}%> <% if(repetidoUsername != ''){%>
             <p class="text-danger"><%=repetidoUsername%></p>
             <%}%>
           </div>
+
+          <!-- apellido -->
           <div class="input-div">
             <label class="input-label" for="surname">Ingresá tu apellido</label>
-            <input
-              class="input-text"
-              type="text"
-              name="surname"
-              id="surname"
-              placeholder="Apellido"
-              value="<%= locals.old && old.surname%>"
-            />
+            <input class="input-text" type="text" name="surname" id="surname" placeholder="Apellido" value="<%= locals.old && old.surname%>" />
             <% if(locals.errors && errors.surname){%>
-            <p class="text-danger"><%=errors.surname.msg%></p>
+              <p class="text-danger"><%=errors.surname.msg%></p>
             <%}%>
+            <p class="errorSurname"></p>
           </div>
+
+          <!-- email -->
           <div class="input-div">
             <label class="input-label" for="email ">Ingresá tu email</label>
-            <input
-              class="input-text"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              value="<%= locals.old && old.email%>"
-            />
+            <input class="input-text" type="email" name="email" id="email" placeholder="Email" value="<%= locals.old && old.email%>" />
+            <p class="errorEmail"></p>
             <% if(locals.errors && errors.email){%>
             <p class="text-danger"><%=errors.email.msg%></p>
             <%}%> <% if(repetidoEmail != ''){%>
             <p class="text-danger"><%=repetidoEmail%></p>
             <%}%>
+
+          <!--password  -->
           </div>
-          <div class="input-div">
-            <label class="input-label" for="password"
-              >Ingresá tu contraseña</label
-            >
-            <input
-              class="input-text"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Contraseña"
-            />
+          <div class="input-div"> 
+            <label class="input-label" for="password">Ingresá tu contraseña</label>
+            <input class="input-text" type="password" name="password" id="password" placeholder="Contraseña" />
+            <p class="errorPassword"></p>
             <% if(locals.errors && errors.password){%>
             <p class="text-danger"><%=errors.password.msg%></p>
             <%}%>
           </div>
           <div class="input-div">
-            <label class="input-label" for="passwordConfirmation"
-              >Repetir contraseña</label
-            >
-            <input
-              class="input-text"
-              type="password"
-              name="passwordConfirmation"
-              id="passwordConfirmation"
-              placeholder="Repetir contraseña"
-            />
+            <label class="input-label" for="passwordConfirmation">Repetir contraseña</label>
+            <input class="input-text" type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Repetir contraseña" />
             <% if(locals.errors && errors.passwordConfirmation){%>
             <p class="text-danger"><%=errors.passwordConfirmation.msg%></p>
             <%}%>
@@ -119,47 +95,37 @@
           <div class="row input-div">
             <h2 class="form-info">Defina el tipo de usuario</h2>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-              <input
-                type="radio"
-                id="empresa"
-                name="tipoUsuarioId"
-                value="empresa"
-                checked
-              />
+              <input type="radio" id="empresa" name="tipoUsuarioId" value="empresa" checked />
               <label for="empresa">Empresa</label>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-              <input
-                type="radio"
-                id="freelancer"
-                name="tipoUsuarioId"
-                value="freelancer"
-              />
+              <input type="radio" id="freelancer" name="tipoUsuarioId" value="freelancer" />
               <label for="freelancer">Freelancer</label>
             </div>
           </div>
           <div class="row input-div">
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-              <label for="avatar"
-                ><h2 class="form-info">Subir imagen</h2></label
-              >
+              <label for="avatar"><h2 class="form-info">Subir imagen</h2></label>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
               <input type="file" name="avatar" />
             </div>
           </div>
           <br />
+          <section >
+            <ul class="errores"></ul>
+          </section>
           <div class="input-div">
             <button>Registrame</button>
           </div>
           <div>
-            <h2 class="form-info">
-              Al unirme, acepto recibir correos de proyectos
-            </h2>
+            <h2 class="form-info">Al unirme, acepto recibir correos de proyectos</h2>
           </div>
         </div>
       </form>
     </main>
     <footer class="footer"><%- include('./partials/footer') %></footer>
+    <script src = '/js/registerValidation.js'></script>
+    </script>
   </body>
 </html>
