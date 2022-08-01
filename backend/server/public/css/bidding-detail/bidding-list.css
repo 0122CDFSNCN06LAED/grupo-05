@@ -4,7 +4,6 @@
   width: 50vw;
   margin: 0 auto;
   gap: 10px;
-
 }
 
 .contenedor-proyectos {
@@ -12,8 +11,6 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
-
-
 }
 
 .datos-proyecto {
@@ -31,19 +28,17 @@
   text-align: justify;
   font-size: 10px;
   margin: 0;
-
 }
 
 .titulo-edicion {
   display: flex;
   align-items: center;
-
 }
 
 .fecha-precio {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   align-items: center;
 }
 
@@ -52,8 +47,8 @@
   justify-self: center; */
   font-size: 14px;
   text-align: center;
-  background-color: rgba(0, 0, 0, .03);
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   padding-top: 12px;
   padding-bottom: 12px;
 }
