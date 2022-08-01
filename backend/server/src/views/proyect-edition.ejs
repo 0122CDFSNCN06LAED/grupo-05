@@ -4,45 +4,46 @@
 <head>
   <title>Proyect-edition</title>
   <%- include('./partials/head') %>
-  <!-- Espacio para estilos de esta pantalla-->
-  <link rel="stylesheet" href="/css/index/index.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/bidding-detail/bidding-creation.css" />
+    <!-- Espacio para estilos de esta pantalla-->
+    <link rel="stylesheet" href="/css/bidding-detail/bidding-creation.css" />
 </head>
 
 <body>
-  <header class="header"><%- include('./partials/header') %></header>
+  <header class="header">
+    <%- include('./partials/header') %>
+  </header>
+  <div class="contenedor-gral">
+    <h8 class="titulo-pagina">
+      Editando producto
+    </h8>
 
-  <h8 class="products-title">
-    Editando producto
-  </h8>
-
-  <div class="contenido">
-    <form action="/proyect/<%=proyecto.id %>?_method=PUT" method="POST">
-      <div class="item-form">
-        <label for="titulo">Ingrese un título</label>
-        <input class="input-small" type="text" name="titulo" id="titulo" value="<%=proyecto.titulo%>" />
-        <% if(locals.errors && errors.titulo){%>
-          <p><%=errors.titulo.msg%></p>
-        <%}%>
-      </div>
-      <div class="item-form descrip">
-        <label for="descripcion">Describa su proyecto</label>
-        <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10" "><%=proyecto.descripcion%></textarea>
-        <% if(locals.errors && errors.descripcion){%>
+    <div class="contenido">
+      <form action="/proyect/<%=proyecto.id %>?_method=PUT" method="POST">
+        <div class="item-form">
+          <label for="titulo">Título</label>
+          <input class="input-small" type="text" name="titulo" id="titulo" value="<%=proyecto.titulo%>" />
+          <% if(locals.errors && errors.titulo){%>
+            <p>
+              <%=errors.titulo.msg%>
+            </p>
+            <%}%>
+        </div>
+        <div class="item-form descrip">
+          <label for="descripcion">Descripción</label>
+          <textarea class="input" name="descripcion" id="descripcion" cols="30" rows="10" "><%=proyecto.descripcion%></textarea>
+          <% if(locals.errors && errors.descripcion){%>
           <p><%=errors.descripcion.msg%></p>
-        <%}%>
-      </div>
-      <div class=" item-form prec">
-        <label for="precio">Precio</label>
-        <input class="input-small" type="text" name="precio" id="precio" value="<%=proyecto.precio%>" />
-        <% if(locals.errors && errors.precio){%>
-          <p><%=errors.precio.msg%></p>
-        <%}%>
-      </div>
+          <%}%>
+        </div>
+        <div class="item-form prec">
+          <label for="precio">Precio</label>
+          <input class="input-small" type="text" name="precio" id="precio" value="<%=proyecto.precio%>" />
+          <% if(locals.errors && errors.precio){%>
+            <p><%=errors.precio.msg%></p>
+          <%}%>
+        </div>
       <div class="item-form">
-        <label for="categorias">Seleccione las categorías</label>
+        <label for="categorias">Categorías</label>
       </div>
       <div class="categorias-check">
         <% for(let i=0; i<1; i++){ %>
@@ -54,26 +55,21 @@
           <% for(let k=0; k<categorias.length; k++) { %>
               <%if(categorias[k] != undefined){%>
           <% if(categId == categorias[k].id){ %>
-          <p><%=categorias[k].nombre%></p>
+          <p class="categorias-nombre"><%=categorias[k].nombre%></p>
           <% } %>
           <% } %>
           <% } %>
           <% } %>
           <% } %>
-  <% } %>
+       <% } %>
         
       </div>
       <div class="botones">
         <button class="guardar-boton" type="submit">Guardar</button>
         <button class="boton-cancelar" type="cancel">Cancelar</button>
         <button class="boton-cancelar" type="cancel">Eliminar</button>
-        
-        
-
-
-
       </div>
-
+    </div>
     <footer class="footer"><%- include('./partials/footer') %></footer>
   </body>
 </html>
