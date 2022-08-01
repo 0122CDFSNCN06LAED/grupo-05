@@ -4,6 +4,7 @@
   width: 50vw;
   margin: 0 auto;
   gap: 10px;
+
 }
 
 .contenedor-proyectos {
@@ -11,29 +12,61 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
+
+
 }
 
 .datos-proyecto {
+  background-color: white;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  background-color: #c0fdfb;
-  padding: 4px;
-  border-radius: 10px;
+  justify-content: space-between;
+  padding: 3px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
 .descripcion {
   text-align: justify;
+  font-size: 10px;
+  margin: 0;
+
 }
 
 .titulo-edicion {
   display: flex;
   align-items: center;
+
+}
+
+.fecha-precio {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  align-items: center;
 }
 
 .titulo {
+  /* font-weight: bold;
+  justify-self: center; */
+  font-size: 14px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .03);
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.fecha-horario {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  color: black;
   font-weight: bold;
-  justify-self: center;
+  font-size: 14px;
 }
 
 .categorias-proyecto {
