@@ -1,23 +1,149 @@
 .contenedor-lista {
-  border: 2px solid orange;
-  height: 50px;
+
+  min-height: 150px;
+  box-sizing: border-box;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: column;
+
 }
 
-.lista-contactos {
-  border: 2px solid red;
-  height: 150px;
+.guardar-boton,
+.guardar-boton a {
+  width: auto;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  background-color: #3a7fff;
+  color: #ffffff;
 }
+
+
+/* .lista-contactos {
+
+  margin-top: 1px;
+} */
 
 .contenedor-elemento-lista {
-  border: 2px solid blue;
+
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 1px;
+
 
 }
 
 .mail-box {
   border: 2px solid purple;
   flex-basis: 100%;
+
+}
+
+.email {
+  font-size: 15px;
+}
+
+.titulo-pagina {
+
+  font-size: 22px;
+  font-weight: 600;
+  background-color: hsl(200, 15%, 33%);
+  color: whitesmoke;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align: center;
+}
+
+
+
+.active_chat {
+  background: #ebebeb;
+}
+
+
+.received_msg {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+  border: 2px solid purple;
+}
+
+.received_withd_msg p {
+  background: #ebebeb none repeat scroll 0 0;
+  border-radius: 3px;
+  color: #646464;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+  border: 2px solid yellowgreen;
+}
+
+.time_date {
+  color: #747474;
+  display: block;
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+
+.received_withd_msg {
+  width: 80%;
+
+}
+
+.mesgs {
+  float: left;
+  /* padding: 5px; */
+  width: 100%;
+  margin-top: 5px;
+
+}
+
+.sent_msg p {
+  /* background: #05728f none repeat scroll 0 0; */
+  background: hsl(202, 16%, 57%);
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0;
+  color: #fff;
+  /* padding: 5px 10px 5px 12px; */
+  width: 100%;
+
+}
+
+.outgoing_msg {
+  overflow: hidden;
+  margin: 26px 0 26px;
+
+}
+
+.sent_msg {
+  float: right;
+  width: 70%;
+
+}
+
+
+
+.msg_history {
+  max-height: 800px;
+  overflow-y: auto;
+  border: 2px solid burlywood
+}
+
+@media (min-width:1200px) {
+  .contenedor-lista {
+    max-width: 800px;
+    align-items: center;
+    border: 2px solid yellowgreen;
+
+  }
 
 }

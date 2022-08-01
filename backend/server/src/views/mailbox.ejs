@@ -5,7 +5,6 @@
   <title>Mail Box</title>
   <%- include('./partials/head') %>
     <!-- Espacio para estilos de esta pantalla-->
-    <!-- <link rel="stylesheet" href="/css/index/index.css" /> -->
     <link rel="stylesheet" href="/css/index/mailbox.css" />
 </head>
 
@@ -14,22 +13,26 @@
     <%- include('./partials/header') %>
   </header>
   <!--  -->
-  <main>
+  <section>
+
+
     <div class="contenedor-lista">
+
+
       <ul class="lista-contactos">
         <%if(usuarios.length> 0){%>
-          <h2>Usuarios</h2>
+          <h2 class="titulo-pagina">Mensajes</h2>
           <div class="contenedor-elemento-lista users">
             <% usuarios.forEach(usuario=> { %>
               <!-- <div class="col-12 col-sm-6 col-lg-3"> -->
               <section class="mail-box">
                 <a href="/user/mailbox/<%= usuario.id %>">
                   <article class="product-box_data">
-                    <span>
+                    <!-- <span>
                       <%= usuario.username %> -
-                    </span>
-                    <p>
-                      <%= usuario.email %>
+                    </span> -->
+                    <p class="email">
+                      Contacto: <%= usuario.email %>
                     </p>
                   </article>
                 </a>
@@ -41,11 +44,13 @@
           <% } %>
             <!-- nuevo fin -->
       </ul>
+      <br>
+      <button class="guardar-boton" href="/user/createMessage">
+   <a class="" href="/user/createMessage"> Nuevo</a>
+      </button>
     </div>
-    <button class="guardar-boton">
-      <a class="" href="/user/createMessage">Nuevo mensaje</a>
-    </button>
-  </main>
+
+  </section>
   <footer class="footer">
     <%- include('./partials/footer') %>
   </footer>
