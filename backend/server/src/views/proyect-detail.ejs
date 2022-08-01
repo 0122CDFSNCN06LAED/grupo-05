@@ -35,23 +35,24 @@
         </div>
       </div>
       <div class="col col-md-4">
-        <div class="card shadow h-100">
-          <div class="card-body d-flex flex-column">
+        <div class="card shadow h-auto">
+          <div class="card-body">
 
-            <div class="d-flex align-items-center">
-              <p class="fs-1 me-2">$ <%= proyecto.precio %>
+            <div class="precio">
+              <p>$<%= proyecto.precio %>
               </p>
             </div>
-            <div class="flex-fill"></div>
+            <!-- <div class="flex-fill"></div> -->
             <div class="">
               <% if (locals.userLogged.tipoUsuarioId !="1" ){ %>
                 <form action="<%= proyecto.id %>" method="POST">
-                  <button class="fs-5 btn w-100 btn-primary text-white">
+                  <button class="guardar-boton">
                     Postularme
                   </button>
                 </form>
                 <% } %>
             </div>
+
           </div>
         </div>
       </div>
