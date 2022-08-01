@@ -21,6 +21,7 @@
           <label class="input-label" for="email ">Ingresá tu email</label>
           <input class="input-text" type="text" name="email" id="email" placeholder="Email"
             value="<%= locals.old && old.email%>" />
+            <p class="errorEmail"></p>
           <% if(locals.errors && errors.email){%>
             <p class="text-danger">
               <%=errors.email.msg%>
@@ -36,6 +37,7 @@
           <label class="input-label" for="password">Ingresá tu contraseña</label>
           <input class="input-text" type="password" name="password" id="password" placeholder="Contraseña"
             value="<%= locals.old && old.password%>" />
+            <p class="errorPassword"></p>
           <% if(locals.errors && errors.password){%>
             <p class="text-danger">
               <%=errors.password.msg%>
@@ -68,6 +70,8 @@
   <footer class="footer">
     <%- include('./partials/footer') %>
   </footer>
+  <script src = '/js/loginValidation.js'></script>
+    </script>
 </body>
 
 </html>

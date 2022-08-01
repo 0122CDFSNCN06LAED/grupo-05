@@ -154,9 +154,51 @@ const proyectController = {
           id: idParam,
         },
       });
-      res.render('proyect-detail', {
-        proyecto: proyecto,
+      let proyUsuExistente = await db.ProyectoUsuario.findOne({
+        where: {
+          postulanteId: res.locals.userLogged.id,
+          proyectoId: proyecto.id
+        }
+      })
+      if (proyUsuExistente) {
+        let postulado = true
+        res.render('proyect-detail', {
+          proyecto: proyecto,
+          postulado: postulado
+        });
+      } else {
+        let postulado = false
+        res.render('proyect-detail', {
+          proyecto: proyecto,
+          postulado: postulado
+        });
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  desp: async (req, res) => {
+    try {
+      const idParam = req.params.id;
+      const proyecto = await db.Proyectos.findOne({
+        where: {
+          id: idParam,
+        },
       });
+      console.log('hhhhhhhhhhhhhhh', idParam)
+      await db.ProyectoUsuario.destroy({
+        where: {
+          postulanteId: res.locals.userLogged.id,
+          proyectoId: idParam
+        }
+      })
+      let postulado = false
+      res.render('index', {
+        proyecto: proyecto,
+        postulado: postulado
+      });
+
     } catch (error) {
       console.log(error);
     }
@@ -363,8 +405,16 @@ const proyectController = {
           id: idParam,
         },
       });
+      let proyUsu = {
+        id: '',
+        postulanteId: res.locals.userLogged.id,
+        proyectoId: idParam,
+      };
+      db.ProyectoUsuario.create(proyUsu)
+      let postulado = true
       res.render('proyect-detail', {
         proyecto: proyecto,
+        postulado: postulado
       });
     } catch (error) {
       console.log(error);

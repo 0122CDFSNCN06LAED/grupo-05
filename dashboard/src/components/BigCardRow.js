@@ -1,4 +1,4 @@
-import UsersIndDbCard from "./UsersInDbCard";
+import UsersInDbCard from "./UsersInDbCard";
 import LastProyectInDb from "./LastProyectCard";
 
 function BigCardRow() {
@@ -6,7 +6,8 @@ function BigCardRow() {
     <div className="row">
       {/* <!-- Last Proyect in DB --> */}
       <LastProyectInDb />
-      <UsersIndDbCard />
+      <UsersInDbCard/>
+
     </div>
   );
 }
