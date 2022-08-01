@@ -1,21 +1,62 @@
 .titulo-puesto {
-    font-size: 18px;
-    font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .descripcion-corta {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .descripcion-detallada {
-    font-size: 12px;
-    margin-top: 2px;
-    max-height: fit-content;
+  font-size: 12px;
+  margin-top: 2px;
+  max-height: fit-content;
 }
 
 /*Contenedor Gral*/
 .row {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  /* flex-direction: column; */
+}
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  width: auto;
+  max-height: min-content;
+}
+
+/* .precio {
+
+    border: 1px solid green;
+} */
+
+.precio p {
+  font-size: 24px;
+  /* border: 1px solid orange; */
+}
+
+.guardar-boton,
+.guardar-boton a {
+  width: auto;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  margin-top: 5px;
+  /* margin-bottom: 14px; */
+  background-color: #3a7fff;
+  color: #ffffff;
+}
+
+.desp-boton,
+.desp-boton a {
+  width: auto;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  margin-top: 5px;
+  /* margin-bottom: 14px; */
+  background-color: red;
+  color: #ffffff;
 }

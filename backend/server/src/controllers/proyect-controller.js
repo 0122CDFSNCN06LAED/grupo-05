@@ -1,8 +1,5 @@
-const fs = require('fs');
-const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../../database/models');
-const { debugPort } = require('process');
 
 const proyectController = {
   proyectsList: async (req, res) => {
@@ -38,6 +35,46 @@ const proyectController = {
     }
   },
   proyectProposals: async (req, res) => {
+    try {
+      let proyectos = [];
+      const categorias = await db.Categorias.findAll();
+      const proyectoCategoria = await db.ProyectoCategoria.findAll();
+      if (req.session.userLogged.tipoUsuarioId == 2) {
+        //busco si es freelancer
+        const proyectoUsuario = await db.ProyectoUsuario.findAll({
+          where: {
+            postulanteId: req.session.userLogged.id,
+          },
+        });
+        for (let i = 0; i < proyectoUsuario.length; i++) {
+          const proy = await db.Proyectos.findOne({
+            where: {
+              id: proyectoUsuario[i].proyectoId,
+            },
+          });
+          proyectos.push(proy);
+        }
+      } else if (req.session.userLogged.tipoUsuarioId == 1) {
+        //busco si es empresa
+        const proyectoCreador = await db.Proyectos.findAll({
+          where: {
+            creadorId: req.session.userLogged.id,
+          },
+        });
+        proyectos = proyectoCreador;
+      } else if (req.session.userLogged.tipoUsuarioId == 3) {
+        proyectos = await db.Proyectos.findAll();
+      }
+      res.render('proyects-list', {
+        listaProyectos: proyectos,
+        listaCategorias: categorias,
+        listaProyCat: proyectoCategoria,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  proposalsList: async (req, res) => {
     try {
       let proyectos = [];
       const categorias = await db.Categorias.findAll();
@@ -117,10 +154,51 @@ const proyectController = {
           id: idParam,
         },
       });
-      console.log('proyectooooo', idParam);
-      res.render('proyect-detail', {
-        proyecto: proyecto,
+      let proyUsuExistente = await db.ProyectoUsuario.findOne({
+        where: {
+          postulanteId: res.locals.userLogged.id,
+          proyectoId: proyecto.id
+        }
+      })
+      if (proyUsuExistente) {
+        let postulado = true
+        res.render('proyect-detail', {
+          proyecto: proyecto,
+          postulado: postulado
+        });
+      } else {
+        let postulado = false
+        res.render('proyect-detail', {
+          proyecto: proyecto,
+          postulado: postulado
+        });
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  desp: async (req, res) => {
+    try {
+      const idParam = req.params.id;
+      const proyecto = await db.Proyectos.findOne({
+        where: {
+          id: idParam,
+        },
       });
+      console.log('hhhhhhhhhhhhhhh', idParam)
+      await db.ProyectoUsuario.destroy({
+        where: {
+          postulanteId: res.locals.userLogged.id,
+          proyectoId: idParam
+        }
+      })
+      let postulado = false
+      res.render('index', {
+        proyecto: proyecto,
+        postulado: postulado
+      });
+
     } catch (error) {
       console.log(error);
     }
@@ -150,7 +228,6 @@ const proyectController = {
         estadoId: 1,
         creadorId: req.session.userLogged.id,
       };
-      console.log('proyecttt', proyect);
       await db.Proyectos.create(proyect);
 
       //cuando creo automáticamente no se carga el id (no sé cual es el motivo) por lo que no puedo crear el proycat, por eso realizo la siguiente búsqueda
@@ -328,9 +405,16 @@ const proyectController = {
           id: idParam,
         },
       });
-      console.log('proyectooooo', idParam);
+      let proyUsu = {
+        id: '',
+        postulanteId: res.locals.userLogged.id,
+        proyectoId: idParam,
+      };
+      db.ProyectoUsuario.create(proyUsu)
+      let postulado = true
       res.render('proyect-detail', {
         proyecto: proyecto,
+        postulado: postulado
       });
     } catch (error) {
       console.log(error);

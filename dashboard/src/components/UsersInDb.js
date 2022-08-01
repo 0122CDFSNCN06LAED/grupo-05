@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 
 class UsersInDb extends Component {
   constructor(props) {
@@ -22,8 +23,12 @@ class UsersInDb extends Component {
 
           return (
             <div key={user.id} className="col-lg-6 mb-4">
+              
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">{user.name}</div>
+              <Link to={`/users/${user.id}`}>
+                <div className="card-body">{user.name}
+                </div>
+                </Link>
               </div>
             </div>
           );
@@ -35,7 +40,6 @@ class UsersInDb extends Component {
   async componentDidMount() {
     const response = await fetch("http://localhost:3000/api/userApiRouter");
     const usersListData = await response.json();
-    console.log('usuarioss', usersListData)
 
     this.setState({
       users: usersListData.data,

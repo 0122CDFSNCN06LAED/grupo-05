@@ -1,53 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Mail Box</title>
-    <%- include('./partials/head') %>
-    <!-- Espacio para estilos de esta pantalla-->
-    <link rel="stylesheet" href="/css/index/index.css" />
-    <link rel="stylesheet" href="/css/index/mailbox.css" />
-  </head>
 
-  <body>
-    <header class="header"><%- include('./partials/header') %></header>
-    <!--  -->
-    <main>
-      <div class="contenedor-lista">
-        <ul class="lista-contactos">
-          <%if(mensajes.length > 0){%>
-          <h2><%=usuario.username%></h2>
-          <div class="contenedor-elemento-lista recibido">
-            <% mensajes.forEach(mensaje => { %> <%if(mensaje.remitenteId ==
-            usuario.id){%>
-            <div class="col-12 col-sm-6 col-lg-3">
-              <section class="mail-box">
-                <article>
-                  <span class="green"> <%= mensaje.contenidoMensaje %> - </span>
-                  <p><%= mensaje.fechaMensaje %></p>
-                </article>
-              </section>
-              <hr />
+<head>
+  <title>Mail Box</title>
+  <%- include('./partials/head') %>
+    <!-- Espacio para estilos de esta pantalla-->
+    <link rel="stylesheet" href="/css/index/mailbox.css" />
+</head>
+
+<body>
+  <header class="header">
+    <%- include('./partials/header') %>
+  </header>
+  <!--  -->
+  <main>
+    <div class="contenedor-lista">
+      <ul class="lista-contactos">
+
+        <div class="mesgs">
+          <%if(mensajes.length> 0){%>
+            <h2 class="titulo-pagina"> Conversacion con:
+              <%=usuario.username%>
+            </h2>
+            <!-- <div class="contenedor-elemento-lista recibido"> -->
+            <div class="msg_history">
+              <% mensajes.forEach(mensaje=> { %> <%if(mensaje.remitenteId==usuario.id){%>
+
+                  <div class="incoming_msg">
+                    <div class="received_msg">
+                      <div class="received_withd_msg">
+                        <p>
+                          <%= mensaje.contenidoMensaje %> -
+                        </p>
+                        <span class="time_date"> Recibido:
+                          <%= mensaje.fechaMensaje %>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <% } %>
+                    <%if(mensaje.destinatarioId==usuario.id){%>
+
+                      <div class="outgoing_msg">
+                        <div class="sent_msg">
+                          <p>
+                            <%= mensaje.contenidoMensaje%>
+                          </p>
+                          <span class="time_date"> Enviado:
+                            <%= mensaje.fechaMensaje %>
+                          </span>
+                        </div>
+                      </div>
+
+
+                      <% } })%>
             </div>
-            <% } %> <%if(mensaje.destinatarioId == usuario.id){%>
-            <div class="col-12 col-sm-6 col-lg-3 enviado">
-              <section class="mail-box">
-                <article>
-                  <span class="blue"> <%= mensaje.contenidoMensaje%></span>
-                  <p><%= mensaje.fechaMensaje %></p>
-                </article>
-              </section>
-              <hr />
-            </div>
-            <% } })%>
-          </div>
-          <% } %>
-          <!-- nuevo fin -->
-        </ul>
-      </div>
-      <button class="guardar-boton">
-        <a class="" href="/user/createMessage">Nuevo mensaje</a>
+            <% } %>
+              <!-- nuevo fin -->
+        </div>
+
+      </ul>
+      <button class="guardar-boton" href="/user/createMessage">
+        <a class="" href="/user/createMessage">Nuevo</a>
       </button>
-    </main>
-    <footer class="footer"><%- include('./partials/footer') %></footer>
-  </body>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <%- include('./partials/footer') %>
+  </footer>
+</body>
+
 </html>

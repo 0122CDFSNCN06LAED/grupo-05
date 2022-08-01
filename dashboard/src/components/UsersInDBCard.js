@@ -1,3 +1,4 @@
+// userInDb
 import BigCard from "./BigCard";
 import UsersInDb from "./UsersInDb";
 
@@ -8,4 +9,3 @@ export default function UsersInDbCard() {
     </BigCard>
   );
 }
-

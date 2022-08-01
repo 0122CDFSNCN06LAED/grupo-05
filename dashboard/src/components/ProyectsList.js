@@ -15,12 +15,11 @@ class ProyectsList extends Component {
     const response = await fetch(
       `http://localhost:3000/api/proyectApiRouter?page=${this.state.page}`);
     const proyectsData = await response.json();
-      console.log('proyectoss',proyectsData);
 
     this.setState({
       proyects: proyectsData.data,
-       hasNextPage: proyectsData.meta.hasNextPage,
-      hasPrevPage: proyectsData.meta.hasPrevPage, 
+      hasNextPage: proyectsData.meta.hasNextPage,
+      hasPrevPage: proyectsData.meta.hasPrevPage,
     });
   }
 

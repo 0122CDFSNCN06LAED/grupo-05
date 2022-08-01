@@ -4,8 +4,8 @@
     <title>Mail Box</title>
     <%- include('./partials/head') %>
     <!-- Espacio para estilos de esta pantalla-->
-    <link rel="stylesheet" href="/css/index/index.css" />
-    <link rel="stylesheet" href="/css/index/mailbox.css" />
+    <!-- <link rel="stylesheet" href="/css/index/index.css" />
+    <link rel="stylesheet" href="/css/index/mailbox.css" />-->
     <link rel="stylesheet" href="/css/index/message.css" />
   </head>
 
@@ -15,45 +15,48 @@
     <main>
       <form action="/user/createMessage" method="POST">
         <div class="mensaje">
-          <div class="form-group">
-            <h6>Ingrese su mensaje</h6>
-            <%if(error !="" ){%>
-            <textarea
-              class="form-control rounded-0 tamanio"
-              id="exampleFormControlTextarea1"
-              rows="10"
-              name="mensaje"
-            >
-<%= locals.old && old.mensaje%><% if(locals.errors && errors.mensaje){%>
-  <p class="text-danger"><%=errors.mensaje.msg%></p>
-<%}%></textarea
-            >
-            <% } %> <%if(error =="" ){%>
-            <textarea
-              class="form-control rounded-0 tamanio"
-              id="exampleFormControlTextarea1"
-              rows="10"
-              name="mensaje"
-            ></textarea>
-            <% if(locals.errors && errors.mensaje){%>
-            <p class="text-danger"><%=errors.mensaje.msg%></p>
-            <%}%> <% } %>
-          </div>
-          <div class="form-group">
-            <h6>Ingrese el destinatario</h6>
+          <div class="destinatario-group">
+            <p class="titulo">Destinatario:</p>
             <select
               class="form-select tamanio-menor"
               aria-label="Default select example"
               name="destinatario"
             >
               <option selected disabled>Elija el usuario</option>
-              <%for ( let i = 0; i < usuarios.length; i++ ) { %>
+              <%for ( let i=0; i < usuarios.length; i++ ) { %>
               <option value="<%=usuarios[i].id %>" selected<%="usuarios[i]" %>
                 ><%=usuarios[i].username %>
               </option>
               <% } %>
             </select>
           </div>
+          <div class="form-group">
+            <!-- <h6>Ingrese su mensaje</h6> -->
+            <%if(error !="" ){%>
+            <textarea
+              class="form-control rounded-0 tamanio"
+              id="exampleFormControlTextarea1"
+              rows="10"
+              name="mensaje"
+              placeholder="Escriba su mensaje..."
+            >
+<%= locals.old && old.mensaje%><% if(locals.errors && errors.mensaje){%>
+  <p class="text-danger"><%=errors.mensaje.msg%></p>
+<%}%></textarea
+            >
+            <% } %> <%if(error=="" ){%>
+            <textarea
+              class="form-control rounded-0 tamanio"
+              id="exampleFormControlTextarea1"
+              rows="10"
+              name="mensaje"
+              placeholder="Escriba su mensaje..."
+            ></textarea>
+            <% if(locals.errors && errors.mensaje){%>
+            <p class="text-danger"><%=errors.mensaje.msg%></p>
+            <%}%> <% } %>
+          </div>
+          <!-- Aca iba lo otro -->
           <% if(locals.errors && errors.destinatario){%>
           <p class="text-danger"><%=errors.destinatario.msg%></p>
           <%}%> <%if(error !="" ){%>
@@ -65,7 +68,7 @@
           <button id="botonEnviar" class="guardar-boton" type="submit">
             Enviar Mensaje
           </button>
-          <% } %> <%console.log('erorss', errors)%>
+          <% } %>
         </div>
       </form>
       <%if(mensajeEnviado !="" ){%>
