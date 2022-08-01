@@ -1,13 +1,47 @@
-.tamanio {
-  width: 80%;
-  margin: 0 auto;
-}
-.tamanio-menor {
-  width: 30%;
-  margin: 0 auto;
+.mensaje {
+  align-items: center;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100px;
+
 }
 
-.guardar-boton {
+.destinatario-group {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin-top: 5px;
+
+}
+
+.tamanio-menor {
+  /* width: 30%; */
+  margin: 0 auto;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.titulo {
+  /* align-items: right;
+  line-height: normal; */
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 5px;
+}
+
+/* .tamanio {
+  /* width: 80%; */
+/* margin: 0 auto;
+} */
+
+*/ .guardar-boton {
   background-color: rgb(72, 163, 72);
   font-family: "Roboto";
   width: 105px;
@@ -15,12 +49,26 @@
   font-size: 13px;
 }
 
-.mensaje {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+
 
 #botonEnviar {
   align-self: center;
+}
+
+.guardar-boton,
+.guardar-boton a {
+  width: auto;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  background-color: #3a7fff;
+  color: #ffffff;
+}
+
+@media (min-width:1200px) {
+  .form-control {
+    min-width: 800px;
+  }
 }

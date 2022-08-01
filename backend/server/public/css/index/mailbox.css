@@ -24,10 +24,10 @@
 }
 
 
-/* .lista-contactos {
+.lista-contactos {
 
-  margin-top: 1px;
-} */
+  margin-top: 5px;
+}
 
 .contenedor-elemento-lista {
 
@@ -40,8 +40,9 @@
 }
 
 .mail-box {
-  border: 2px solid purple;
+  background-color: hsl(201, 21%, 69%);
   flex-basis: 100%;
+  margin-bottom: 1px;
 
 }
 
@@ -61,7 +62,7 @@
 }
 
 
-
+/* Ventana de CHATS*/
 .active_chat {
   background: #ebebeb;
 }
@@ -72,7 +73,7 @@
   padding: 0 0 0 10px;
   vertical-align: top;
   width: 92%;
-  border: 2px solid purple;
+
 }
 
 .received_withd_msg p {
@@ -83,7 +84,7 @@
   margin: 0;
   padding: 5px 10px 5px 12px;
   width: 100%;
-  border: 2px solid yellowgreen;
+
 }
 
 .time_date {
@@ -108,7 +109,7 @@
 
 .sent_msg p {
   /* background: #05728f none repeat scroll 0 0; */
-  background: hsl(202, 16%, 57%);
+  background: hsl(202, 13%, 51%);
   border-radius: 3px;
   font-size: 14px;
   margin: 0;
@@ -130,19 +131,17 @@
 
 }
 
-
-
 .msg_history {
   max-height: 800px;
   overflow-y: auto;
-  border: 2px solid burlywood
+  border-bottom: 2px solid grey;
 }
 
 @media (min-width:1200px) {
   .contenedor-lista {
     max-width: 800px;
     align-items: center;
-    border: 2px solid yellowgreen;
+    /* border: 2px solid yellowgreen; */
 
   }
 
