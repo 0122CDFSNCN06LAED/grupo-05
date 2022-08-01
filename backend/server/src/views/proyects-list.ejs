@@ -6,6 +6,7 @@
     <%- include('./partials/head') %>
         <!-- Espacio para estilos de esta pantalla-->
         <link rel="stylesheet" href="/css/bidding-detail/bidding-list.css" />
+        <link rel="stylesheet" href="/css/tarjetasPropuestas.css" />
 </head>
 
 <body>
@@ -20,17 +21,16 @@
                         <p class="titulo">
                             <%= listaProyectos[i].titulo%>
                         </p>
+                        <div class="fecha-precio">
 
-                        <p class="precio-proyecto">
-                            <%= listaProyectos[i].precio%>
-                        </p>
-                        <p>
-                            <%= listaProyectos[i].fechaCreacion%>
-                        </p>
-                        <p class="descripcion">
+                            <p class="price">
+                                <%= listaProyectos[i].precio%>
+                            </p>
+                        </div>
+                        <p class="card-text">
                             <%= listaProyectos[i].descripcion%>
                         </p>
-                        <div class="categorias-proyecto">
+                        <div class="requisitos-recomendados">
                             <!-- proyCat contiene la instancia que pertenece al proyecto y le saco la/s categoría/s -->
                             <% for(let j=0; j<listaProyCat.length; j++){ %>
                                 <% if(listaProyCat[j].proyectoId==listaProyectos[i].id){ %>

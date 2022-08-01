@@ -22,7 +22,8 @@ p {
 /* I - recomendados */
 /*Contenedor gral*/
 .recomendados {
-  display: flex;
+  display: none;
+  /* display: flex; */
   flex-direction: column;
 }
 
@@ -490,5 +491,12 @@ input::-webkit-inner-spin-button {
 
   .d-flex {
     width: 62vw;
+  }
+
+
+  .recomendados {
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
   }
 }
