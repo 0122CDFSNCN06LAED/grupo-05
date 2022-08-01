@@ -101,4 +101,7 @@ label {
 
 .label-checkbox {
   width: 110px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
