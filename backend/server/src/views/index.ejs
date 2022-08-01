@@ -26,57 +26,59 @@
             <img class="lupa" src="/images/lupa-icon.png" alt="lupa">
           </a>
         </p>
-        <a href="/proyect/create" class="boton-agregar" <% if (locals.userLogged.tipoUsuarioId==2){
-          %>style='display: none'<% } %>>
+        <!-- <div class="agregar-proyecto-group">
+          <a href="/proyect/create" class="boton-agregar" <% if (locals.userLogged.tipoUsuarioId==2){ %>style='display:
+            none'<% } %>>
               <div class="agregar-proyecto-contenedor">
-                  <p class="agregar-proyecto-text">Agregar nuevo proyecto</p>
+                <p class="agregar-proyecto-text">Agregar nuevo proyecto</p>
+                <i class="fa-solid fa-circle-plus"></i>
               </div>
-              <i class="fa-solid fa-circle-plus"></i>  
+        </div> -->
       </form>
     </div>
-   
+
   </nav>
   <div class="recomendados">
     <p class="recomendado-titulo">RECOMENDADOS PARA TI</p>
-    <%if(listaProyectos.length >= 4){%>
-    <ul class="lista-recomendados">
-      <% for(let i=0; i<4; i++){ %>
-        <a href="proyect/detail/ <%=ultimosProyectos[i].id %> " class="card hipervinculo">
-          <h5 class="card-header">
-            <%= ultimosProyectos[i].titulo%>
-          </h5>
-          <div class="card-body">
-            <div class="fecha-horario">
-              <p class="price">
-                <%= ultimosProyectos[i].precio%>
+    <%if(listaProyectos.length>= 4){%>
+      <ul class="lista-recomendados">
+        <% for(let i=0; i<4; i++){ %>
+          <a href="proyect/detail/ <%=ultimosProyectos[i].id %> " class="card hipervinculo">
+            <h5 class="card-header">
+              <%= ultimosProyectos[i].titulo%>
+            </h5>
+            <div class="card-body">
+              <div class="fecha-horario">
+                <p class="price">
+                  <%= ultimosProyectos[i].precio%>
+                </p>
+                <p class="fecha">
+                  <%= ultimosProyectos[i].fechaCreacion%>
+                </p>
+              </div>
+              <p class="card-text">
+                <%= ultimosProyectos[i].descripcion%>
               </p>
-              <p class="fecha">
-                <%= ultimosProyectos[i].fechaCreacion%>
-              </p>
-            </div>
-            <p class="card-text">
-              <%= ultimosProyectos[i].descripcion%>
-            </p>
-            <div class="requisitos-recomendados">
-              <% for(let j=0; j<listaProyCat.length; j++){ %>
-                <% if(listaProyCat[j].proyectoId==ultimosProyectos[i].id){ %>
-                  <!-- busco la categoria (nombre) -->
-                  <% let categId=listaProyCat[j].categoriaId %>
-                    <% for(let k=0; k<listaCategorias.length; k++) { %>
-                      <% if(categId==listaCategorias[k].id){ %>
-                        <p>
-                          <%=listaCategorias[k].nombre%>
-                        </p>
-                        <% } %>
+              <div class="requisitos-recomendados">
+                <% for(let j=0; j<listaProyCat.length; j++){ %>
+                  <% if(listaProyCat[j].proyectoId==ultimosProyectos[i].id){ %>
+                    <!-- busco la categoria (nombre) -->
+                    <% let categId=listaProyCat[j].categoriaId %>
+                      <% for(let k=0; k<listaCategorias.length; k++) { %>
+                        <% if(categId==listaCategorias[k].id){ %>
+                          <p>
+                            <%=listaCategorias[k].nombre%>
+                          </p>
                           <% } %>
                             <% } %>
                               <% } %>
+                                <% } %>
+              </div>
             </div>
-          </div>
-        </a>
-        <% } %>
-    </ul>
-  <%}%>
+          </a>
+          <% } %>
+      </ul>
+      <%}%>
   </div>
   <div class="contenido-principal">
     <div class="filtrado">
@@ -107,9 +109,9 @@
           </form>
         </div>
       </div>
-        <button class="boton-boton" onclick="clickBoton()">
-          <a class="ver-todo hipervinculo view-all" href="/proyect/proyectosAll">Ver todos</a>
-        </button>
+      <button class="boton-boton" onclick="clickBoton()">
+        <a class="ver-todo hipervinculo view-all" href="/proyect/proyectosAll">Ver todos</a>
+      </button>
     </div>
     <%if(listaProyectos.length==0){%>
       <div>
@@ -119,52 +121,62 @@
         <div class="buscador-buscados">
           <!--ponerle evento onclick al botón -->
           <div class="boton-all">
-            <p class="boton-texto">Últimos proyectos</p>
+            <div class="agregar-proyecto-group">
+              <a href="/proyect/create" class="boton-agregar" <% if (locals.userLogged.tipoUsuarioId==2){
+                %>style='display:
+                none'<% } %>>
+                  <div class="agregar-proyecto-contenedor">
+                    <p class="agregar-proyecto-text">Agregar nuevo proyecto</p>
+                  </div>
+                  <i class="fa-solid fa-circle-plus"></i>
+            </div>
+            <p class="boton-texto">Proyectos</p>
             <!--  <button class="boton-boton" onclick="clickBoton()">
           <a class="ver-todo hipervinculo view-all" href="#">Ver todos</a>
         </button> -->
+            <!-- Boton de agregAR PROYECTO -->
           </div>
-          <%if (listaProyectos.length >= 4){%>
-          <div class="tarjeta-buscados">
-            <% let long=listaProyectos.length %>
-              <% if (long> 4) { long = 4} %>
-                <% for(let i=0; i<long; i++){ %>
-                  <a href="proyect/detail/ <%=listaProyectos[i].id %>" class="card hipervinculo">
-                    <h5 class="card-header">
-                      <%= listaProyectos[i].titulo%>
-                    </h5>
-                    <div class="card-body">
-                      <div class="fecha-horario">
-                        <p class="price">
-                          <%= listaProyectos[i].precio%>
+          <%if (listaProyectos.length>= 4){%>
+            <div class="tarjeta-buscados">
+              <% let long=listaProyectos.length %>
+                <% if (long> 4) { long = 4} %>
+                  <% for(let i=0; i<long; i++){ %>
+                    <a href="proyect/detail/ <%=listaProyectos[i].id %>" class="card hipervinculo">
+                      <h5 class="card-header">
+                        <%= listaProyectos[i].titulo%>
+                      </h5>
+                      <div class="card-body">
+                        <div class="fecha-horario">
+                          <p class="price">
+                            <%= listaProyectos[i].precio%>
+                          </p>
+                          <p class="fecha">
+                            <%= listaProyectos[i].fechaCreacion%>
+                          </p>
+                        </div>
+                        <p class="card-text">
+                          <%= listaProyectos[i].descripcion%>
                         </p>
-                        <p class="fecha">
-                          <%= listaProyectos[i].fechaCreacion%>
-                        </p>
-                      </div>
-                      <p class="card-text">
-                        <%= listaProyectos[i].descripcion%>
-                      </p>
-                      <div class="requisitos-recomendados">
-                        <% for(let j=0; j<listaProyCat.length; j++){ %>
-                          <% if(listaProyCat[j].proyectoId==listaProyectos[i].id){ %>
-                            <!-- busco la categoria (nombre) -->
-                            <% let categId=listaProyCat[j].categoriaId %>
-                              <% for(let k=0; k<listaCategorias.length; k++) { %>
-                                <% if(categId==listaCategorias[k].id){ %>
-                                  <p>
-                                    <%=listaCategorias[k].nombre%>
-                                  </p>
-                                  <% } %>
+                        <div class="requisitos-recomendados">
+                          <% for(let j=0; j<listaProyCat.length; j++){ %>
+                            <% if(listaProyCat[j].proyectoId==listaProyectos[i].id){ %>
+                              <!-- busco la categoria (nombre) -->
+                              <% let categId=listaProyCat[j].categoriaId %>
+                                <% for(let k=0; k<listaCategorias.length; k++) { %>
+                                  <% if(categId==listaCategorias[k].id){ %>
+                                    <p>
+                                      <%=listaCategorias[k].nombre%>
+                                    </p>
                                     <% } %>
                                       <% } %>
                                         <% } %>
+                                          <% } %>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                  <% } %>
-          </div>
-          <%}%>
+                    </a>
+                    <% } %>
+            </div>
+            <%}%>
         </div>
         <%}%>
   </div>

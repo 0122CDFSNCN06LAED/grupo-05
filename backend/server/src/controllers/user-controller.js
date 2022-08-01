@@ -22,7 +22,6 @@ module.exports = {
           return 0;
         }
       });
-      console.log('kkkkkk', ultimosProyectos)
       let tipoUsuarioId = 1;
       if (req.body.tipoUsuarioId == 'freelancer') {
         tipoUsuarioId = 2;
@@ -46,15 +45,23 @@ module.exports = {
           email: req.body.email
         }
       })
-      if (usuario) {
-        res.render('register', { errors: errors.mapped(), old: req.body, repetidoEmail: 'Ya existe un usuario con este email', repetidoUsername: '' });
-        return
-      }
+
       const usuario2 = await db.Usuarios.findOne({
         where: {
           username: req.body.usuarioNombre
         }
       })
+
+      if (usuario && usuario2) {
+        res.render('register', { errors: errors.mapped(), old: req.body, repetidoEmail: 'Ya existe un usuario con este email', repetidoUsername: 'Ya existe un usuario con este nombre' });
+        return
+      }
+
+      if (usuario) {
+        res.render('register', { errors: errors.mapped(), old: req.body, repetidoEmail: 'Ya existe un usuario con este email', repetidoUsername: '' });
+        return
+      }
+
       if (usuario2) {
         res.render('register', { errors: errors.mapped(), old: req.body, repetidoEmail: '', repetidoUsername: 'Ya existe un usuario con este nombre' });
         return
@@ -171,7 +178,6 @@ module.exports = {
   //   }
   // },
   logout: (req, res) => {
-    console.log('logoutttt');
     res.locals.userLogged = null;
     req.session.userLogged = null;
     console.log(
@@ -220,7 +226,6 @@ module.exports = {
       let usuariosUnicosId = participantesId.filter((item, index) => {
         return participantesId.indexOf(item) === index;
       });
-      console.log('idddd', usuariosUnicosId);
       let usuariosUnicos = [];
       for (let j = 0; j < usuariosUnicosId.length; j++) {
         let user = await db.Usuarios.findOne({
@@ -230,7 +235,6 @@ module.exports = {
         });
         usuariosUnicos.push(user);
       }
-      console.log('usuariosssss', usuariosUnicos);
 
       if (usuariosUnicos) {
         res.render('mailbox', {
@@ -278,7 +282,6 @@ module.exports = {
             destinatarioId: req.body.destinatario,
             remitenteId: req.session.userLogged.id,
           };
-          console.log('newwwww', newMensaje);
           await db.Mensajes.create(newMensaje);
           mensajeEnviado = 'Mensaje Enviado';
           res.render('create-message', {
