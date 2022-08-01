@@ -41,7 +41,6 @@
                                     <% let categId=listaProyCat[j].proyectoId %>
                                         <% for(let k=0; k<listaCategorias.length; k++) { %>
                                             <%if(listaCategorias[k] !=undefined){%>
-                                                <%console.log('ttttt', categId, listaCategorias[k])%>
                                                     <% if(categId==listaCategorias[k].id){ %>
                                                         <p>
                                                             <%=listaCategorias[k].nombre%>
@@ -62,7 +61,6 @@
                 </div>
                 <% } %>
         </div>
-        <% console.log(locals.userLogged.tipoUsuarioId) %>
             <a href="/proyect/create" class="boton-agregar" <% if (locals.userLogged.tipoUsuarioId==2){
                 %>style='display: none'<% } %>>
                     <div class="agregar-proyecto-contenedor">

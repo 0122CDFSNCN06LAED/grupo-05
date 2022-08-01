@@ -19,7 +19,6 @@
   </h8>
 
   <div class="contenido">
-    <%console.log(proyecto,'lll')%>
     <form action="/proyect/<%=proyecto.id %>?_method=PUT" method="POST">
       <div class="item-form">
         <label for="titulo">Ingrese un título</label>
@@ -54,7 +53,6 @@
           <% let categId = proyectoCategoria[j].proyectoId %>
           <% for(let k=0; k<categorias.length; k++) { %>
               <%if(categorias[k] != undefined){%>
-                  <%console.log('ttttt', categId, categorias[k])%>
           <% if(categId == categorias[k].id){ %>
           <p><%=categorias[k].nombre%></p>
           <% } %>
