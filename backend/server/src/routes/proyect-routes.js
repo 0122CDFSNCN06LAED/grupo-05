@@ -11,6 +11,11 @@ proyectRouter.get(
   proyectController.proyectProposals
 );
 proyectRouter.get(
+  '/proposals-list', //muestra la lista de propuestas de un proyecto puntual. (vista de empresa)
+  authGuestMiddleware,
+  proyectController.proposalsList
+);
+proyectRouter.get(
   '/proyectosAll', //muestra la lista de propuestas de un proyecto puntual. (vista de empresa)
   authGuestMiddleware,
   proyectController.proyectosAll

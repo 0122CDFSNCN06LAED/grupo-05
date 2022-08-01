@@ -24,7 +24,6 @@ module.exports = {
           return 0;
         }
       });
-      console.log('kkkkkk', ultimosProyectos)
 
       res.render('index', {
         listaProyectos: proyectos,
@@ -91,7 +90,6 @@ module.exports = {
                 return 0;
               }
             });
-            console.log('kkkkkk', ultimosProyectos)
             res.render('index', {
               user: req.session.userLogged,
               /* tipoUsuario: usuarioTipo, */
