@@ -1,4 +1,4 @@
-import UsersIndDbCard from "./UsersInDbCard";
+import UsersInDbCard from "./UsersInDbCard";
 import LastProyectInDb from "./LastProyectCard";
 
 function BigCardRow() {
