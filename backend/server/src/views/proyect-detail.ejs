@@ -1,67 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>
-    <%= proyecto.titulo %>
-  </title>
-  <!-- Espacio para estilos de esta pantalla-->
-  <%- include('./partials/head') %>
+  <head>
+    <title><%= proyecto.titulo %></title>
+    <!-- Espacio para estilos de esta pantalla-->
+    <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/proyect-detail.css" />
     <!-- Espacio para estilos de esta pantalla-->
-</head>
+  </head>
 
-<body>
-  <header class="header">
-    <%- include('./partials/header') %>
+  <body>
+    <header class="header"><%- include('./partials/header') %></header>
 
-  </header>
+    <main class="flex-fill container py-3">
+      <div class="row bg-white border shadow p-1">
+        <div class="col col-md-8">
+          <!-- <img class="d-block mx-auto" src="<%# proyecto.image %>" alt="<%# product.name %>" /> -->
+          <div class="p-4">
+            <h1 class="titulo-puesto"><%= proyecto.titulo %></h1>
 
-  <main class="flex-fill container py-3">
-    <div class="row bg-white border shadow p-1">
-      <div class="col col-md-8">
-        <!-- <img class="d-block mx-auto" src="<%# proyecto.image %>" alt="<%# product.name %>" /> -->
-        <div class="p-4">
-          <h1 class="titulo-puesto">
-            <%= proyecto.titulo %>
-          </h1>
-
-          <p class="descripcion-corta">
-            <%= proyecto.descripcion %>
-          </p>
-          <p class="descripcion-detallada">
-            <%= proyecto.descripcionDetallada %>
-          </p>
+            <p class="descripcion-corta"><%= proyecto.descripcion %></p>
+            <p class="descripcion-detallada">
+              <%= proyecto.descripcionDetallada %>
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="col col-md-4">
-        <div class="card shadow h-auto">
-          <div class="card-body">
-
-            <div class="precio">
-              <p>$<%= proyecto.precio %>
-              </p>
-            </div>
-            <!-- <div class="flex-fill"></div> -->
-            <div class="">
-              <% if (locals.userLogged.tipoUsuarioId !="1" ){ %>
+        <div class="col col-md-4">
+          <div class="card shadow h-auto">
+            <div class="card-body">
+              <div class="precio">
+                <p>$<%= proyecto.precio %></p>
+              </div>
+              <!-- <div class="flex-fill"></div> -->
+              <div class="">
+                <% if (locals.userLogged.tipoUsuarioId =="2" && !postulado){ %>
                 <form action="<%= proyecto.id %>" method="POST">
-                  <button class="guardar-boton">
-                    Postularme
-                  </button>
+                  <button class="guardar-boton">Postularme</button>
                 </form>
                 <% } %>
+              </div>
+              <div class="">
+                <% if (locals.userLogged.tipoUsuarioId =="2" && postulado){ %>
+                <button class="guardar-boton">Postulado</button>
+                <% } %>
+              </div>
+              <div class="hidden">
+                <% if (locals.userLogged.tipoUsuarioId =="2" && postulado){ %>
+                <form action="<%= proyecto.id %>" method="DELETE">
+                  <button class="desp-boton">Despostularme</button>
+                </form>
+                <% } %>
+              </div>
             </div>
-
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer class="footer">
-    <%- include('./partials/footer') %>
-  </footer>
-</body>
-
+    <footer class="footer"><%- include('./partials/footer') %></footer>
+  </body>
 </html>

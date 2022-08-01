@@ -25,6 +25,8 @@ proyectRouter.get(
 proyectRouter.get('/detail/:id/', authGuestMiddleware, proyectController.detail);
 /* agrega al freelancer a la lista de postulados */
 proyectRouter.post('/detail/:id', proyectController.postular);
+proyectRouter.delete('/detail/:id', proyectController.desp);
+/* proyectRouter.post('/detail/despostularme/:id', proyectController.desp); */
 
 /*** CREAR UN PRODUCTO ***/
 proyectRouter.get('/create', authGuestMiddleware, proyectController.create);
