@@ -34,7 +34,6 @@ class LastProyectInDb extends Component {
     const response = await fetch("http://localhost:3000/api/proyectApiRouter");
     const proyectos = await response.json();
     const proyectosFiltrados = proyectos.data
-    let lastProyect;
     let proyectosOrdenados = proyectosFiltrados.sort((o1, o2) => {
       if (o1.fechaCreacion < o2.fechaCreacion) {
         return -1;
