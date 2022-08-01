@@ -6,7 +6,8 @@ function BigCardRow() {
     <div className="row">
       {/* <!-- Last Proyect in DB --> */}
       <LastProyectInDb />
-      <UsersIndDbCard />
+      <UsersInDbCard/>
+
     </div>
   );
 }
